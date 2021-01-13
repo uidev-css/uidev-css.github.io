@@ -4,7 +4,7 @@ description: "Minimal Jekyll theme for storytellers"
 url: "https://chesterhow.github.io"
 
 # Google Analytics
-google_analytics: UA—XXXXXXXX-X
+google_analytics: G-4E7S0P2MWC
 
 # Author
 author:
@@ -31,7 +31,7 @@ plugins:
 
 # Permalinks
 permalink: /:year-:month-:day/:title
-paginate: 5
+paginate: 20
 
 # Excludes
 exclude: [Gemfile, Gemfile.lock, tale.gemspec]
