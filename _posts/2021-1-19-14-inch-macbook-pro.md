@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 곧 출시 될 16 형 및 14 형 MacBook Pro : 우리가 알고있는 모든 것
+title: '곧 출시 될 16 형 및 14 형 MacBook Pro : 우리가 알고있는 모든 것'
 author: 'itposting'
 ---
 
@@ -61,4 +61,4 @@ Kuo가 가장 최근 보고서에서 미니 LED 기술에 대해 언급하지 �
 verified_user
 새로운 MacBook Pro 모델은 2021 년 3 분기에 출시 될 예정입니다.
 ## 더 읽어보기
-13 인치 MacBook Pro 및 16 인치 MacBook Pro 전용 라운드 업에서 현재 MacBook Pro 모델과 곧 새롭게 디자인 될 MacBook Pro 모델에 대해 더 자세히 알아볼 수 있습니다.
+13 인치 MacBook Pro 및 16 인치 MacBook Pro 전용 라운드 업에서 현재 MacBook Pro 모델과 곧 새롭게 디자인 될 MacBook Pro 모델에 대해 자세히 알아볼 수 있습니다.
