@@ -6,6 +6,8 @@ comments: true
 tags: Tale
 ---
 
+
+
 Tale is a minimal [Jekyll](https://jekyllrb.com/) theme curated for storytellers. It is designed and developed by [myself](https://github.com/chesterhow/) for a friend who writes short stories.
 
 ## Tale features
