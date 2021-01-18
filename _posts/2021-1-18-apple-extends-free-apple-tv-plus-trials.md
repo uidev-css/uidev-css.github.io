@@ -1,14 +1,8 @@
 ---
 layout: post
-title:  "Apple, 무료 Apple TV + 평가판을 7 월까지 연장"
-author: "itposting"
-comments: true
-tags: 
+title: Apple, 무료 Apple TV + 평가판을 7 월까지 연장
+author: 'itposting'
 ---
-
-
-
-​        
 Apple은 다시 한 번 무료 Apple TV + 평가판 구독을 7 월까지 연장 할 계획입니다.
  2019 년 11 월 ‌Apple TV + ‌가 출시되었을 때 Apple은 2019 년 9 월 또는 그 이후에 새 Apple 기기를 구매 한 사람들에게 무료 ‌Apple TV + ‌ 구독을 제공했습니다.
 ![Apple TV Ray Light 2 Triad](https://images.macrumors.com/t/HoHY3it2hETErNRux5oLv-b0jU4=/2500x0/filters:no_upscale():quality(90)/article-new/2020/12/Apple-TV-Ray-Light-2-Triad.jpg)
