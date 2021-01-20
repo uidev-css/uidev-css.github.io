@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Apple은 두 대의 새로운 Mac Pro 데스크탑을 작업 중이며 그중 하나는 Power Mac G4 Cube를 연상시킵니다.'
+title: "Apple은 두 대의 새로운 Mac Pro 데스크탑을 작업 중이며 그중 하나는 Power Mac G4 Cube를 연상시킵니다."
 author: 'itposting'
 ---
 

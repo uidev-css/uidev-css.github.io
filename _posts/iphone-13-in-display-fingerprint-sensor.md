@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Apple, iPhone 13 용 디스플레이 내 지문 센서 테스트, 접이식 iPhone도 작동 중'
+title: "Apple, iPhone 13 용 디스플레이 내 지문 센서 테스트, 접이식 iPhone도 작동 중"
 author: 'itposting'
 ---
 

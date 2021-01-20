@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'BMW, 내년 초까지 Apple의 자동차 주요 기능의 Ultra Wideband 버전 출시 계획 발표'
+title: "BMW, 내년 초까지 Apple의 자동차 주요 기능의 Ultra Wideband 버전 출시 계획 발표"
 author: 'itposting'
 ---
 

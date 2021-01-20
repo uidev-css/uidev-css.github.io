@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '전체 PC 시장 성장으로 2020 년 4 분기 Mac 출하량 크게 증가'
+title: "전체 PC 시장 성장으로 2020 년 4 분기 Mac 출하량 크게 증가"
 author: 'itposting'
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Safari는 사용자가 AirTags 실행 전에 '내 찾기'앱에서 숨겨진 '항목'탭을 활성화하도록 허용합니다.'
+title: "Safari는 사용자가 AirTags 실행 전에 '내 찾기'앱에서 숨겨진 '항목'탭을 활성화하도록 허용합니다."
 author: 'itposting'
 ---
 

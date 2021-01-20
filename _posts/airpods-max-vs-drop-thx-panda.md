@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'AirPods Max vs. Drop + THX Panda 무선 헤드폰'
+title: "AirPods Max vs. Drop + THX Panda 무선 헤드폰"
 author: 'itposting'
 ---
 

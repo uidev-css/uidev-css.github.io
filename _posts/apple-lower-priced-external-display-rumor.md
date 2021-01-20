@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Apple, Thunderbolt 디스플레이 성공을 위해 저가형 외부 모니터 작업 중'
+title: "Apple, Thunderbolt 디스플레이 성공을 위해 저가형 외부 모니터 작업 중"
 author: 'itposting'
 ---
 

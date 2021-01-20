@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '삼성 $ 30 스마트 태그, AirTags 이길 출시'
+title: "삼성 $ 30 스마트 태그, AirTags 이길 출시"
 author: 'itposting'
 ---
 

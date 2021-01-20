@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Kuo : 평면 디자인, MagSafe, No Touch Bar 및 더 많은 포트를 갖춘 새로운 MacBook Pro 모델'
+title: "Kuo : 평면 디자인, MagSafe, No Touch Bar 및 더 많은 포트를 갖춘 새로운 MacBook Pro 모델"
 author: 'itposting'
 ---
 

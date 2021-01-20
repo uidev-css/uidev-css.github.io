@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Apple, 무료 Apple TV + 평가판을 7 월까지 연장'
+title: "Apple, 무료 Apple TV + 평가판을 7 월까지 연장"
 author: 'itposting'
 ---
 

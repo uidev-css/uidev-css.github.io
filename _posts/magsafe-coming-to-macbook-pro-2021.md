@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'MagSafe가 Mac으로 돌아옵니다 : Apple의 원래 마그네틱 충전 기술 돌아보기'
+title: "MagSafe가 Mac으로 돌아옵니다 : Apple의 원래 마그네틱 충전 기술 돌아보기"
 author: 'itposting'
 ---
 

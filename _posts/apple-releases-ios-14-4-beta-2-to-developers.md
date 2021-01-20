@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Apple Seeds Second Beta of iOS 14.4 및 iPadOS 14.4 to Developers [업데이트 : 공개 베타 사용 가능]'
+title: "Apple Seeds Second Beta of iOS 14.4 및 iPadOS 14.4 to Developers [업데이트 : 공개 베타 사용 가능]"
 author: 'itposting'
 ---
 
