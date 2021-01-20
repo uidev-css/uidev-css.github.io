@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "딜 : M1 13 인치 MacBook Pro, Amazon 및 B & H Photo에서 $ 100 하락"
+title: "아마존 M1 13 인치 MacBook Pro $100 할인"
 author: 'itposting'
 ---
 

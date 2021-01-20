@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "곧 출시 될 16 형 및 14 형 MacBook Pro : 우리가 알고있는 모든 것"
+title: "MacBook Pro 14인치 16인친 : 최신 유출 정보"
 author: "itposting"
 ---
 

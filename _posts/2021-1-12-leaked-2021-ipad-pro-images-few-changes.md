@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "2021 년 iPad Pro CAD 이미지가 유출 된 것으로 추정되며 디자인 변경 사항이 거의 없음"
+title: "2021 년 iPad Pro CAD 이미지 유출 정보"
 author: 'itposting'
 ---
 

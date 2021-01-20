@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "주요 뉴스 : MacBook Pro, iMac, Mac Pro 및 iPhone 소문, Best of CES 2021"
+title: "MacBook Pro, iMac, Mac Pro 및 iPhone 최신 루머(2021년)"
 author: 'itposting'
 ---
 

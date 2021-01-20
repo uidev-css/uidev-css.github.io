@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Kuo : 평면 디자인, MagSafe, No Touch Bar 및 더 많은 포트를 갖춘 새로운 MacBook Pro 모델"
+title: "2021년 새로운 MacBook Pro 평면 디자인, 맥세이프, 논 터치바 모델?"
 author: 'itposting'
 ---
 

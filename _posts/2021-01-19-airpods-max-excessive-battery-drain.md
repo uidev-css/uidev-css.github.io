@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "과도한 배터리 소모를 보는 일부 AirPods Max 소유자"
+title: "AirPods Max 과도한 배터리 소모?"
 author: 'itposting'
 ---
 
