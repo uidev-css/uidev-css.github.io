@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "더 작은 노치, 더 큰 이미지 센서를 사용하는 프로 모델 카메라를 특징으로하는 iPhone 13"
+title: "iPhone 13, 드디어 노치가 작아진다? "
 author: 'itposting'
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bloomberg : Apple의 첫 번째 AR / VR 헤드셋 '가격이 비싸고 틈새 시장의 선구자'가 더 야심 찬 AR 안경으로 내년에 출시 될 수 있음"
+title: "Apple의 첫 번째 AR / VR 헤드셋 2022년 출시 예정"
 author: 'itposting'
 ---
 
