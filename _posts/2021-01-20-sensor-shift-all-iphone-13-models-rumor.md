@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "iPhone 13 라인업 전체로 확장 할 것이라는 소문이있는 센서 시프트 카메라 안정화"
+title: "iPhone 13 모든 라인업에 센서 시프트 카메라 탑재 예상"
 author: 'itposting'
 ---
 
 
-대만 간행물 DigiTimes가 오늘 공유 한 간략한 스토리 미리보기에 따르면 전체 iPhone 13 라인업은 현재 모델 중 iPhone 12 Pro Max에만 비해 센서 시프트 광학 이미지 안정화 기능을 갖추고 있습니다.
+대만 간행물 DigiTimes가 오늘 공유 한 간략한 스토리 미리보기에 따르면 전체 iPhone 13 라인업에  iPhone 12 Pro Max에만 들어있는 센서 시프트 광학 이미지 안정화 기능을 추가할 것으로 예상했습니다.
 
 ![iPhone OIS Feature2](https://images.macrumors.com/t/Dr2K8Oj3PotD8o6xvhQpEZdRU7M=/2500x0/filters:no_upscale():quality(90)/article-new/2021/01/iPhone-OIS-Feature2.5.jpg)
 
