@@ -2,6 +2,7 @@
 layout: post
 title: "2021 맥북 프로에서 제거 될 것이라는 루머에 따라 트위터에서 '터치 바'트렌드"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

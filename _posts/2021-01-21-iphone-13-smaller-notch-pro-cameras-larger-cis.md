@@ -2,6 +2,7 @@
 layout: post
 title: "iPhone 13, 드디어 노치가 작아진다? "
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

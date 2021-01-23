@@ -2,6 +2,7 @@
 layout: post
 title: "iMac 용 Face ID 2021 iMac 에서는 미탑재 예상"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

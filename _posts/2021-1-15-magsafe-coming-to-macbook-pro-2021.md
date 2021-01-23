@@ -2,6 +2,7 @@
 layout: post
 title: "MagSafe가 Mac으로 돌아옵니다 : Apple의 마그네틱 충전 기술 정리"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

@@ -2,6 +2,7 @@
 layout: post
 title: "MacBook Pro 14인치 16인친 : 최신 유출 정보"
 author: "itposting"
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 Apple은 2020 년 11 월에 새로운 M1 MacBook Pro를 출시했지만 새 모델에는 디자인 변경 사항이 포함되지 않았습니다.

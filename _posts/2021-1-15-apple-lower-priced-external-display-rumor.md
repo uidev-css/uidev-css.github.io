@@ -2,6 +2,7 @@
 layout: post
 title: "Apple, Thunderbolt 디스플레이 성공을 위해 저가형 외부 모니터 개발 중"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

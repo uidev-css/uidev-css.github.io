@@ -2,6 +2,7 @@
 layout: post
 title: "AirPods Max 과도한 배터리 소모?"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

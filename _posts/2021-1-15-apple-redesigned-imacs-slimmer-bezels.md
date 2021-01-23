@@ -2,6 +2,7 @@
 layout: post
 title: "더 슬림 한 베젤, Apple 실리콘 칩으로 재 설계된 iMac을 개발하는 Apple"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

@@ -2,6 +2,7 @@
 layout: post
 title: "AirTags, '내 찾기'앱에서 숨겨진 '항목'탭에 탑재 예정."
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 2019 년 MacRumors에서 얻은 스크린 샷에서 볼 수 있듯이 Apple의 오랜 소문이 났던 AirTags 항목 추적기는 iPhone, iPad 및 Mac에서 나의 찾기 앱을 통해 관리 될 것으로 예상됩니다.

@@ -2,6 +2,7 @@
 layout: post
 title: "Apple의 첫 번째 AR / VR 헤드셋 2022년 출시 예정"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

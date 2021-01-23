@@ -2,6 +2,7 @@
 layout: post
 title: "Google iOS 앱에는 개인 정보 보호 라벨 미표시"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

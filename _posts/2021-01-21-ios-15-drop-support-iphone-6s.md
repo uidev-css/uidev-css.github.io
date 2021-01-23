@@ -2,6 +2,7 @@
 layout: post
 title: "iOS 15, iPhone 6s 및 2016 iPhone SE 지원 중단 루머"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

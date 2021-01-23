@@ -2,6 +2,7 @@
 layout: post
 title: "아마존 M1 13 인치 MacBook Pro $100 할인"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 

@@ -2,6 +2,7 @@
 layout: post
 title: "MagSafe를 통해 향상된 디스플레이, 더 빠른 충전을 제공하는 차세대 MacBook Pro"
 author: 'itposting'
+thumbnail: "https://source.unsplash.com/400x400/?mac"
 ---
 
 
