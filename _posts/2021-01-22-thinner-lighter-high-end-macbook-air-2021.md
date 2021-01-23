@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bloomberg : MagSafe를 탑재 한 '얇고 가벼운'하이 엔드 MacBook Air를 개발하는 Apple, 2021 년 하반기 출시 예정"
+title: "MagSafe를 탑재 한 '얇고 가벼운' MacBook Air,2021년 하반기 출시 예정"
 author: 'itposting'
 ---
 

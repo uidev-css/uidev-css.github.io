@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bloomberg : SD 카드 리더를 갖춘 차세대 MacBook Pro"
+title: "SD 카드 리더가 사용 가능한 2021 MacBook Pro"
 author: 'itposting'
 ---
 

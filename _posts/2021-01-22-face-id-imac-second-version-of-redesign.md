@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "블룸버그 : iMac 용 Face ID, 곧 재 설계의 두 번째 반복으로 밀려나 다"
+title: "iMac 용 Face ID 2021 iMac 에서는 미탑재 예상"
 author: 'itposting'
 ---
 
@@ -10,7 +10,7 @@ author: 'itposting'
 
 ![FaceID iMac REREREREMIX](https://images.macrumors.com/t/I9-ZLUF0WktVCNwdog86xlWJasg=/2500x0/filters:no_upscale():quality(90)/article-new/2020/07/FaceID-iMac-REREREREMIX.jpg)
 
-오늘 맥북 에어의 향후 재 설계에 관한 보고서의 마지막 부분에이 소식이 나왔습니다.
+오늘 맥북 에어의 향후 재 설계에 관한 보고서의 마지막 부분에 이 소식이 나왔습니다.
  또한이 보고서는 새로운 포트, 슬롯 및 셀룰러 연결을 도입하여 Mac의 가장 확고한 지지자의 욕구를 반영하는 Mac 라인업에 대한 수많은 업데이트를 출시하려는 Apple의 의도를 강조합니다.
 
 > Apple은 또한 셀룰러 연결 (스마트 폰 네트워크를 통해 Mac을 인터넷에 연결할 수있는 기능)과 회사의 얼굴 인식 시스템 인 Face ID에 대한 기본 Mac 지원을 개발했습니다.
