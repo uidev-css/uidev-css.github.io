@@ -2,7 +2,7 @@
 layout: post
 title: "Apple, 무료 Apple TV + 평가판을 7 월까지 연장"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.unsplash.com/photo-1611070722747-27b73fbeab6f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400"
 ---
 
 

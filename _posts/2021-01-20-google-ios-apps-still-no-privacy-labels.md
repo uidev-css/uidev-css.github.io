@@ -2,7 +2,7 @@
 layout: post
 title: "Google iOS 앱에는 개인 정보 보호 라벨 미표시"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/IcHZSdSLXTaI2RPyRm9nr3W-gyo=/2500x0/filters:no_upscale():quality(90)/article-new/2020/12/appstoreprivacy-feature.jpg"
 ---
 
 

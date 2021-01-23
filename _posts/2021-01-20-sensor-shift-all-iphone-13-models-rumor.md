@@ -2,7 +2,7 @@
 layout: post
 title: "iPhone 13 모든 라인업에 센서 시프트 카메라 탑재 예상"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/Dr2K8Oj3PotD8o6xvhQpEZdRU7M=/2500x0/filters:no_upscale():quality(90)/article-new/2021/01/iPhone-OIS-Feature2.5.jpg"
 ---
 
 

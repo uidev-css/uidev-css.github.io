@@ -2,7 +2,7 @@
 layout: post
 title: "MagSafe를 탑재 한 '얇고 가벼운' MacBook Air,2021년 하반기 출시 예정"
 author: "itposting"
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/dzr3R8hiTSI-axic0v4sC0gvb0E=/2500x0/filters:no_upscale():quality(90)/article-new/2021/01/Flat-MacBook-Air-Feature-1.jpg"
 ---
 
 잘 연결된 블룸버그 저널리스트 인 마크 거먼의 새로운 보고서에 따르면 애플은 올해 하반기 또는 2022 년에 출시 할 예정인 맥북 에어의 "더 얇고 가벼운"버전을 개발하고있다.

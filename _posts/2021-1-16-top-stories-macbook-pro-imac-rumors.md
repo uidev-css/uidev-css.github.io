@@ -2,7 +2,7 @@
 layout: post
 title: "MacBook Pro, iMac, Mac Pro 및 iPhone 최신 루머(2021년)"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/0Cpa6_MFxp8m36yumfWMiEvBK7U=/2500x0/filters:no_upscale():quality(90)/article-new/2021/01/Top-Stories-43-Feature.jpg"
 ---
 
 

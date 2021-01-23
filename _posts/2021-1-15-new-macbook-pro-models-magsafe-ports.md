@@ -2,7 +2,7 @@
 layout: post
 title: "2021년 새로운 MacBook Pro 평면 디자인, 맥세이프, 논 터치바 모델?"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/_KHWNhzRqEzo7RsoW7kSnIs5TAQ=/2500x0/filters:no_upscale():quality(90)/article-new/2020/11/mac-pro-mini-feature.jpg"
 ---
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Apple Seeds Second Beta of iOS 14.4 및 iPadOS 14.4 to Developers [업데이트 : 공개 베타 사용 가능]"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.unsplash.com/photo-1610619162394-7ff5177404d3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400"
 ---
 
 

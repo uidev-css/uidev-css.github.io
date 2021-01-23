@@ -2,6 +2,7 @@
 layout: post
 title: "2021 년 iPad Pro CAD 이미지 유출 정보"
 author: 'itposting'
+thumbnail: "https://images.unsplash.com/photo-1610619162404-6350871913ae?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400"
 ---
 
 

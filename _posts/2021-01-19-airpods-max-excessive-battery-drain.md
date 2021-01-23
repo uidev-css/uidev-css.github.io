@@ -2,7 +2,7 @@
 layout: post
 title: "AirPods Max 과도한 배터리 소모?"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/A5vEoR3HoJiGe9vfG1Qh8rkLwx8=/2500x0/filters:no_upscale():quality(90)/article-new/2021/01/AirPods-Max-Battery-Life-Feature.jpg"
 ---
 
 

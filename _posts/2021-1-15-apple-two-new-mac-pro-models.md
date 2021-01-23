@@ -2,7 +2,7 @@
 layout: post
 title: "Apple은 두 대의 새로운 Mac Pro 데스크탑을 작업 중이며 그중 하나는 Power Mac G4 Cube를 연상시킵니다."
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.unsplash.com/photo-1609934500228-3708eac5a216?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400"
 ---
 
 

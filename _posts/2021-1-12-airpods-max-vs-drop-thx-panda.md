@@ -2,7 +2,7 @@
 layout: post
 title: "AirPods Max vs. Drop + THX Panda 무선 헤드폰"
 author: "itposting"
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.unsplash.com/photo-1611146393465-0d86247f1e3f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400"
 ---
 
 AirPods Max를 Bose, Sennheiser 및 Sony와 같은 회사의 다른 경쟁 헤드폰 세트와 비교했지만 최근에는 Drop + THX Panda 무선 헤드폰이 주목을 받고 있으므로 측정 방법을 볼 것이라고 생각했습니다.

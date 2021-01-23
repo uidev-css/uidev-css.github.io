@@ -2,7 +2,7 @@
 layout: post
 title: "SD 카드 리더가 사용 가능한 2021 MacBook Pro"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/BuPpIlsrdTQNHGIKdZG9x0TeXjI=/2500x0/filters:no_upscale():quality(90)/article-new/2021/01/2021-mbp-sd-slot-feature2.jpg"
 ---
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: "아마존 M1 13 인치 MacBook Pro $100 할인"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/emMtxJCOmnljupqDenPayaRPS84=/2500x0/filters:no_upscale():quality(90)/article-new/2020/12/100-off-m1-macbook-pro.jpg"
 ---
 
 

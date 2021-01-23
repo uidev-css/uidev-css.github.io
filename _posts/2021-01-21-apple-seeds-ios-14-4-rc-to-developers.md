@@ -2,7 +2,7 @@
 layout: post
 title: "개발자 및 공개 베타 테스터를위한 Apple Seeds iOS 14.4 및 iPadOS 14.4 출시 예정"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/KsM2qi2Zpzf_cwJNrZ707A5zO9Y=/2500x0/filters:no_upscale():quality(90)/article-new/2021/01/iOS-14.4-Release-Candidate-Feature.jpg"
 ---
 
 

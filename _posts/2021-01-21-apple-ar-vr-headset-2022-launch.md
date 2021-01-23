@@ -2,7 +2,7 @@
 layout: post
 title: "Apple의 첫 번째 AR / VR 헤드셋 2022년 출시 예정"
 author: 'itposting'
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/mkdiLpD0moz4aVnkEBEs5IFBML8=/2500x0/filters:no_upscale():quality(90)/article-new/2021/01/Apple-VR-Feature.jpg"
 ---
 
 

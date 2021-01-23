@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "MacBook Pro 14인치 16인친 : 최신 유출 정보"
+title: "MacBook Pro 14인치 16인치 : 최신 유출 정보"
 author: "itposting"
-thumbnail: "https://source.unsplash.com/400x400/?mac"
+thumbnail: "https://images.macrumors.com/t/4YMBr2Hnwpm1kkZ2CbHrPZJsAHs=/2500x0/filters:no_upscale():quality(90)/article-new/2021/01/Flat-2021-MacBook-Pro-Mockup-Feature-1.jpg"
 ---
 
 Apple은 2020 년 11 월에 새로운 M1 MacBook Pro를 출시했지만 새 모델에는 디자인 변경 사항이 포함되지 않았습니다.
