@@ -1,3 +1,5 @@
+@import './mixin';
+
 .catalogue {
     &-item {
         border-bottom: 1px solid $grey-2;
@@ -57,21 +59,34 @@
     }
 
     &-description { 
-      font-size: 0.875rem;
+      font-size: 14px;
+      @include ellipsisMulti(2 , 18);
+    }
 
-      word-break: keep-all;
-  word-wrap: break-word;
-  word-break: break-word;
+    @media (max-width:1000px) {
+        &-title {
+            font-size: 1.25rem;
+        } 
+    }
 
-       // ie 대응
-  display: block;
-  line-height: $line-height + px;
-  max-height: ($line-height * $line_num) + px;
+    @media (max-width:768px) {
+        &-item {
+            flex-direction: column;
+        }
 
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: $line_num;
-  -webkit-box-orient: vertical;
+        &-thumbnail {
+          width: auto;
+          padding-top: 60%;  
+          margin-right: 0;
+        }
+        
+
+        &-title {
+            font-size: 1.25rem;
+        } 
+
+        &-description { 
+            display: none;
+          }
     }
 }

@@ -13,6 +13,14 @@ footer,
   width: 80%;
 }
 
+@media (max-width:768px) {
+  main,
+  footer,
+  .nav-container{ 
+    width: 90%;
+  }
+}
+
 .nav {
   box-shadow: 0 2px 2px -2px $shadow-color;
   overflow: auto;

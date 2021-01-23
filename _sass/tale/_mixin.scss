@@ -1,0 +1,29 @@
+
+@mixin wordBreak {
+	word-break: keep-all;
+	word-wrap: break-word;
+	word-break: break-word;
+  }
+  
+  @mixin ellipsis {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  }
+  
+  @mixin ellipsisMulti($line_num, $line-height) {
+	@include wordBreak;
+  
+	// ie 대응
+	display: block;
+	line-height: $line-height + px;
+	max-height: ($line-height * $line_num) + px;
+  
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: $line_num;
+	-webkit-box-orient: vertical;
+  }
+  
