@@ -44,7 +44,7 @@
         color: $default-shade;
         display: block;
         font-family: $sans-serif;
-        font-size: 2rem;
+        font-size: 1.625rem;
         font-weight: 700;
         margin: 0.5rem 0;
     }
@@ -54,5 +54,24 @@
         border-top: 0.2rem solid $default-shade;
         display: block;
         width: 2rem;
+    }
+
+    &-description { 
+      font-size: 0.875rem;
+
+      word-break: keep-all;
+  word-wrap: break-word;
+  word-break: break-word;
+
+       // ie 대응
+  display: block;
+  line-height: $line-height + px;
+  max-height: ($line-height * $line_num) + px;
+
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line_num;
+  -webkit-box-orient: vertical;
     }
 }
