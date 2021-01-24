@@ -1,14 +1,14 @@
 # Site settings
-title: IT NEWS
-description: "애플 뉴스를 가장 빠르게 전달해드리고 있습니다."
-url: "https://itposting.github.io/"
+title: CSS Dev
+description: "ui 개발에 필요한 내용을 정리하고 있습니다."
+url: "https://uidev-css.github.io/"
 
 # Google Analytics
 google_analytics: G-4E7S0P2MWC
 
 # Author
 author:
-    name: it poster
+    name: CSS Dev
     url:
     email:
 
