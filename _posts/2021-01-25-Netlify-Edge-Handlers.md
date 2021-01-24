@@ -38,7 +38,7 @@ Jamstack과 CDN의 정신적 수학은 전통적으로 다음과 같이 진행�
  95 %의 시간이 원래 응답을 완전히 대체한다고 생각합니다.
  마찬가지로 사이트의`/ blog`에 대한 HTML은 말 그대로 다음과 같습니다.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +54,7 @@ Jamstack과 CDN의 정신적 수학은 전통적으로 다음과 같이 진행�
 
 Edge Handler를 사용하면 원래 응답을 얻고 클라우드 데이터를 호출하고 직감을 블로그 게시물로 대체하는 것이 특히 어렵지 않습니다.
 
-```JavaScript
+```js
 export function onRequest(event) {
   event.replaceResponse(async () => {
     // Get the original response HTML
