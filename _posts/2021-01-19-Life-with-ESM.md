@@ -15,6 +15,12 @@ ES 모듈, JavaScript 모듈을 의미하는 ESM.
 
 ESM 이전의 JavaScript 프로젝트 상황은 다음과 같습니다.
 
+- npm에서 사용해야하는 패키지가 있습니다.
+- `package.json`,`npm install` 등을 사용하여 미리 npm에서 설치합니다.
+- 어떤 이유로 (개발자의 편의를 위해) 잘못된 ESM 인`import` 문을 작성하고 로컬`node_modules` 폴더에서 패키지를 가져 오는 것으로 가정합니다.
+- 우리 번 들러는 잘못된 수입품을 어떻게 처리해야하는지 알게 될 것입니다.
+- 길거리에서 번들링은 성능을 위해 여전히 필요하며 Babel 및 친구들을 실행하는 것과 같이 어쨌든 우리가 원하는 다른 작업을 수행한다는 말이 있기 때문에 이것은 모두 괜찮습니다.
+
 이제 우리는 ESM을 더 많이 믿을 수있게되었고, 이야기는 다소 바뀌고 있으며, 그 모든 것들이 의문을 제기하고 있습니다.
 
 - `npm install`이 필요하지 않았다면 어떨까요?
@@ -27,7 +33,7 @@ ESM 이전의 JavaScript 프로젝트 상황은 다음과 같습니다.
 
 
 <div class="video_wrapper" style="padding-top: 56.25%;">
-    <div class="fluid-width-video-wrapper" style="padding-top: 50%;"><video controls="" src="https://css-tricks.com/wp-content/uploads/2021/01/streaming-imports-demo.mp4" name="fitvid0"></video></div>
+    <video controls="" src="https://css-tricks.com/wp-content/uploads/2021/01/streaming-imports-demo.mp4" name="fitvid0"></video>
 </div>
 
 

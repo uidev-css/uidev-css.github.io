@@ -64,7 +64,8 @@
     .video_wrapper {
         position: relative;
 
-        iframe {
+        iframe,
+        .fluid-width-video-wrapper {
             position: absolute;
             top: 0;
             left: 0;
