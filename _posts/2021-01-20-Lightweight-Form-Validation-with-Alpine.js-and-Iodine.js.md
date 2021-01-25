@@ -45,11 +45,15 @@ Alpine은 CDN에서 프로젝트로 가져 오도록 설계되었습니다.
 
 이 예에서는이 CDN 링크에서 요오드를 가져옵니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;script src="https://cdn.jsdelivr.net/gh/mattkingshott/iodine@3/dist/iodine.min.js" defer&gt;&lt;/script&gt;`</code></pre>
+```html
+<script src="https://cdn.jsdelivr.net/gh/mattkingshott/iodine@3/dist/iodine.min.js" defer></script>
+```
 
 또는 Skypack을 사용하여 프로젝트로 가져올 수 있습니다.
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`import kingshottIodine from "https://cdn.skypack.dev/@kingshott/iodine";`</code></pre>
+```js
+import kingshottIodine from "https://cdn.skypack.dev/@kingshott/iodine";
+```
 
 Skypack에서 Iodine을 가져올 때 `kingshottIodine`을 가져와야합니다.
  이것은 여전히 우리의 global / window 범위에 `요오드`를 추가합니다.
@@ -69,12 +73,30 @@ Iodine의 `is`메소드는 값이 유효하면 `true`를 반환하고 검사가 
 
 HTML에서 이것이 어떻게 보이는지 다음과 같습니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;input name="email" type="email" id="email" data-rules='["required","email"]'&gt;`</code></pre>
+```html
+<input name="email" type="email" id="email" data-rules='["required","email"]'>
+```
 
 각 입력의 유효성을 확인하기 위해 DOM을 통해 매핑 할 때 요소의 입력 값으로 `Iodine`함수를 호출 한 다음 입력의 `dataset.rules`의 `JSON.encode ()`결과를 호출합니다.
  바닐라 자바 스크립트 DOM 메소드를 사용하면 다음과 같습니다.
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`let form = document.getElementById("form");<br><br>// This is a nice way of getting a list of checkable input elements<br>// And converting them into an array so we can use map/filter/reduce functions:<br>let inputs = [...form.querySelectorAll("input[data-rules]")];<br><br>function onSubmit(event) {<br>  inputs.map((input) =&gt; {<br>    if (Iodine.is(input.value, JSON.parse(input.dataset.rules)) !== true) {<br>      event.preventDefault();<br>      input.classList.add("invalid");<br>    }<br>  });<br>}<br>form.addEventListener("submit", onSubmit);`</code></pre>
+```js
+let form = document.getElementById("form");
+
+// This is a nice way of getting a list of checkable input elements
+// And converting them into an array so we can use map/filter/reduce functions:
+let inputs = [...form.querySelectorAll("input[data-rules]")];
+
+function onSubmit(event) {
+  inputs.map((input) => {
+    if (Iodine.is(input.value, JSON.parse(input.dataset.rules)) !== true) {
+      event.preventDefault();
+      input.classList.add("invalid");
+    }
+  });
+}
+form.addEventListener("submit", onSubmit);
+```
 
 이 매우 기본적인 구현은 다음과 같습니다.
 
@@ -94,11 +116,15 @@ HTML에서 이것이 어떻게 보이는지 다음과 같습니다.
 
 CDN에서 Alpine을 가져옵니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer&gt;&lt;/script&gt;`</code></pre>
+```html
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+```
 
 또는 Skypack을 사용하여 프로젝트로 가져올 수 있습니다.
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`import alpinejs from "https://cdn.skypack.dev/alpinejs";`</code></pre>
+```js
+import alpinejs from "https://cdn.skypack.dev/alpinejs";
+```
 
 이제 각 입력에 대해 유지해야하는 두 가지 상태 만 있습니다.
 
@@ -116,17 +142,48 @@ Alpine을 사용하면 부모 요소의`x-data` 속성에 일반 JavaScript 객�
 `errorMessage`에 대한 빈 문자열과 blur라는 부울이라는 두 가지 속성이있는 각 입력 필드의 개체를 보유하도록 양식 데이터를 초기화 해 보겠습니다.
  각 요소의 이름 속성을 키로 사용합니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`<br>&lt;form id="form" x-data="form()" action=""&gt;<br>  &lt;h1&gt;Log In&lt;/h1&gt;<br><br>  &lt;label for="username"&gt;Username&lt;/label&gt;<br>  &lt;input name="username" id="username" type="text" data-rules='["required"]'&gt;<br><br>  &lt;label for="email"&gt;Email&lt;/label&gt;<br>  &lt;input name="email" type="email" id="email" data-rules='["required","email"]'&gt;<br><br>  &lt;label for="password"&gt;Password&lt;/label&gt;<br>  &lt;input name="password" type="password" id="password" data-rules='["required","minimum:8"]'&gt;<br><br>  &lt;label for="passwordConf"&gt;Confirm Password&lt;/label&gt;<br>  &lt;input name="passwordConf" type="password" id="passwordConf" data-rules='["required","minimum:8"]'&gt;<br><br>  &lt;input type="submit"&gt;<br>&lt;/form&gt;`</code></pre>
+```html
+
+<form id="form" x-data="form()" action="">
+  <h1>Log In</h1>
+
+  <label for="username">Username</label>
+  <input name="username" id="username" type="text" data-rules='["required"]'>
+
+  <label for="email">Email</label>
+  <input name="email" type="email" id="email" data-rules='["required","email"]'>
+
+  <label for="password">Password</label>
+  <input name="password" type="password" id="password" data-rules='["required","minimum:8"]'>
+
+  <label for="passwordConf">Confirm Password</label>
+  <input name="passwordConf" type="password" id="passwordConf" data-rules='["required","minimum:8"]'>
+
+  <input type="submit">
+</form>
+```
 
 여기에 데이터를 설정하는 기능이 있습니다.
  키는 입력의`name` 속성과 일치합니다.
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`window.form = () =&gt; { <br>  return {<br>    username: {errorMessage:'', blurred:false},<br>    email: {errorMessage:'', blurred:false},<br>    password: {errorMessage:'', blurred:false},<br>    passwordConf: {errorMessage:'', blurred:false},<br>  }<br>}`</code></pre>
+```js
+window.form = () => { 
+  return {
+    username: {errorMessage:'', blurred:false},
+    email: {errorMessage:'', blurred:false},
+    password: {errorMessage:'', blurred:false},
+    passwordConf: {errorMessage:'', blurred:false},
+  }
+}
+```
 
 이제 입력에 Alpine의`x-bind : class` 속성을 사용하여 입력이 흐리게 처리되고 구성 요소 데이터의 요소에 대한 메시지가있는 경우 "잘못된"클래스를 추가 할 수 있습니다.
  사용자 이름 입력에 표시되는 방식은 다음과 같습니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;input name="username" id="username" type="text" <br>x-bind:class="{'invalid':username.errorMessage &amp;&amp; username.blurred}" data-rules='["required"]'&gt;`</code></pre>
+```html
+<input name="username" id="username" type="text" 
+x-bind:class="{'invalid':username.errorMessage && username.blurred}" data-rules='["required"]'>
+```
 
 ### 입력 변경에 응답
 
@@ -146,11 +203,41 @@ Alpine을 사용하면 부모 요소의`x-data` 속성에 일반 JavaScript 객�
 
 다음은 이벤트 리스너가 연결된 사용자 이름 입력에 대한 HTML입니다.
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`&lt;input <br>  name="username" id="username" type="text"<br>  x-bind:class="{'invalid':username.errorMessage &amp;&amp; username.blurred}" <br>  @blur="blur" @input="input"<br>  data-rules='["required"]'<br>&gt;`</code></pre>
+```js
+<input 
+  name="username" id="username" type="text"
+  x-bind:class="{'invalid':username.errorMessage && username.blurred}" 
+  @blur="blur" @input="input"
+  data-rules='["required"]'
+>
+```
 
 그리고 이벤트 리스너에 응답하는 함수가있는 JavaScript :
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`window.form = () =&gt; {<br>  return {<br>    username: {errorMessage:'', blurred:false},<br>    email: {errorMessage:'', blurred:false},<br>    password:{ errorMessage:'', blurred:false},<br>    passwordConf: {errorMessage:'', blurred:false},<br>    blur: function(event) {<br>      let ele = event.target;<br>      this[ele.name].blurred = true;<br>      let rules = JSON.parse(ele.dataset.rules)<br>      this[ele.name].errorMessage = this.getErrorMessage(ele.value, rules);<br>    },<br>    input: function(event) {<br>      let ele = event.target;<br>      let rules = JSON.parse(ele.dataset.rules)<br>      this[ele.name].errorMessage = this.getErrorMessage(ele.value, rules);<br>    },<br>    getErrorMessage: function() {<br>    // to be completed<br>    }<br>  }<br>}`</code></pre>
+```js
+window.form = () => {
+  return {
+    username: {errorMessage:'', blurred:false},
+    email: {errorMessage:'', blurred:false},
+    password:{ errorMessage:'', blurred:false},
+    passwordConf: {errorMessage:'', blurred:false},
+    blur: function(event) {
+      let ele = event.target;
+      this[ele.name].blurred = true;
+      let rules = JSON.parse(ele.dataset.rules)
+      this[ele.name].errorMessage = this.getErrorMessage(ele.value, rules);
+    },
+    input: function(event) {
+      let ele = event.target;
+      let rules = JSON.parse(ele.dataset.rules)
+      this[ele.name].errorMessage = this.getErrorMessage(ele.value, rules);
+    },
+    getErrorMessage: function() {
+    // to be completed
+    }
+  }
+}
+```
 
 ### 오류 가져 오기 및 표시
 
@@ -161,7 +248,15 @@ Iodine 검사가 `true`를 반환하면 `errorMessage`속성을 빈 문자열로
  사람이 읽을 수있는 메시지를 반환합니다.
  다음과 같이 표시됩니다.
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`getErrorMessage:function(value, rules){<br>  let isValid = Iodine.is(value, rules);<br>  if (isValid !== true) {<br>    return Iodine.getErrorMessage(isValid);<br>  }<br>  return '';<br>}`</code></pre>
+```js
+getErrorMessage:function(value, rules){
+  let isValid = Iodine.is(value, rules);
+  if (isValid !== true) {
+    return Iodine.getErrorMessage(isValid);
+  }
+  return '';
+}
+```
 
 이제 사용자에게 오류 메시지도 표시해야합니다.
 
@@ -174,16 +269,31 @@ Iodine 검사가 `true`를 반환하면 `errorMessage`속성을 빈 문자열로
  그러면 구성 요소 상태를 사용할 수있는 JavaScript 표현식에`innertext`가 자동으로 바인딩됩니다.
  다음과 같이 표시됩니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;p x-show="username.errorMessage &amp;&amp; username.blurred" x-text="username.errorMessage" class="error-message"&gt;&lt;/p&gt;`</code></pre>
+```html
+<p x-show="username.errorMessage && username.blurred" x-text="username.errorMessage" class="error-message"></p>
+```
 
 마지막으로 할 수있는 일은 Alpine을 가져 오기 전의`onsubmit` 코드를 재사용하는 것입니다.하지만 이번에는`@ submit`을 사용하여 양식 요소에 이벤트 리스너를 추가하고 구성 요소에서`submit` 함수를 사용할 수 있습니다.
  데이터.
  Alpine은`$ el`을 사용하여 컴포넌트 상태를 유지하는 부모 요소를 참조 할 수 있습니다.
  즉, 더 긴 DOM 메서드를 작성할 필요가 없습니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;form id="form" x-data="form()" @submit="submit" action=""&gt;<br>  &lt;!-- inputs...  --&gt;<br>&lt;/form&gt;`</code></pre>
+```html
+<form id="form" x-data="form()" @submit="submit" action="">
+  <!-- inputs...  -->
+</form>
+```
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`submit: function (event) {<br>  let inputs = [...this.$el.querySelectorAll("input[data-rules]")];<br>  inputs.map((input) =&gt; {<br>    if (Iodine.is(input.value, JSON.parse(input.dataset.rules)) !== true) {<br>      event.preventDefault();<br>    }<br>  });<br>}`</code></pre>
+```js
+submit: function (event) {
+  let inputs = [...this.$el.querySelectorAll("input[data-rules]")];
+  inputs.map((input) => {
+    if (Iodine.is(input.value, JSON.parse(input.dataset.rules)) !== true) {
+      event.preventDefault();
+    }
+  });
+}
+```
 
 <div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 775px;"><iframe id="cp_embed_VwKaMmo" src="//codepen.io/anon/embed/VwKaMmo?height=775&amp;theme-id=1&amp;slug-hash=VwKaMmo&amp;default-tab=result" height="775" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed VwKaMmo" title="CodePen Embed VwKaMmo" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div>
 
@@ -209,13 +319,31 @@ Iodine 검사가 `true`를 반환하면 `errorMessage`속성을 빈 문자열로
  그런 다음`getErrorMessage` 함수를 업데이트하여 서버 오류가 있는지 확인하고이를 먼저 반환 할 수 있습니다.
  존재하지 않는 경우 클라이언트 측 오류를 확인할 수 있습니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;input name="username" id="username" type="text" <br>x-bind:class="{'invalid':username.errorMessage &amp;&amp; username.blurred}" <br>@blur="blur" @input="input" data-rules='["required"]' <br>data-server-errors='["Username already in use"]'&gt;`</code></pre>
+```html
+<input name="username" id="username" type="text" 
+x-bind:class="{'invalid':username.errorMessage && username.blurred}" 
+@blur="blur" @input="input" data-rules='["required"]' 
+data-server-errors='["Username already in use"]'>
+```
 
 그리고 서버 측 오류가 전체 시간 동안 표시되지 않도록 사용자가 수정을 시작한 후에도 입력이 변경 될 때마다 빈 배열로 교체합니다.
 
 init 함수는 다음과 같습니다.
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`init: function () {<br>  this.inputElements = [...this.$el.querySelectorAll("input[data-rules]")];<br>  this.initDomData();<br>},<br>initDomData: function () {<br>  this.inputElements.map((ele) =&gt; {<br>  this[ele.name] = {<br>    serverErrors: JSON.parse(ele.dataset.serverErrors),<br>    blurred: false<br>    };<br>  });<br>}`</code></pre>
+```js
+init: function () {
+  this.inputElements = [...this.$el.querySelectorAll("input[data-rules]")];
+  this.initDomData();
+},
+initDomData: function () {
+  this.inputElements.map((ele) => {
+  this[ele.name] = {
+    serverErrors: JSON.parse(ele.dataset.serverErrors),
+    blurred: false
+    };
+  });
+}
+```
 
 ### 상호 의존적 입력 처리
 
@@ -230,11 +358,18 @@ init 함수는 다음과 같습니다.
 이를 테스트하기 위해 비밀번호 확인을위한`matchingPassword` 규칙을 추가해 보겠습니다.
  요오드는`addRule` 메소드로 새로운 사용자 지정 규칙을 추가 할 수 있습니다.
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`Iodine.addRule(<br>  "matchingPassword",<br>  value =&gt; value === document.getElementById("password").value<br>);`</code></pre>
+```js
+Iodine.addRule(
+  "matchingPassword",
+  value => value === document.getElementById("password").value
+);
+```
 
 이제 Iodine의`messages` 속성에 키를 추가하여 사용자 지정 오류 메시지를 설정할 수 있습니다.
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`Iodine.messages.matchingPassword="Password confirmation needs to match password";`</code></pre>
+```js
+Iodine.messages.matchingPassword="Password confirmation needs to match password";
+```
 
 이 규칙을 설정하기 위해`init` 함수에이 두 호출을 모두 추가 할 수 있습니다.
 
@@ -246,11 +381,33 @@ init 함수는 다음과 같습니다.
 우리가 할 수있는 작은 리 팩터 중 하나는 `getErrorMessage`함수가 입력이 흐릿한 경우에만 메시지를 반환하도록 만드는 것입니다. 이렇게하면 입력을 무효화할지 여부를 결정하기 전에 하나의 값만 확인하면되므로 HTML을 약간 더 짧게 만들 수 있습니다.
  이것은 우리의`x-bind` 속성이 다음과 같이 짧을 수 있음을 의미합니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`x-bind:class="{'invalid':username.errorMessage}"`</code></pre>
+```html
+x-bind:class="{'invalid':username.errorMessage}"
+```
 
 다음은 입력을 통해 매핑하고`errorMessage` 데이터를 설정하는 함수의 모습입니다.
 
-<pre rel="JavaScript" class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`updateErrorMessages: function () {<br>  // Map through the input elements and set the 'errorMessage'<br>  this.inputElements.map((ele) =&gt; {<br>    this[ele.name].errorMessage = this.getErrorMessage(ele);<br>  });<br>},<br>getErrorMessage: function (ele) {<br>  // Return any server errors if they're present<br>  if (this[ele.name].serverErrors.length &gt; 0) {<br>    return input.serverErrors[0];<br>  }<br>  // Check using Iodine and return the error message only if the element has not been blurred<br>  const error = Iodine.is(ele.value, JSON.parse(ele.dataset.rules));<br>  if (error !== true &amp;&amp; this[ele.name].blurred) {<br>    return Iodine.getErrorMessage(error);<br>  }<br>  // Return empty string if there are no errors<br>  return "";<br>},`</code></pre>
+```js
+updateErrorMessages: function () {
+  // Map through the input elements and set the 'errorMessage'
+  this.inputElements.map((ele) => {
+    this[ele.name].errorMessage = this.getErrorMessage(ele);
+  });
+},
+getErrorMessage: function (ele) {
+  // Return any server errors if they're present
+  if (this[ele.name].serverErrors.length > 0) {
+    return input.serverErrors[0];
+  }
+  // Check using Iodine and return the error message only if the element has not been blurred
+  const error = Iodine.is(ele.value, JSON.parse(ele.dataset.rules));
+  if (error !== true && this[ele.name].blurred) {
+    return Iodine.getErrorMessage(error);
+  }
+  // Return empty string if there are no errors
+  return "";
+},
+```
 
 부모 양식 요소에서 이러한 이벤트를 수신하여 모든 입력에서`@ blur` 및`@ input` 이벤트를 제거 할 수도 있습니다.
  그러나 이것에 문제가 있습니다.`blur` 이벤트는 버블 링되지 않습니다 (이 이벤트를 수신하는 부모 요소는 자식에서 발생할 때 전달되지 않습니다).
@@ -264,7 +421,9 @@ init 함수는 다음과 같습니다.
 
 아, 그리고 Alpine으로하기가 너무 쉽기 때문에 오류 메시지에주의를 기울이는 페이드 인 전환을 추가해 보겠습니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;p class="error-message" x-show.transition.in="username.errorMessage" x-text="username.errorMessage"&gt;&lt;/p&gt;`</code></pre>
+```html
+<p class="error-message" x-show.transition.in="username.errorMessage" x-text="username.errorMessage"></p>
+```
 
 그리고 여기에 최종 결과가 있습니다.
  최소한의 페이지로드 비용으로 반응적이고 재사용 가능한 양식 유효성 검사.

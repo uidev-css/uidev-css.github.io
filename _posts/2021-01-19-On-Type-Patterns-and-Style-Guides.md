@@ -22,12 +22,14 @@ QuarkXPress, Adobe InDesign 또는 CorelDraw와 같은 인쇄 디자인 데스�
  거기에서 원하는만큼 만들 수 있습니다.
  단락 스타일은 "블록"수준과 유사한 요소를위한 것이고 문자 스타일은 굵게 또는 고유 한 범위와 같은 "인라인"수준과 유사한 요소를위한 것입니다.
 
+![image](https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1604880957421_04-paragraph-pane-b.png?resize=2840%2C1040&ssl=1)
+
+![image](https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1604881018931_05-paragraph-pane-c.png?resize=1494%2C1024&ssl=1)
+
 사용자 인터페이스 세부 사항은 중요하지 않습니다. 그러나이 텍스트가 시각적으로 작동하는 방식을 정의하는 많은 컨트롤이 있음을 알 수 있습니다.
  내부적으로는 CSS 속성 : 값 쌍과 같은 키 : 값 쌍입니다.
 
-<pre rel="CSS" class="wp-block-csstricks-code-block  language-css" data-line=""><code markup="tt" class=" language-css">`h1 {<br>  font-family: "Helvetica Neue", sans-serif; <br>  font-size: 20px;<br>  font-weight: bold;<br>  color: fuchsia;<br>}`</code></pre>
-
-```css
+```CSS
 h1 {
   font-family: "Helvetica Neue", sans-serif; 
   font-size: 20px;
@@ -36,14 +38,14 @@ h1 {
 }
 ```
 
-
-
-
-
 스타일을 정의하면 모든 텍스트에 적용 할 수 있습니다.
  이 경우 작은 `+`(아래 단락 스타일 이름 옆)는 스타일 정의가 변경되었음을 의미합니다.
 
+![image](https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1604881098474_06-redefining-style-a.png?resize=1946%2C1232&ssl=1)
+
 이러한 변경 사항을 해당 단락 스타일이있는 모든 항목에 적용하려면 스타일을 "재정의"하면 프로젝트 전체에 적용됩니다.
+
+![image](https://i2.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1604881155133_07-redefinined-style-a.png?resize=1732%2C986&ssl=1)
 
 내가 그렇게 말하면 생각하게 될 것입니다. 그것이 CSS 클래스입니다.
 
@@ -51,14 +53,40 @@ h1 {
  웹 사이트가 어떤 크기로 표시 될지 알지 못합니다 (모바일 장치와 같이 작거나 데스크톱 모니터와 같이 거대 할 수도 있고, 아는 사람은 흑백 태블릿에서도 가능).
  클래스는 컨텍스트에 따라 변경됩니다.
 
+![image](https://i2.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1604881443500_08-various-screens.png?resize=2872%2C2036&ssl=1)
+
 ### 최소한의 타이포그래피 제어
 
 개발자로서 초창기에는 다음과 같은 시맨틱 HTML을 접했을 수 있습니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;h1&gt;Here's some HTML stuff. I'm a heading level 1&lt;/h1&gt;<br>&lt;p&gt;And some more. I'm a paragraph.&lt;/p&gt;<br><br>&lt;h2&gt;This is a heading level 2&lt;/h2&gt;<br>&lt;p&gt;And some more pragraph stuff.&lt;/p&gt;`</code></pre>
+```html
+<h1>Here's some HTML stuff. I'm a heading level 1</h1>
+<p>And some more. I'm a paragraph.</p>
+
+<h2>This is a heading level 2</h2>
+<p>And some more pragraph stuff.</p>
+```
+
 이러한 요소를 대상으로하고 다음과 같이 스타일을 적용하는 CSS와 쌍을 이룹니다.
 
-<pre rel="CSS" class="wp-block-csstricks-code-block  language-css" data-line=""><code markup="tt" class=" language-css">`h1 {<br>  font-size: 50px; /* key: value pairs */<br>  color: #ff0066;<br>}<br><br>h2 {<br>  font-size: 32px;<br>  color: rgba(0,0,0,.8);<br>}<br><br>p {<br>  font-size: 16px;<br>  color: deepskyblue;<br>  line-height: 1.5;<br>}`</code></pre>
+```CSS
+h1 {
+  font-size: 50px; /* key: value pairs */
+  color: #ff0066;
+}
+
+h2 {
+  font-size: 32px;
+  color: rgba(0,0,0,.8);
+}
+
+p {
+  font-size: 16px;
+  color: deepskyblue;
+  line-height: 1.5;
+}
+```
+
 작동합니다!
 
 헤더를 대상으로하는 규칙을 작성하고 내림차순으로 스타일을 지정하여 가장 큰> 큰> 중간 등으로 지정할 수 있습니다.
@@ -79,10 +107,34 @@ h1 {
 
 먼저 특별한 상황을위한 수업을 시작합니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;h1 class="page-title"&gt;<br>  Be &lt;span class='super-ultra-magic-rainbow'&gt;excellent&lt;/span&gt; to each other<br>&lt;/h1&gt;<br><br>&lt;p class="special-mantra"&gt;Party on, &lt;em&gt;dudes&lt;/em&gt;.&lt;/p&gt;<br><br>&lt;p&gt;And yeah. I'm just a regular paragraph.&lt;/p&gt;`</code></pre>
+```html
+<h1 class="page-title">
+  Be <span class='super-ultra-magic-rainbow'>excellent</span> to each other
+</h1>
+
+<p class="special-mantra">Party on, <em>dudes</em>.</p>
+
+<p>And yeah. I'm just a regular paragraph.</p>
+```
+
 그런 다음 모든 곳에서 클래스를 갖기 시작합니다 (대부분의 CSS 방법론에서는이를 권장합니다).
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;header class="site-header"&gt;<br>  &lt;h1 class="page-title"&gt;<br>    Be &lt;span class='ultra-magic-rainbow'&gt;excellent&lt;/span&gt; to each other<br>  &lt;/h1&gt;<br>&lt;/header&gt;<br><br>&lt;main class="page-content"&gt;<br>  &lt;section class="welcome"&gt;<br>    &lt;h2 class="special-mantra"&gt;Party on &lt;em&gt;dudes&lt;/em&gt;&lt;/h2&gt;<br><br>    &lt;p class="regular-paragraph"&gt;And yeah. I'm just regular&lt;/p&gt;<br>  &lt;/section&gt;<br>&lt;/main&gt;`</code></pre>
+```html
+<header class="site-header">
+  <h1 class="page-title">
+    Be <span class='ultra-magic-rainbow'>excellent</span> to each other
+  </h1>
+</header>
+
+<main class="page-content">
+  <section class="welcome">
+    <h2 class="special-mantra">Party on <em>dudes</em></h2>
+
+    <p class="regular-paragraph">And yeah. I'm just regular</p>
+  </section>
+</main>
+```
+
 새로 온 사람들은 기본 글꼴 크기와 축소 여백을 "재설정"하는 데 자신이 없을 경우이를 해결하려고 노력할 것입니다.
 
 이것은 사람들이`margin-top : -20px`를 시도하기 시작하는 곳입니다.
@@ -94,7 +146,11 @@ h1 {
 당신이 실제 일을하고 있고 당신의 상사 (또는 비주얼 디자이너)가이 "픽셀 완벽한"Adobe Photoshop 문서를 제공한다고 상상해보십시오.
  다양한 색상, 레이아웃 및 타이포그래피가 있습니다.
 
+![image](https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1604883500942_Screen_Shot_2020-11-08_at_4_54_32_PM.png?resize=1798%2C1740&ssl=1)
+
 Photoshop을 열고 둘러보기 시작하지만 페이지가 너무 많고 유형 스타일이 너무 많아 인벤토리를 작성하고 조합하거나 조합하여 사용할 수있는 스타일을 수집해야합니다.
+
+![image](https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1604883460115_ScreenShot2020-11-08at4.53.59PM.png?resize=2994%2C1344&ssl=1)
 
 시각적 레이아웃을 완성하고 전달하는 것이 기분이 좋습니다.
  그러나 Photoshop 문서에서 도대체 무슨 일이 일어나고 있는지 파악하기 위해 얼마나 많은 일을 보냈는지 말할 수 없습니다.
@@ -111,7 +167,11 @@ Photoshop을 열고 둘러보기 시작하지만 페이지가 너무 많고 유�
 참조 할 스타일 가이드를 얻을 수 있습니다.
  그러나 그것조차도 문맥을 식별하기에 충분히 구체적이지 않을 수 있습니다.
 
+![image](https://i1.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1603909503101_ScreenShot2020-10-28at11.20.25AM.png?resize=1557%2C924&ssl=1)
+
 다음 지침 중 하나를 확대 해 보겠습니다.
+
+![image](https://i1.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1603909569973_ScreenShot2020-10-28at11.21.00AM.png?resize=455%2C538&ssl=1)
 
 픽셀 크기 나 다양한 화면 크기에 대한 메모가 전혀없는 형식적이지만 일반적인 스타일 가이드를 얻을 수도 있습니다!
 
@@ -128,13 +188,60 @@ Photoshop을 열고 둘러보기 시작하지만 페이지가 너무 많고 유�
 그러나 모든 세부 사항을 코딩하기 시작하면 진행되는 중복의 양으로 인해 상황이 약간 압도 될 수 있습니다.
  여기서 반복되는 모든 속성을 살펴보십시오.
 
-<pre rel="CSS" class="wp-block-csstricks-code-block  language-css" data-line=""><code markup="tt" class=" language-css">`.blog article p {<br>  font-family: 'Georgia', serif;<br>  font-size: 17px;<br>  line-height: 1.4;<br>  letter-spacing: 0.02em;<br>  margin-bottom: 10px;<br>}<br><br>.welcome .main-message {<br>  font-family: 'Georgia', serif;<br>  font-size: 17px;<br>  line-height: 1.4;<br>  letter-spacing: 0.02em;<br>  margin-bottom: 20px;<br>}<br><br>@media (min-width; 700px) {<br>  .welcome .main-message {<br>    font-size: 18px;<br>  }<br>}<br><br>.welcome .other-thing {<br>  font-family: 'Georgia', serif;<br>  font-size: 17px;<br>  line-height: 1.4;<br>  letter-spacing: 0.02em;<br>  margin-bottom: 20px;<br>}<br><br>.site-footer .link list a {<br>  font-family: 'Georgia', serif;<br>  font-size: 17px;<br>  line-height: 1.4;<br>  letter-spacing: 0.02em;<br>  margin-bottom: 20px;<br>}`</code></pre>
+```CSS
+.blog article p {
+  font-family: 'Georgia', serif;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.welcome .main-message {
+  font-family: 'Georgia', serif;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+@media (min-width; 700px) {
+  .welcome .main-message {
+    font-size: 18px;
+  }
+}
+
+.welcome .other-thing {
+  font-family: 'Georgia', serif;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.site-footer .link list a {
+  font-family: 'Georgia', serif;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+```
+
 공통 선언을 대신 본문에 적용 할 수 있습니다.
  소규모 프로젝트에서는 이것이 좋은 방법 일 수도 있습니다.
  캐스케이드를 유리하게 사용하는 방법과 너무 많은 것을 함께 묶는 것처럼 보이는 다른 방법이 있습니다.
  객체 지향 프로그래밍 언어에서와 마찬가지로 모든 것이 반드시 모든 것을 상속하는 것을 원하지는 않습니다.
 
-<pre rel="CSS" class="wp-block-csstricks-code-block  language-css" data-line=""><code markup="tt" class=" language-css">`body {<br>  font-family: 'Georgia', serif;<br>  font-size: 17px;<br>  line-height: 1.4;<br>  letter-spacing: 0.02em;<br>}`</code></pre>
+```CSS
+body {
+  font-family: 'Georgia', serif;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+```
+
 일이 잘 될 것입니다.
  대부분의 웹은 이렇게 만들어졌습니다.
  우리는 더 나은 것을 찾고 있습니다.
@@ -157,10 +264,47 @@ Photoshop을 열고 둘러보기 시작하지만 페이지가 너무 많고 유�
  더 나아가 비주얼 디자이너의 문서에서 패턴을 끌어 내려고합니다.
  (말하지 않고 19px를 18px로 반올림 할 수도 있습니다…)
 
-<pre rel="CSS" class="wp-block-csstricks-code-block  language-css" data-line=""><code markup="tt" class=" language-css">`.standard-text { /* or something */<br>  font-family: serif;<br>  font-size: 16px; /* px: up for debate */<br>  line-height: 1.4; /* no unit: so it's relative to the font-size */<br>  letter-spacing: 0.02em; /* em: so it's relative to the font-size */<br>}<br><br>.heading-1 {<br>  font-family: sans-Serif;<br>  font-size: 30px;<br>  line-height: 1.5;<br>  letter-spacing: 0.03em;<br>}<br><br>.medium-heading {<br>  font-family: sans-Serif;<br>  font-size: 24px;<br>  line-height: 1.3;<br>  letter-spacing: 0.04em;<br>}`</code></pre>
+```CSS
+.standard-text { /* or something */
+  font-family: serif;
+  font-size: 16px; /* px: up for debate */
+  line-height: 1.4; /* no unit: so it's relative to the font-size */
+  letter-spacing: 0.02em; /* em: so it's relative to the font-size */
+}
+
+.heading-1 {
+  font-family: sans-Serif;
+  font-size: 30px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.medium-heading {
+  font-family: sans-Serif;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+```
+
 그런 다음 필요한 모든 것에 수업을 적용합니다.
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;header class="site-header"&gt;<br>  &lt;h1 class="page-title heading-1"&gt;<br>    Be &lt;mark&gt;excellent&lt;/mark&gt; to each other<br>  &lt;/h1&gt;<br>&lt;/header&gt;<br><br>&lt;main class="page-content"&gt;<br>  &lt;section class="welcome"&gt;<br>    &lt;h2 class="medium-heading"&gt;Party on &lt;em&gt;dudes&lt;/em&gt;&lt;/h2&gt;<br><br>    &lt;p class="standard-text"&gt;And yeah. I'm just regular&lt;/p&gt;<br>  &lt;/section&gt;<br>&lt;/main&gt;`</code></pre>
+```html
+<header class="site-header">
+  <h1 class="page-title heading-1">
+    Be <mark>excellent</mark> to each other
+  </h1>
+</header>
+
+<main class="page-content">
+  <section class="welcome">
+    <h2 class="medium-heading">Party on <em>dudes</em></h2>
+
+    <p class="standard-text">And yeah. I'm just regular</p>
+  </section>
+</main>
+```
+
 이러한 작업 방식은 모든 기술 수준의 사람들이 HTML을 변경하는 팀에 매우 유용 할 수 있습니다.
  이 CSS 클래스를 플러그 앤 플레이하여 새로운 인턴이더라도 원하는 스타일을 얻을 수 있습니다.
 
@@ -173,7 +317,16 @@ Photoshop을 열고 둘러보기 시작하지만 페이지가 너무 많고 유�
  이렇게하면 상황에 따라 스타일을 지정할 수 있습니다.
  캐스케이드를 반드시 `사용`하는 것은 아니지만 기술을 분리하여 유지하기 때문에 싸우는 것도 아닙니다.
 
-<pre rel="CSS" class="wp-block-csstricks-code-block  language-css" data-line=""><code markup="tt" class=" language-css">`.site-header {<br>  padding: 20px 0;<br>}<br><br>.welcome .medium-heading { /* the context — not the type-pattern */<br>  margin-bottom: 10px;<br>}`</code></pre>
+```CSS
+.site-header {
+  padding: 20px 0;
+}
+
+.welcome .medium-heading { /* the context — not the type-pattern */
+  margin-bottom: 10px;
+}
+```
+
 이것은 일을 합리적이고 깔끔하게 유지합니다.
  이 기술은 웹 전체에서 사용됩니다.
 
@@ -188,10 +341,30 @@ Photoshop을 열고 둘러보기 시작하지만 페이지가 너무 많고 유�
  이 경우 단순히 개별 요소에 클래스를 추가 할 수 없습니다.
  일부 템플릿 언어에서 HTML 덤프를 얻을 수 있습니다.
 
-<pre rel=" " class="wp-block-csstricks-code-block  language-javascript" data-line=""><code markup="tt" class=" language-javascript">`&lt;?php echo getContent()?&gt;<br>&lt;?=getContent()?&gt;<br>${data.content}<br>{{model.cmsContent}}`</code></pre>
+``` 
+<?php echo getContent()?>
+<?=getContent()?>
+${data.content}
+{{model.cmsContent}}
+```
+
 그렇다면 HTML로 작업 할 수 없다면 무엇을 할 수 있습니까?
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;article class="post cms-blog-dump"&gt;<br>  &lt;h1&gt;Talking type-patterns on CSS-tricks&lt;/h1&gt;<br>  &lt;p&gt;Intoduction paragraph - and we'd like to style this with a slightly different size font then the next (normal) paragraphs&lt;/p&gt;<br>  &lt;h2&gt;Some headings&lt;/h2&gt;<br>  &lt;h2&gt;And maybe someone accidentally puts 2 headings in a row&lt;/h2&gt;<br>  &lt;ol&gt;<br>    &lt;li&gt;and some &lt;strong&gt;list&lt;/strong&gt;&lt;/li&gt;<br>    &lt;li&gt;and here&lt;/li&gt;<br>  &lt;/ol&gt;<br><br>  &lt;p&gt;Or if a blog post is too boring - then think of a list of bands on an event site. You never know how many there will be or which ones are headlining, so you have to write rules that will handle whatever happens.<br>&lt;/article&gt;`</code></pre>
+```html
+<article class="post cms-blog-dump">
+  <h1>Talking type-patterns on CSS-tricks</h1>
+  <p>Intoduction paragraph - and we'd like to style this with a slightly different size font then the next (normal) paragraphs</p>
+  <h2>Some headings</h2>
+  <h2>And maybe someone accidentally puts 2 headings in a row</h2>
+  <ol>
+    <li>and some <strong>list</strong></li>
+    <li>and here</li>
+  </ol>
+
+  <p>Or if a blog post is too boring - then think of a list of bands on an event site. You never know how many there will be or which ones are headlining, so you have to write rules that will handle whatever happens.
+</article>
+```
+
 이 마크 업을 제어 할 수 없으므로 클래스를 추가 할 수 없습니다. 즉, 만든 멋진 플러그 앤 플레이 클래스가 작동하지 않습니다.
  부엌 싱크대에 대한 규칙을 정의하는 더 큰`.article {}`클래스에 복사하여 붙여 넣을 수 있습니다.
  작동 할 수 있습니다.
@@ -235,6 +408,7 @@ Less, Sass, Stylus 및 기타 CSS 전처리 기는 모두 이에 대한 자체 �
 일반 CSS를 보려면 항상 CodePen에서 "View Compiled"를 사용할 수 있습니다.
 
 <div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 550px;"><iframe id="cp_embed_dyMjvpo" src="//codepen.io/anon/embed/dyMjvpo?height=550&amp;theme-id=1&amp;slug-hash=dyMjvpo&amp;default-tab=result" height="550" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed dyMjvpo" title="CodePen Embed dyMjvpo" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div>
+
 어떤 사람들은 로보 토마 이즈 된 올빼미 접근법 (`* + *`)에 정말 만족하지만 저는 보통 "단락 뒤에 오는 모든`<h2>`"에 대한 명시적인 규칙을 작성하고 정말 상세하게 만듭니다.
  결국 모든 사람이 읽고 싶어하는 글이 쓰여진 내용입니다. 정말 한 곳에서 한 번만 전화를 걸면됩니다.
 
@@ -264,7 +438,10 @@ Less, Sass, Stylus 및 기타 CSS 전처리 기는 모두 이에 대한 자체 �
  재미 있어요.
  그리고 유틸리티 클래스 아이디어와 완전히 결합 할 수도 있습니다 (필요한 경우).
 
-<pre rel="HTML" class="wp-block-csstricks-code-block  language-html" data-line=""><code markup="tt" class=" language-html">`&lt;p class="calm-voice"&gt;Welcome to this code snippet!&lt;/p&gt;`</code></pre>
+```html
+<p class="calm-voice">Welcome to this code snippet!</p>
+```
+
 공통 언어를 공유하고 "창작자"와 "코더"사이의 장벽을 허물 수 있다면 모든 사람이 처음부터 이러한 유형 패턴을 염두에두고 작업 할 수 있습니다.
 
 때로는 스타일 가이드를 `브랜드`하위 도메인으로 게시하거나`/ style-guide`와 같이 사이트에 직접 게시 할 수 있습니다.
@@ -287,6 +464,7 @@ Less, Sass, Stylus 및 기타 CSS 전처리 기는 모두 이에 대한 자체 �
 Ticketfly에 대한 템플릿 아이디어를 구상하려고 할 때 레이아웃과 유형 패턴에 대한 우려를 분리했습니다.
 
 <div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 550px;"><iframe id="cp_embed_zwYRzR" src="//codepen.io/anon/embed/zwYRzR?height=550&amp;theme-id=1&amp;slug-hash=zwYRzR&amp;default-tab=result" height="550" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed zwYRzR" title="CodePen Embed zwYRzR" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div>
+
 일부 패턴은 다양한 중단 점에서 크기를 변경합니다.
 
 나는 이와 같은 일을했는데 약간의 부작용이 있었다.
@@ -297,6 +475,7 @@ Ticketfly에 대한 템플릿 아이디어를 구상하려고 할 때 레이아�
 이제 이론적으로 문지르지 않고 패턴 사이를 뛰어 넘을 수도 있습니다.
 
 <div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 450px;"><iframe id="cp_embed_QWNyVxa" src="//codepen.io/anon/embed/QWNyVxa?height=450&amp;theme-id=1&amp;slug-hash=QWNyVxa&amp;default-tab=result" height="450" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed QWNyVxa" title="CodePen Embed QWNyVxa" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div>
+
 그러나 이제 둘 다 동일한 속성을 가지고 있고 다른 사람과 충돌하거나 피를 흘리지 않도록해야합니다!
  새로운 가변 글꼴 옵션도 생각해보십시오.
  작은 화면에서는 제목이 약간 덜 무거워 지거나 공간에서 작업하기 위해 약간 더 커지기를 원할 수 있습니다.
@@ -313,6 +492,7 @@ Ticketfly에 대한 템플릿 아이디어를 구상하려고 할 때 레이아�
  움직임에 대해 저를 유머러스하게 만들고이 유형 패턴과 기타 믹스 인을 사용하여 일반적인 "카드"인터페이스를 스타일링하는 방법을 살펴보세요.
 
 <div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 250px;"><iframe id="cp_embed_PozybwX" src="//codepen.io/anon/embed/PozybwX?height=250&amp;theme-id=1&amp;slug-hash=PozybwX&amp;default-tab=result" height="250" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed PozybwX" title="CodePen Embed PozybwX" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div>
+
 어떤면에서 유형 패턴은 Bootstrap 또는 Tailwind의 유틸리티 클래스 스타일과 같습니다.
  그러나 이것들은 사람이 읽을 수 있습니다.
  패턴은 HTML 대신 CSS에 추가됩니다.
@@ -341,7 +521,11 @@ Ticketfly에 대한 템플릿 아이디어를 구상하려고 할 때 레이아�
  이를 통해 브랜드 전체에서 작업하고 하나의 단일 소스 소스를 가질 수 있습니다.
  이처럼 정말 작은 사이트에서도 도움이됩니다.
 
+![image](https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1604891365591_ScreenShot2020-11-08at7.09.16PM.png?resize=2078%2C1584&ssl=1)
+
 이러한 이유로 InDesign과 Illustrator에는 항상 "단락 스타일"과 "문자 스타일"이 있었지만 가변 화면 크기를 고려하지 않았습니다.
+
+![image](https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/12/s_4D1460787A5F1D7103C72142FE37900B0A21B7DDB005645C4A053C6A671E55B9_1608242454950_ScreenShot2020-12-17at1.57.09PM.png?resize=2226%2C1986&ssl=1)
 
 몇 가지 패딩 유형 크기 / 비율, 일부 색상 및 일부 선 너비를 던져보세요.
  실제로 "픽셀 완벽"일 필요는 없지만 함께 작동하는 패턴 모음입니다.
