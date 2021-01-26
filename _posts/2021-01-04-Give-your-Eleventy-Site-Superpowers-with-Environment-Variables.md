@@ -6,7 +6,6 @@ thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_aut
 tags: ELEVENTY ENVIRONMENT VARIABLES
 ---
 
-
 Eleventy는 멋지고 간단한 웹 사이트를 만들 수 있기 때문에 인기가 높아지고 있습니다. 또한 개발자 친화적이기 때문입니다.
  우리는 그것으로 대규모의 복잡한 프로젝트도 만들 수 있습니다.
  이 튜토리얼에서 우리는 강력하고 인간 친화적 인 환경 변수 솔루션을 결합하여 확장 된 기능을 보여줄 것입니다.
@@ -198,8 +197,6 @@ mode: process.env.MODE || 'public'
 ## This is secret content that only shows if we’re in private mode.
 
 This is called with {% raw %}`{{ env.mode }}`{% endraw %}. This is great for doing special private builds of the site for people that pay for content, for example.
-
-{% endif %}
 ```
 
 로컬 버전을 새로 고침하면 방금 추가 한 콘텐츠를 볼 수 없습니다.
