@@ -42,7 +42,7 @@ GraphQL 스키마에는 유형, 필드 및 지시문이 포함됩니다.
 이것이 사용자 엔티티가 이미 플러그인에 의해 제공되는 방식입니다.
  `User` 유형은 다음 코드를 통해 제공됩니다.
 
-```PHP
+```php
 class UserTypeResolver extends AbstractTypeResolver
 {
   public function getTypeName(): string
@@ -72,7 +72,7 @@ class UserTypeResolver extends AbstractTypeResolver
 
 `username`,`email` 및`url` 필드를`User` 유형에 추가하는 것은`FieldResolver` 객체를 통해 수행됩니다.
 
-```PHP
+```php
 class UserFieldResolver extends AbstractDBDataFieldResolver
 {
   public static function getClassesToAttachTo(): array
@@ -215,7 +215,7 @@ GraphQL API는 Publish-subscribe 패턴을 사용하여 필드가 유형에 "구
 
 이전부터 필드 리졸버 재평가 :
 
-```PHP
+```php
 class UserFieldResolver extends AbstractDBDataFieldResolver
 {
   public static function getClassesToAttachTo(): array
@@ -404,7 +404,7 @@ SDL 우선 접근 방식을 사용하는 GraphQL 서버는 스키마에서 정�
 
 예를 들어 앞서 살펴본 것처럼이 코드는 필드 설명을 지역화합니다.
 
-```PHP
+```php
 class UserFieldResolver extends AbstractDBDataFieldResolver
 {
   public function getSchemaFieldDescription(

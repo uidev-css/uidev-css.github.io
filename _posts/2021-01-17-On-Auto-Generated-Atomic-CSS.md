@@ -17,7 +17,7 @@ Atomic CSS를 생성하는 CSS-in-JS에 대한이 모든 아이디어가 꽤 흥
 
 이렇게 :
 
-```CSS
+```css
 .mb-8 {
   margin-bottom: 2rem;
 }

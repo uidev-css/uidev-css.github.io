@@ -24,7 +24,7 @@ React가 색칠하기 책이라면-은유를 용서하세요. 저는 색칠하�
  먼저 텍스트 입력을 Shadow DOM에 연결하고 값이 변경 될 때 이벤트를 내보내는 매우 간단한 맞춤 요소를 작성하겠습니다.
  단순함을 위해 LitElement를 기본으로 사용하지만 원하는 경우 처음부터 사용자 정의 요소를 작성할 수 있습니다.
 
-<div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 250px;"><iframe id="cp_embed_ExgoXdY" src="//codepen.io/anon/embed/ExgoXdY?height=250&amp;theme-id=1&amp;slug-hash=ExgoXdY&amp;default-tab=result" height="250" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed ExgoXdY" title="CodePen Embed ExgoXdY" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div> 
+<div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 250px;"><iframe id="cp_embed_ExgoXdY" src="//codepen.io/anon/embed/ExgoXdY?height=250&amp;theme-id=1&amp;slug-hash=ExgoXdY&amp;default-tab=result" height="250" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed ExgoXdY" title="CodePen Embed ExgoXdY" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div>
 
 우리의`super-cool-input` 요소는 기본적으로 맞춤 이벤트를 생성하는 일반 ol ``<input>`요소에 대한 몇 가지 스타일이있는 래퍼입니다.
  사용자에게 가능한 가장 불쾌한 방법으로 현재 값을 알려주는`reportValue` 메소드가 있습니다.
@@ -42,6 +42,7 @@ React의`useRef` 후크를 사용하여 우리가 정의한 네이티브 DOM 요
  또한 값이 "rad"라는 단어의 변형 인 경우 ref를 사용하여`super-cool-input`의`reportValue` 메서드를 호출합니다.
 
 <div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 300px;"><iframe id="cp_embed_dypJRBO" src="//codepen.io/anon/embed/dypJRBO?height=300&amp;theme-id=1&amp;slug-hash=dypJRBO&amp;default-tab=result" height="300" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed dypJRBO" title="CodePen Embed dypJRBO" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div>
+
 위의 예에서 주목해야 할 점은 React 컴포넌트의`useEffect` 블록입니다.
 
 ```jsx
@@ -70,7 +71,7 @@ React 애플리케이션에서 커스텀 요소를 사용하려는 다음 시도
 여기에서는 복잡성을 맞춤 요소의 래퍼 구성 요소로 이동했습니다.
  새로운`CoolInput` React 구성 요소는 모든 소비 구성 요소가 다른 React 구성 요소와 마찬가지로 props를 전달할 수 있도록 이벤트 리스너를 추가 및 제거하는 동안 ref 생성을 관리합니다.
 
-```JSX
+```jsx
 function CoolInput(props) {
   const ref = useRef();
   const { children, onCustomInput, ...rest } = props;
@@ -97,6 +98,7 @@ function CoolInput(props) {
  일반 이벤트 콜백과 달리, 우리는`CoolInput`의 내부 참조의 현재 값을 전달하는 두 번째 인수를 추가하기로 선택했습니다.
 
 <div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 450px;"><iframe id="cp_embed_abmELOV" src="//codepen.io/anon/embed/abmELOV?height=450&amp;theme-id=1&amp;slug-hash=abmELOV&amp;default-tab=result" height="450" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed abmELOV" title="CodePen Embed abmELOV" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div>
+
 이와 동일한 기술을 사용하여 Mathieu Puech의이`reactifyLitElement` 구성 요소와 같은 사용자 정의 요소에 대한 일반 래퍼를 만들 수 있습니다.
  이 특정 구성 요소는 React 구성 요소를 정의하고 전체 수명주기를 관리합니다.
 
@@ -114,11 +116,12 @@ pragma를 호출하려면 사용중인 파일로 가져 와서 파일 맨 위에
  이것이 우리의 `Super-cool-input`을 어떻게 찾는 지 봅시다.
 
 <div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 300px;"><iframe id="cp_embed_abmEVOX" src="//codepen.io/anon/embed/abmEVOX?height=300&amp;theme-id=1&amp;slug-hash=abmEVOX&amp;default-tab=result" height="300" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed abmEVOX" title="CodePen Embed abmEVOX" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div>
+
 pragma의 코드는 GitHub에서 사용할 수 있습니다.
  React props 대신 네이티브 속성에 바인딩하려면 react-bind-properties를 사용할 수 있습니다.
  그것에 대해 간단히 살펴 보겠습니다.
 
-```JSX
+```jsx
 import React from 'react'
 
 /**
