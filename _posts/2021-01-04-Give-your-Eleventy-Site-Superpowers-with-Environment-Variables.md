@@ -227,7 +227,6 @@ MODE=private
  `src / _includes / base.njk`를 열고 닫는`</ head>`태그 바로 앞에 다음을 추가합니다.
 
 ```html
-{% if env.funMode %}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" />
   <style>
     body {
@@ -249,7 +248,6 @@ MODE=private
       text-align: center;
     }
   </style>
-{% endif %}
 ```
 
 이 스 니펫은 `funMode`환경 변수가 `true`인지 확인하고, 그렇다면 `재미있는`CSS를 추가합니다.
@@ -257,11 +255,11 @@ MODE=private
 여전히`base.njk`에서 여는`<article>`태그 바로 앞에 다음 코드를 추가합니다.
 
 ```html
-{% if env.funMode %}
+
   <div class="fun">
     <p>🎉 <strong>Fun mode enabled!</strong> 🎉</p>
   </div>
-{% endif %}
+
 ```
 
 이 코드는 동일한 로직을 사용하고 `funMode`가 `true`인 경우 재미있는 배너를 렌더링합니다.
