@@ -3,7 +3,7 @@ layout: post
 title: "환경 변수를 사용하여 Eleventy 사이트에 슈퍼 파워 제공"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/12/eleventy-env-fun-mode.png
-tags: ELEVENTY,ENVIRONMENT VARIABLES
+tags: ELEVENTY ENVIRONMENT VARIABLES
 ---
 
 
