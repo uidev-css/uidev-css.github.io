@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "모바일의 WooCommerce
- "
+title: "모바일의 WooCommerce"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/12/intro-devices-desktop@2x-2.png
 tags: 

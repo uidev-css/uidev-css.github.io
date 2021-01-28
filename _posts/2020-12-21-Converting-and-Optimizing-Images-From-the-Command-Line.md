@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "명령 줄에서 이미지 변환 및 최적화
- "
+title: "명령 줄에서 이미지 변환 및 최적화"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/12/optimize-images-terminal.png
 tags: COMMAND LINE,IMAGE OPTIMIZATION,TERMINAL

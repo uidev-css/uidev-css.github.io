@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "웹이 실제로 구축되는 방법
- "
+title: "웹이 실제로 구축되는 방법"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/12/Screen-Shot-2020-12-21-at-4.50.43-PM.png
 tags: 
