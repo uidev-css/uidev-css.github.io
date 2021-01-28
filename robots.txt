@@ -1,4 +1,4 @@
 User-agent: *
 Allow: 
 
-Sitemap: https://itposting.github.io/sitemap.xml
+Sitemap: https://uidev-css.github.io/sitemap.xml
