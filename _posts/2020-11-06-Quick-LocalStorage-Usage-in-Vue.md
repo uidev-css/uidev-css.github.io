@@ -65,7 +65,7 @@ export default {
           :value="todo"
           v-model="checked"
         />
-       <label :for="todo">{{ todo }}</label>
+       <label :for="todo"> todo</label>
      </div>
    </fieldset>
  </div>

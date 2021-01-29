@@ -43,7 +43,7 @@ tags: CLOUDINARY,ELEVENTY
 
 ```html
 <img src="
-  {{CLOUDINARY_PREFIX}}{{FULLY_QUALIFIED_PRODUCTION_URL}}{{RELATIVE_IMAGE_URL}}
+  CLOUDINARY_PREFIX FULLY_QUALIFIED_PRODUCTION_URL RELATIVE_IMAGE_URL
   "
   alt="Don't screw this up, fam."
 />
@@ -65,7 +65,7 @@ module.exports = {
 }
 ```
 
-템플릿에서`{{sandwiches.ham}}`를 사용할 수 있으며`{{true}}`로 정의됩니다.
+템플릿에서`sandwiches.ham`를 사용할 수 있으며`true`로 정의됩니다.
  
 
 이것은 JavaScript (노드)이기 때문에 다른 변수를 기반으로 일부 로직을 수행 할 수있는 능력이 있음을 의미합니다.
@@ -111,13 +111,13 @@ module.exports = {
 또한 논리를 어떤 방식 으로든 변경하려는 경우`process.env.CONTEXT === `deploy-preview``를 확인하여 Netlify 배포 미리보기 URL을 테스트 할 수 있습니다.
  
 
-이제 모든 템플릿에서`{{images.imageLocation}}`및`{{images.urlPrefix}}`를 사용하여 소스를 구축 할 수 있습니다.
+이제 모든 템플릿에서`images.imageLocation`및`images.urlPrefix`를 사용하여 소스를 구축 할 수 있습니다.
  
 
 ```html
 <img 
   src="
-    {{images.urlPrefixLarge}}{{images.imageLocation}}/image.png
+    images.urlPrefixLarge images.imageLocation /image.png
   "
   alt="Useful alternative text."
 />

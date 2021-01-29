@@ -288,7 +288,7 @@ Vue는 요소가 목록에서 추가 (`v-enter`) 또는 제거 (`v-leave`) 될 �
 <transition-group name="list" tag="ul">
   <li v-for="(item, index) in activeHeadings" v-bind:key="item.id">
     <a :href="item.id">
-      {{ item.text }}
+     item.text 
     </a>
   </li>
 </transition-group>

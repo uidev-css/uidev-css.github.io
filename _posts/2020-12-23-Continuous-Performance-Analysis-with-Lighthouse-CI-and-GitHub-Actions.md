@@ -322,7 +322,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.PAT }}
+          token: secrets.PAT 
           submodules: recursive
 
       - name: Setup Hugo

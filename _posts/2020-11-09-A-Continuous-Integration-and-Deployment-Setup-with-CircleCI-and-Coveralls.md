@@ -213,12 +213,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        key: dependency-cache-{{ checksum "package.json" }}
+        key: dependency-cache- checksum "package.json" 
       - run:
         name: install-npm-dependencies
         command: npm install
       - save_cache:
-        key: dependency-cache-{{ checksum "package.json" }}
+        key: dependency-cache- checksum "package.json" 
         paths:
           - ./node_modules
       - run: # run tests
@@ -290,12 +290,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache- checksum "package.json" 
       - run:
           name: install-npm-dependencies
           command: npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache- checksum "package.json" 
           paths:
             - ./node_modules
 ```

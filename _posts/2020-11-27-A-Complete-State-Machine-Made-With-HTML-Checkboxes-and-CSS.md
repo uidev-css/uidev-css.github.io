@@ -140,19 +140,13 @@ UI 전체의 변경 사항에 영향을 미치는 디자인의 서로 다른 두
  현재 비활성 상태에 대한 모든 전환이 숨겨집니다.
  
 
-```html
-{%macro AtoB(text="B",class="", classBtn="",classLbl="",classInp="")%}
-  <label class=" {{class}} {{classLbl}} {{showM111_A()}} "><input class=" {{classInp}} " form="rrc-form-Bx00" type="radio" name="rrc-Bx00" />{{text}}</label>
-  <button class=" {{class}} {{classBtn}} {{showM000_A1()}} " type="reset" form="rrc-form-Bx00">{{text}}</button>
-{%endmacro%}
 
-```
 
 위의 세 가지 구성 요소로 충분합니다.
  상태에 의존하는 모든 요소는 다른 상태에서 숨길 수 있도록 클래스를 적용해야합니다.
  이것은 지저분해진다.
  다음 매크로는 해당 프로세스를 단순화하는 데 사용됩니다.
- 주어진 요소가 상태 A에만 표시되어야하는 경우`{{showA ()}}`매크로는 숨길 상태를 추가합니다.
+ 주어진 요소가 상태 A에만 표시되어야하는 경우`showA ()`매크로는 숨길 상태를 추가합니다.
  
 
 ```html
@@ -169,7 +163,7 @@ UI 전체의 변경 사항에 영향을 미치는 디자인의 서로 다른 두
  템플릿 매크로는 파일의 첫 번째 줄에서 가져옵니다.
  CSS 로직이 머리에 추가되고 컨트롤러가 본문의 맨 위에 있습니다.
  상태 클래스는`.traffic-light` 요소의 각 조명에 있습니다.
- 점등 된 신호에는`{{showA ()}}`매크로가있는 반면“off”버전의 신호에는 A 상태에서 숨길 수있는`.M000` 및`.M111` 클래스에 대한 기계 상태가 있습니다.
+ 점등 된 신호에는`showA ()`매크로가있는 반면“off”버전의 신호에는 A 상태에서 숨길 수있는`.M000` 및`.M111` 클래스에 대한 기계 상태가 있습니다.
  상태 전환 버튼은 페이지 하단에 있습니다.
  
 
@@ -181,27 +175,27 @@ UI 전체의 변경 사항에 영향을 미치는 디자인의 서로 다른 두
   <meta charset="UTF-8" />
   <title>Traffic Light State Machine Example</title>
   <link rel="stylesheet" href="styles/index.processed.css">
-  {{rrc.FSM4S_css()}}
+  rrc.FSM4S_css()
 </head>
 <body>
-  {{rrc.FSM4S_controller()}}
+  rrc.FSM4S_controller()
   <div>
     <div class="traffic-light">
-      <div class="{{rrc.showA()}} light red-light on"></div>
+      <div class="rrc.showA() light red-light on"></div>
       <div class="M111 M000 light red-light off"></div>
-      <div class="{{rrc.showB()}} light yellow-light on"></div>
+      <div class="rrc.showB() light yellow-light on"></div>
       <div class="M100 M011 light yellow-light off"></div>
-      <div class="{{rrc.showC()}} light green-light on"></div>
+      <div class="rrc.showC() light green-light on"></div>
       <div class="M010 M101 light green-light off"></div>
     </div>
     <div>
       <div class="next-state">
-        {{rrc.AtoC(text="NEXT", classInp="control-input",
-          classLbl="control-label",classBtn="control-button")}}
-        {{rrc.CtoB(text="NEXT", classInp="control-input",
-          classLbl="control-label",classBtn="control-button")}}
-        {{rrc.BtoA(text="NEXT", classInp="control-input",
-          classLbl="control-label",classBtn="control-button")}}
+        rrc.AtoC(text="NEXT", classInp="control-input",
+          classLbl="control-label",classBtn="control-button")
+        rrc.CtoB(text="NEXT", classInp="control-input",
+          classLbl="control-label",classBtn="control-button")
+        rrc.BtoA(text="NEXT", classInp="control-input",
+          classLbl="control-label",classBtn="control-button")
       </div>
     </div>
   </div>

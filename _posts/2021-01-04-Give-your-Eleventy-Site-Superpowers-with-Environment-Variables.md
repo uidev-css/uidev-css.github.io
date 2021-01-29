@@ -87,7 +87,7 @@ module.exports = {
 ```
 
 여기서 수행하는 작업은 해당 환경 변수를 찾고 필요한 경우 OR 연산자 (`||`)를 사용하여 정의되지 않은 경우 값을 반환하는 기본값을 설정하는 것입니다.
- 그런 다음 템플릿에서`{{env.hello}}`를 수행 할 수 있습니다.
+ 그런 다음 템플릿에서`env.hello`를 수행 할 수 있습니다.
 
 이제이 기술이 어떻게 작동하는지 알았으니 실행 해 보겠습니다.
  시작 파일 폴더에는 빈`env.js` 파일이있는`src / _data`라는 디렉토리가 있습니다.
@@ -116,7 +116,7 @@ module.exports = {
  `src / index.md`를 열고 파일 하단에 다음을 추가합니다.
 
 ```nunjucks
-Here’s an example: The environment variable, HELLO is currently: “{{ env.hello }}”. This is called with {% raw %}{{ env.hello }}{% endraw %}.
+Here’s an example: The environment variable, HELLO is currently: “ env.hello ”. This is called with {% raw %}env.hello {% endraw %}.
 
 ```
 
@@ -130,7 +130,7 @@ Here’s an example: The environment variable, HELLO is currently: “{{ env.hel
 
 도대체`{% raw %}`가 무엇인지 궁금 할 것입니다.
  무시해야 할 영역을 정의 할 수있는 Nunjucks 태그입니다.
- 그것이 없으면 Nunjucks는`{{env.hello}}`부분을 평가하려고 할 것입니다.
+ 그것이 없으면 Nunjucks는`env.hello`부분을 평가하려고 할 것입니다.
 
 ### 이미지 기본 경로 수정
 
@@ -155,7 +155,7 @@ imageProps: process.env.IMAGE_PROPS,
 `_includes / base.njk`를 열고`<h1> {{title}} </ h1>`비트 뒤에 다음을 추가합니다.
 
 ```html
-<img src="{{ env.imageBase }}mountains.jpg{{ env.imageProps }}" alt="Some lush mountains at sunset" />
+<img src=" env.imageBase  mountains.jpg  env.imageProps " alt="Some lush mountains at sunset" />
 ```
 
 기본적으로 이것은`/ images / mountains.jpg`를로드합니다.
@@ -196,7 +196,7 @@ mode: process.env.MODE || 'public'
 
 ## This is secret content that only shows if we’re in private mode.
 
-This is called with {% raw %}`{{ env.mode }}`{% endraw %}. This is great for doing special private builds of the site for people that pay for content, for example.
+This is called with {% raw %}` env.mode `{% endraw %}. This is great for doing special private builds of the site for people that pay for content, for example.
 ```
 
 로컬 버전을 새로 고침하면 방금 추가 한 콘텐츠를 볼 수 없습니다.

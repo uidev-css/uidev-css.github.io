@@ -79,9 +79,9 @@ tags:
 
     <!-- Comment info (author, # of votes, time added) start -->
     <div class="comment-info">
-      <a href="#" class="comment-author">{{ author }}</a>
+      <a href="#" class="comment-author"> author </a>
       <p>
-        {{ # of votes }} • {{ time_added }}
+         # of votes  •  time_added 
       </p>
     </div>
     <!-- Comment info (author, # of votes, time added) end -->
@@ -91,7 +91,7 @@ tags:
   <!-- Comment body start -->
   <div class="comment-body">
     <p>
-      {{ comment_content }}
+      comment_content
     </p>
     <button type="button">Reply</button>
     <button type="button">Flag</button>
@@ -245,7 +245,7 @@ tags:
 <div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper resizable" style="height: 450px;"><iframe id="cp_embed_ZEpGXNb" src="//codepen.io/anon/embed/ZEpGXNb?height=450&amp;theme-id=1&amp;slug-hash=ZEpGXNb&amp;default-tab=result" height="450" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed ZEpGXNb" title="CodePen Embed ZEpGXNb" class="cp_embed_iframe" style="width: 100%; overflow: hidden; height: 100%;">CodePen Embed Fallback</iframe><div class="win-size-grip" style="touch-action: none;"></div></div>
 
 위의 예에서 우리는 주석 본문 안에 간단한 양식을 추가하고 기본적으로`.d-none` 클래스를 부여하여`display : none;`을 설정하고보기에서 숨 깁니다.
- 간단한 이벤트 리스너 덕분에`data-toggle = "reply-form"`및`data-target = "{{comment_reply_form_id}}`속성이있는 모든 버튼을 클릭하여 양식의 가시성을 전환 할 수 있습니다.
+ 간단한 이벤트 리스너 덕분에`data-toggle = "reply-form"`및`data-target = "comment_reply_form_id`속성이있는 모든 버튼을 클릭하여 양식의 가시성을 전환 할 수 있습니다.
  응답 양식을 쉽게 처리하는 매우 간단한 예입니다.
  
 

@@ -345,7 +345,7 @@ body {
 <?php echo getContent()?>
 <?=getContent()?>
 ${data.content}
-{{model.cmsContent}}
+model.cmsContent
 ```
 
 그렇다면 HTML로 작업 할 수 없다면 무엇을 할 수 있습니까?

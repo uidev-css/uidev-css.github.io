@@ -185,7 +185,7 @@ SVG의 CIrcles는 세 가지 속성으로 구성됩니다.
       v-for="(task, i) in tasks"
       :key="task.name"
       class="select">
-      {{ task.name }}
+      task.name
     </div>
   </div>
 </template>
