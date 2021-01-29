@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "줄 바꿈
- verified_user"
+title: "줄 바꿈 verified_user"
 author: 'CSS Dev'
 thumbnail: undefined
 tags: 
