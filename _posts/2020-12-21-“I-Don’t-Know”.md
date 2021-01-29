@@ -1,7 +1,6 @@
 ---
 layout: post
-title: ""모름"
- "
+title: "모름"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/12/Screen-Shot-2020-12-21-at-6.55.56-AM.png
 tags: 
