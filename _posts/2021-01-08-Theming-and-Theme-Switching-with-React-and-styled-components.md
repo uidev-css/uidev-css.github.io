@@ -323,7 +323,7 @@ function App() {
     {
       themeLoaded && <ThemeProvider theme={ selectedTheme }>
         <GlobalStyles/>
-        <Container style={{fontFamily: selectedTheme.font}}>
+        <Container style={fontFamily: selectedTheme.font}>
           <h1>Theme Builder</h1>
           <p>
             This is a theming system with a Theme Switcher and Theme Builder.
@@ -423,7 +423,7 @@ import ThemeSelector from './ThemeSelector';
 이제`Container` 구성 요소 내에서 사용할 수 있습니다.
 
 ```jsx
-<Container style={{fontFamily: selectedTheme.font}}>
+<Container style={fontFamily: selectedTheme.font}>
   // same as before
   <ThemeSelector setter={ setSelectedTheme } />
 </Container> 

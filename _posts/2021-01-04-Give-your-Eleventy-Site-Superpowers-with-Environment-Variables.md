@@ -152,7 +152,7 @@ imageProps: process.env.IMAGE_PROPS,
 `/ images /`의`imageBase`에 기본값을 사용하여`IMAGE_BASE`가 정의되지 않은 경우 로컬 이미지를 찾을 수 있습니다.
  필요하지 않는 한 비어있을 수 있기 때문에`imageProps`에 대해 동일한 작업을 수행하지 않습니다.
 
-`_includes / base.njk`를 열고`<h1> {{title}} </ h1>`비트 뒤에 다음을 추가합니다.
+`_includes / base.njk`를 열고`<h1> {title} </ h1>`비트 뒤에 다음을 추가합니다.
 
 ```html
 <img src=" env.imageBase  mountains.jpg  env.imageProps " alt="Some lush mountains at sunset" />

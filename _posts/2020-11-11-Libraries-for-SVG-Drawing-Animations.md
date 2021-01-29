@@ -237,14 +237,7 @@ npm install framer-motion
 SVG 경로 그리기 애니메이션의 경우 Framer Motion은 네 가지 소품을 사용하는`motion.path` 구성 요소를 제공합니다.
  
 
-```js
-<motion.path
-  d={pathDefinition}
-  initial={{ pathLength: 1, pathOffset: 0 }}
-  animate={{ pathLength: 0, pathOffset: 1 }}
-  transition={{ duration: 2 }}
-/>
-```
+
 
 이를 사용하려면 다음과 같이 SVG 경로를`motion.path`로 변환하기 만하면됩니다.
  
@@ -256,14 +249,10 @@ const AnimatedCastle = () => {
   return (
     <svg id="svg-castle" width="480" height="480" viewBox="0 0 480 480" fill="non            e" xmlns="http://www.w3.org/2000/svg">
       <motion.path d="M311.111 420H288.889V455.556V468.889H311.111V455.556V420Z"              stroke="#B2441D" stroke-width="2" className="color-1"
-       initial={{ pathLength: 1,fill:"none", opacity:0, }}
-       animate={{ pathLength: 0,fill:"695A69", opacity:1 }}
-       transition={{ duration: 2 }}
+      
       />
       <motion.path d="M191.111 420H168.889V455.556V468.889H191.111V455.556V420Z"                stroke="#B2441D" stroke-width="2" className="color-2"
-        initial={{ pathLength: 1, fill:"none", opacity:0, }}
-        animate={{ pathLength: 0, fill:"#b2441d", opacity:1}}
-        transition={{ duration: 3 }}
+        
       />
          
       <!-- etc. -->
