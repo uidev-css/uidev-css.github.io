@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "# 196 : Kyle Simpson의 학습 그리드 및 Flexbox
- "
+title: "# 196 Kyle Simpson의 학습 그리드 및 Flexbox"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/thumb-grid.png
 tags: FLEXBOX,GRID,LAYOUT

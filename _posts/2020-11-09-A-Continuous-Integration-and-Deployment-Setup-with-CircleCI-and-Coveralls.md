@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "CircleCI 및 Coveralls를 사용한 지속적인 통합 및 배포 설정
- "
+title: "CircleCI 및 Coveralls를 사용한 지속적인 통합 및 배포 설정"
 author: 'CSS Dev'
 thumbnail: undefined
 tags: CONTINUOUS DEPLOYMENT,CONTINUOUS INTEGRATION,TESTING

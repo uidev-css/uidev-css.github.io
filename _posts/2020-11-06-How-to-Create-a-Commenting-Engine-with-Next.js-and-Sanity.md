@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Next.js 및 Sanity를 사용하여 주석 엔진을 만드는 방법
- "
+title: "Next.js 및 Sanity를 사용하여 주석 엔진을 만드는 방법"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/next-sanity-comments.jpg
 tags: COMMENTS,NEXT.JS,SANITY

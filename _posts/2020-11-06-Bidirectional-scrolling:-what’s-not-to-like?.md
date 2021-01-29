@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "양방향 스크롤 : 마음에 들지 않는 것은 무엇입니까?
- "
+title: "양방향 스크롤  마음에 들지 않는 것은 무엇입니까?"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/link-to-each-category.png
 tags: HORIZONTAL SCROLLING,SCROLLING

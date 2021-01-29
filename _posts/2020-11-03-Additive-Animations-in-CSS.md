@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "CSS의 추가 애니메이션
- "
+title: "CSS의 추가 애니메이션"
 author: 'CSS Dev'
 thumbnail: undefined
 tags: 

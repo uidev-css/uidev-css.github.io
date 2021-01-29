@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "마스크 출처
- "
+title: "마스크 출처"
 author: 'CSS Dev'
 thumbnail: undefined
 tags: 

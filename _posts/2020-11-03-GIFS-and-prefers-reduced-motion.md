@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "GIFS 및 선호 감소 모션
- "
+title: "GIFS 및 선호 감소 모션"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/05/resp-images-thumb.png
 tags: GIF,PICTURE,PREFERS-REDUCED-MOTION

@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "CSS 사용자 정의 속성 토글 트릭
- "
+title: "CSS 사용자 정의 속성 토글 트릭"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2019/09/custom-properties-code.png
 tags: CUSTOM

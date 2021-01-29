@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "CSS에서 사물을 숨기는 다양한 방법 비교
- "
+title: "CSS에서 사물을 숨기는 다양한 방법 비교s"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/magic-stage-hiding-elements.jpg
 tags: ACCESSIBILITY,HIDING

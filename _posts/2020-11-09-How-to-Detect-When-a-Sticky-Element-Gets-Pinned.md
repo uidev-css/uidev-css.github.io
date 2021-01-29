@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "고정 요소가 고정되는시기를 감지하는 방법
- "
+title: "고정 요소가 고정되는시기를 감지하는 방법"
 author: 'CSS Dev'
 thumbnail: undefined
 tags: INTERSECTIONOBSERVER,STICKY

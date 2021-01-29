@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "현대 개발에서 테이블과 수레 방어
- "
+title: "현대 개발에서 테이블과 수레 방어"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/table-on-clouds.png
 tags: FLOAT,TABLE-LAYOUT,TABLES

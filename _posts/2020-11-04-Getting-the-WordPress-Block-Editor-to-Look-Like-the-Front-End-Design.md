@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "WordPress 블록 편집기를 프런트 엔드 디자인처럼 보이게 만들기
- "
+title: "WordPress 블록 편집기를 프런트 엔드 디자인처럼 보이게 만들기"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/wp-editor-dev-tools.jpg
 tags: GUTENBERG,WORDPRESS

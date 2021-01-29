@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "최대 인라인 크기
- "
+title: "최대 인라인 크기"
 author: 'CSS Dev'
 thumbnail: undefined
 tags: 

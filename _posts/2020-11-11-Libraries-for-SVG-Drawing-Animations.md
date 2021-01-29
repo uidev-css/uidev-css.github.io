@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "SVG 드로잉 애니메이션 용 라이브러리
- "
+title: "SVG 드로잉 애니메이션 용 라이브러리"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/castle-svg-texture.jpg
 tags: SVG,SVG ANIMATION

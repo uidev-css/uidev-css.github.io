@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "그레이 버스트
- "
+title: "그레이 버스트"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/gray-burst.jpg
 tags: GENERATOR,SVG

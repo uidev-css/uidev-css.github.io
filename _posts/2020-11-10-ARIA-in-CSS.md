@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "CSS의 ARIA
- "
+title: "CSS의 ARIA"
 author: 'CSS Dev'
 thumbnail: undefined
 tags: ARIA

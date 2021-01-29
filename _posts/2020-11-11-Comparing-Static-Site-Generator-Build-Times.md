@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "정적 사이트 생성기 빌드 시간 비교
- "
+title: "정적 사이트 생성기 빌드 시간 비교"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/ssg-logo-tiles.png
 tags: ELEVENTY,GATSBY,HUGO,JEKYLL,NEXT.JS,NUXT,STATIC SITE GENERATORS

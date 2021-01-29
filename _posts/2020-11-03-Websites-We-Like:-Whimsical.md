@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "우리가 좋아하는 웹 사이트 : 기발한
- "
+title: "우리가 좋아하는 웹 사이트 기발한"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/whiumsical-map-map.png
 tags: 

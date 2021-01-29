@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "# 197 : Stackbit 및 Stackbit Studio 살펴보기
- "
+title: "# 197  Stackbit 및 Stackbit Studio 살펴보기"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/thumb-stackbit.png
 tags: HEADLESS CMS,JAMSTACK,STACKBIT

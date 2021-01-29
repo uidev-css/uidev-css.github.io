@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "자바 스크립트 연산자 조회
- "
+title: "자바 스크립트 연산자 조회"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/js-operators.png
 tags: JAVASCRIPT,JAVASCRIPT OPERATORS

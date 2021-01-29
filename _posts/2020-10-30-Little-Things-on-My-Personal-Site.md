@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "내 개인 사이트의 작은 것들
- "
+title: "내 개인 사이트의 작은 것들"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/wavy-fingerprint.png
 tags: 
