@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "세부 정보 및 요약 요소로 수행 할 수있는 작업 탐색
- "
+title: "세부 정보 및 요약 요소로 수행 할 수있는 작업 탐색"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/details-tooltip.png
 tags: DETAILS/SUMMARY,FOOTNOTES,TOOLTIP

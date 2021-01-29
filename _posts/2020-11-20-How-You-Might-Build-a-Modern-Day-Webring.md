@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "현대 웹링을 구축하는 방법
- "
+title: "현대 웹링을 구축하는 방법"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/webring.png
 tags: WEB COMPONENTS

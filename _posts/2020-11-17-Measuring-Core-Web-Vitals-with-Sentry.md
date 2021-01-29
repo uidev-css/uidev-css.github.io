@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Sentry로 핵심 웹 바이탈 측정
- "
+title: "Sentry로 핵심 웹 바이탈 측정"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/sentry-dashboard.png
 tags: CORE WEB VITALS,PERFORMANCE

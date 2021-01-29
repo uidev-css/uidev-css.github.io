@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "웹으로 그리기
- "
+title: "웹으로 그리기"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/richter-albertinum.jpg
 tags: DESIGN

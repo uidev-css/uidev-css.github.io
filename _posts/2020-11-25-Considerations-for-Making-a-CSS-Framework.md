@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "CSS 프레임 워크를 만들기위한 고려 사항
- "
+title: "CSS 프레임 워크를 만들기위한 고려 사항"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/halfmoon-screen-logo.png
 tags: DARK,FRAMEWORK,HALFMOON,THEMING

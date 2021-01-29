@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "렌더링 스펙트럼
- "
+title: "렌더링 스펙트럼"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2018/05/page-transitions.jpg
 tags: CLIENT SIDE RENDERING,RENDERING,SERVER SIDE RENDERING,STATIC SITES

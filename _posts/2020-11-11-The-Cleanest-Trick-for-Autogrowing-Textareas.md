@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Autogrowing Textareas를위한 가장 깨끗한 트릭
- "
+title: "Autogrowing Textareas를위한 가장 깨끗한 트릭"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/Frame-1.svg
 tags: GRID,TEXTAREA

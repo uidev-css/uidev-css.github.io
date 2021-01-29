@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "CSS에서 누락 된 사항은 무엇입니까?
- "
+title: "CSS에서 누락 된 사항은 무엇입니까?"
 author: 'CSS Dev'
-thumbnail: undefined
+thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/webring.png
 tags: 
 ---
 

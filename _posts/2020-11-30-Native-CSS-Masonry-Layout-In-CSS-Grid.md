@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "CSS 그리드의 네이티브 CSS 벽돌 레이아웃
- "
+title: "CSS 그리드의 네이티브 CSS 벽돌 레이아웃"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/pure-css-masonry.jpg
 tags: 

@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "CSS 배경 패턴
- "
+title: "CSS 배경 패턴"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/Screen-Shot-2020-11-11-at-3.58.15-PM.png
 tags: 

@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Film School이 더 나은 사용자 경험을 만드는 데 어떻게 도움이 되었습니까?
- "
+title: "Film School이 더 나은 사용자 경험을 만드는 데 어떻게 도움이 되었습니까?"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/10/zombie-focus.jpg
 tags: ANIMATION

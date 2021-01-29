@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "순수 CSS에서 색상 혼합
- "
+title: "순수 CSS에서 색상 혼합"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2018/03/color-wheels.jpg
 tags: COLOR,KEYFRAMES

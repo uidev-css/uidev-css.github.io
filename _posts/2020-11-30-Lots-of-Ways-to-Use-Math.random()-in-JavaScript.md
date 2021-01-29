@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "JavaScript에서 Math.random ()을 사용하는 다양한 방법
- "
+title: "JavaScript에서 Math.random ()을 사용하는 다양한 방법"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/math-random.png
 tags: JAVASCRIPT,MATH,RANDOM

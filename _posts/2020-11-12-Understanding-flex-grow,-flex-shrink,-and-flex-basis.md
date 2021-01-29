@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "flex-grow, flex-shrink 및 flex-basis 이해
- "
+title: "flex-grow, flex-shrink 및 flex-basis 이해"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2018/12/guide-flexbox.png
 tags: FLEX-BASIS,FLEX-GROW,FLEX-SHRINK,FLEXBOX

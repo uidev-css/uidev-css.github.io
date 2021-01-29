@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "정당화 항목
- "
+title: "정당화 항목"
 author: 'CSS Dev'
-thumbnail: undefined
+thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2019/07/table-pattern.png
 tags: 
 ---
 

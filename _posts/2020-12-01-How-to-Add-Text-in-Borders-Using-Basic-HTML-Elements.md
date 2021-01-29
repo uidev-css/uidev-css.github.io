@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "기본 HTML 요소를 사용하여 테두리에 텍스트를 추가하는 방법
- "
+title: "기본 HTML 요소를 사용하여 테두리에 텍스트를 추가하는 방법"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/border-text-fieldset-legend.jpg
 tags: BORDER,FIELDSET,FORMS,LEGEND

@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "WordPress 블록 패턴으로 작업하는 방법
- "
+title: "WordPress 블록 패턴으로 작업하는 방법"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/block-patterns-50714d9e-f968-4262-bb51-5aae3a70ca12.jpg
 tags: WORDPRESS,WORDPRESS BLOCKS

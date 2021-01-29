@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "초소형 아이콘
- "
+title: "초소형 아이콘"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/Screen-Shot-2020-11-25-at-12.38.41-PM.png
 tags: SVG,SVG ICONS

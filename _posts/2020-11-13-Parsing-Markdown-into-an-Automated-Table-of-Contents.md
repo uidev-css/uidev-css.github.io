@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Markdown을 자동화 된 목차로 구문 분석
- "
+title: "Markdown을 자동화 된 목차로 구문 분석"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2018/07/smooth-scroll-nav.gif
 tags: INTERSECTIONOBSERVER,MARKDOWN,NAVIGATION,VUE ANIMATIONS

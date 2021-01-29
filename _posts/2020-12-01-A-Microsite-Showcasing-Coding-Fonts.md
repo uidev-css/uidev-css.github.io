@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "코딩 글꼴을 보여주는 마이크로 사이트
- "
+title: "코딩 글꼴을 보여주는 마이크로 사이트"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/Screen-Shot-2020-11-12-at-2.44.05-PM.png
 tags: 

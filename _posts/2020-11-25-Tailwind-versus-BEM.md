@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Tailwind 대 BEM
- "
+title: "Tailwind 대 BEM"
 author: 'CSS Dev'
 thumbnail: undefined
 tags: BEM,TAILWIND

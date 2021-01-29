@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "HTML 및 CSS가 포함 된 동적 크기의 고정 사이드 바
- "
+title: "HTML 및 CSS가 포함 된 동적 크기의 고정 사이드 바"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/sticky-sidebar.png
 tags: STICKY

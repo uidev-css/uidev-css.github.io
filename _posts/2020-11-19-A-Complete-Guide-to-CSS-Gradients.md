@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "CSS 그라디언트에 대한 완전한 가이드
- "
+title: "CSS 그라디언트에 대한 완전한 가이드"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/css-gradient.png
 tags: 

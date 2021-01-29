@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Core Web Vitals 과대 광고 열차
- "
+title: "Core Web Vitals 과대 광고 열차"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/train-tracks.png
 tags: PERFORMANCE,WEB CORE VITALS

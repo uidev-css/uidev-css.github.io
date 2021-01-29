@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "SVG에서 UI 구성 요소 만들기
- "
+title: "SVG에서 UI 구성 요소 만들기"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/CleanShot-2020-11-15-at-12.36.14@2x.png
 tags: COMPONENTS,REACT,SVG,UX,VUE

@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Eleventy를 사용한 Cloudinary Fetch (지역 개발 존중)
- "
+title: "Eleventy를 사용한 Cloudinary Fetch (지역 개발 존중)"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/eleventy-cloudinary.png
 tags: CLOUDINARY,ELEVENTY

@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "텍스트 결합 수직
- "
+title: "텍스트 결합 수직"
 author: 'CSS Dev'
-thumbnail: undefined
+thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/richter-albertinum.jpg
 tags: 
 ---
 
