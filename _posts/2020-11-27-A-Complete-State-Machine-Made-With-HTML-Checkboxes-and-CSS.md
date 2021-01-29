@@ -142,7 +142,6 @@ UI 전체의 변경 사항에 영향을 미치는 디자인의 서로 다른 두
  
 
 ```html
-{% import "rrc.njk" as rrc %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
