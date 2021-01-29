@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "HTML 체크 박스와 CSS로 만든 완전한 상태 머신
- "
+title: "HTML 체크 박스와 CSS로 만든 완전한 상태 머신"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/11/state-management.png
 tags: STATE,STATE MACHINES,STATE MANAGEMENT
@@ -98,16 +97,7 @@ UI 전체의 변경 사항에 영향을 미치는 디자인의 서로 다른 두
  이 세 입력의 상태는 시스템 상태를 구성하며이 컨트롤러는 페이지 상단에 있습니다.
  
 
-```html
-{% macro FSM4S_controller()%}
-  <form id="rrc-form-Bx00"></form>
-  <form id="rrc-form-B0x0"></form>
-  <form id="rrc-form-B00x"></form>
-  <input data-rrc="Bx00" form="rrc-form-Bx00" style="display:none" type="radio" name="rrc-Bx00" checked="checked" />
-  <input data-rrc="B0x0" form="rrc-form-B0x0" style="display:none" type="radio" name="rrc-B0x0" checked="checked" />
-  <input data-rrc="B00x" form="rrc-form-B00x" style="display:none" type="radio" name="rrc-B00x" checked="checked" />
-{% endmacro %}
-```
+
 
 위의 컨트롤러를 페이지 상태에 연결하는 로직은 CSS로 작성됩니다.
  Checkbox Hack은 유사한 기술을 사용하여 확인란으로 형제 또는 하위 요소를 제어합니다.
@@ -117,20 +107,6 @@ UI 전체의 변경 사항에 영향을 미치는 디자인의 서로 다른 두
  여기서 `! important`는 논리의 중요한 부분이 아니며 제거 할 수 있습니다.
  다른 CSS에 의해 무시되지 않도록 숨기기에 우선 순위를 둡니다.
  
-
-```html
-{%macro FSM4S_css()%}
-<style>
-  /* Hide M000 (A1) */
-  input[data-rrc="Bx00"]:not(:checked)~input[data-rrc="B0x0"]:not(:checked)~input[data-rrc="B00x"]:not(:checked)~* .M000  {
-    display: none !important;
-  }
-
-  /* one section for each of 8 Machine States */
-
-</style>
-{%endmacro%}
-```
 
 페이지 상태를 변경하려면 사용자가 클릭하거나 키를 입력해야합니다.
  시스템 상태의 단일 비트를 변경하기 위해 사용자는 컨트롤러에있는 비트 중 하나의 동일한 양식 및 라디오 그룹에 연결된 라디오 버튼을 클릭합니다.
@@ -150,9 +126,7 @@ UI 전체의 변경 사항에 영향을 미치는 디자인의 서로 다른 두
  
 
 ```html
-{%macro showA() %}
   M001 M010 M100 M101 M110 M011
-{%endmacro%}
 
 ```
 
