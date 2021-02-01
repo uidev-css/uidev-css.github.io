@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "색다른 스톡 이미지 소스
- "
+title: "색다른 스톡 이미지 소스"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/12/Screen-Shot-2020-12-10-at-2.40.26-PM.png
 tags: STOCK IMAGES

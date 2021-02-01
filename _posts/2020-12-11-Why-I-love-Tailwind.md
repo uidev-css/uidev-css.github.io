@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "내가 Tailwind를 사랑하는 이유
- "
+title: "내가 Tailwind를 사랑하는 이유"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/12/tailwind-card.png
 tags: TAILWIND

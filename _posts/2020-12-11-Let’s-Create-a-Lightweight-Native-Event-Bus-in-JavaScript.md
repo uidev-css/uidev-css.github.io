@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "JavaScript로 경량 네이티브 이벤트 버스를 만들어 보겠습니다.
- "
+title: "JavaScript로 경량 네이티브 이벤트 버스를 만들어 보겠습니다."
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/12/event-bus-js-vw.jpg
 tags: EVENT BUS
