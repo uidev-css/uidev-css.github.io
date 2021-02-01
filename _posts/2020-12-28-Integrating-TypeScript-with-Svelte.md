@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "TypeScript와 Svelte 통합
- "
+title: "TypeScript와 Svelte 통합"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/12/typescript-svelte-logos.jpg
 tags: SVELTE,TYPESCRIPT

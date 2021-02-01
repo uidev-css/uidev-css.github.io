@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "세 줄의 CSS로 된 달력
- "
+title: "세 줄의 CSS로 된 달력"
 author: 'CSS Dev'
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/07/calendar-month-view-previous-past-months.png
 tags: GRID
