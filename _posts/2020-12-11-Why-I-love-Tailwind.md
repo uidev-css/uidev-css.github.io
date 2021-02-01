@@ -30,12 +30,12 @@ import "twin.macro"
 import "styled-components/macro"
 
 <div 
-  css={{
+  css={
     textAlign: "center",
     "@media (min-width: 768px)": {
       "textAlign":"left"
     }
-  }}
+  }
 />
 ```
 
