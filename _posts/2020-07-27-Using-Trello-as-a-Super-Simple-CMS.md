@@ -77,16 +77,16 @@ Tello에서 데이터를 가져와 일부 템플릿에 적용하여 사이트를
 
 ```html
 <!-- index.njk -->
-{% for card in trello %}
+{ for card in trello }
 <section>
   <h2>{ card.name }</h2>
   <div>
-    {% markdown %}
+    { markdown }
       {- card.desc | safe }
-    {% endmarkdown %}
+    { endmarkdown }
   </div>
 </section>
-{% endfor %}
+{ endfor }
 ```
 
 ### 빌드에 대한 데이터 가져오기
