@@ -6,13 +6,12 @@ thumbnail: "https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_au
 tags: ALPINE.JS,ELEVENTY,TAILWIND
 ---
 
-
 현재 개인 웹 사이트를 기반으로 하기로 결정했을 때, 저는 그 바퀴를 다시 만들고 싶지 않았습니다. 나는 문서를 통해 스타터 프로젝트에서 찾을 수 있는 Tailwind CSS로 빌드된 11명의 모든 시동기를 테스트했습니다.
 
 많은 시작점들이 Tailwind CSS를 복잡한 방식으로 통합하는 것처럼 보였다. 또한, 그들 중 일부는 웹 사이트에서 작업하는 동안 아무도 Tailwind의 구성을 즉시 업데이트하지 않는다고 추측하는 것 같았다. 그래서 저는 Elevent와 Tailwind CSS, Alpine.js를 통합했습니다. 제 솔루션의 단순함을 좋아하실 거라고 믿으실 만한 이유가 있습니다.
 
 > 좋은 디자인은 가능한 한 적은 디자인이다.
-—디터 램, 우수한 설계를 위한 10가지 원칙
+> —디터 램, 우수한 설계를 위한 10가지 원칙
 
 세부 사항에 관심이 없으시면 언제든지 제 출발선수를 잡고 바로 뛰어들세요.
 
@@ -37,18 +36,18 @@ npm install --save-dev @11ty/eleventy tailwindcss postcss-cli autoprefixer
 프로젝트 폴더에 `index.njk`라는 새 파일을 만들어 봅시다. 홈페이지로 지정해 드립니다.
 
 ```nunjucks
-{% extends "_includes/default.njk" }
- 
-{% block title }It does work{% endblock }
- 
-{% block content }
+{ extends "_includes/default.njk" }
+
+{ block title }It does work{ endblock }
+
+{ block content }
   <div class="fixed inset-0 flex justify-center items-center">
     <div>
       <span class="text-change">Good design</span><br/>
       <span class="change">is<br/>as little design<br/>as possible</span>
     </div>
   </div>
-{% endblock }
+{ endblock }
 ```
 
 ### 기본 템플릿
@@ -60,21 +59,21 @@ npm install --save-dev @11ty/eleventy tailwindcss postcss-cli autoprefixer
 <html lang="en">
   <head>
     <title>
-      {% block title }Does it work?{% endblock }
+      { block title }Does it work?{ endblock }
     </title>
     <meta charset="UTF-8"/>
-    {% if description }
+    { if description }
       <meta name="description" content="{description}"/>
-    {% endif }
+    { endif }
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
-    <link rel="stylesheet" href="/style.css?v={% version }"/>
-    {% block head }{% endblock }
+    <link rel="stylesheet" href="/style.css?v={ version }"/>
+    { block head }{ endblock }
   </head>
   <body>
-    {% block content }
+    { block content }
       { content | safe }
-    {% endblock }
+    { endblock }
   </body>
 </html>
 ```
@@ -85,21 +84,21 @@ npm install --save-dev @11ty/eleventy tailwindcss postcss-cli autoprefixer
 
 ```js
 module.exports = {
-  purge: {
-    content: ["_site/**/*.html"],
-    options: {
-      safelist: [],
+    purge: {
+        content: ["_site/**/*.html"],
+        options: {
+            safelist: []
+        }
     },
-  },
-  theme: {
-    extend: {
-      colors: {
-        change: "transparent",
-      },
+    theme: {
+        extend: {
+            colors: {
+                change: "transparent"
+            }
+        }
     },
-  },
-  variants: {},
-  plugins: [],
+    variants: {},
+    plugins: []
 };
 ```
 
@@ -111,9 +110,9 @@ module.exports = {
 @tailwind utilities;
 
 @layer utilities {
-  .change {
-    color: transparent;
-  }
+    .change {
+        color: transparent;
+    }
 }
 ```
 
@@ -121,10 +120,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  plugins: [
-    require(`tailwindcss`)(`./styles/tailwind.config.js`),
-    require(`autoprefixer`),
-  ],
+    plugins: [require(`tailwindcss`)(`./styles/tailwind.config.js`), require(`autoprefixer`)]
 };
 ```
 
@@ -149,16 +145,16 @@ node_modules
 이제 기본적으로 Elevent를 구성하는 `.evenent.js`(선행 점 참고!)라는 파일을 만들어 볼 파일과 작업 저장 위치를 알려줍니다.
 
 ```js
-module.exports = function (eleventyConfig) {
-  eleventyConfig.setUseGitIgnore(false);
- 
-  eleventyConfig.addWatchTarget("./_tmp/style.css");
- 
-  eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
- 
-  eleventyConfig.addShortcode("version", function () {
-    return String(Date.now());
-  });
+module.exports = function(eleventyConfig) {
+    eleventyConfig.setUseGitIgnore(false);
+
+    eleventyConfig.addWatchTarget("./_tmp/style.css");
+
+    eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
+
+    eleventyConfig.addShortcode("version", function() {
+        return String(Date.now());
+    });
 };
 ```
 
@@ -218,20 +214,16 @@ const htmlmin = require("html-minifier");
 또한 htmlmin을 .elevenent.js에 구성해야 합니다.
 
 ```js
-eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (
-      process.env.ELEVENTY_PRODUCTION &&
-      outputPath &&
-      outputPath.endsWith(".html")
-    ) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      });
-      return minified;
+eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+            useShortDoctype: true,
+            removeComments: true,
+            collapseWhitespace: true
+        });
+        return minified;
     }
- 
+
     return content;
 });
 ```
@@ -240,55 +232,40 @@ eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
 
 ```js
 const htmlmin = require("html-minifier");
- 
-module.exports = function (eleventyConfig) {
-  eleventyConfig.setUseGitIgnore(false);
- 
-  eleventyConfig.addWatchTarget("./_tmp/style.css");
- 
-  eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
- 
-  eleventyConfig.addShortcode("version", function () {
-    return String(Date.now());
-  });
- 
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (
-      process.env.ELEVENTY_PRODUCTION &&
-      outputPath &&
-      outputPath.endsWith(".html")
-    ) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      });
-      return minified;
-    }
- 
-    return content;
-  });
+
+module.exports = function(eleventyConfig) {
+    eleventyConfig.setUseGitIgnore(false);
+
+    eleventyConfig.addWatchTarget("./_tmp/style.css");
+
+    eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
+
+    eleventyConfig.addShortcode("version", function() {
+        return String(Date.now());
+    });
+
+    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+        if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith(".html")) {
+            let minified = htmlmin.minify(content, {
+                useShortDoctype: true,
+                removeComments: true,
+                collapseWhitespace: true
+            });
+            return minified;
+        }
+
+        return content;
+    });
 };
 ```
 
 패키지의 `빌드` 스크립트를 업데이트합니다.json:
 
 ```html
-{
-  "scripts": {
-    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css && cleancss _site/style.css -o _site/style.css"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
-    "autoprefixer": "^10.1.0",
-    "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.0.2"
-  }
-}
+{ "scripts": { "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch", "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css && cleancss _site/style.css -o _site/style.css" }, "devDependencies": { "@11ty/eleventy": "^0.11.1", "autoprefixer": "^10.1.0", "postcss-cli": "^8.3.1", "tailwindcss": "^2.0.2" } }
 ```
 
-다시 한 번 npm run start를 실행해 봅시다. 아무것도 변하지 않았다는 것을 알게 될 것입니다. 최적화는 빌드 중에만 이루어지기 때문입니다. 대신 npm run build를 사용해 본 다음 _site folder를 살펴봅시다. `index.html` 파일에 불필요한 문자가 하나만 있으면 안 됩니다. style.css 파일도 마찬가지다.
+다시 한 번 npm run start를 실행해 봅시다. 아무것도 변하지 않았다는 것을 알게 될 것입니다. 최적화는 빌드 중에만 이루어지기 때문입니다. 대신 npm run build를 사용해 본 다음 \_site folder를 살펴봅시다. `index.html` 파일에 불필요한 문자가 하나만 있으면 안 됩니다. style.css 파일도 마찬가지다.
 
 이렇게 만들어진 프로젝트는 이제 배포할 준비가 되었습니다. 잘했어! 🏆
 
@@ -306,25 +283,24 @@ npm install --save-dev alpinejs
 
 ```js
 eleventyConfig.addPassthroughCopy({
-  "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
+    "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js"
 });
-
 ```
 
 마지막으로 `_include/default.njk`를 열고 닫는 `/head` 태그 바로 앞에 Alpine.js를 추가합니다.
 
 ```nunjucks
-<script src="/js/alpine.js?v={% version }"></script>
+<script src="/js/alpine.js?v={ version }"></script>
 ```
 
 이것을 index.njk에 추가하면 알파인이 작동하는지 확인할 수 있다.
 
 ```nunjucks
-{% extends "_includes/default.njk" }
- 
-{% block title }It does work{% endblock }
- 
-{% block content }
+{ extends "_includes/default.njk" }
+
+{ block title }It does work{ endblock }
+
+{ block content }
   <div class="fixed inset-0 flex justify-center items-center">
     <div>
       <span class="text-change">Good design</span><br/>
@@ -332,7 +308,7 @@ eleventyConfig.addPassthroughCopy({
       <span x-data="{message:'🤖 Hello World 🤓'}" x-text="message"></span>
     </div>
   </div>
-{% endblock }
+{ endblock }
 ```
 
 프로젝트 시작:

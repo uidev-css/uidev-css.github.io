@@ -1,11 +1,10 @@
 ---
 layout: post
 title: "커뮤니티가 주도하는 마천루 : 마천루 건설"
-author: 'CSS Dev'
+author: "CSS Dev"
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/08/weekly-pet-battle.png
 tags: ELEVENTY,NETLIFY,NUNJUCKS
 ---
-
 
 마지막 기사에서, 우리는 지역사회 중심 사이트의 계획에 무엇이 포함되는지 배웠습니다. Style Stage를 구축한 경험을 바탕으로 사용자 제출 수락에 필요한 고려 사항이 몇 가지인지 확인했습니다.
 
@@ -13,11 +12,11 @@ tags: ELEVENTY,NETLIFY,NUNJUCKS
 
 이 문서에서는 다음 내용을 다룹니다.
 
-- Elevant를 초기화하고 유용한 개발 및 빌드 스크립트를 작성하는 방법
-- 권장 설치 사용자 지정
-- 사용자 정의 데이터를 정의하고 여러 데이터 소스를 결합하는 방법
-- Nunjucks 및 Elevation Chain을 사용하여 레이아웃 만들기
-- Netlifify로 배포
+-   Elevant를 초기화하고 유용한 개발 및 빌드 스크립트를 작성하는 방법
+-   권장 설치 사용자 지정
+-   사용자 정의 데이터를 정의하고 여러 데이터 소스를 결합하는 방법
+-   Nunjucks 및 Elevation Chain을 사용하여 레이아웃 만들기
+-   Netlifify로 배포
 
 ### 비젼
 
@@ -61,13 +60,13 @@ npm install --save-dev fast-glob.
 이를 구성하려면 프로젝트 디렉터리의 루트에 `evenent.js` 파일을 생성합니다. 그런 다음 입출력 디렉토리가 어디로 갈지 11번에게 알려드리겠습니다. 이 경우 입력에는 `src` 디렉토리를 사용하고 출력에는 `public` 디렉토리를 사용합니다.
 
 ```js
-module.exports = function (eleventyConfig) {
-  return {
-    dir: {
-      input: "src",
-      output: "public"
-    },
-  };
+module.exports = function(eleventyConfig) {
+    return {
+        dir: {
+            input: "src",
+            output: "public"
+        }
+    };
 };
 ```
 
@@ -108,9 +107,7 @@ README.md 파일은 당신이 그 길을 가고 싶다면 그렇게 해도 좋�
 `_data`에 사용된 파일 이름은 해당 데이터 세트를 저장하는 변수가 되므로, 이 안에 고양이와 개의 파일을 추가할 것입니다.
 
 ```html
-_data/
-  cats.js
-  dogs.js
+_data/ cats.js dogs.js
 ```
 
 각 파일의 기능은 거의 동일할 것이다. 우리는 단지 "cat"의 인스턴스를 "dog"와 교환하고 있을 뿐이다. 고양이를 위한 기능은 다음과 같습니다.
@@ -118,22 +115,22 @@ _data/
 ```js
 const fastglob = require("fast-glob");
 const fs = require("fs");
- 
+
 module.exports = async () => {
-  // Create a "glob" of all cat json files
-  const catFiles = await fastglob("./src/pets/cats/*.json", {
-    caseSensitiveMatch: false,
-  });
- 
-  // Loop through those files and add their content to our `cats` Set
-  let cats = new Set();
-  for (let cat of catFiles) {
-    const catData = JSON.parse(fs.readFileSync(cat));
-    cats.add(catData);
-  }
- 
-  // Return the cats Set of objects within an array
-  return [...cats];
+    // Create a "glob" of all cat json files
+    const catFiles = await fastglob("./src/pets/cats/*.json", {
+        caseSensitiveMatch: false
+    });
+
+    // Loop through those files and add their content to our `cats` Set
+    let cats = new Set();
+    for (let cat of catFiles) {
+        const catData = JSON.parse(fs.readFileSync(cat));
+        cats.add(catData);
+    }
+
+    // Return the cats Set of objects within an array
+    return [...cats];
 };
 ```
 
@@ -151,29 +148,29 @@ Nunjucks는 Eleventity로 템플릿을 생성할 때 사용할 수 있는 옵션
 
 ```html
 <ul>
-  <!-- Loop through cat data -->
-  {% for cat in cats %}
-  <li>
-    <a href="/cats/{ cat.name | slug }/">{ cat.name }</a>
-  </li>
-  {% endfor %}
+    <!-- Loop through cat data -->
+    { for cat in cats %}
+    <li>
+        <a href="/cats/{ cat.name | slug }/">{ cat.name }</a>
+    </li>
+    { endfor %}
 </ul>
- 
+
 <ul>
-  <!-- Loop through dog data -->
-  {% for dog in dogs %}
-  <li>
-    <a href="/dogs/{ dog.name | slug }/">{ dog.name }</a>
-  </li>
-  {% endfor %}
+    <!-- Loop through dog data -->
+    { for dog in dogs %}
+    <li>
+        <a href="/dogs/{ dog.name | slug }/">{ dog.name }</a>
+    </li>
+    { endfor %}
 </ul>
 ```
 
-참고로 cats와 dogs에 대한 참조는 _data의 파일 이름과 일치한다. 루프 내에서 우리는 더블 컬리 브레이스(예: `{ cat.name})`를 사용하여 Nunjucks 템플릿 변수로 출력되는 `cat.name`에 표시된 것처럼 도트 표기법을 사용하여 JSON 키에 액세스할 수 있다.
+참고로 cats와 dogs에 대한 참조는 \_data의 파일 이름과 일치한다. 루프 내에서 우리는 더블 컬리 브레이스(예: `{ cat.name})`를 사용하여 Nunjucks 템플릿 변수로 출력되는 `cat.name`에 표시된 것처럼 도트 표기법을 사용하여 JSON 키에 액세스할 수 있다.
 
 ### 애완동물 프로필 페이지를 만들자.
 
-홈페이지(index.njk)의 고양이와 개 목록 외에 애완견에 대한 개별 프로필 페이지도 만들고자 합니다. 루프는 이러한 구조에 대해 `[펫 타입]/[name-slug](으)로 사용할 힌트를 사용하여 `[pet type]/[name-slug]
+홈페이지(index.njk)의 고양이와 개 목록 외에 애완견에 대한 개별 프로필 페이지도 만들고자 합니다. 루프는 이러한 구조에 대해 `[펫 타입]/[name-slug](으)로 사용할 힌트를 사용하여`[pet type]/[name-slug]
 
 데이터로부터 페이지를 작성하는 권장 방법은 데이터를 청크아웃할 수 있는 11개 개념의 페이지를 사용하는 것입니다.
 
@@ -271,15 +268,15 @@ eleventyComputed:
 ```html
 <img src="{ photoURL }" />
 <ul>
-  <li><strong>Name</strong>: { title }</li>
-  <li><strong>Color</strong>: { petColor }</li>
-  <li><strong>Favorite Food</strong>: { favoriteFood if favoriteFood else 'N/A' }</li>
-  <li><strong>Favorite Toy</strong>: { favoriteToy if favoriteToy else 'N/A' }</li>
-{% if ownerTwitter %}
-  <li><strong>Owner</strong>: <a href="{ ownerTwitter }">{ ownerName }</a></li>
-{% else %}
-  <li><strong>Owner</strong>: { ownerName }</li>
-{% endif %}
+    <li><strong>Name</strong>: { title }</li>
+    <li><strong>Color</strong>: { petColor }</li>
+    <li><strong>Favorite Food</strong>: { favoriteFood if favoriteFood else 'N/A' }</li>
+    <li><strong>Favorite Toy</strong>: { favoriteToy if favoriteToy else 'N/A' }</li>
+    { if ownerTwitter %}
+    <li><strong>Owner</strong>: <a href="{ ownerTwitter }">{ ownerName }</a></li>
+    { else %}
+    <li><strong>Owner</strong>: { ownerName }</li>
+    { endif %}
 </ul>
 ```
 
@@ -311,14 +308,14 @@ Go를 통과하여 100달러를 모으기 전에, 첫 번째 게시물을 다시
 
 제출 절차는 다음과 같습니다.
 
-- 웹 사이트 리포지토리를 포크로 만듭니다.
-- 포크를 로컬 컴퓨터에 복제하거나 GitHub 웹 인터페이스를 사용하여 나머지 단계를 수행합니다.
-- 필요한 데이터가 포함된 src/pets/cats 또는 src/pets/dog 내에 고유한 .json 파일을 생성합니다.
-- 복제본에서 변경한 경우 변경 내용을 커밋하거나, 파일이 웹 인터페이스에서 편집된 경우 파일을 저장합니다.
-- 기본 리포지토리로 끌어오기 요청을 다시 엽니다.
-- (선택사항) Netliify deploy 미리보기를 검토하여 정보가 예상대로 표시되는지 확인합니다.
-- 변경 내용을 병합합니다.
-- Netliify는 새 애완동물을 라이브 사이트에 배포합니다.
+-   웹 사이트 리포지토리를 포크로 만듭니다.
+-   포크를 로컬 컴퓨터에 복제하거나 GitHub 웹 인터페이스를 사용하여 나머지 단계를 수행합니다.
+-   필요한 데이터가 포함된 src/pets/cats 또는 src/pets/dog 내에 고유한 .json 파일을 생성합니다.
+-   복제본에서 변경한 경우 변경 내용을 커밋하거나, 파일이 웹 인터페이스에서 편집된 경우 파일을 저장합니다.
+-   기본 리포지토리로 끌어오기 요청을 다시 엽니다.
+-   (선택사항) Netliify deploy 미리보기를 검토하여 정보가 예상대로 표시되는지 확인합니다.
+-   변경 내용을 병합합니다.
+-   Netliify는 새 애완동물을 라이브 사이트에 배포합니다.
 
 FAQ 섹션은 참여자에게 풀 요청을 작성하는 방법을 알려주는 좋은 장소입니다. 스타일 스테이지에서 예를 확인할 수 있습니다.
 
@@ -328,10 +325,10 @@ FAQ 섹션은 참여자에게 풀 요청을 작성하는 방법을 알려주는 
 
 Eleventity로 구축된 커뮤니티 중심 사이트로 우리가 할 수 있는 일은 훨씬 더 많다. 예를 들어:
 
-- 마크다운 파일은 버튼다운과 함께 보낸 이메일 뉴스레터의 내용에 사용할 수 있습니다. 마크를 Nunjucks 또는 Liquid와 혼합할 수 있는 11번째 아이템입니다. 따라서 예를 들어, 루프용 Nunjucks를 추가하여 최신 5개의 애완동물을 Markdown 구문으로 출력하고 Buttondown으로 픽업하는 링크로 출력할 수 있습니다.
-- 소셜 네트워크 링크 미리보기를 위해 자동으로 생성된 소셜 미디어 미리보기 이미지를 만들 수 있다.
-- 주석 시스템을 혼합에 추가할 수 있습니다.
-- Netliify CMS Open Authoring을 사용하여 사용자가 인터페이스를 사용하여 제출할 수 있습니다. 크리스의 작동 방식을 자세히 살펴보세요.
+-   마크다운 파일은 버튼다운과 함께 보낸 이메일 뉴스레터의 내용에 사용할 수 있습니다. 마크를 Nunjucks 또는 Liquid와 혼합할 수 있는 11번째 아이템입니다. 따라서 예를 들어, 루프용 Nunjucks를 추가하여 최신 5개의 애완동물을 Markdown 구문으로 출력하고 Buttondown으로 픽업하는 링크로 출력할 수 있습니다.
+-   소셜 네트워크 링크 미리보기를 위해 자동으로 생성된 소셜 미디어 미리보기 이미지를 만들 수 있다.
+-   주석 시스템을 혼합에 추가할 수 있습니다.
+-   Netliify CMS Open Authoring을 사용하여 사용자가 인터페이스를 사용하여 제출할 수 있습니다. 크리스의 작동 방식을 자세히 살펴보세요.
 
 마이 야옹 대. BowWow 예는 GitHub에서 포크 할 수 있다. 라이브 프리뷰도 볼 수 있고, 네, 이 바보 같은 사이트에 애완동물을 제출할 수도 있습니다. 🙂
 

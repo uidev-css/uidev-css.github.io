@@ -1,11 +1,10 @@
 ---
 layout: post
 title: "Jamstack 사이트에서 논리는 어디로 갈까요?"
-author: 'CSS Dev'
+author: "CSS Dev"
 thumbnail: https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2020/08/assembly-line.png
 tags: JAMSTACK,MAINTENANCE
 ---
-
 
 여기 제가 Jamstack 사이트를 짓기 시작했을 때 머리를 싸매야 했던 것이 있습니다. 논리를 내세울 수 있는 사이트에는 다음과 같은 다양한 단계가 있습니다.
 
@@ -44,11 +43,11 @@ The event description goes here!
 그런 다음 빌드 프로세스 중에 다음과 같은 템플릿을 작성하여 약간의 논리를 실행합니다.
 
 ```html
-{% if event.date > now %}
-  <h1>Upcoming Event: {event.title}</h1>
-{% else %}
-  <h1>Past Event: {event.title}</h1>
-{% endif %}
+{ if event.date > now %}
+<h1>Upcoming Event: {event.title}</h1>
+{ else %}
+<h1>Past Event: {event.title}</h1>
+{ endif %}
 ```
 
 이제 빌드 프로세스가 실행될 때마다 이벤트 날짜를 보고 과거인지 미래인지 판단하여 해당 정보를 기반으로 다른 HTML을 생성합니다. HTML을 수동으로 더 이상 변경할 수 없습니다!
@@ -67,18 +66,18 @@ The event description goes here!
 
 ```js
 // THIS DOES NOT WORK
-import eventsList from "./eventsList.json"
+import eventsList from "./eventsList.json";
 function onRequest(request) {
-  const now = new Date();
-  eventList.forEach(event => {
-    if (event.date > now) {
-      event.upcoming = true;
-    }
-  })
-  const props = {
-    events: events,
-  }
-  request.respondWith(200, render(props), {})
+    const now = new Date();
+    eventList.forEach(event => {
+        if (event.date > now) {
+            event.upcoming = true;
+        }
+    });
+    const props = {
+        events: events
+    };
+    request.respondWith(200, render(props), {});
 }
 ```
 
@@ -99,16 +98,16 @@ function onRequest(request) {
 그런 다음 페이지가 로드된 후 JavaScript에서 날짜를 비교합니다.
 
 ```js
-function processEvents(){
-  const now = new Date()
-  events.forEach(event => {
-    const eventDate = new Date(event.getAttribute('data-date'))
-    if (eventDate > now){
-        event.classList.add('upcoming')
-    } else {
-        event.classList.add('past')
-    }
-  })
+function processEvents() {
+    const now = new Date();
+    events.forEach(event => {
+        const eventDate = new Date(event.getAttribute("data-date"));
+        if (eventDate > now) {
+            event.classList.add("upcoming");
+        } else {
+            event.classList.add("past");
+        }
+    });
 }
 ```
 
