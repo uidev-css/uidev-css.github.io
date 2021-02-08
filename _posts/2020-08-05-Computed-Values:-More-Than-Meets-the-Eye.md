@@ -17,7 +17,7 @@ tags: CASCADE,COMPUTED,DEVTOOLS,INHERITANCE,VALUES
 
 ![image](https://i2.wp.com/css-tricks.com/wp-content/uploads/2020/06/image.png?fit=1024%2C729&ssl=1)
 
-반면 [스타일] 탭에는 선택한 요소의 정확한 규칙 집합이 기록된 대로 표시됩니다. 따라서 스타일 탭에 `.subhead {font-size:75%}`와 같은 항목이 표시될 수 있지만 계산 탭에는 실제 글꼴 크기 또는 현재 `70%`가 표시됩니다. 예를 들어, 위와 같이 렌더링된 텍스트의 실제 글꼴 크기는 `13.2px`입니다.
+반면 [스타일] 탭에는 선택한 요소의 정확한 규칙 집합이 기록된 대로 표시됩니다. 따라서 스타일 탭에 `.subhead {font-size:75}`와 같은 항목이 표시될 수 있지만 계산 탭에는 실제 글꼴 크기 또는 현재 `70%`가 표시됩니다. 예를 들어, 위와 같이 렌더링된 텍스트의 실제 글꼴 크기는 `13.2px`입니다.
 
 ![image](https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/06/VNT_r8zq.png?fit=1024%2C729&ssl=1)
 

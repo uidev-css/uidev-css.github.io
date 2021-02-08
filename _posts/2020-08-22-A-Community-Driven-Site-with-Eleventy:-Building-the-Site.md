@@ -149,20 +149,20 @@ Nunjucks는 Eleventity로 템플릿을 생성할 때 사용할 수 있는 옵션
 ```html
 <ul>
     <!-- Loop through cat data -->
-    { for cat in cats %}
+    { for cat in cats }
     <li>
         <a href="/cats/{ cat.name | slug }/">{ cat.name }</a>
     </li>
-    { endfor %}
+    { endfor }
 </ul>
 
 <ul>
     <!-- Loop through dog data -->
-    { for dog in dogs %}
+    { for dog in dogs }
     <li>
         <a href="/dogs/{ dog.name | slug }/">{ dog.name }</a>
     </li>
-    { endfor %}
+    { endfor }
 </ul>
 ```
 
@@ -272,11 +272,11 @@ eleventyComputed:
     <li><strong>Color</strong>: { petColor }</li>
     <li><strong>Favorite Food</strong>: { favoriteFood if favoriteFood else 'N/A' }</li>
     <li><strong>Favorite Toy</strong>: { favoriteToy if favoriteToy else 'N/A' }</li>
-    { if ownerTwitter %}
+    { if ownerTwitter }
     <li><strong>Owner</strong>: <a href="{ ownerTwitter }">{ ownerName }</a></li>
-    { else %}
+    { else }
     <li><strong>Owner</strong>: { ownerName }</li>
-    { endif %}
+    { endif }
 </ul>
 ```
 

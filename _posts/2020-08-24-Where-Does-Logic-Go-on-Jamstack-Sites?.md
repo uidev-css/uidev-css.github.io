@@ -43,11 +43,11 @@ The event description goes here!
 그런 다음 빌드 프로세스 중에 다음과 같은 템플릿을 작성하여 약간의 논리를 실행합니다.
 
 ```html
-{ if event.date > now %}
+{ if event.date > now }
 <h1>Upcoming Event: {event.title}</h1>
-{ else %}
+{ else }
 <h1>Past Event: {event.title}</h1>
-{ endif %}
+{ endif }
 ```
 
 이제 빌드 프로세스가 실행될 때마다 이벤트 날짜를 보고 과거인지 미래인지 판단하여 해당 정보를 기반으로 다른 HTML을 생성합니다. HTML을 수동으로 더 이상 변경할 수 없습니다!
