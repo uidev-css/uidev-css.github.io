@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://uidev-css.github.io/sitemap.xml
