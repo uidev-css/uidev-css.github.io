@@ -66,7 +66,7 @@ Flutter 명령을 일반 Windows 콘솔에서 실행하려면 PATH 환경 변수
 
 <div class="content-ad"></div>
 
-```
+
 ![Step 1](/assets/img/2024-06-19-Step-by-StepGuidetoInstallingFlutterandDartonWindows_2.png)
 
 다음 화면에서 "새로 만들기"를 클릭하고 flutter\bin 디렉토리의 전체 경로를 추가하세요. 이 가이드에서는 아래와 같이 표시됩니다. 두 창 모두 "확인"을 클릭하여 Windows 콘솔에서 Flutter 명령을 실행할 수 있도록 활성화하세요.
@@ -74,7 +74,7 @@ Flutter 명령을 일반 Windows 콘솔에서 실행하려면 PATH 환경 변수
 ![Step 2](/assets/img/2024-06-19-Step-by-StepGuidetoInstallingFlutterandDartonWindows_3.png)
 
 - 해당 항목이 없는 경우 flutter\bin의 전체 경로를 값으로 하는 Path라는 새로운 사용자 변수를 만드세요.
-```
+
 
 <div class="content-ad"></div>
 
@@ -99,7 +99,7 @@ Android Studio 다운로드:
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![Step 5](/assets/img/2024-06-19-Step-by-StepGuidetoInstallingFlutterandDartonWindows_5.png)
 
 Afterward, The Android Studio Setup Wizard will start, and you can proceed by clicking Next.
@@ -107,11 +107,11 @@ Afterward, The Android Studio Setup Wizard will start, and you can proceed by cl
 ![Step 6](/assets/img/2024-06-19-Step-by-StepGuidetoInstallingFlutterandDartonWindows_6.png)
 
 On the Install Type screen, select Custom and click Next
-```
+
 
 <div class="content-ad"></div>
 
-```markdown
+
 <img src="/assets/img/2024-06-19-Step-by-StepGuidetoInstallingFlutterandDartonWindows_7.png" />
 
 설치 위치를 선택하거나 기본 경로를 유지하고 '다음'을 클릭하세요.
@@ -119,11 +119,11 @@ On the Install Type screen, select Custom and click Next
 <img src="/assets/img/2024-06-19-Step-by-StepGuidetoInstallingFlutterandDartonWindows_8.png" />
 
 UI 테마를 선택하고 '다음'을 클릭하세요.
-```
+
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![Step 9](/assets/img/2024-06-19-Step-by-StepGuidetoInstallingFlutterandDartonWindows_9.png)
 
 ![Step 10](/assets/img/2024-06-19-Step-by-StepGuidetoInstallingFlutterandDartonWindows_10.png)
@@ -131,20 +131,20 @@ UI 테마를 선택하고 '다음'을 클릭하세요.
 ![Step 11](/assets/img/2024-06-19-Step-by-StepGuidetoInstallingFlutterandDartonWindows_11.png)
 
 Verify the selections and click Next.
-```
+
 
 <div class="content-ad"></div>
 
 다음 화면에서 라이센스 동의를 받아들이고 완료를 클릭해주세요.
 
 빠른 설치를 위해 아래의 명령어를 사용해주세요.
-```markdown
+
 | 컴퓨터 유형       | 특징                           |
 |------------------|--------------------------------|
 | 노트북           | 가볍고 휴대할 수 있는 디바이스 |
 | 데스크탑         | 더 많은 연산이 필요한 곳에서 사용 |
 | 태블릿           | 화면이 크고 터치 기능이 있는 디바이스 |
-```
+
 
 <div class="content-ad"></div>
 

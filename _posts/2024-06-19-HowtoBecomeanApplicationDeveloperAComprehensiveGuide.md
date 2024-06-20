@@ -61,6 +61,5 @@ link: "https://medium.com/@bhupeshsahu2312/how-to-become-an-application-develope
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![2024-06-19-HowtoBecomeanApplicationDeveloperAComprehensiveGuide_1.png](/assets/img/2024-06-19-HowtoBecomeanApplicationDeveloperAComprehensiveGuide_1.png)
-```

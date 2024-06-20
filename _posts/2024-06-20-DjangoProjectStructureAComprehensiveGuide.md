@@ -11,7 +11,7 @@ link: "https://medium.com/django-unleashed/django-project-structure-a-comprehens
 ---
 
 
-```markdown
+
 ![2024-06-20-DjangoProjectStructureAComprehensiveGuide_0](/assets/img/2024-06-20-DjangoProjectStructureAComprehensiveGuide_0.png)
 
 웹 개발에서 원활한 디지털 경험을 만들기 위해 코드를 작성하는 것을 넘어, 조화롭게 작동하는 컴포넌트를 조율하는 것이 중요합니다. 이 과정에서 중요한 요소 중 하나는 프로젝트의 구조입니다. 마치 초고층 건물의 청사진과 같이, 잘 구성된 프로젝트 구조는 확장 가능하고 효율적인 웹 애플리케이션을 위한 기초가 됩니다.
@@ -19,7 +19,7 @@ link: "https://medium.com/django-unleashed/django-project-structure-a-comprehens
 신뢰할 수 있는 Python 프레임워크인 Django는 웹 개발의 흥미진진한 여정을 제공합니다. 그러나 Django의 능력은 그 기능 세트를 넘어, 프로젝트의 구조 방식에 내재되어 있습니다. 이 포괄적인 안내서에서 Django의 프로젝트 구조의 중요성, 구성 요소 및 효율적 설계에 대해 탐구해 보겠습니다.
 
 # 구조 퍼즐 해독
-```
+
 
 <div class="content-ad"></div>
 
@@ -171,7 +171,7 @@ my_project/
 
 잘 구성된 프로젝트 구조는 일반적으로 다음과 같은 계층 구조를 따릅니다:
 
-```markdown
+
 project_name/
 ├── manage.py
 ├── project_name/
@@ -186,7 +186,7 @@ project_name/
 ├── static/
 ├── media/
 ├── templates/
-```
+
 
 - project_name: 프로젝트의 루트 디렉토리입니다.
 - project_name/project_name: 이 내부 디렉토리에는 핵심 프로젝트 설정과 구성이 포함됩니다.

@@ -11,7 +11,7 @@ link: "https://medium.com/@maks-dolgikh/bad-questions-for-senior-frontend-dev-in
 ---
 
 
-```markdown
+
 ![image](https://miro.medium.com/v2/resize:fit:1000/1*lvenLl3-ZZJ06pgkJkhnNg.gif)
 
 # 아래에 설명된 모든 것은 내 주관적인 의견입니다
@@ -19,7 +19,7 @@ link: "https://medium.com/@maks-dolgikh/bad-questions-for-senior-frontend-dev-in
 본 이야기는 후보자들을 위한 직접적인 안내서가 아니며 현재 기술 면접에 대한 반성으로 기능합니다. 이 정보를 활용하는 방법은 여러분이 결정해야 합니다.
 
 일반적으로 검색 결과에서 자유롭게 찾을 수 있는 유명한 면접 질문들이 어떤 실용적인 적용도가 없다는 점을 말하고, 나에게는 회사가 후보자를 선발함에 있어 태만한 조직의 조짐이 있다고 생각합니다. 이렇게 함으로써 어떤 팀이든 관련된 질문을 하지 않아 모든 시니어 개발자를 상실할 수 있습니다.
-```
+
 
 <div class="content-ad"></div>
 

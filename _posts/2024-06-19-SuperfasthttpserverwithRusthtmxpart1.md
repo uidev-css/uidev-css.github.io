@@ -11,7 +11,7 @@ link: "https://medium.com/gitconnected/super-fast-http-server-with-rust-htmx-par
 ---
 
 
-```markdown
+
 ![SuperfasthttpserverwithRusthtmxpart1_0](/assets/img/2024-06-19-SuperfasthttpserverwithRusthtmxpart1_0.png)
 
 내 첫 번째 글 중 하나에서는 다양한 아키텍처에서 Rust의 사용에 대해 이야기했습니다. 내가 임베디드 리눅스 시스템에서 작업하면서, 사용 가능한 하드웨어 자원을 최적으로 활용하는 효율적인 프로그래밍 언어를 채용하는 것이 반드시 필요해집니다. 이전 논의는 Rust에서의 크로스 컴파일의 간단함에 초점을 맞추었지만, 이는 프로세스의 최초 단계에 불과합니다.
@@ -19,7 +19,7 @@ link: "https://medium.com/gitconnected/super-fast-http-server-with-rust-htmx-par
 내 작업을 고려할 때, 고객에게 장치를 관리할 수 있는 인터페이스를 제공하는 것이 흔한 요구사항입니다. 이 측면을 임베디드 웹 서버라고 적절히 표현할 수 있습니다.
 
 이 주제에 대한 정보를 찾기 위해 웹을 뒤지면 다양하고 흥미로운 글과 자습서를 만날 수 있습니다. 그러나 문제는 이러한 리소스의 거의 90%가 내 것보다 훨씬 강력한 하드웨어를 위한 맞춤형 우수한 솔루션을 제공한다는 것입니다. 보통 그들은 다음과 같은 주제를 다룹니다:
-```
+
 
 <div class="content-ad"></div>
 
@@ -172,7 +172,7 @@ where
 }
 ```
 
-이제 hello 함수 다음에 오류가 발생할 수 있습니다. 이는 Askama가 템플릿 폴더에서 app.html 파일을 찾기 때문입니다. 그러나 현재 이 두 구성 요소가 없습니다. 이를 해결하려면 루트 디렉토리에 templates라는 폴더를 만들고 그 안에 app.html이라는 파일을 생성하십시오. 내용을 자유롭게 추가할 수 있으며, 예를 들어 `h1`인사말: 임베디드 웹 서버로부터`/h1`을 작성했습니다. 이제 코드를 실행하면 localhost:8086에서 유사한 결과를 관찰해야합니다.```
+이제 hello 함수 다음에 오류가 발생할 수 있습니다. 이는 Askama가 템플릿 폴더에서 app.html 파일을 찾기 때문입니다. 그러나 현재 이 두 구성 요소가 없습니다. 이를 해결하려면 루트 디렉토리에 templates라는 폴더를 만들고 그 안에 app.html이라는 파일을 생성하십시오. 내용을 자유롭게 추가할 수 있으며, 예를 들어 `h1`인사말: 임베디드 웹 서버로부터`/h1`을 작성했습니다. 이제 코드를 실행하면 localhost:8086에서 유사한 결과를 관찰해야합니다.
 
 <div class="content-ad"></div>
 
@@ -343,7 +343,7 @@ Tailwind CLI를 다시 실행하면 main.css 파일이 업데이트되며 페이
 
 <div class="content-ad"></div>
 
-```markdown
+
 ```js
 let router = Router::new()
     .route("/", get(hello))
@@ -370,4 +370,3 @@ struct AnotherPageTemplate;
 ## 다음 단계
 
 오늘은 여기까지입니다! 다음 세그먼트에서는 네비게이션 기능을 통합하고 간단한 앱을 향상시키기 위해 몇 가지 흥미로운 htmx 기능을 구현하기 시작할 것입니다. 직접 리포지토리를 다운로드하길 원하시면 여기로 시작할 수 있는 링크가 있습니다. 이 첫 번째 부분이 흥미롭다고 생각되었으면서, 도전적인 문제에 부딪히거나 질문이 있으면 망설이지 말고 문의해 주세요. 다음 시간까지, 감사합니다. 다음 세션에서 뵙겠습니다!
-```

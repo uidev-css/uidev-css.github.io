@@ -52,7 +52,7 @@ FlutterFlow은 Firebase와 Supabase와의 완벽한 통합을 제공하여 강�
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![Image](/assets/img/2024-06-19-FlutterFlowRapidPrototypingforLow-CodeAppDevelopmentTheGoodtheBadandtheFlow_4.png)
 
 # 광범위한 통합
@@ -65,7 +65,7 @@ FlutterFlow는 다음과 같은 기능을 위한 사용 준비 완료 통합 라
 - Mux Livestream: 앱에 라이브 스트리밍 기능을 추가합니다.
 - Gemini AI: 챗봇 및 이미지 인식과 같은 AI 기능을 추가합니다.
 - API 통합 및 클라우드 함수: 외부 서비스 또는 사용자 정의 백엔드 로직과 통합합니다.
-```
+
 
 <div class="content-ad"></div>
 

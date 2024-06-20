@@ -11,7 +11,7 @@ link: "https://medium.com/gitconnected/lesser-known-css-features-that-you-should
 ---
 
 
-```markdown
+
 <img src="/assets/img/2024-06-19-Lesser-KnownCSSFeaturesThatYouShouldLearnNow_0.png" />
 
 WWW(월드 와이드 웹)의 발명은 정보를 전 세계적으로 공유하기 위한 새로운 디지털 시대를 만들어 냈습니다. 초기 WWW는 주요 웹 문서 요소 사이의 기본 스타일을 구분하기 위해 의미론적 HTML 태그를 사용하는 순수 HTML 문서만을 가졌습니다. 이후 CSS가 도입되어 의미론적 HTML 태그를 스타일링하는 간단한 키-값 기반 스타일링 언어로 발전했습니다. CSS는 발전함에 따라 현재 웹 디자이너들은 생산적이고 개발자 친화적인 구문을 사용하여 현대적인 스타일, 애니메이션, 반응형 요소, 그리고 이미지 필터를 만들 수 있습니다.
@@ -19,7 +19,7 @@ WWW(월드 와이드 웹)의 발명은 정보를 전 세계적으로 공유하�
 일반적으로 CSS는 미리 정의된 문자열 값 또는 숫자 값이 들어 있는 많은 전통적인 속성을 제공합니다. 현대 CSS 표준은 기본 키-값 구문을 넘어서 함수 및 중첩된 블록(즉, at-rules)을 제공하며, 또한 현대 CSS 구문은 가상 요소, 가상 클래스, 그리고 선택자 조합을 지원합니다. 이 모든 CSS 기능들은 표준 웹 브라우저에서 깔끔하게 작동하는 사용 가능하고 현대적인 웹사이트를 만들기 위해 개발자의 생산성을 향상시키기 위한 것입니다.
 
 이 글에서는 대부분의 웹 디자이너가 자주 사용하지 않는 몇 가지 CSS 기능을 탐색해 보겠습니다. 덜 알려진 이러한 CSS 기능들을 숙달하여 고품질 디자인 요구 사항에 맞추어 CSS 기능을 최적으로 선택하여 생산적으로 웹사이트를 디자인할 수 있습니다!
-```
+
 
 <div class="content-ad"></div>
 
@@ -85,7 +85,7 @@ h1 { font-size: max(2.2em, 3vw + 1em) }
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![image](https://miro.medium.com/v2/resize:fit:1400/1*vgI9wo0MaP4SriLdBTR3bw.gif)
 
 Utopia fluid design methodology 웹사이트에서 유체 디자인 원칙에 대해 더 읽을 수 있어요.
@@ -93,7 +93,7 @@ Utopia fluid design methodology 웹사이트에서 유체 디자인 원칙에 �
 # CSS Math Stepped Value Functions 사용하기
 
 대부분의 일반 목적 프로그래밍 언어는 일반적인 수학 알고리즘을 구현하기 위한 십진 반올림 함수와 내장된 나머지/모듈로 연산자를 제공합니다. CSS 명세는 여전히 뷰포트 높이를 기반으로 컨테이너 높이를 계산하는 데 사용하는 구식(calc()) 함수가 인기를 얻은 후 더 많은 수학 함수를 소개하기 시작했어요.
-```
+
 
 <div class="content-ad"></div>
 
@@ -118,7 +118,7 @@ Utopia fluid design methodology 웹사이트에서 유체 디자인 원칙에 �
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![Image](https://miro.medium.com/v2/resize:fit:1400/1*IVJjCjbFsDpcMGhr1rh_lQ.gif)
 
 round() 함수는 공식 MDN 문서에 설명된 대로 개발자가 반올림 전략을 사용자 정의할 수 있도록 합니다.
@@ -208,7 +208,7 @@ accent-color 속성을 사용하면 기본 폼 컨트롤의 기본 색상 스키
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![image](https://miro.medium.com/v2/resize:fit:1400/1*TZdvLwHpwHwiK901ozI3jQ.gif)
 
 `accent-color` 속성은 입력 색상을 기반으로 기본 폼 컨트롤의 모든 하위 요소를 업데이트하여 접근 가능한 색상 체계를 생성합니다. 해당 예시에서 보여지는 폼 요소들만을 기준으로 현재 이 기능이 작동합니다.
@@ -231,7 +231,7 @@ CSS는 `accent-color` 속성과 함께 사용할 `color-scheme` 속성을 제공
   }
 }
 ```
-```
+
 
 <div class="content-ad"></div>
 
@@ -274,7 +274,7 @@ CSS 카운터 기능은 CSS 선택자 내에서 증가/감소시킬 수 있는 �
 
 <div class="content-ad"></div>
 
-```markdown
+
 <img src="/assets/img/2024-06-19-Lesser-KnownCSSFeaturesThatYouShouldLearnNow_1.png" />
 
 HTML에는 내장된 정렬된 및 정렬되지 않은 목록 스타일이 있지만 특정 시나리오에서는 처음부터 사용자 정의 스타일을 구현하거나 기존 스타일을 확장해야 할 수 있습니다. @counter-style at-rule을 사용하면 새로운 또는 확장된 목록 스타일을 만들 수 있습니다. 내장된 10진수 목록 스타일 유형을 주변 괄호 추가 및 단일 제로 패딩 사용하여 사용자 정의해야 한다고 가정해 보십시오. CSS 카운터로 이 요구 사항을 구현할 수 있지만 @counter-style을 사용하면 이 기능에 대해 작성해야 하는 CSS 코드를 줄일 수 있습니다.
@@ -301,7 +301,7 @@ HTML에는 내장된 정렬된 및 정렬되지 않은 목록 스타일이 있�
 ```
 
 위의 HTML 코드는 사용자 정의 목록 스타일이 적용된 정렬된 목록을 렌더링하며, 다음 미리보기와 같이 표시됩니다:
-```
+
 
 <div class="content-ad"></div>
 

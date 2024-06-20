@@ -11,7 +11,7 @@ link: "https://medium.com/@mingyang-li/azure-cosmosdb-zod-data-validation-on-ste
 ---
 
 
-```markdown
+
 ![Azure CosmosDB](/assets/img/2024-06-19-AzureCosmosDBZodDataValidationonSteroids_0.png)
 
 데이터베이스 보호 및 Azure 요금 절감
@@ -19,7 +19,7 @@ link: "https://medium.com/@mingyang-li/azure-cosmosdb-zod-data-validation-on-ste
 Azure CosmosDB는 다른 NoSQL 데이터베이스들처럼 훌륭합니다. 빠르고 신뢰할 수 있으며 매우 유연합니다.
 
 그러나 자유는 언제나 대가가 따릅니다. 완전히 스키마 없는 데이터베이스의 경우, 데이터베이스에 들어가는 내용과 데이터를 검색하는 방법에 대해 계산된 결정을 내리게 됩니다. 개발자인 우리에게 책임이 떨어집니다.
-```
+
 
 <div class="content-ad"></div>
 
@@ -45,7 +45,7 @@ await container.item("some-id", "some-id").read();
 - ID 입력이 null 인 경우
 - ID 입력이 빈 문자열인 경우: ""
 - ID 입력에 공백 문자가 포함된 경우: " some-id", "some -id", 또는 "some-id"는 모두 CosmosDB가 허용하지 않는 잘못된 ID입니다.
-- 특별한 사용 사례: ID 입력이 이미 데이터베이스에 적용한 사용자 지정 ID 형식을 준수하지 않는 경우. 예: 모든 ID는 USER-xxx-xxxx-xxxx 등의 형식을 따라야 합니다.```
+- 특별한 사용 사례: ID 입력이 이미 데이터베이스에 적용한 사용자 지정 ID 형식을 준수하지 않는 경우. 예: 모든 ID는 USER-xxx-xxxx-xxxx 등의 형식을 따라야 합니다.
 
 <div class="content-ad"></div>
 
@@ -167,7 +167,7 @@ export const findOnePost = async (
 ```
 
 두 가지 접근 방법이 모두 작동함을 확인할 수 있습니다. 둘 다 Azure CosmosDB 호출 전에 ID 입력의 유효성을 검사합니다.
-```
+
 
 <div class="content-ad"></div>
 
@@ -181,10 +181,9 @@ export const findOnePost = async (
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![Azure CosmosDB Zod Data Validation on Steroids](/assets/img/2024-06-19-AzureCosmosDBZodDataValidationonSteroids_1.png)
 
 데이터베이스를 요청하지 않으면 매우 사소한 것처럼 보일 수 있지만, 모든 달러가 중요합니다. Azure CosmosDB를 쿼리하는 시기, 방법 및 빈도를 신중히 다루면 큰 Azure 송장에서 자신을 보호할 수 있습니다.
 
 생각을 공유하고 댓글을 달아주세요!
-```

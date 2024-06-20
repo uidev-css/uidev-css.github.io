@@ -119,7 +119,7 @@ getTop10: SELECT * FROM book ORDER BY viewCount DESC Limit 10;
 
 코드를 생성한 후 drift가 dart 코드로 DB 도우미 클래스에서 이러한 3가지 메서드를 자동으로 생성할 것입니다.
 
-# 2.3 데이터베이스 도우미 클래스 생성하기```
+# 2.3 데이터베이스 도우미 클래스 생성하기
 
 <div class="content-ad"></div>
 
@@ -192,7 +192,7 @@ getTop10: SELECT * FROM book ORDER BY viewCount DESC Limit 10;
 ```
 
 아래에서 이를 사용할 수 있습니다.
-```  
+
 
 <div class="content-ad"></div>
 
@@ -212,4 +212,3 @@ var topTenBooks = await _bookDB.getTop10().get();
 Drift는 데이터베이스를 관리하는 데 유용합니다. 데이터를 가져오기 위해 사용자 지정 메서드를 생성할 수 있으며 SQL 문을 사용하지 않고 Dart API를 사용할 수도 있습니다. 자세한 내용은 여기에서 확인할 수 있습니다. 여전히 오피서 웹사이트에서 많은 강력한 기능을 찾을 수 있습니다.
 
 이 글이 마음에 드셨다면 .Net Core, Angular 및 기타 기술에 관한 더 많은 이야기를 보려면 Medium에서 팔로우해주세요! 🙂
-```

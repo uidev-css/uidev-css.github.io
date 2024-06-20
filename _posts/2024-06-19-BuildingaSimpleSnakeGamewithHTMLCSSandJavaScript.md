@@ -11,7 +11,7 @@ link: "https://medium.com/@algorhythm2411/building-a-simple-snake-game-with-html
 ---
 
 
-```markdown
+
 ![Game screenshot](/assets/img/2024-06-19-BuildingaSimpleSnakeGamewithHTMLCSSandJavaScript_0.png)
 
 클래식 스네이크 게임을 만드는 것은 JavaScript 기술을 향상시키는 환상적인 방법입니다. 이 튜토리얼에서는 HTML, CSS 및 JavaScript를 사용하여 간단한 스네이크 게임을 만드는 방법을 단계별로 안내해 드리겠습니다.
@@ -19,7 +19,7 @@ link: "https://medium.com/@algorhythm2411/building-a-simple-snake-game-with-html
 여기에서 게임을 확인하실 수 있고, 여기에서 GitHub 저장소를 확인하실 수 있습니다.
 
 # HTML 구조
-```
+
 
 <div class="content-ad"></div>
 
@@ -85,7 +85,7 @@ canvas {
 자, 이제 게임을 기능적으로 만들기 위해 JavaScript에 집중해 봅시다. 게임을 초기화하는 것, 게임 루프를 처리하는 것, 뱀을 그리고 움직이는 것, 음식을 다루는 것, 그리고 게임 오버 조건을 확인하는 것 등이 있습니다.
 
 # 초기 설정
-```
+
 
 <div class="content-ad"></div>
 

@@ -11,7 +11,7 @@ link: "https://medium.com/@enesakbal00/flutter-clean-architecture-part-1-introdu
 ---
 
 
-```markdown
+
 ![image](/assets/img/2024-06-20-FlutterCleanArchitecturePart1Introduction_0.png)
 
 소프트웨어 개발에서는 체계적이고 유지보수 가능한 코드베이스를 유지하는 것이 매우 중요합니다. 이때 Clean Architecture가 등장하여 코드베이스를 모듈식, 독립적이고 테스트 가능한 방식으로 구성하는 데 도움을 줍니다. 이 글에서는 Clean Architecture가 무엇인지, Flutter에서 어떻게 구현하는지, 그리고 프로젝트에 어떤 이점을 가져다 줄 수 있는지 살펴보겠습니다.
@@ -19,7 +19,7 @@ link: "https://medium.com/@enesakbal00/flutter-clean-architecture-part-1-introdu
 커피를 마시고 준비하세요! 오랜 여정이 시작됩니다.
 
 ## Flutter에서 Clean Architecture를 사용해야 하는 이유
-```
+
 
 <div class="content-ad"></div>
 
@@ -41,7 +41,7 @@ link: "https://medium.com/@enesakbal00/flutter-clean-architecture-part-1-introdu
 
 <div class="content-ad"></div>
 
-```
+
 ![이미지](/assets/img/2024-06-20-FlutterCleanArchitecturePart1Introduction_1.png)
 
 코딩을 시작하기 전에 짧게 예제에 대해 설명하겠습니다:
@@ -49,7 +49,7 @@ link: "https://medium.com/@enesakbal00/flutter-clean-architecture-part-1-introdu
 TMDB 플랫폼의 API를 사용하여 기본 영화 애플리케이션을 구축할 예정입니다. 이 응용 프로그램은 API에서 인기 있는 및 최상위 영화 목록을 검색하고 표시할 것입니다. 사용자는 배우 세부 정보를 포함한 영화 정보에 액세스할 수 있습니다.
 
 ![이미지](https://miro.medium.com/v2/resize:fit:600/1*opIWWgVq6ZlP_x5sdV0LDA.gif)
-```
+
 
 <div class="content-ad"></div>
 
@@ -164,7 +164,7 @@ HTTP 요청을 위한 클래스를 만들어 봅시다. DioClient 클래스는 A
 저희 애플리케이션에서는 하나의 API만 사용할 것이므로, Dio를 사용하기 때문에 DioClient라고 이름 짓겠습니다. 애플리케이션이 여러 개의 API와 통신해야 하는 경우, HTTP 요청을 보내는 DioClient와 유사한 클래스가 필요합니다. 이것은 각 네트워크 클래스가 관련된 데이터 원본과 관련되어야 하기 때문입니다.
 
 예를 들어, 영화 데이터에 대해 TMDB API를 사용하고 배우에 대해 BlaBla API를 사용하는 경우, 명명 규칙에 유의해야 합니다. 네이밍의 예시로는 TmdbNetworkManager, BlaBlaClient, CatClient 등이 있을 수 있습니다.
-```
+
 
 <div class="content-ad"></div>
 
@@ -321,7 +321,7 @@ class DioClient {
 
 네트워크 오류 모델을 만들어봅시다. 이 모델은 나쁜 응답 오류가 발생할 때 생성되므로 API에서 오류 메시지를 표시할 수 있습니다.
 
-TMDB API의 오류 모델은 아래와 같습니다.```
+TMDB API의 오류 모델은 아래와 같습니다.
 
 <div class="content-ad"></div>
 
@@ -457,4 +457,3 @@ class DatabaseException extends Equatable implements Exception {
 이제 Clean Architecture에 대해 준비되었습니다.
 
 다음 파트
-```

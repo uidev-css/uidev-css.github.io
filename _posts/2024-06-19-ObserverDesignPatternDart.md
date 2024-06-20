@@ -11,7 +11,7 @@ link: "https://medium.com/@tagizada.nicat/observer-design-pattern-dart-819536fe0
 ---
 
 
-```markdown
+
 <img src="/assets/img/2024-06-19-ObserverDesignPatternDart_0.png" />
 
 옵저버는 행동 디자인 패턴입니다. 우리는 데이터를 변경할 때 객체에 알리는 관찰자 패턴을 사용할 수 있습니다. 객체에게 "앗, 데이터가 변경되었어. 할 일을 해라"고 알립니다. 이는 플러터의 ChangeNotifier와 비슷합니다. 옵저버 패턴에는 Subject와 Observer 두 가지 타입의 클래스가 있습니다. Observer 클래스는 데이터 업데이트를 기다리고 우리의 사용자 정의 로직을 실행할 것입니다. Subject 클래스는 옵저버를 저장하고 데이터를 알림하기 위해 사용됩니다.
@@ -19,7 +19,7 @@ link: "https://medium.com/@tagizada.nicat/observer-design-pattern-dart-819536fe0
 # 시작해보죠
 
 <img src="https://miro.medium.com/v2/resize:fit:1000/1*MRIUs1xCFX0PjO88wG1AxQ.gif" />
-```
+
 
 <div class="content-ad"></div>
 

@@ -105,7 +105,7 @@ link: "https://medium.com/towards-data-science/from-data-scientist-to-ai-develop
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-19-FromDataScientisttoAIDeveloperLessonsBuildingaGenerativeAIWebAppin2023_5.png)
 
 하지만 잠시 후, 웹사이트가 매우 추려지고 현대적인 AI 데모 페이지와 비교했을 때 정말 추악해 보인다는 것을 깨달았어요. 그 부트스트랩 답은 느낌이 덜어져 있었는데, 그것은 수정이 어려운 일종의 미적 고집이었고, 혼동스럽게 명명된 CSS 클래스들에 뒤얽혀 있었어요. 그래서 결국, 다시 한번 용감을 내어 내 프론트 엔드 전체를 Tailwind CSS로 새롭게 만들기로 했죠. 3일이 걸렸어요.
@@ -113,11 +113,11 @@ link: "https://medium.com/towards-data-science/from-data-scientist-to-ai-develop
 ![이미지](/assets/img/2024-06-19-FromDataScientisttoAIDeveloperLessonsBuildingaGenerativeAIWebAppin2023_6.png)
 
 현대적이고 깔끔한 UI를 가진 AI 데모 페이지를 본 적이 있다면, 그들이 Tailwind CSS를 사용한 것일 확률이 매우 높아요.
-```
+
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![2024-06-19-FromDataScientisttoAIDeveloperLessonsBuildingaGenerativeAIWebAppin2023_7.png](/assets/img/2024-06-19-FromDataScientisttoAIDeveloperLessonsBuildingaGenerativeAIWebAppin2023_7.png)
 
 처음에는 Tailwind에 겁을 먹었어요. 그 긴 구성 요소 정의는 암호처럼 보이는 유틸리티 클래스들로 넘쳐나 초보자 친화적이지 않아 보였거든요. Tailwind에는 미리 구성된 구성 요소가 부족하고 유틸리티 클래스를 기억하는 것이 어려울 것으로 생각했어요. 그런데 이는 전혀 사실이 아니었어요! Tailwind CSS로 만들어진 많은 훌륭한 UI 컴포넌트 라이브러리가 있어요. 저는 Flowbite React를 사용했어요(필요한 모든 컴포넌트가 다 들어있어요!)
@@ -125,7 +125,7 @@ link: "https://medium.com/towards-data-science/from-data-scientist-to-ai-develop
 # 데이터 과학 마인드셋의 함정
 
 데이터 과학을 공부하다 보니, 파이썬을 정말 좋아하게 되었어요. 파이썬의 간결하고 강력한 코드 구문이 매력적이었어요. 파이썬의 타입 추론 덕분에 모든 변수에 대해 타입을 정의하는 일에서 벗어날 수 있었어요(이 작업은 특히 자바 같은 기초 컴퓨터 과학 수업에서 만난 언어에서 어려운 작업이었어요).
-```
+
 
 <div class="content-ad"></div>
 

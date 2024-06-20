@@ -36,9 +36,9 @@ default.js 파일은 Next.js에서 전체 페이지 로드 후 슬롯의 활성 
 
 루트 세그먼트부터 슬롯 하위 페이지까지의 동적 라우트 매개변수가 포함된 객체입니다. 예를 들어:
 
-```markdown
+
 | Example                                  | URL        | params                            |
 | ---------------------------------------- | ---------- | --------------------------------- |
 | app/@sidebar/[artist]/default.js         | /zack      | { artist: 'zack' }                |
 | app/@sidebar/[artist]/[album]/default.js | /zack/next | { artist: 'zack', album: 'next' } |
-```
+

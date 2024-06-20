@@ -136,7 +136,7 @@ class _MyAppState extends State<MyApp> {
 
 카메라 컨트롤러 초기화
 
-_CameraAppState 클래스에서 initState 메서드에서 카메라 컨트롤러를 초기화합니다.```
+_CameraAppState 클래스에서 initState 메서드에서 카메라 컨트롤러를 초기화합니다.
 
 <div class="content-ad"></div>
 
@@ -381,7 +381,7 @@ class _CameraAppState extends State<CameraApp> {
 ```
 
 <img src="https://miro.medium.com/v2/resize:fit:592/1*oqIKI2wzNfzOj1IJ-EDmoQ.gif" />
-```
+
 
 <div class="content-ad"></div>
 

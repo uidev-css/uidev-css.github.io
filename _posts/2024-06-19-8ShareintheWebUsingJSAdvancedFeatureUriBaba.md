@@ -38,7 +38,7 @@ const isShareAPIDataValid = (sharingData) => {
 };
 ```
 
-그 다음 단계에서는 navigator.share를 사용하여 휴대폰 앱 목록을 열어서 사용자가 어떤 앱에서든 공유할 수 있도록 합시다.```
+그 다음 단계에서는 navigator.share를 사용하여 휴대폰 앱 목록을 열어서 사용자가 어떤 앱에서든 공유할 수 있도록 합시다.
 
 <div class="content-ad"></div>
 
@@ -81,7 +81,7 @@ if (isBrowserSupport()) {
 ```
 
 ![이미지](/assets/img/2024-06-19-8ShareintheWebUsingJSAdvancedFeatureUriBaba_1.png)
-```
+
 
 <div class="content-ad"></div>
 

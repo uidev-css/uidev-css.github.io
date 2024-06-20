@@ -42,7 +42,7 @@ if (navigator.userAgent.match(/iPhone|Android/i)) {
 ![이미지](/assets/img/2024-06-19-9WhatsappShareintheWebUsingJSAdvancedFeatureUriBaba_1.png)
 
 fe-pilot npm 패키지로 웹 개발을 한 단계 높여보세요! https://github.com/opensrc0/fe-pilot
-```
+
 
 <div class="content-ad"></div>
 

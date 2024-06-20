@@ -35,7 +35,7 @@ link: "https://medium.com/@pomis172/mastering-shapes-and-clipping-in-flutter-7c7
 
 <div class="content-ad"></div>
 
-```markdown
+
 ```js
 DecoratedBox(
   decoration: BoxDecoration( // <- this
@@ -51,7 +51,7 @@ DecoratedBox(
 <img src="/assets/img/2024-06-20-MasteringShapesandClippinginFlutter_0.png" />
 
 대안으로 ShapeDecoration을 사용할 수도 있는데, 이것은 색상, 그림자, 그라디언트의 비슷한 사용자 정의를 제공하지만 주요 차이점은 그 모양 매개변수가 BoxShape 대신 ShapeBorder를 사용한다는 것입니다.
-```
+
 
 <div class="content-ad"></div>
 
@@ -70,7 +70,7 @@ DecoratedBox(
 그럼 ShapeBorder는 정확히 무엇인가요?
 
 구현을 확인하면 좀 더 명확해집니다. OutlinedBorder, StarBorder, BeveledRectangleBorder와 같은 슈퍼클래스들이 있습니다. 이것들은 위젯을 꾸미기 위한 다양한 모양들입니다. 그리고 WidgetStateOutlinedBorder도 있습니다. WidgetStates에 익숙하지 않다면 해당 기사를 읽어보세요.
-```
+
 
 <div class="content-ad"></div>
 
@@ -96,7 +96,7 @@ DecoratedBox(
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-20-MasteringShapesandClippinginFlutter_3.png)
 
 ```js
@@ -141,7 +141,7 @@ class MessageShapeBorder extends OutlinedBorder {
       ..close();
   }
 ```
-```
+
 
 <div class="content-ad"></div>
 
@@ -209,7 +209,7 @@ DecoratedBox(
 
 <div class="content-ad"></div>
 
-```markdown
+
 <img src="/assets/img/2024-06-20-MasteringShapesandClippinginFlutter_5.png" />
 
 안녕하세요! 코닉 섹션의 무게를 AnimatedBuilder를 사용하여 애니메이션할 수 있습니다. 만약 플러터의 애니메이션에 익숙하지 않다면, 꼭 공식 안내서를 읽어보시기를 강력히 추천합니다.
@@ -223,7 +223,7 @@ MessageShapeBorder(
 ```
 
 <img src="https://miro.medium.com/v2/resize:fit:1088/1*AqcXygpWbTcwMHVyDkAf6A.gif" />
-```
+
 
 <div class="content-ad"></div>
 

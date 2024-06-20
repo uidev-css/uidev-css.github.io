@@ -72,7 +72,7 @@ ReactionButton<String>(
 
 4. chat_bubbles
 
-getstream을 사용하여 채팅/메시징 시스템을 구축할 수 있지만, 많은 사람들(저 포함, 앱에 따라 다름)은 자체 시스템을 구축하는 것을 선호할 수 있습니다. chat_bubbles 위젯은 Whatsapp 및 다른 인기있는 앱과 유사한 메시징 시스템을 위한 간단한 Bubble UI를 제공합니다.```
+getstream을 사용하여 채팅/메시징 시스템을 구축할 수 있지만, 많은 사람들(저 포함, 앱에 따라 다름)은 자체 시스템을 구축하는 것을 선호할 수 있습니다. chat_bubbles 위젯은 Whatsapp 및 다른 인기있는 앱과 유사한 메시징 시스템을 위한 간단한 Bubble UI를 제공합니다.
 
 <div class="content-ad"></div>
 

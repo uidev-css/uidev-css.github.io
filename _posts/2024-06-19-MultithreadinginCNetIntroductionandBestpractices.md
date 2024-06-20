@@ -11,7 +11,7 @@ link: "https://medium.com/@codebob75/multithreading-in-c-net-introduction-and-be
 ---
 
 
-```markdown
+
 ![image](/assets/img/2024-06-19-MultithreadinginCNetIntroductionandBestpractices_0.png)
 
 # Agenda
@@ -24,7 +24,7 @@ link: "https://medium.com/@codebob75/multithreading-in-c-net-introduction-and-be
 - Concurrency and parallelism
 - Asynchrony vs Multithreading
 - Benefits of using multithreading in C#
-```
+
 
 <div class="content-ad"></div>
 
@@ -696,7 +696,7 @@ AutoResetEvent를 사용하면 스레드 간 통신을 동기화할 수 있습�
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![ThreadPool](https://miro.medium.com/v2/resize:fit:720/0*9oNxhHqD2tltG8U4.gif)
 
 # IV/ The ThreadPool
@@ -704,7 +704,7 @@ AutoResetEvent를 사용하면 스레드 간 통신을 동기화할 수 있습�
 System.Threading.ThreadPool 클래스는 worker 스레드 풀을 제공합니다. 또한 스레드 풀 스레드를 사용할 수 있습니다.
 
 새 스레드를 생성하는 대신 스레드 풀을 사용하면 기존 스레드를 재사용하여 성능을 향상시킬 수 있습니다.
-```
+
 
 <div class="content-ad"></div>
 
@@ -869,7 +869,7 @@ thread.IsBackground = true;
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![Image](/assets/img/2024-06-19-MultithreadinginCNetIntroductionandBestpractices_22.png)
 
 ## 스레드 컨텍스트
@@ -945,7 +945,7 @@ ThreadLocal<int> threadLocalValue = new ThreadLocal<int>(() => 0);
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-19-MultithreadinginCNetIntroductionandBestpractices_23.png)
 
 ```js
@@ -955,7 +955,7 @@ thread.Name = "Bob Thread";
 ![이미지](/assets/img/2024-06-19-MultithreadinginCNetIntroductionandBestpractices_24.png)
 
 다음과 같이 사용중인 스레드 정보를 얻을 수 있습니다:
-```
+
 
 <div class="content-ad"></div>
 
@@ -967,11 +967,11 @@ ConsoleWriteLine("메인 스레드의 ID: " + Thread.CurrentThread.ManagedThread
 
 ![이미지](/assets/img/2024-06-19-MultithreadinginCNetIntroductionandBestpractices_25.png)
 
-위 내용은 아래 창을 표시합니다.```
+위 내용은 아래 창을 표시합니다.
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-19-MultithreadinginCNetIntroductionandBestpractices_26.png)
 
 # VII/ .Net에서 스레드 작업 추천 방법
@@ -979,7 +979,7 @@ ConsoleWriteLine("메인 스레드의 ID: " + Thread.CurrentThread.ManagedThread
 - Thread.Abort를 사용하지 마세요
 
 해당 스레드에 예외를 throw하는 것과 유사하게 스레드를 강제로 종료시킵니다. 대신 취소 토큰을 사용하세요.
-```
+
 
 <div class="content-ad"></div>
 

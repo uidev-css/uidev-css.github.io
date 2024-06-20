@@ -157,7 +157,7 @@ static const ColorScheme darkColorScheme = ColorScheme(
 
 지금까지 우리는 밝은 테마(light)와 어두운 테마(dark)를 위한 ColorScheme을 설정했어요. 이제 이를 ThemeData에서 어떻게 사용하는지 알아볼게요.
 
-## ThemeData 생성```
+## ThemeData 생성
 
 <div class="content-ad"></div>
 

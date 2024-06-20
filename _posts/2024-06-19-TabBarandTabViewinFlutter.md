@@ -104,15 +104,15 @@ class _HomePageState extends State<HomePage>
 
 <div class="content-ad"></div>
 
-```markdown
+
 위의 코드 스니펫에서 새로운 앱 바를 만들고, 현재 선택된 탭의 인덱스를 사용하여 앱 바의 제목을 추가했습니다. "bottom" 속성에는 앞서 생성한 TabController와 앱에 추가하려는 탭을 함께 포함한 TabBar 위젯을 추가했습니다.
 Tab() 위젯은 해당 탭의 라벨로 사용될 "text" 매개변수를 사용하며, "icon"은 해당 탭에서 아이콘으로 사용할 위젯을 취합니다.
 
 이제 탭이 생성되었으므로, 각 탭에 대한 탭 뷰를 만들어야 합니다. 탭 뷰는 탭을 선택할 때 표시할 보기/화면/위젯입니다. 다음과 같이 TabView() 위젯을 사용하여 Scaffold()의 "body"에 구현할 것입니다.
 
-```
 
-```markdown
+
+
 ```js
 import 'package:flutter/material.dart';
 import 'package:tabview_flutter_module/screens/screen_forth.dart';
@@ -195,7 +195,7 @@ class _HomePageState extends State<HomePage>
   }
 }
 ```
-```
+
 
 <div class="content-ad"></div>
 

@@ -237,7 +237,7 @@ macro class Hello implements ClassDeclarationsMacro {
 
 이 매크로는 macro 수정자를 가진 클래스로 구현되었습니다. ClassDeclarationsMacro를 구현합니다. 이것은 컴파일러에게 해당 매크로가 클래스에 적용될 수 있고 선언을 업데이트할 시간이 되었을 때 실행될 수 있다고 알려줍니다. 매크로가 다양한 코드 엔티티에 적용되어 코드 생성의 다양한 단계에서 실행될 수 있도록 할 수 있는 많은 인터페이스가 있습니다. 제가 명령줄 인수 구문 분석 매크로에 도달하면 해당 내용에 대해 이야기하겠습니다.
 
-이 인터페이스에는 구현해야 하는 buildDeclarationsForClass라는 메서드가 있으며 적절한 시점에 호출됩니다. 이 메서드에 전달되는 매개변수는: ```
+이 인터페이스에는 구현해야 하는 buildDeclarationsForClass라는 메서드가 있으며 적절한 시점에 호출됩니다. 이 메서드에 전달되는 매개변수는: 
 
 <div class="content-ad"></div>
 
@@ -271,7 +271,7 @@ builder.declareInType(
 ```
 
 일부는 마지막에 함께 붙이는 문자열과 식별자 참조의 조합일 수 있습니다. 이 과정에서 모든 식별자는 필요한 접두사와 함께 앞에 붙입니다.
-```
+
 
 <div class="content-ad"></div>
 
@@ -313,7 +313,7 @@ fun main() {
 더 배우기 위해 따라할 수 있는 두 가지 실제 세계 매크로가 있습니다:
 
 ## JsonCodable
-```  
+
 
 <div class="content-ad"></div>
 

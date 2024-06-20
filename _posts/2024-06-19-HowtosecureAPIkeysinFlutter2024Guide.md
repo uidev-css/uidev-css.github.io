@@ -96,19 +96,19 @@ class ProductionSecret implements AppSecret, AppEnvFields {
 
 <div class="content-ad"></div>
 
-```markdown
+
 # dart
 dart run build_runner build
 # flutter
 flutter pub run build_runner build
-```
+
 
 `.gitignore` 파일에 `.env`, `production_secret.dart`, `production_secret.g.dart`를 추가하는 걸 잊지 마세요. 이것들을 깃 저장소에 저장하고 싶지 않을 거예요.
 
 # CI/CD 흐름에서 시크릿 키 사용하는 방법
 
 만약 Github Actions나 CodeMagic와 같은 CI/CD 도구를 사용 중이라면, 이 플랫폼 내에서 키를 안전하게 저장하는 것이 중요합니다. 그리고 워크플로우에서 Envied 파일을 동적으로 생성할 수 있습니다.
-```
+
 
 <div class="content-ad"></div>
 

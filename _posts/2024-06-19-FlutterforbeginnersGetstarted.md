@@ -95,7 +95,7 @@ echo $0
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-19-FlutterforbeginnersGetstarted_6.png)
 
 3. ps 명령어 사용: 터미널을 열고 다음을 입력하세요:
@@ -105,7 +105,7 @@ ps -p $$
 ```
 
 ![이미지](/assets/img/2024-06-19-FlutterforbeginnersGetstarted_7.png)
-```
+
 
 <div class="content-ad"></div>
 
@@ -183,17 +183,17 @@ VS 코드를 사용하여 Flutter를 설치하려면 Visual Studio Code 1.77 이
 
 위치를 선택한 후 다음을 볼 수 있습니다:
 
-```
+
 ![Flutter for beginners - Get started 11](/assets/img/2024-06-19-FlutterforbeginnersGetstarted_11.png)
 
 ![Flutter for beginners - Get started 12](/assets/img/2024-06-19-FlutterforbeginnersGetstarted_12.png)
-```
+
 
 VS Code를 다시 열고 Command + Shift + P를 누른 다음, Flutter: New Project를 선택하세요. 이런 스크린샷과 같은 화면을 볼 때 SDK가 성공적으로 설치된 것입니다.
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-19-FlutterforbeginnersGetstarted_13.png)
 
 # 3. Test drive
@@ -201,7 +201,7 @@ VS Code를 다시 열고 Command + Shift + P를 누른 다음, Flutter: New Proj
 ## 3.1 샘플 Flutter 앱 만들기
 
 VS Code에서 DevTools를 사용하려면 Dart 확장이 필요합니다. 더 쉬운 디버깅을 위해 Flutter 확장도 유용합니다.
-```
+
 
 <div class="content-ad"></div>
 
@@ -218,7 +218,7 @@ VS Code에서 DevTools를 사용하려면 Dart 확장이 필요합니다. 더 �
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-19-FlutterforbeginnersGetstarted_15.png)
 
 7. 프로젝트가 생성되는 동안 기다려주세요. 시간이 조금 걸릴 수 있어요.
@@ -226,7 +226,7 @@ VS Code에서 DevTools를 사용하려면 Dart 확장이 필요합니다. 더 �
 8. lib 폴더 내의 main.dart 파일을 열어주세요. 코드의 각 부분이 무엇을 하는지 이해하려면 main.dart 파일의 주석을 읽어보세요.
 
 # 3.2 예제 애플리케이션 실행하기
-```
+
 
 <div class="content-ad"></div>
 

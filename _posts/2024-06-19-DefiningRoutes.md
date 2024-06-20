@@ -31,7 +31,7 @@ Next.js(넥스트.제이에스)는 파일 시스템을 기반으로 하는 라�
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img2024-06-19-DefiningRoutes_1.png)
 
 이 예시에서 /dashboard/analytics URL 경로는 공개적으로 접근할 수 없습니다. 왜냐하면 해당 페이지에 대응하는 page.js 파일이 없기 때문입니다. 이 폴더는 컴포넌트, 스타일시트, 이미지 또는 다른 동료 파일을 저장하는 데 사용될 수 있습니다.
@@ -39,7 +39,7 @@ Next.js(넥스트.제이에스)는 파일 시스템을 기반으로 하는 라�
 > 참고: 특별한 파일에는 .js, .jsx 또는 .tsx 파일 확장자를 사용할 수 있습니다.
 
 ## UI 생성
-```
+
 
 <div class="content-ad"></div>
 

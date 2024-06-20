@@ -51,7 +51,7 @@ link: "https://medium.com/python-in-plain-english/whats-new-in-flet-v0-23-0-2561
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![](/assets/img/2024-06-19-WhatsnewinFletv0230_3.png)
 
 ## 지도
@@ -59,11 +59,11 @@ link: "https://medium.com/python-in-plain-english/whats-new-in-flet-v0-23-0-2561
 커뮤니티에서 가장 요청이 많은 컨트롤 중 하나였습니다.
 
 이를 통해 앱에 대화형 지도를 추가하고 다양한 유형의 레이어와 마커를 표시하며 사용자 상호작용을 처리하고 더 많은 작업을 할 수 있게 됩니다.
-```
+
 
 <div class="content-ad"></div>
 
-```
+
 ![image](https://miro.medium.com/v2/resize:fit:1200/1*pVc2BkoTHzyI_Ym1JZV8xg.gif)
 
 ## PermissionHandler
@@ -71,7 +71,7 @@ link: "https://medium.com/python-in-plain-english/whats-new-in-flet-v0-23-0-2561
 앱 권한을 관리하며, 다양한 플랫폼에서 권한을 요청하고 확인하는 통합 방법을 제공합니다. 마이크, 위치 및 오디오와 같은 기능의 권한 처리 과정을 단순화하여 앱이 플랫폼별 권한 정책을 준수하도록 합니다.
 
 ![image](/assets/img/2024-06-19-WhatsnewinFletv0230_4.png)
-```
+
 
 <div class="content-ad"></div>
 
@@ -117,7 +117,7 @@ The output of the `flet build` 명령이 예쁘게 표시되었습니다.
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![2024-06-19-WhatsnewinFletv0230_5.png](/assets/img/2024-06-19-WhatsnewinFletv0230_5.png)
 
 - --show-platform-matrix 옵션이 추가되었습니다. 이 옵션을 이용하면 빌드 플랫폼 매트릭스를 포함한 테이블이 표시됩니다. 이 테이블은 "Command" (가능한 빌드 명령어)와 "Platform" (해당 명령어와 함께 사용해야 하는 장치) 열 헤더를 가지고 있습니다.
@@ -125,11 +125,11 @@ The output of the `flet build` 명령이 예쁘게 표시되었습니다.
 ![2024-06-19-WhatsnewinFletv0230_6.png](/assets/img/2024-06-19-WhatsnewinFletv0230_6.png)
 
 - 대상 플랫폼이 장치에서 빌드할 수 없는 경우, 정보를 제공하는 메시지와 함께 빌드 플랫폼 매트릭스가 포함된 테이블이 표시됩니다.
-```
+
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-19-WhatsnewinFletv0230_7.png)
 
 # 중요 변경 사항
@@ -138,7 +138,7 @@ The output of the `flet build` 명령이 예쁘게 표시되었습니다.
 
 다음 속성은 이제 해당 클래스의 인스턴스를 생성할 때 "필수"로 지정되어 있습니다(제공되고 보이기 위해 필요함):
 
-```
+
 
 <div class="content-ad"></div>
 
@@ -195,7 +195,7 @@ pip install flet --upgrade
 
 이 모든 것은 활기찬 Flet 커뮤니티 덕분에 가능한 것입니다!
 
-문제가 발생하거나 궁금한 점이 있으면 Flet Discord 서버에 참여하거나 Flet의 GitHub 리포지토리에서 새로운 토론을 열어보세요.```
+문제가 발생하거나 궁금한 점이 있으면 Flet Discord 서버에 참여하거나 Flet의 GitHub 리포지토리에서 새로운 토론을 열어보세요.
 
 <div class="content-ad"></div>
 

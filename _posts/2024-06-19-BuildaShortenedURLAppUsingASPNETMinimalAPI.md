@@ -111,7 +111,7 @@ dotnet run
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![2024-06-19-BuildaShortenedURLAppUsingASPNETMinimalAPI_6](/assets/img/2024-06-19-BuildaShortenedURLAppUsingASPNETMinimalAPI_6.png)
 
 ![2024-06-19-BuildaShortenedURLAppUsingASPNETMinimalAPI_7](/assets/img/2024-06-19-BuildaShortenedURLAppUsingASPNETMinimalAPI_7.png)
@@ -119,7 +119,7 @@ dotnet run
 ![2024-06-19-BuildaShortenedURLAppUsingASPNETMinimalAPI_8](/assets/img/2024-06-19-BuildaShortenedURLAppUsingASPNETMinimalAPI_8.png)
 
 ASP.NET Minimal API를 사용하여 URL 단축기를 만드는 것은 현대의 웹 개발 도구의 강력함과 효율성을 보여줍니다. 최소한의 부가 코드와 간단한 구성으로 ASP.NET Minimal API를 사용하면 신속하게 기능적이고 확장 가능한 애플리케이션을 생성할 수 있습니다. 이 튜토리얼에서는 프로젝트 설정, 필요한 모델 정의, 엔드포인트 생성 및 MSSQL 데이터베이스에서 URL 매핑 처리하는 것을 안내했습니다.
-```
+
 
 <div class="content-ad"></div>
 

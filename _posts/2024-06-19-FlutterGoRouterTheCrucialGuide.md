@@ -11,7 +11,7 @@ link: "https://medium.com/@vimehraa29/flutter-go-router-the-crucial-guide-41dc61
 ---
 
 
-```markdown
+
 ![FlutterGoRouter](/assets/img/2024-06-19-FlutterGoRouterTheCrucialGuide_0.png)
 
 Go_router은 Flutter에서 라우팅을 위한 서드 파티 패키지로, 기본 플러터 라우팅 옵션보다 더 유연하고 사용하기 쉬운 솔루션을 제공하기 위해 만들어졌습니다. 라우트가 어떻게 정의되고 관리되는지에 대해 더 많은 제어를 원하는 경우 유용할 수 있습니다. 또한 웹에 대한 좋은 지원을 제공하기 때문에 애플리케이션에 좋은 선택일 수 있습니다.
@@ -19,7 +19,7 @@ Go_router은 Flutter에서 라우팅을 위한 서드 파티 패키지로, 기�
 URL 패턴을 정의하고, URL을 사용하여 탐색하며, 딥 링크를 처리하고, 기타 여러 네비게이션 관련 시나리오를 다룰 수 있습니다.
 
 # 특징
-```
+
 
 <div class="content-ad"></div>
 
@@ -395,4 +395,3 @@ GoRouter(
 ```
 
 이벤트가 발생하면 내비게이터에 알림이 전달됩니다.
-```

@@ -87,7 +87,7 @@ Step 3: IIS로 프로젝트 배포하기
 
 <div class="content-ad"></div>
 
-```
+
 ![Step 1](/assets/img/2024-06-19-AStep-by-StepGuidetoDeployingYourASPNETProjectinIIS_5.png)
 
 - 그런 다음 서버 이름을 마우스 오른쪽 버튼으로 클릭한 후 웹 사이트 추가를 클릭하세요.
@@ -95,11 +95,11 @@ Step 3: IIS로 프로젝트 배포하기
 ![Step 2](/assets/img/2024-06-19-AStep-by-StepGuidetoDeployingYourASPNETProjectinIIS_6.png)
 
 - 웹 사이트 이름을 지정하고 애플리케이션 빌드가 배치된 물리적 경로를 제공하세요(예: C:\inetpub\wwwroot\MyAspNetApp).
-```
+
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![A Step-by-Step Guide to Deploying Your ASP.NET Project in IIS 7](/assets/img/2024-06-19-AStep-by-StepGuidetoDeployingYourASPNETProjectinIIS_7.png)
 
 - Give the website host name also.
@@ -107,7 +107,7 @@ Step 3: IIS로 프로젝트 배포하기
 ![A Step-by-Step Guide to Deploying Your ASP.NET Project in IIS 8](/assets/img/2024-06-19-AStep-by-StepGuidetoDeployingYourASPNETProjectinIIS_8.png)
 
 Step 4: Editing the Hosts File to Map IP Address to Hostname
-```
+
 
 <div class="content-ad"></div>
 
@@ -132,7 +132,7 @@ Step 4: Editing the Hosts File to Map IP Address to Hostname
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![Step 1](/assets/img/2024-06-19-AStep-by-StepGuidetoDeployingYourASPNETProjectinIIS_11.png)
 
 Now the application is live in IIS.
@@ -140,7 +140,7 @@ Now the application is live in IIS.
 ![Step 2](/assets/img/2024-06-19-AStep-by-StepGuidetoDeployingYourASPNETProjectinIIS_12.png)
 
 References
-```
+
 
 <div class="content-ad"></div>
 

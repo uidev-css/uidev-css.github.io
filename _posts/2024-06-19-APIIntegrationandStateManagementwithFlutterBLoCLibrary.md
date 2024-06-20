@@ -47,9 +47,9 @@ Flutter Bloc Library를 사용하면 다양한 응용 프로그램 상태를 명
 
 데이터 레이어 구현으로 넘어가기 전에 필요한 종속성을 추가해 봅시다:
 
-```markdown
+
 ![Dependency](/assets/img/2024-06-19-APIIntegrationandStateManagementwithFlutterBLoCLibrary_2.png)
-```
+
 
 HTTP: HTTP 요청을 만들기 위한 구성 가능한 미래 기반 라이브러리입니다.
 
@@ -157,7 +157,7 @@ class ProductLoadedState extends ProductState {
 ```
 
 - Product Empty State: 명시적이고 표현 계층에 로직을 줄이기 위해 상품 조회가 성공했지만 제품 데이터가 비어 있는 상태를 관리합니다. (라인 20)
-- Product Loading Failed State: 제품을 로드하는 중에 오류가 발생한 상태입니다. 이 오류는 HTTP 오류이거나 예외일 수 있습니다. 사용자 경험을 향상시키기 위해 페이지에 친절한 메시지를 표시하여 오류의 원인 또는 요청이 완료되지 않은 이유를 설명하는 것이 좋습니다. 이로 인해 ProductLoadingFailedState는 생성자에서 오류 메시지를 요구합니다. (라인 22)```
+- Product Loading Failed State: 제품을 로드하는 중에 오류가 발생한 상태입니다. 이 오류는 HTTP 오류이거나 예외일 수 있습니다. 사용자 경험을 향상시키기 위해 페이지에 친절한 메시지를 표시하여 오류의 원인 또는 요청이 완료되지 않은 이유를 설명하는 것이 좋습니다. 이로 인해 ProductLoadingFailedState는 생성자에서 오류 메시지를 요구합니다. (라인 22)
 
 <div class="content-ad"></div>
 
@@ -226,7 +226,7 @@ handleExceptionWithMessage() 함수는 발생한 예외에 대한 설명을 반�
 # 3. 프레젠테이션
 
 데이터와 블록 레이어가 준비되어 있으며, 프레젠테이션에는 데이터를 표시하는 위젯이 포함되어 있습니다.
-```
+
 
 <div class="content-ad"></div>
 

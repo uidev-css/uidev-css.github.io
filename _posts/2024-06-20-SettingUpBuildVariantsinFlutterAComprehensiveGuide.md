@@ -215,7 +215,7 @@ android {
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-20-SettingUpBuildVariantsinFlutterAComprehensiveGuide_2.png)
 
 # 단계 6. 다른 플레이버 실행/빌드하기
@@ -223,30 +223,30 @@ android {
 명령줄을 사용하여 원하는 플레이버로 앱을 실행하세요. --flavor 플래그와 -t 플래그를 사용하여 빌드 플레이버와 대상 파일을 지정합니다.
 
 터미널에서 아래의 주석을 사용하세요
-```
+
 
 <div class="content-ad"></div>
 
-```md
+
 flutter run --flavor development -t lib/main.dart // 개발용
 
 flutter run --flavor staging -t lib/main.dart    // 스테이징용
 
 flutter run --flavor production -t lib/main.dart // 프로덕션 또는 릴리스용
-```
+
 
 Android 빌드하려면 터미널에서 다음 주석을 사용하세요
 
-```md
+
 flutter build apk --flavor development -t lib/main.dart
 
 flutter build apk --flavor staging -t lib/main.dart
 
 flutter build apk --flavor production -t lib/main.dart
-```
+
 
 iOS 빌드하려면 터미널에서 다음 주석을 사용하세요
-```  
+
 
 <div class="content-ad"></div>
 
@@ -298,7 +298,7 @@ flutter build ios --flavor production -t lib/main.dart
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![image](/assets/img/2024-06-20-SettingUpBuildVariantsinFlutterAComprehensiveGuide_3.png)
 
 # 결론
@@ -306,7 +306,7 @@ flutter build ios --flavor production -t lib/main.dart
 위의 단계를 따라가면, 플러터 앱에서 여러 빌드 변형을 효율적으로 관리하여 개발, 테스트 및 프로덕션을 위한 다른 환경을 유지하기 쉬워집니다. 이 설정을 통해 각 빌드 변형이 자체 구성 및 리소스를 가질 수 있도록하여 개발 및 배포 프로세스를 더 효율적으로 할 수 있습니다.
 
 의문이나 질문이 있으면 언제든지 연락해 주세요. LinkTree를 통해 저에게 연락할 수 있습니다.
-```
+
 
 <div class="content-ad"></div>
 

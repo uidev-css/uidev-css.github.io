@@ -61,7 +61,7 @@ link: "https://medium.com/cto-as-a-service/the-pure-manifesto-for-web-standards-
 
 <div class="content-ad"></div>
 
-```md
+
 ![이미지](/assets/img/2024-06-19-ThePUREManifestoforWebStandardsbasedDesignSystems_2.png)
 
 가끔은 표준 HTML 구조를 사용하여 흥미로운 사용자 정의 결과를 얻을 수 있습니다. 이는 완전한 의미론적인 응답입니다:
@@ -71,7 +71,7 @@ link: "https://medium.com/cto-as-a-service/the-pure-manifesto-for-web-standards-
 ```
 
 ...약간의 스타일링을 추가하면 멋진 구분선이 될 수 있습니다.
-```
+
 
 <div class="content-ad"></div>
 
@@ -278,7 +278,7 @@ createRenderRoot() {
 
 기본적으로 LitElement 기반의 웹 컴포넌트는 Shadow DOM을 사용하여 렌더링되므로 확장된 HTMLElement 자체를 반환하여 사용을 비활성화해야 합니다!
 
-커스텀 HTML을 출력하고 문서의 전역 스타일과 격리되어야 하는 커스텀 스타일을 사용하는 복잡한 컴포넌트의 경우, 이 아이디어가 좋지만 몇 가지 추가 복잡성을 받아 들여야 합니다:```
+커스텀 HTML을 출력하고 문서의 전역 스타일과 격리되어야 하는 커스텀 스타일을 사용하는 복잡한 컴포넌트의 경우, 이 아이디어가 좋지만 몇 가지 추가 복잡성을 받아 들여야 합니다:
 
 <div class="content-ad"></div>
 

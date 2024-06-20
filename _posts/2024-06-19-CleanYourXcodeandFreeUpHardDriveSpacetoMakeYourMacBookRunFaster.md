@@ -54,7 +54,7 @@ rm -rf *
 ## 3: 사용하지 않는 디바이스
 
 경로: ~/Library/Developer/CoreSimulator/Devices
-```
+
 
 <div class="content-ad"></div>
 

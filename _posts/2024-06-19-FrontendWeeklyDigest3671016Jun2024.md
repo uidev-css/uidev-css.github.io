@@ -11,7 +11,7 @@ link: "https://medium.com/@frontender-ua/frontend-weekly-digest-367-10-16-jun-20
 ---
 
 
-```markdown
+
 ![Frontend Weekly Digest](/assets/img/2024-06-19-FrontendWeeklyDigest3671016Jun2024_0.png)
 
 # 웹 개발
@@ -43,7 +43,7 @@ link: "https://medium.com/@frontender-ua/frontend-weekly-digest-367-10-16-jun-20
 ## 효과
 - SDF 및 WebGL을 사용한 Shape Lens Blur 효과
 - SVG에서 임의 경로 변형
-```
+
 
 
 <div class="content-ad"></div>

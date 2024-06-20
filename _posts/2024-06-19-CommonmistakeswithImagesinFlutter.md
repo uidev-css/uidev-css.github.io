@@ -105,7 +105,7 @@ Image.asset(
 ![Image](/assets/img/2024-06-19-CommonmistakeswithImagesinFlutter_2.png)
 
 # 4. 이미지 에셋을 미리 로드하지 않기
-```
+
 
 <div class="content-ad"></div>
 

@@ -75,7 +75,7 @@ export const Counter = () => {
 - _insert는 값을 채워넣고 반환된 DOM 요소를 부모 DOM 요소에 삽입합니다.
 
 ## 렌더링에서 함수 감싸기
-```
+
 
 <div class="content-ad"></div>
 

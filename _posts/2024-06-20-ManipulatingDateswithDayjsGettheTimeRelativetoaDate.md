@@ -11,7 +11,7 @@ link: "https://medium.com/javascript-in-plain-english/manipulating-dates-with-da
 ---
 
 
-```markdown
+
 ![Day.js로 날짜 조작하기](/assets/img/2024-06-20-ManipulatingDateswithDayjsGettheTimeRelativetoaDate_0.png)
 
 Day.js는 앱에서 날짜를 조작할 수 있게 해주는 JavaScript 라이브러리입니다.
@@ -19,7 +19,7 @@ Day.js는 앱에서 날짜를 조작할 수 있게 해주는 JavaScript 라이�
 이 글에서는 JavaScript 앱에서 Day.js를 사용하여 날짜를 조작하는 방법을 살펴보겠습니다.
 
 # 현재까지의 시간 구하기
-```
+
 
 <div class="content-ad"></div>
 

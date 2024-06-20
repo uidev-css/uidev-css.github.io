@@ -165,4 +165,3 @@ async function fetchData() {
 이러한 기능을 알면 JavaScript 코드를 개선하고 더 읽기 쉽게 만들 수 있습니다.
 
 읽어 주셔서 감사합니다! 즐거운 하루 되세요!
-```

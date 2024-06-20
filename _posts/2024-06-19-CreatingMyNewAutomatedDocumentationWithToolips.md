@@ -45,7 +45,7 @@ end # ChifiDocs <3
 이제 우리는 Julia 측 백엔드를 만들기 시작할 차례입니다.
 
 ## 백엔드
-```  
+
 
 <div class="content-ad"></div>
 
@@ -71,7 +71,7 @@ end
 
 <div class="content-ad"></div>
 
-```markdown
+
 ```js
 abstract type AbstractDocClient end
 
@@ -99,7 +99,7 @@ mutable struct ClientDocLoader <: Toolips.AbstractExtension
     end
 end
 ```
-```
+
 
 이제 이 백엔드에서 프론트엔드를 구축하고 올바른 탭을 클라이언트에 제공해야 합니다. 이 모듈에서 메뉴를 구축하는 `generate_menu`로 시작하겠습니다.
 
@@ -117,7 +117,7 @@ end
 ```
 
 또한 `ClientDocLoader`에 대한 `Toolips.on_start` 바인딩을 추가하여 서버가 시작될 때 단순히 그것을 Connection 데이터로 푸시합니다.
-```
+
 
 <div class="content-ad"></div>
 

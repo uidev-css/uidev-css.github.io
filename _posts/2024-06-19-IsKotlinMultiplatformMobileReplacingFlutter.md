@@ -45,7 +45,7 @@ KMM과 Flutter는 Android와 iOS용 모바일 앱을 하나의 코드베이스�
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![image](/assets/img/2024-06-19-IsKotlinMultiplatformMobileReplacingFlutter_1.png)
 
 ## Shared Powerhouse
@@ -54,7 +54,7 @@ KMM shines in its ability to share code across Android and iOS platforms. This s
 
 - Business Logic: The core logic of your app, like data processing and calculations, can be written in Kotlin and used on both platforms.
 - Data Access: KMM allows you to implement shared code for accessing and managing data, ensuring consistency across platforms.
-```
+
 
 <div class="content-ad"></div>
 

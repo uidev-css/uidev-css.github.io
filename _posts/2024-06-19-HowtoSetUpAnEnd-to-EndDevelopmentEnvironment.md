@@ -87,7 +87,7 @@ mkdir workspace && cd workspace && bit init
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-19-HowtoSetUpAnEnd-to-EndDevelopmentEnvironment_1.png)
 
 이렇게 하면이 작업 공간에서 만드는 모든 구성 요소가 기본적으로 지정된 범위에서 유지됩니다.
@@ -95,7 +95,7 @@ mkdir workspace && cd workspace && bit init
 사실, 빈 디렉토리만 보게 될 것입니다:
 
 ![이미지](/assets/img/2024-06-19-HowtoSetUpAnEnd-to-EndDevelopmentEnvironment_2.png)
-```
+
 
 <div class="content-ad"></div>
 
@@ -128,7 +128,7 @@ bit create react-env envs/react-mui --aspect teambit.react/react-env
 
 ![이미지](/assets/img/2024-06-19-HowtoSetUpAnEnd-to-EndDevelopmentEnvironment_4.png)
 
-`env.jsonc` 파일을 열어봅시다. 이 파일은 환경에 대한 모든 종속성을 처리하는 파일입니다. 따라서 이 환경을 사용하는 모든 구성요소는 여기에서 정의한 종속성을 사용할 수 있습니다.```
+`env.jsonc` 파일을 열어봅시다. 이 파일은 환경에 대한 모든 종속성을 처리하는 파일입니다. 따라서 이 환경을 사용하는 모든 구성요소는 여기에서 정의한 종속성을 사용할 수 있습니다.
 
 <div class="content-ad"></div>
 
@@ -273,7 +273,7 @@ bit create node-env envs/node-environment --aspect bitdev.node/node-env
 
 ![2024-06-19-HowtoSetUpAnEnd-to-EndDevelopmentEnvironment_9.png](/assets/img/2024-06-19-HowtoSetUpAnEnd-to-EndDevelopmentEnvironment_9.png)
 
-## 단계 05: 환경을 사용하여 Node.js 컴포넌트 빌드하기```
+## 단계 05: 환경을 사용하여 Node.js 컴포넌트 빌드하기
 
 <div class="content-ad"></div>
 
@@ -291,12 +291,12 @@ bit create node services/fetcher --env envs/node-environment
 
 아래는 Markdown 형식으로 표현한 표입니다.
 
-```markdown
+
 | 열1 | 열2 | 열3 |
 |-----|-----|-----|
 | 항목1 | 항목2 | 항목3 |
 | 내용1 | 내용2 | 내용3 |
-```
+
 
 <div class="content-ad"></div>
 

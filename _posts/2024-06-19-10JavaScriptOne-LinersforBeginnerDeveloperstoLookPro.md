@@ -13,7 +13,7 @@ link: "https://medium.com/@pinjarirehan/10-javascript-one-liners-for-beginner-de
 
 이미지 태그를 수정하여 마크다운 형식으로 변환해보세요.
 
-```markdown
+
 ![image](/assets/img/2024-06-19-10JavaScriptOne-LinersforBeginnerDeveloperstoLookPro_0.png)
 
 코딩을 하고 있는데 다른 사람이 들어와서 한 줄의 JavaScript로 문제를 해결할 때가 있나요? 마치 코딩 마술 같은 느낌이죠.
@@ -21,7 +21,7 @@ link: "https://medium.com/@pinjarirehan/10-javascript-one-liners-for-beginner-de
 이것이 원라이너의 힘입니다. 이러한 짧은 코드 스니펫은 매우 효과적일 수 있으며, 자바스크립트 프로처럼 느끼게 할 수 있습니다.
 
 하지만 코드의 모든 부분에 원라이너를 넣기 전에, 함께 알아보겠습니다.
-```
+
 
 <div class="content-ad"></div>
 
@@ -190,7 +190,7 @@ in 연산자는 객체 내에 속성이 존재하는지 확인합니다. 여기�
 사용 시기: 객체 내에서 지정된 속성의 존재 여부에 따라 데이터를 유효성 검사하는 것은 일상적인 상황입니다. 이 1줄짜리 코드는 간단한 해결책을 제공합니다.
 
 # 8. 기본 매개변수 값
-```
+
 
 <div class="content-ad"></div>
 
@@ -262,8 +262,7 @@ JavaScript 개념을 더 깊이 파고들고 새로운 코딩 모험에 나서�
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![image 1](/assets/img/2024-06-19-10JavaScriptOne-LinersforBeginnerDeveloperstoLookPro_1.png)
 
 ![image 2](/assets/img/2024-06-19-10JavaScriptOne-LinersforBeginnerDeveloperstoLookPro_2.png)
-```

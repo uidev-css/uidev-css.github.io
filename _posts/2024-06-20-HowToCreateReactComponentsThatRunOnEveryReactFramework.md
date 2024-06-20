@@ -51,7 +51,7 @@ Bit를 성공적으로 설치했다면, 아래와 같은 출력이 표시될 것
 
 ![Bit Version Output](/assets/img/2024-06-20-HowToCreateReactComponentsThatRunOnEveryReactFramework_1.png)
 
-다음으로, Bit Cloud에 계정을 만들어야 합니다. Bit Cloud를 사용하면 원격 scope에 컴포넌트를 호스팅할 수 있어 다른 프로젝트가 구축 중인 컴포넌트 라이브러리를 사용할 수 있습니다.```
+다음으로, Bit Cloud에 계정을 만들어야 합니다. Bit Cloud를 사용하면 원격 scope에 컴포넌트를 호스팅할 수 있어 다른 프로젝트가 구축 중인 컴포넌트 라이브러리를 사용할 수 있습니다.
 
 <div class="content-ad"></div>
 
@@ -97,7 +97,7 @@ mkdir workspace && cd workspace && bit init
 
 다음으로 특별한 작업을 수행할 것입니다. "환경"을 만들어봅시다. 이 환경은 독립적인 개발을 가능하게 합니다. 현재 당신의 작업 공간은 어떤 프레임워크와도 묶여 있지 않습니다. 당신의 작업 공간에서는 Node.js, Angular, Vue.js, Stencil, React.js 및 더 많은 컴포넌트를 개발할 수 있습니다.
 
-그러니 React 환경을 만들어봅시다. 아래 명령어를 실행하세요:```
+그러니 React 환경을 만들어봅시다. 아래 명령어를 실행하세요:
 
 <div class="content-ad"></div>
 
@@ -110,7 +110,7 @@ bit create react-env envs/react-18 --aspect teambit.react/react-env
 환경을 만든 후에는 새로운 환경을 기반으로 하는 모든 컴포넌트를 생성할 수 있습니다.
 
 # 단계 03: 모든 프레임워크에서 사용할 수 있는 React 컴포넌트 작성하기
-```
+
 
 <div class="content-ad"></div>
 
@@ -199,7 +199,7 @@ export const BasicImage = () => {
 <img src="/assets/img/2024-06-20-HowToCreateReactComponentsThatRunOnEveryReactFramework_7.png" />
 
 그저 그런 것뿐이에요. 다음으로 해당 명령어를 사용하여 원격 범위로 공유할 수 있어요: 
-```
+
 
 <div class="content-ad"></div>
 
@@ -244,12 +244,12 @@ bit create nextjs apps/my-nextjs-app --aspect frontend.nextjs/nextjs-env
 
 다음으로, Markdown 포맷으로 표 태그를 변경해보세요.
 
-```markdown
+
 | 작업 | 비고 |
 |------|------|
 | A    | B    |
 | C    | D    |
-```
+
 
 <div class="content-ad"></div>
 

@@ -11,7 +11,7 @@ link: "https://medium.com/@thomasmiddel/is-kotlin-multiplatform-killing-flutter-
 ---
 
 
-```markdown
+
 <img src="https://miro.medium.com/v2/resize:fit:1400/1*9tMerLCXlni2rnhmZXZKRQ.gif" />
 
 현재 크로스 플랫폼 솔루션의 옵션들은 무수히 많습니다. 솔직히 말해서, 옳고 그른 것은 없죠. KMP와 Compose은 플러터에게 심각한 위협으로 보입니다. 하지만 걱정해야 할 문제인지, 또는 그들이 공존할 수 있는 중요한 차이가 있는지에 대해 이야기해 봐야 할 것 같습니다.
@@ -19,7 +19,7 @@ link: "https://medium.com/@thomasmiddel/is-kotlin-multiplatform-killing-flutter-
 언제나 그런 질문 중 하나죠: "왜 플러터를 선택해야 하나요?", "플러터가 ...보다 뛰어나나요?" 그리고 항상 다음과 같이 친절히 말씀드리겠습니다. (아니, Ionic이나 Cordova와 같은 웹 기반 프레임워크를 선택하지 않는 한) 옳고 그른 대답은 없다는 거 말이죠. (모바일 개발이라고 부를 수 있을까요?)
 
 저는 플러터를 좋아하지만, 만약 그게 무리하다면 강요하지는 않을 거에요. 이미 존재하는 제품, 기술 스택, 팀, 또는 스킬셋을 고려해보면 React Native와 같은 것을 사용하는 것이 더 합리적일 수 있어요. 그렇지 않으면 플러터 지식을 가진 새로운 개발자를 고용해야 하거나, 기존 팀에 교육을 받게 해야 하거나, 혹은 직접 공부를 해야 할 수도 있어요. 재미있긴 하지만, 비즈니스적으로 항상 합당한 이유는 아니거든요.
-```
+
 
 <div class="content-ad"></div>
 

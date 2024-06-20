@@ -100,7 +100,7 @@ var devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
 
 - 설명: textScaleFactor는 사용자 기호를 존중하기 위해 텍스트에 적용된 스케일링 팩터를 나타냅니다.
 - 사용법: 텍스트 크기가 사용자의 접근성 설정과 일치하도록 보장합니다.
-- 예시:```
+- 예시:
 
 <div class="content-ad"></div>
 
@@ -121,7 +121,7 @@ bool isDarkMode = brightness == Brightness.dark;
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![Image](/assets/img/2024-06-19-AComprehensiveMediaQueryGuide_3.png)
 
 - 설명: 패딩 속성은 시스템 UI가 차지할 수 있는 영역에 대한 여백을 제공합니다. 예를 들어, 상태 표시줄, 노치 또는 특정 기기의 하단 영역 등이 포함됩니다.
@@ -135,7 +135,7 @@ var bottomPadding = padding.bottom;
 ```
 
 ![Image](/assets/img/2024-06-19-AComprehensiveMediaQueryGuide_4.png)
-```  
+
 
 <div class="content-ad"></div>
 
@@ -160,7 +160,7 @@ var bottomViewPadding = viewPadding.bottom;
 
 <div class="content-ad"></div>
 
-```markdown
+
 ![이미지](/assets/img/2024-06-19-AComprehensiveMediaQueryGuide_5.png)
 
 - 설명: orientation 속성은 기기가 현재 세로 모드 또는 가로 모드인지를 나타냅니다.
@@ -173,7 +173,7 @@ bool isPortrait = orientation == Orientation.portrait;
 ```
 
 # MediaQuery와 LayoutBuilder의 결합
-```
+
 
 <div class="content-ad"></div>
 
