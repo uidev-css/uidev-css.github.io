@@ -1,0 +1,421 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><title>GetX로 API 통합하기 Flutter를 이용한 쉬운 방법 | uidev-css</title><meta name="description" content=""/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:url" content="https://uidev-css.github.io///post/2024-06-22-APIIntegrationusingGetXinflutter" data-gatsby-head="true"/><meta property="og:type" content="website" data-gatsby-head="true"/><meta property="og:site_name" content="GetX로 API 통합하기 Flutter를 이용한 쉬운 방법 | uidev-css" data-gatsby-head="true"/><meta property="og:title" content="GetX로 API 통합하기 Flutter를 이용한 쉬운 방법 | uidev-css" data-gatsby-head="true"/><meta property="og:description" content="" data-gatsby-head="true"/><meta property="og:image" content="/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_0.png" data-gatsby-head="true"/><meta property="og:locale" content="en_US" data-gatsby-head="true"/><meta name="twitter:card" content="summary_large_image" data-gatsby-head="true"/><meta property="twitter:domain" content="https://uidev-css.github.io/" data-gatsby-head="true"/><meta property="twitter:url" content="https://uidev-css.github.io///post/2024-06-22-APIIntegrationusingGetXinflutter" data-gatsby-head="true"/><meta name="twitter:title" content="GetX로 API 통합하기 Flutter를 이용한 쉬운 방법 | uidev-css" data-gatsby-head="true"/><meta name="twitter:description" content="" data-gatsby-head="true"/><meta name="twitter:image" content="/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_0.png" data-gatsby-head="true"/><meta name="twitter:data1" content="Dev | uidev-css" data-gatsby-head="true"/><meta name="article:published_time" content="2024-06-22 04:13" data-gatsby-head="true"/><meta name="next-head-count" content="19"/><meta name="google-site-verification" content="a-yehRo3k3xv7fg6LqRaE8jlE42e5wP2bDE_2F849O4"/><link rel="stylesheet" href="/favicons/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png"/><link rel="icon" href="/favicons/apple-icon-180x180.png"/><link rel="apple-touch-icon" href="/favicons/apple-icon-180x180.png"/><link rel="apple-touch-startup-image" href="/startup.png"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="msapplication-config" content="/favicons/browserconfig.xml"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BHFR6GTH9P"></script><script>window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-BHFR6GTH9P');</script><link rel="preload" href="/_next/static/css/6e57edcf9f2ce551.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6e57edcf9f2ce551.css" data-n-g=""/><link rel="preload" href="/_next/static/css/b8ef307c9aee1e34.css" as="style"/><link rel="stylesheet" href="/_next/static/css/b8ef307c9aee1e34.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-ee6df16fdc6dae4d.js" defer=""></script><script src="/_next/static/chunks/framework-46611630e39cfdeb.js" defer=""></script><script src="/_next/static/chunks/main-cf4a52eec9a970a0.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6fae11262ee5c69b.js" defer=""></script><script src="/_next/static/chunks/75fc9c18-4a646156c659a948.js" defer=""></script><script src="/_next/static/chunks/348-d11c34b645b13f5b.js" defer=""></script><script src="/_next/static/chunks/162-4172e84c8e2aa747.js" defer=""></script><script src="/_next/static/chunks/pages/post/%5Bslug%5D-b75a4bf98ee956a8.js" defer=""></script><script src="/_next/static/ANQ7dDegvQhf-pl2SqBlQ/_buildManifest.js" defer=""></script><script src="/_next/static/ANQ7dDegvQhf-pl2SqBlQ/_ssgManifest.js" defer=""></script></head><body><div id="__next"><header class="Header_header__Z8PUO"><div class="Header_inner__tfr0u"><strong class="Header_title__Otn70"><a href="/">UIDEV CSS</a></strong><nav class="Header_nav_area__6KVpk"><a class="nav_item" href="/posts/1">Posts</a></nav></div></header><main class="posts_container__NyRU3"><div class="posts_inner__i3n_i"><h1 class="posts_post_title__EbxNx">GetX로 API 통합하기 Flutter를 이용한 쉬운 방법</h1><div class="posts_meta__cR7lu"><div class="posts_profile_wrap__mslMl"><div class="posts_profile_image_wrap__kPikV"><img alt="GetX로 API 통합하기 Flutter를 이용한 쉬운 방법" loading="lazy" width="44" height="44" decoding="async" data-nimg="1" class="profile" style="color:transparent" src="/favicons/apple-icon-114x114.png"/></div><div class="posts_textarea__w_iKT"><span class="writer">UIDEV CSS</span><span class="posts_info__5KJdN"><span class="posts_date__ctqHI">Posted On Jun 22, 2024</span><span class="posts_reading_time__f7YPP">12<!-- --> min read</span></span></div></div><img alt="" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" class="posts_view_badge__tcbfm" style="color:transparent" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fallround-coder.github.io/post/2024-06-22-APIIntegrationusingGetXinflutter&amp;count_bg=%2379C83D&amp;title_bg=%23555555&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=views&amp;edge_flat=false"/></div><article class="posts_post_content__n_L6j"><div><!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+</head>
+<body>
+<p><img src="/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_0.png" alt="APIIntegrationusingGetXinflutter"></p>
+<p>플러터에서 API 통합은 앱과 외부 서비스 간의 데이터 통신을 활성화하여 동적이고 실시간이며 확장 가능한 기능을 제공하고 서로 다른 플랫폼 간에 일관된 경험을 제공하는 데 중요합니다.</p>
+<p>API 통합은 플러터 애플리케이션이 외부 서비스와 상호 작용하고 데이터를 검색하고 다양한 기능을 수행할 수 있도록 가능하게 합니다. 다음은 플러터 개발에서 API 통합이 중요하게 간주되는 몇 가지 이유입니다:</p>
+<ul>
+<li>데이터 검색: 대부분의 애플리케이션은 데이터베이스, 서버 또는 제3자 서비스와 같은 외부 소스에서 데이터를 필요로합니다. API 통합을 통해 플러터 앱이 이러한 데이터를 동적으로 가져와 표시하므로 사용자가 항상 최신 정보에 액세스할 수 있습니다.</li>
+<li>실시간 업데이트: API를 사용하면 클라이언트(플러터 앱)와 서버 간의 실시간 통신이 가능해집니다. 이는 메시징 앱, 협업 도구 또는 실시간 데이터 피드와 같은 실시간 업데이트가 필요한 애플리케이션에 중요합니다.</li>
+<li>오프라인 지원: API는 장치에 로컬로 정보를 캐싱하여 오프라인 데이터 액세스를 지원할 수 있도록 설계될 수 있습니다. 이는 일시적이거나 인터넷 연결이 없는 환경에서 기능해야 하는 애플리케이션에 중요합니다.</li>
+<li>보안: API는 종종 인증 메커니즘을 통합하여 특정 데이터에만 인가된 사용자만이 액세스하거나 특정 작업을 수행할 수 있도록합니다. 이는 응용프로그램 및 데이터의 보안 유지에 도움이 됩니다.</li>
+</ul>
+<h2>Android Studio에 JsonToDart 플러그인 설치하기</h2>
+<p>플러그인: <a href="https://plugins.jetbrains.com/plugin/12562-jsontodart-json-to-dart-" rel="nofollow" target="_blank">JsonToDart</a></p>
+<h2>HTTP 패키지 추가하기</h2>
+<p>HTTP 요청을 하기 위해 pubspec.yaml 파일에 http 패키지를 추가하고 flutter pub get을 실행하세요.</p>
+<h2>Getx 패키지 추가하기</h2>
+<p>GetX는 플러터를 위한 가벼우면서 강력한 솔루션입니다. 높은 성능의 상태 관리, 지능적인 의존성 주입, 빠르고 실용적인 라우트 관리를 결합하고 있습니다. GetX를 사용하려면 flutter pub add get 명령어를 실행하세요.</p>
+<h2>main.dart 파일에 GetMaterialApp 추가하기</h2>
+<pre><code class="hljs language-dart"><span class="hljs-keyword">import</span> <span class="hljs-string">'package:flutter/material.dart'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'package:get/get.dart'</span>; <span class="hljs-comment">// Get 패키지 가져오기</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'UserListScreens.dart'</span>; <span class="hljs-comment">// 화면 파일 import하기</span>
+
+<span class="hljs-keyword">void</span> main() {
+  runApp(<span class="hljs-keyword">const</span> MyApp());
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyApp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
+  <span class="hljs-keyword">const</span> MyApp({Key key}) : <span class="hljs-keyword">super</span>(key: key);
+
+  <span class="hljs-meta">@override</span>
+  Widget build(BuildContext context) {
+    <span class="hljs-keyword">return</span> GetMaterialApp(
+      debugShowCheckedModeBanner: <span class="hljs-keyword">false</span>,
+      title: <span class="hljs-string">'Flutter Demo'</span>,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(primary: Colors.deepPurple), <span class="hljs-comment">// 주요 색상 deepPurple로 설정</span>
+        useMaterial3: <span class="hljs-keyword">false</span>,
+      ),
+      home: <span class="hljs-keyword">const</span> UserListScreen(), <span class="hljs-comment">// 처음 화면으로 UserListScreen 표시</span>
+    );
+  }
+}
+</code></pre>
+<h2>APIConstant 클래스 생성</h2>
+<pre><code class="hljs language-dart"><span class="hljs-keyword">import</span> <span class="hljs-string">'dart:io'</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">APIConstant</span> </span>{
+  
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> url = <span class="hljs-string">'https://reqres.in/api/users?page=2'</span>;
+
+  <span class="hljs-keyword">static</span> <span class="hljs-built_in">Map</span>&#x3C;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span>> authHeader = {
+    HttpHeaders.contentTypeHeader: <span class="hljs-string">'application/json; charset=UTF-8'</span>
+  };
+
+}
+</code></pre>
+<h2>UserModels 클래스 생성</h2>
+<pre><code class="hljs language-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserModels</span> </span>{
+  UserModels({
+    <span class="hljs-built_in">num?</span> page, 
+    <span class="hljs-built_in">num?</span> perPage, 
+    <span class="hljs-built_in">num?</span> total, 
+    <span class="hljs-built_in">num?</span> totalPages, 
+    <span class="hljs-built_in">List</span>&#x3C;Data>? data, 
+    Support? support,
+  }) {
+    _page = page;
+    _perPage = perPage;
+    _total = total;
+    _totalPages = totalPages;
+    _data = data;
+    _support = support;
+  }
+
+  UserModels.fromJson(<span class="hljs-built_in">dynamic</span> json) {
+    _page = json[<span class="hljs-string">'page'</span>];
+    _perPage = json[<span class="hljs-string">'per_page'</span>];
+    _total = json[<span class="hljs-string">'total'</span>];
+    _totalPages = json[<span class="hljs-string">'total_pages'</span>];
+    <span class="hljs-keyword">if</span> (json[<span class="hljs-string">'data'</span>] != <span class="hljs-keyword">null</span>) {
+      _data = [];
+      json[<span class="hljs-string">'data'</span>].forEach((v) {
+        _data?.add(Data.fromJson(v));
+      });
+    }
+    _support = json[<span class="hljs-string">'support'</span>] != <span class="hljs-keyword">null</span> ? Support.fromJson(json[<span class="hljs-string">'support'</span>]) : <span class="hljs-keyword">null</span>;
+  }
+
+  <span class="hljs-built_in">num?</span> _page;
+  <span class="hljs-built_in">num?</span> _perPage;
+  <span class="hljs-built_in">num?</span> _total;
+  <span class="hljs-built_in">num?</span> _totalPages;
+  <span class="hljs-built_in">List</span>&#x3C;Data>? _data;
+  Support? _support;
+
+  UserModels copyWith({
+    <span class="hljs-built_in">num?</span> page,
+    <span class="hljs-built_in">num?</span> perPage,
+    <span class="hljs-built_in">num?</span> total,
+    <span class="hljs-built_in">num?</span> totalPages,
+    <span class="hljs-built_in">List</span>&#x3C;Data>? data,
+    Support? support,
+  }) => UserModels(  
+    page: page ?? _page,
+    perPage: perPage ?? _perPage,
+    total: total ?? _total,
+    totalPages: totalPages ?? _totalPages,
+    data: data ?? _data,
+    support: support ?? _support,
+  );
+
+  <span class="hljs-built_in">num?</span> <span class="hljs-keyword">get</span> page => _page;
+  <span class="hljs-built_in">num?</span> <span class="hljs-keyword">get</span> perPage => _perPage;
+  <span class="hljs-built_in">num?</span> <span class="hljs-keyword">get</span> total => _total;
+  <span class="hljs-built_in">num?</span> <span class="hljs-keyword">get</span> totalPages => _totalPages;
+  <span class="hljs-built_in">List</span>&#x3C;Data>? <span class="hljs-keyword">get</span> data => _data;
+  Support? <span class="hljs-keyword">get</span> support => _support;
+
+  <span class="hljs-built_in">Map</span>&#x3C;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">dynamic</span>> toJson() {
+    <span class="hljs-keyword">final</span> map = &#x3C;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">dynamic</span>>{};
+    map[<span class="hljs-string">'page'</span>] = _page;
+    map[<span class="hljs-string">'per_page'</span>] = _perPage;
+    map[<span class="hljs-string">'total'</span>] = _total;
+    map[<span class="hljs-string">'total_pages'</span>] = _totalPages;
+    <span class="hljs-keyword">if</span> (_data != <span class="hljs-keyword">null</span>) {
+      map[<span class="hljs-string">'data'</span>] = _data?.map((v) => v.toJson()).toList();
+    }
+    <span class="hljs-keyword">if</span> (_support != <span class="hljs-keyword">null</span>) {
+      map[<span class="hljs-string">'support'</span>] = _support?.toJson();
+    }
+    <span class="hljs-keyword">return</span> map;
+  }
+
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Support</span> </span>{
+  Support({
+    <span class="hljs-built_in">String?</span> url,
+    <span class="hljs-built_in">String?</span> text,
+  }) {
+    _url = url;
+    _text = text;
+  }
+
+  Support.fromJson(<span class="hljs-built_in">dynamic</span> json) {
+    _url = json[<span class="hljs-string">'url'</span>];
+    _text = json[<span class="hljs-string">'text'</span>];
+  }
+
+  <span class="hljs-built_in">String?</span> _url;
+  <span class="hljs-built_in">String?</span> _text;
+
+  Support copyWith({
+    <span class="hljs-built_in">String?</span> url,
+    <span class="hljs-built_in">String?</span> text,
+  }) => Support(  
+    url: url ?? _url,
+    text: text ?? _text,
+  );
+
+  <span class="hljs-built_in">String?</span> <span class="hljs-keyword">get</span> url => _url;
+  <span class="hljs-built_in">String?</span> <span class="hljs-keyword">get</span> text => _text;
+
+  <span class="hljs-built_in">Map</span>&#x3C;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">dynamic</span>> toJson() {
+    <span class="hljs-keyword">final</span> map = &#x3C;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">dynamic</span>>{};
+    map[<span class="hljs-string">'url'</span>] = _url;
+    map[<span class="hljs-string">'text'</span>] = _text;
+    <span class="hljs-keyword">return</span> map;
+  }
+
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Data</span> </span>{
+  Data({
+    <span class="hljs-built_in">num?</span> id,
+    <span class="hljs-built_in">String?</span> email,
+    <span class="hljs-built_in">String?</span> firstName,
+    <span class="hljs-built_in">String?</span> lastName,
+    <span class="hljs-built_in">String?</span> avatar,
+  }) {
+    _id = id;
+    _email = email;
+    _firstName = firstName;
+    _lastName = lastName;
+    _avatar = avatar;
+  }
+
+  Data.fromJson(<span class="hljs-built_in">dynamic</span> json) {
+    _id = json[<span class="hljs-string">'id'</span>];
+    _email = json[<span class="hljs-string">'email'</span>];
+    _firstName = json[<span class="hljs-string">'first_name'</span>];
+    _lastName = json[<span class="hljs-string">'last_name'</span>];
+    _avatar = json[<span class="hljs-string">'avatar'</span>];
+  }
+
+  <span class="hljs-built_in">num?</span> _id;
+  <span class="hljs-built_in">String?</span> _email;
+  <span class="hljs-built_in">String?</span> _firstName;
+  <span class="hljs-built_in">String?</span> _lastName;
+  <span class="hljs-built_in">String?</span> _avatar;
+
+  Data copyWith({
+    <span class="hljs-built_in">num?</span> id,
+    <span class="hljs-built_in">String?</span> email,
+    <span class="hljs-built_in">String?</span> firstName,
+    <span class="hljs-built_in">String?</span> lastName,
+    <span class="hljs-built_in">String?</span> avatar,
+  }) => Data(  
+    id: id ?? _id,
+    email: email ?? _email,
+    firstName: firstName ?? _firstName,
+    lastName: lastName ?? _lastName,
+    avatar: avatar ?? _avatar,
+  );
+
+  <span class="hljs-built_in">num?</span> <span class="hljs-keyword">get</span> id => _id;
+  <span class="hljs-built_in">String?</span> <span class="hljs-keyword">get</span> email => _email;
+  <span class="hljs-built_in">String?</span> <span class="hljs-keyword">get</span> firstName => _firstName;
+  <span class="hljs-built_in">String?</span> <span class="hljs-keyword">get</span> lastName => _lastName;
+  <span class="hljs-built_in">String?</span> <span class="hljs-keyword">get</span> avatar => _avatar;
+
+  <span class="hljs-built_in">Map</span>&#x3C;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">dynamic</span>> toJson() {
+    <span class="hljs-keyword">final</span> map = &#x3C;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">dynamic</span>>{};
+    map[<span class="hljs-string">'id'</span>] = _id;
+    map[<span class="hljs-string">'email'</span>] = _email;
+    map[<span class="hljs-string">'first_name'</span>] = _firstName;
+    map[<span class="hljs-string">'last_name'</span>] = _lastName;
+    map[<span class="hljs-string">'avatar'</span>] = _avatar;
+    <span class="hljs-keyword">return</span> map;
+  }
+
+}
+</code></pre>
+<h2>UserListController 클래스 생성 및 GetxController를 상속받도록 클래스 확장</h2>
+<pre><code class="hljs language-dart"><span class="hljs-keyword">import</span> <span class="hljs-string">'dart:async'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'dart:convert'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'dart:io'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'package:flutter/cupertino.dart'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'package:http/http.dart'</span> <span class="hljs-keyword">as</span> http;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'package:get/get.dart'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'package:post_project/Models/UserModels.dart'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'../APIConstant.dart'</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserListController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">GetxController</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">GetxService</span> </span>{
+
+  <span class="hljs-keyword">var</span> isLoading = <span class="hljs-keyword">true</span>.obs;
+  <span class="hljs-keyword">var</span> getUserList = &#x3C;Data>[].obs;
+
+  <span class="hljs-meta">@override</span>
+  <span class="hljs-keyword">void</span> onInit() {
+    <span class="hljs-keyword">super</span>.onInit();
+    userList();
+  }
+
+  Future&#x3C;<span class="hljs-built_in">dynamic</span>> userList() <span class="hljs-keyword">async</span> {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">final</span> response = <span class="hljs-keyword">await</span> http.<span class="hljs-keyword">get</span>(
+        <span class="hljs-built_in">Uri</span>.parse(APIConstant.url),
+        headers: APIConstant.authHeader,
+      );
+      debugPrint(<span class="hljs-string">"UserList"</span>);
+      debugPrint(response.body);
+      <span class="hljs-keyword">const</span> utf8Decoder = Utf8Decoder(allowMalformed: <span class="hljs-keyword">true</span>);
+      <span class="hljs-keyword">final</span> decodedBytes = utf8Decoder.convert(response.bodyBytes);
+      <span class="hljs-built_in">Map</span>&#x3C;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">dynamic</span>> responseBody = json.decode(decodedBytes);
+      <span class="hljs-keyword">if</span> (response.statusCode == <span class="hljs-number">200</span>) {
+        isLoading.value = <span class="hljs-keyword">false</span>;
+        UserModels model = UserModels.fromJson(responseBody);
+        getUserList.value = model.data!;
+      }
+    } <span class="hljs-keyword">on</span> TimeoutException <span class="hljs-keyword">catch</span> (e) {
+      isLoading.value = <span class="hljs-keyword">false</span>;
+      debugPrint(e.toString());
+    } <span class="hljs-keyword">on</span> SocketException <span class="hljs-keyword">catch</span> (e) {
+      isLoading.value = <span class="hljs-keyword">false</span>;
+      debugPrint(e.toString());
+    } <span class="hljs-keyword">on</span> Error <span class="hljs-keyword">catch</span> (e) {
+      isLoading.value = <span class="hljs-keyword">false</span>;
+      debugPrint(e.toString());
+    } <span class="hljs-keyword">catch</span> (e) {
+      debugPrint(e.toString());
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+  }
+
+}
+</code></pre>
+<h2>listView를 위한 UserItems 위젯 작성</h2>
+<pre><code class="hljs language-dart"><span class="hljs-keyword">import</span> <span class="hljs-string">'package:flutter/material.dart'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'package:post_project/Models/UserModels.dart'</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserItems</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
+
+  <span class="hljs-keyword">final</span> Data data;
+  <span class="hljs-keyword">const</span> UserItems({Key key, <span class="hljs-keyword">required</span> <span class="hljs-keyword">this</span>.data});
+
+  <span class="hljs-meta">@override</span>
+  Widget build(BuildContext context) {
+    <span class="hljs-keyword">return</span> Padding(
+      padding: <span class="hljs-keyword">const</span> EdgeInsets.all(<span class="hljs-number">8.0</span>),
+      child: Container(
+        decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+        child: Row(
+          children: [
+            SizedBox(
+              height: <span class="hljs-number">100</span>,
+              width: <span class="hljs-number">70</span>,
+              child: Image.network(
+                data.avatar.toString(),
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: <span class="hljs-keyword">const</span> EdgeInsets.all(<span class="hljs-number">15.0</span>),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    <span class="hljs-string">"<span class="hljs-subst">${data.firstName}</span> <span class="hljs-subst">${data.lastName}</span>"</span>,
+                    style: <span class="hljs-keyword">const</span> TextStyle(
+                        fontSize: <span class="hljs-number">20</span>, fontWeight: FontWeight.w600),
+                  ),
+                  <span class="hljs-keyword">const</span> SizedBox(height: <span class="hljs-number">5</span>),
+                  Text(data.email.toString()),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+<h2>이렇게 GetxController를 호출하세요</h2>
+<pre><code class="hljs language-js">final userListController = <span class="hljs-title class_">Get</span>.<span class="hljs-title function_">put</span>(<span class="hljs-title class_">UserListController</span>(), <span class="hljs-attr">permanent</span>: <span class="hljs-literal">true</span>);
+</code></pre>
+<h2>UserListScreen 클래스를 생성하세요</h2>
+<p>전체 코드:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">import</span> <span class="hljs-string">'package:flutter/material.dart'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'package:flutter/services.dart'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'package:get/get.dart'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'package:post_project/Controller/UserListController.dart'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'package:post_project/UserItems.dart'</span>;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">UserListScreen</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">StatefulWidget</span> {
+  <span class="hljs-keyword">const</span> <span class="hljs-title class_">UserListScreen</span>({<span class="hljs-variable language_">super</span>.<span class="hljs-property">key</span>});
+
+  @override
+  <span class="hljs-title class_">State</span>&#x3C;<span class="hljs-title class_">UserListScreen</span>> <span class="hljs-title function_">createState</span>() => <span class="hljs-title function_">_UserListScreenState</span>();
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">_UserListScreenState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">State</span>&#x3C;<span class="hljs-title class_">UserListScreen</span>> {
+
+  final userListController = <span class="hljs-title class_">Get</span>.<span class="hljs-title function_">put</span>(<span class="hljs-title class_">UserListController</span>(),<span class="hljs-attr">permanent</span>: <span class="hljs-literal">true</span>);
+
+  @override
+  <span class="hljs-title class_">Widget</span> <span class="hljs-title function_">build</span>(<span class="hljs-params">BuildContext context</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-title class_">Scaffold</span>(
+      <span class="hljs-attr">appBar</span>: <span class="hljs-title class_">AppBar</span>(
+        <span class="hljs-attr">systemOverlayStyle</span>: <span class="hljs-keyword">const</span> <span class="hljs-title class_">SystemUiOverlayStyle</span>(
+          <span class="hljs-attr">statusBarColor</span>: <span class="hljs-title class_">Colors</span>.<span class="hljs-property">green</span>,
+          <span class="hljs-attr">statusBarIconBrightness</span>: <span class="hljs-title class_">Brightness</span>.<span class="hljs-property">dark</span>, <span class="hljs-comment">// For Android (dark icons)</span>
+          <span class="hljs-attr">statusBarBrightness</span>: <span class="hljs-title class_">Brightness</span>.<span class="hljs-property">light</span>, <span class="hljs-comment">// For iOS (dark icons)</span>
+        ),
+        <span class="hljs-attr">titleSpacing</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-attr">centerTitle</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">elevation</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">automaticallyImplyLeading</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">backgroundColor</span>: <span class="hljs-title class_">Colors</span>.<span class="hljs-property">green</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-keyword">const</span> <span class="hljs-title class_">Text</span>(<span class="hljs-string">"User List"</span>,
+            <span class="hljs-attr">style</span>: <span class="hljs-title class_">TextStyle</span>(
+                <span class="hljs-attr">fontSize</span>: <span class="hljs-number">18</span>,
+                <span class="hljs-attr">color</span>: <span class="hljs-title class_">Colors</span>.<span class="hljs-property">white</span>,
+                <span class="hljs-attr">fontWeight</span>: <span class="hljs-title class_">FontWeight</span>.<span class="hljs-property">w600</span>)),
+      ),
+      <span class="hljs-attr">body</span>: <span class="hljs-title class_">Column</span>(
+        <span class="hljs-attr">children</span>: [
+          <span class="hljs-title class_">Expanded</span>(
+            <span class="hljs-attr">child</span>: <span class="hljs-title class_">Obx</span>(() {
+              <span class="hljs-keyword">return</span> userListController.<span class="hljs-property">getUserList</span>.<span class="hljs-property">isEmpty</span>
+                  ? <span class="hljs-keyword">const</span> <span class="hljs-title class_">Center</span>(
+                      <span class="hljs-attr">child</span>: <span class="hljs-title class_">Text</span>(<span class="hljs-string">"data"</span>),
+                    )
+                  : <span class="hljs-title class_">ListView</span>.<span class="hljs-title function_">builder</span>(
+                      <span class="hljs-attr">shrinkWrap</span>: <span class="hljs-literal">true</span>,
+                      <span class="hljs-attr">itemCount</span>: userListController.<span class="hljs-property">getUserList</span>.<span class="hljs-property">length</span>,
+                      <span class="hljs-attr">itemBuilder</span>: (<span class="hljs-title class_">BuildContext</span> context, int index) {
+                        <span class="hljs-keyword">return</span> <span class="hljs-title class_">UserItems</span>(
+                            <span class="hljs-attr">data</span>: userListController.<span class="hljs-property">getUserList</span>[index]);
+                      });
+            }),
+          )
+        ],
+      ),
+    );
+  }
+}
+</code></pre>
+<h2>스크린샷:</h2>
+<h2>소스 코드:</h2>
+<p>GitHub 링크: <a href="https://github.com/sanjaysharmajw/UserList" rel="nofollow" target="_blank">https://github.com/sanjaysharmajw/UserList</a></p>
+<h2>저와 소통해요:</h2>
+<ul>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/sanjaydeveloper/" rel="nofollow" target="_blank">https://www.linkedin.com/in/sanjaydeveloper/</a></li>
+<li>Instagram: <a href="https://www.instagram.com/sanjayjw/" rel="nofollow" target="_blank">https://www.instagram.com/sanjayjw/</a></li>
+</ul>
+<p><img src="/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_2.png" alt="이미지"></p>
+<p>이 기사를 즐겨 보셨기를 바라요! 제공된 정보를 감사하게 생각하신다면, 'Buy Me A Coffee'로 저를 지원할 수 있어요! 여러분의 작은 선행에 감사하겠습니다!</p>
+</body>
+</html>
+</div></article></div></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"GetX로 API 통합하기 Flutter를 이용한 쉬운 방법","description":"","date":"2024-06-22 04:13","slug":"2024-06-22-APIIntegrationusingGetXinflutter","content":"\n\n![APIIntegrationusingGetXinflutter](/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_0.png)\n\n플러터에서 API 통합은 앱과 외부 서비스 간의 데이터 통신을 활성화하여 동적이고 실시간이며 확장 가능한 기능을 제공하고 서로 다른 플랫폼 간에 일관된 경험을 제공하는 데 중요합니다.\n\nAPI 통합은 플러터 애플리케이션이 외부 서비스와 상호 작용하고 데이터를 검색하고 다양한 기능을 수행할 수 있도록 가능하게 합니다. 다음은 플러터 개발에서 API 통합이 중요하게 간주되는 몇 가지 이유입니다:\n\n- 데이터 검색: 대부분의 애플리케이션은 데이터베이스, 서버 또는 제3자 서비스와 같은 외부 소스에서 데이터를 필요로합니다. API 통합을 통해 플러터 앱이 이러한 데이터를 동적으로 가져와 표시하므로 사용자가 항상 최신 정보에 액세스할 수 있습니다.\n- 실시간 업데이트: API를 사용하면 클라이언트(플러터 앱)와 서버 간의 실시간 통신이 가능해집니다. 이는 메시징 앱, 협업 도구 또는 실시간 데이터 피드와 같은 실시간 업데이트가 필요한 애플리케이션에 중요합니다.\n- 오프라인 지원: API는 장치에 로컬로 정보를 캐싱하여 오프라인 데이터 액세스를 지원할 수 있도록 설계될 수 있습니다. 이는 일시적이거나 인터넷 연결이 없는 환경에서 기능해야 하는 애플리케이션에 중요합니다.\n- 보안: API는 종종 인증 메커니즘을 통합하여 특정 데이터에만 인가된 사용자만이 액세스하거나 특정 작업을 수행할 수 있도록합니다. 이는 응용프로그램 및 데이터의 보안 유지에 도움이 됩니다.\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n## Android Studio에 JsonToDart 플러그인 설치하기\n\n플러그인: [JsonToDart](https://plugins.jetbrains.com/plugin/12562-jsontodart-json-to-dart-)\n\n## HTTP 패키지 추가하기\n\nHTTP 요청을 하기 위해 pubspec.yaml 파일에 http 패키지를 추가하고 flutter pub get을 실행하세요.\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n## Getx 패키지 추가하기\n\nGetX는 플러터를 위한 가벼우면서 강력한 솔루션입니다. 높은 성능의 상태 관리, 지능적인 의존성 주입, 빠르고 실용적인 라우트 관리를 결합하고 있습니다. GetX를 사용하려면 flutter pub add get 명령어를 실행하세요.\n\n## main.dart 파일에 GetMaterialApp 추가하기\n\n```dart\nimport 'package:flutter/material.dart';\nimport 'package:get/get.dart'; // Get 패키지 가져오기\nimport 'UserListScreens.dart'; // 화면 파일 import하기\n\nvoid main() {\n  runApp(const MyApp());\n}\n\nclass MyApp extends StatelessWidget {\n  const MyApp({Key key}) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return GetMaterialApp(\n      debugShowCheckedModeBanner: false,\n      title: 'Flutter Demo',\n      theme: ThemeData(\n        colorScheme: ColorScheme.fromSwatch(primary: Colors.deepPurple), // 주요 색상 deepPurple로 설정\n        useMaterial3: false,\n      ),\n      home: const UserListScreen(), // 처음 화면으로 UserListScreen 표시\n    );\n  }\n}\n```  \n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n## APIConstant 클래스 생성\n\n```dart\nimport 'dart:io';\n\nclass APIConstant {\n  \n  static const url = 'https://reqres.in/api/users?page=2';\n\n  static Map\u003cString, String\u003e authHeader = {\n    HttpHeaders.contentTypeHeader: 'application/json; charset=UTF-8'\n  };\n\n}\n```\n\n## UserModels 클래스 생성\n\n```dart\nclass UserModels {\n  UserModels({\n    num? page, \n    num? perPage, \n    num? total, \n    num? totalPages, \n    List\u003cData\u003e? data, \n    Support? support,\n  }) {\n    _page = page;\n    _perPage = perPage;\n    _total = total;\n    _totalPages = totalPages;\n    _data = data;\n    _support = support;\n  }\n\n  UserModels.fromJson(dynamic json) {\n    _page = json['page'];\n    _perPage = json['per_page'];\n    _total = json['total'];\n    _totalPages = json['total_pages'];\n    if (json['data'] != null) {\n      _data = [];\n      json['data'].forEach((v) {\n        _data?.add(Data.fromJson(v));\n      });\n    }\n    _support = json['support'] != null ? Support.fromJson(json['support']) : null;\n  }\n\n  num? _page;\n  num? _perPage;\n  num? _total;\n  num? _totalPages;\n  List\u003cData\u003e? _data;\n  Support? _support;\n\n  UserModels copyWith({\n    num? page,\n    num? perPage,\n    num? total,\n    num? totalPages,\n    List\u003cData\u003e? data,\n    Support? support,\n  }) =\u003e UserModels(  \n    page: page ?? _page,\n    perPage: perPage ?? _perPage,\n    total: total ?? _total,\n    totalPages: totalPages ?? _totalPages,\n    data: data ?? _data,\n    support: support ?? _support,\n  );\n\n  num? get page =\u003e _page;\n  num? get perPage =\u003e _perPage;\n  num? get total =\u003e _total;\n  num? get totalPages =\u003e _totalPages;\n  List\u003cData\u003e? get data =\u003e _data;\n  Support? get support =\u003e _support;\n\n  Map\u003cString, dynamic\u003e toJson() {\n    final map = \u003cString, dynamic\u003e{};\n    map['page'] = _page;\n    map['per_page'] = _perPage;\n    map['total'] = _total;\n    map['total_pages'] = _totalPages;\n    if (_data != null) {\n      map['data'] = _data?.map((v) =\u003e v.toJson()).toList();\n    }\n    if (_support != null) {\n      map['support'] = _support?.toJson();\n    }\n    return map;\n  }\n\n}\n\nclass Support {\n  Support({\n    String? url,\n    String? text,\n  }) {\n    _url = url;\n    _text = text;\n  }\n\n  Support.fromJson(dynamic json) {\n    _url = json['url'];\n    _text = json['text'];\n  }\n\n  String? _url;\n  String? _text;\n\n  Support copyWith({\n    String? url,\n    String? text,\n  }) =\u003e Support(  \n    url: url ?? _url,\n    text: text ?? _text,\n  );\n\n  String? get url =\u003e _url;\n  String? get text =\u003e _text;\n\n  Map\u003cString, dynamic\u003e toJson() {\n    final map = \u003cString, dynamic\u003e{};\n    map['url'] = _url;\n    map['text'] = _text;\n    return map;\n  }\n\n}\n\nclass Data {\n  Data({\n    num? id,\n    String? email,\n    String? firstName,\n    String? lastName,\n    String? avatar,\n  }) {\n    _id = id;\n    _email = email;\n    _firstName = firstName;\n    _lastName = lastName;\n    _avatar = avatar;\n  }\n\n  Data.fromJson(dynamic json) {\n    _id = json['id'];\n    _email = json['email'];\n    _firstName = json['first_name'];\n    _lastName = json['last_name'];\n    _avatar = json['avatar'];\n  }\n\n  num? _id;\n  String? _email;\n  String? _firstName;\n  String? _lastName;\n  String? _avatar;\n\n  Data copyWith({\n    num? id,\n    String? email,\n    String? firstName,\n    String? lastName,\n    String? avatar,\n  }) =\u003e Data(  \n    id: id ?? _id,\n    email: email ?? _email,\n    firstName: firstName ?? _firstName,\n    lastName: lastName ?? _lastName,\n    avatar: avatar ?? _avatar,\n  );\n\n  num? get id =\u003e _id;\n  String? get email =\u003e _email;\n  String? get firstName =\u003e _firstName;\n  String? get lastName =\u003e _lastName;\n  String? get avatar =\u003e _avatar;\n\n  Map\u003cString, dynamic\u003e toJson() {\n    final map = \u003cString, dynamic\u003e{};\n    map['id'] = _id;\n    map['email'] = _email;\n    map['first_name'] = _firstName;\n    map['last_name'] = _lastName;\n    map['avatar'] = _avatar;\n    return map;\n  }\n\n}\n```\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n## UserListController 클래스 생성 및 GetxController를 상속받도록 클래스 확장\n\n```dart\nimport 'dart:async';\nimport 'dart:convert';\nimport 'dart:io';\nimport 'package:flutter/cupertino.dart';\nimport 'package:http/http.dart' as http;\nimport 'package:get/get.dart';\nimport 'package:post_project/Models/UserModels.dart';\nimport '../APIConstant.dart';\n\nclass UserListController extends GetxController implements GetxService {\n\n  var isLoading = true.obs;\n  var getUserList = \u003cData\u003e[].obs;\n\n  @override\n  void onInit() {\n    super.onInit();\n    userList();\n  }\n\n  Future\u003cdynamic\u003e userList() async {\n    try {\n      final response = await http.get(\n        Uri.parse(APIConstant.url),\n        headers: APIConstant.authHeader,\n      );\n      debugPrint(\"UserList\");\n      debugPrint(response.body);\n      const utf8Decoder = Utf8Decoder(allowMalformed: true);\n      final decodedBytes = utf8Decoder.convert(response.bodyBytes);\n      Map\u003cString, dynamic\u003e responseBody = json.decode(decodedBytes);\n      if (response.statusCode == 200) {\n        isLoading.value = false;\n        UserModels model = UserModels.fromJson(responseBody);\n        getUserList.value = model.data!;\n      }\n    } on TimeoutException catch (e) {\n      isLoading.value = false;\n      debugPrint(e.toString());\n    } on SocketException catch (e) {\n      isLoading.value = false;\n      debugPrint(e.toString());\n    } on Error catch (e) {\n      isLoading.value = false;\n      debugPrint(e.toString());\n    } catch (e) {\n      debugPrint(e.toString());\n    }\n    return null;\n  }\n\n}\n```\n\n## listView를 위한 UserItems 위젯 작성\n\n```dart\nimport 'package:flutter/material.dart';\nimport 'package:post_project/Models/UserModels.dart';\n\nclass UserItems extends StatelessWidget {\n\n  final Data data;\n  const UserItems({Key key, required this.data});\n\n  @override\n  Widget build(BuildContext context) {\n    return Padding(\n      padding: const EdgeInsets.all(8.0),\n      child: Container(\n        decoration: BoxDecoration(border: Border.all(color: Colors.black)),\n        child: Row(\n          children: [\n            SizedBox(\n              height: 100,\n              width: 70,\n              child: Image.network(\n                data.avatar.toString(),\n                fit: BoxFit.cover,\n              ),\n            ),\n            Padding(\n              padding: const EdgeInsets.all(15.0),\n              child: Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Text(\n                    \"${data.firstName} ${data.lastName}\",\n                    style: const TextStyle(\n                        fontSize: 20, fontWeight: FontWeight.w600),\n                  ),\n                  const SizedBox(height: 5),\n                  Text(data.email.toString()),\n                ],\n              ),\n            )\n          ],\n        ),\n      ),\n    );\n  }\n}\n```\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n## 이렇게 GetxController를 호출하세요\n\n```js\nfinal userListController = Get.put(UserListController(), permanent: true);\n```\n\n## UserListScreen 클래스를 생성하세요\n\n전체 코드:\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n```js\nimport 'package:flutter/material.dart';\nimport 'package:flutter/services.dart';\nimport 'package:get/get.dart';\nimport 'package:post_project/Controller/UserListController.dart';\nimport 'package:post_project/UserItems.dart';\n\nclass UserListScreen extends StatefulWidget {\n  const UserListScreen({super.key});\n\n  @override\n  State\u003cUserListScreen\u003e createState() =\u003e _UserListScreenState();\n}\n\nclass _UserListScreenState extends State\u003cUserListScreen\u003e {\n\n  final userListController = Get.put(UserListController(),permanent: true);\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        systemOverlayStyle: const SystemUiOverlayStyle(\n          statusBarColor: Colors.green,\n          statusBarIconBrightness: Brightness.dark, // For Android (dark icons)\n          statusBarBrightness: Brightness.light, // For iOS (dark icons)\n        ),\n        titleSpacing: 5,\n        centerTitle: false,\n        elevation: 0,\n        automaticallyImplyLeading: false,\n        backgroundColor: Colors.green,\n        title: const Text(\"User List\",\n            style: TextStyle(\n                fontSize: 18,\n                color: Colors.white,\n                fontWeight: FontWeight.w600)),\n      ),\n      body: Column(\n        children: [\n          Expanded(\n            child: Obx(() {\n              return userListController.getUserList.isEmpty\n                  ? const Center(\n                      child: Text(\"data\"),\n                    )\n                  : ListView.builder(\n                      shrinkWrap: true,\n                      itemCount: userListController.getUserList.length,\n                      itemBuilder: (BuildContext context, int index) {\n                        return UserItems(\n                            data: userListController.getUserList[index]);\n                      });\n            }),\n          )\n        ],\n      ),\n    );\n  }\n}\n```\n\n## 스크린샷:\n\n\u003cimg src=\"/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_1.png\" /\u003e\n\n## 소스 코드:\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\nGitHub 링크: [https://github.com/sanjaysharmajw/UserList](https://github.com/sanjaysharmajw/UserList)\n\n## 저와 소통해요:\n\n- LinkedIn: [https://www.linkedin.com/in/sanjaydeveloper/](https://www.linkedin.com/in/sanjaydeveloper/)\n- Instagram: [https://www.instagram.com/sanjayjw/](https://www.instagram.com/sanjayjw/)\n\n![이미지](/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_2.png)\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n이 기사를 즐겨 보셨기를 바라요! 제공된 정보를 감사하게 생각하신다면, 'Buy Me A Coffee'로 저를 지원할 수 있어요! 여러분의 작은 선행에 감사하겠습니다!","ogImage":{"url":"/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_0.png"},"coverImage":"/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_0.png","tag":["Tech"],"readingTime":12},"content":"\u003c!doctype html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n\u003cmeta charset=\"utf-8\"\u003e\n\u003cmeta content=\"width=device-width, initial-scale=1\" name=\"viewport\"\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n\u003cp\u003e\u003cimg src=\"/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_0.png\" alt=\"APIIntegrationusingGetXinflutter\"\u003e\u003c/p\u003e\n\u003cp\u003e플러터에서 API 통합은 앱과 외부 서비스 간의 데이터 통신을 활성화하여 동적이고 실시간이며 확장 가능한 기능을 제공하고 서로 다른 플랫폼 간에 일관된 경험을 제공하는 데 중요합니다.\u003c/p\u003e\n\u003cp\u003eAPI 통합은 플러터 애플리케이션이 외부 서비스와 상호 작용하고 데이터를 검색하고 다양한 기능을 수행할 수 있도록 가능하게 합니다. 다음은 플러터 개발에서 API 통합이 중요하게 간주되는 몇 가지 이유입니다:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e데이터 검색: 대부분의 애플리케이션은 데이터베이스, 서버 또는 제3자 서비스와 같은 외부 소스에서 데이터를 필요로합니다. API 통합을 통해 플러터 앱이 이러한 데이터를 동적으로 가져와 표시하므로 사용자가 항상 최신 정보에 액세스할 수 있습니다.\u003c/li\u003e\n\u003cli\u003e실시간 업데이트: API를 사용하면 클라이언트(플러터 앱)와 서버 간의 실시간 통신이 가능해집니다. 이는 메시징 앱, 협업 도구 또는 실시간 데이터 피드와 같은 실시간 업데이트가 필요한 애플리케이션에 중요합니다.\u003c/li\u003e\n\u003cli\u003e오프라인 지원: API는 장치에 로컬로 정보를 캐싱하여 오프라인 데이터 액세스를 지원할 수 있도록 설계될 수 있습니다. 이는 일시적이거나 인터넷 연결이 없는 환경에서 기능해야 하는 애플리케이션에 중요합니다.\u003c/li\u003e\n\u003cli\u003e보안: API는 종종 인증 메커니즘을 통합하여 특정 데이터에만 인가된 사용자만이 액세스하거나 특정 작업을 수행할 수 있도록합니다. 이는 응용프로그램 및 데이터의 보안 유지에 도움이 됩니다.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eAndroid Studio에 JsonToDart 플러그인 설치하기\u003c/h2\u003e\n\u003cp\u003e플러그인: \u003ca href=\"https://plugins.jetbrains.com/plugin/12562-jsontodart-json-to-dart-\" rel=\"nofollow\" target=\"_blank\"\u003eJsonToDart\u003c/a\u003e\u003c/p\u003e\n\u003ch2\u003eHTTP 패키지 추가하기\u003c/h2\u003e\n\u003cp\u003eHTTP 요청을 하기 위해 pubspec.yaml 파일에 http 패키지를 추가하고 flutter pub get을 실행하세요.\u003c/p\u003e\n\u003ch2\u003eGetx 패키지 추가하기\u003c/h2\u003e\n\u003cp\u003eGetX는 플러터를 위한 가벼우면서 강력한 솔루션입니다. 높은 성능의 상태 관리, 지능적인 의존성 주입, 빠르고 실용적인 라우트 관리를 결합하고 있습니다. GetX를 사용하려면 flutter pub add get 명령어를 실행하세요.\u003c/p\u003e\n\u003ch2\u003emain.dart 파일에 GetMaterialApp 추가하기\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-dart\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:flutter/material.dart'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:get/get.dart'\u003c/span\u003e; \u003cspan class=\"hljs-comment\"\u003e// Get 패키지 가져오기\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'UserListScreens.dart'\u003c/span\u003e; \u003cspan class=\"hljs-comment\"\u003e// 화면 파일 import하기\u003c/span\u003e\n\n\u003cspan class=\"hljs-keyword\"\u003evoid\u003c/span\u003e main() {\n  runApp(\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e MyApp());\n}\n\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eMyApp\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eStatelessWidget\u003c/span\u003e \u003c/span\u003e{\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e MyApp({Key key}) : \u003cspan class=\"hljs-keyword\"\u003esuper\u003c/span\u003e(key: key);\n\n  \u003cspan class=\"hljs-meta\"\u003e@override\u003c/span\u003e\n  Widget build(BuildContext context) {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e GetMaterialApp(\n      debugShowCheckedModeBanner: \u003cspan class=\"hljs-keyword\"\u003efalse\u003c/span\u003e,\n      title: \u003cspan class=\"hljs-string\"\u003e'Flutter Demo'\u003c/span\u003e,\n      theme: ThemeData(\n        colorScheme: ColorScheme.fromSwatch(primary: Colors.deepPurple), \u003cspan class=\"hljs-comment\"\u003e// 주요 색상 deepPurple로 설정\u003c/span\u003e\n        useMaterial3: \u003cspan class=\"hljs-keyword\"\u003efalse\u003c/span\u003e,\n      ),\n      home: \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e UserListScreen(), \u003cspan class=\"hljs-comment\"\u003e// 처음 화면으로 UserListScreen 표시\u003c/span\u003e\n    );\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eAPIConstant 클래스 생성\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-dart\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'dart:io'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eAPIConstant\u003c/span\u003e \u003c/span\u003e{\n  \n  \u003cspan class=\"hljs-keyword\"\u003estatic\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e url = \u003cspan class=\"hljs-string\"\u003e'https://reqres.in/api/users?page=2'\u003c/span\u003e;\n\n  \u003cspan class=\"hljs-keyword\"\u003estatic\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003eMap\u003c/span\u003e\u0026#x3C;\u003cspan class=\"hljs-built_in\"\u003eString\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003eString\u003c/span\u003e\u003e authHeader = {\n    HttpHeaders.contentTypeHeader: \u003cspan class=\"hljs-string\"\u003e'application/json; charset=UTF-8'\u003c/span\u003e\n  };\n\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eUserModels 클래스 생성\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-dart\"\u003e\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eUserModels\u003c/span\u003e \u003c/span\u003e{\n  UserModels({\n    \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e page, \n    \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e perPage, \n    \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e total, \n    \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e totalPages, \n    \u003cspan class=\"hljs-built_in\"\u003eList\u003c/span\u003e\u0026#x3C;Data\u003e? data, \n    Support? support,\n  }) {\n    _page = page;\n    _perPage = perPage;\n    _total = total;\n    _totalPages = totalPages;\n    _data = data;\n    _support = support;\n  }\n\n  UserModels.fromJson(\u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e json) {\n    _page = json[\u003cspan class=\"hljs-string\"\u003e'page'\u003c/span\u003e];\n    _perPage = json[\u003cspan class=\"hljs-string\"\u003e'per_page'\u003c/span\u003e];\n    _total = json[\u003cspan class=\"hljs-string\"\u003e'total'\u003c/span\u003e];\n    _totalPages = json[\u003cspan class=\"hljs-string\"\u003e'total_pages'\u003c/span\u003e];\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (json[\u003cspan class=\"hljs-string\"\u003e'data'\u003c/span\u003e] != \u003cspan class=\"hljs-keyword\"\u003enull\u003c/span\u003e) {\n      _data = [];\n      json[\u003cspan class=\"hljs-string\"\u003e'data'\u003c/span\u003e].forEach((v) {\n        _data?.add(Data.fromJson(v));\n      });\n    }\n    _support = json[\u003cspan class=\"hljs-string\"\u003e'support'\u003c/span\u003e] != \u003cspan class=\"hljs-keyword\"\u003enull\u003c/span\u003e ? Support.fromJson(json[\u003cspan class=\"hljs-string\"\u003e'support'\u003c/span\u003e]) : \u003cspan class=\"hljs-keyword\"\u003enull\u003c/span\u003e;\n  }\n\n  \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e _page;\n  \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e _perPage;\n  \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e _total;\n  \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e _totalPages;\n  \u003cspan class=\"hljs-built_in\"\u003eList\u003c/span\u003e\u0026#x3C;Data\u003e? _data;\n  Support? _support;\n\n  UserModels copyWith({\n    \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e page,\n    \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e perPage,\n    \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e total,\n    \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e totalPages,\n    \u003cspan class=\"hljs-built_in\"\u003eList\u003c/span\u003e\u0026#x3C;Data\u003e? data,\n    Support? support,\n  }) =\u003e UserModels(  \n    page: page ?? _page,\n    perPage: perPage ?? _perPage,\n    total: total ?? _total,\n    totalPages: totalPages ?? _totalPages,\n    data: data ?? _data,\n    support: support ?? _support,\n  );\n\n  \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e page =\u003e _page;\n  \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e perPage =\u003e _perPage;\n  \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e total =\u003e _total;\n  \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e totalPages =\u003e _totalPages;\n  \u003cspan class=\"hljs-built_in\"\u003eList\u003c/span\u003e\u0026#x3C;Data\u003e? \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e data =\u003e _data;\n  Support? \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e support =\u003e _support;\n\n  \u003cspan class=\"hljs-built_in\"\u003eMap\u003c/span\u003e\u0026#x3C;\u003cspan class=\"hljs-built_in\"\u003eString\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e\u003e toJson() {\n    \u003cspan class=\"hljs-keyword\"\u003efinal\u003c/span\u003e map = \u0026#x3C;\u003cspan class=\"hljs-built_in\"\u003eString\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e\u003e{};\n    map[\u003cspan class=\"hljs-string\"\u003e'page'\u003c/span\u003e] = _page;\n    map[\u003cspan class=\"hljs-string\"\u003e'per_page'\u003c/span\u003e] = _perPage;\n    map[\u003cspan class=\"hljs-string\"\u003e'total'\u003c/span\u003e] = _total;\n    map[\u003cspan class=\"hljs-string\"\u003e'total_pages'\u003c/span\u003e] = _totalPages;\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (_data != \u003cspan class=\"hljs-keyword\"\u003enull\u003c/span\u003e) {\n      map[\u003cspan class=\"hljs-string\"\u003e'data'\u003c/span\u003e] = _data?.map((v) =\u003e v.toJson()).toList();\n    }\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (_support != \u003cspan class=\"hljs-keyword\"\u003enull\u003c/span\u003e) {\n      map[\u003cspan class=\"hljs-string\"\u003e'support'\u003c/span\u003e] = _support?.toJson();\n    }\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e map;\n  }\n\n}\n\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eSupport\u003c/span\u003e \u003c/span\u003e{\n  Support({\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e url,\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e text,\n  }) {\n    _url = url;\n    _text = text;\n  }\n\n  Support.fromJson(\u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e json) {\n    _url = json[\u003cspan class=\"hljs-string\"\u003e'url'\u003c/span\u003e];\n    _text = json[\u003cspan class=\"hljs-string\"\u003e'text'\u003c/span\u003e];\n  }\n\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e _url;\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e _text;\n\n  Support copyWith({\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e url,\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e text,\n  }) =\u003e Support(  \n    url: url ?? _url,\n    text: text ?? _text,\n  );\n\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e url =\u003e _url;\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e text =\u003e _text;\n\n  \u003cspan class=\"hljs-built_in\"\u003eMap\u003c/span\u003e\u0026#x3C;\u003cspan class=\"hljs-built_in\"\u003eString\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e\u003e toJson() {\n    \u003cspan class=\"hljs-keyword\"\u003efinal\u003c/span\u003e map = \u0026#x3C;\u003cspan class=\"hljs-built_in\"\u003eString\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e\u003e{};\n    map[\u003cspan class=\"hljs-string\"\u003e'url'\u003c/span\u003e] = _url;\n    map[\u003cspan class=\"hljs-string\"\u003e'text'\u003c/span\u003e] = _text;\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e map;\n  }\n\n}\n\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eData\u003c/span\u003e \u003c/span\u003e{\n  Data({\n    \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e id,\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e email,\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e firstName,\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e lastName,\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e avatar,\n  }) {\n    _id = id;\n    _email = email;\n    _firstName = firstName;\n    _lastName = lastName;\n    _avatar = avatar;\n  }\n\n  Data.fromJson(\u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e json) {\n    _id = json[\u003cspan class=\"hljs-string\"\u003e'id'\u003c/span\u003e];\n    _email = json[\u003cspan class=\"hljs-string\"\u003e'email'\u003c/span\u003e];\n    _firstName = json[\u003cspan class=\"hljs-string\"\u003e'first_name'\u003c/span\u003e];\n    _lastName = json[\u003cspan class=\"hljs-string\"\u003e'last_name'\u003c/span\u003e];\n    _avatar = json[\u003cspan class=\"hljs-string\"\u003e'avatar'\u003c/span\u003e];\n  }\n\n  \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e _id;\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e _email;\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e _firstName;\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e _lastName;\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e _avatar;\n\n  Data copyWith({\n    \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e id,\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e email,\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e firstName,\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e lastName,\n    \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e avatar,\n  }) =\u003e Data(  \n    id: id ?? _id,\n    email: email ?? _email,\n    firstName: firstName ?? _firstName,\n    lastName: lastName ?? _lastName,\n    avatar: avatar ?? _avatar,\n  );\n\n  \u003cspan class=\"hljs-built_in\"\u003enum?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e id =\u003e _id;\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e email =\u003e _email;\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e firstName =\u003e _firstName;\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e lastName =\u003e _lastName;\n  \u003cspan class=\"hljs-built_in\"\u003eString?\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e avatar =\u003e _avatar;\n\n  \u003cspan class=\"hljs-built_in\"\u003eMap\u003c/span\u003e\u0026#x3C;\u003cspan class=\"hljs-built_in\"\u003eString\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e\u003e toJson() {\n    \u003cspan class=\"hljs-keyword\"\u003efinal\u003c/span\u003e map = \u0026#x3C;\u003cspan class=\"hljs-built_in\"\u003eString\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e\u003e{};\n    map[\u003cspan class=\"hljs-string\"\u003e'id'\u003c/span\u003e] = _id;\n    map[\u003cspan class=\"hljs-string\"\u003e'email'\u003c/span\u003e] = _email;\n    map[\u003cspan class=\"hljs-string\"\u003e'first_name'\u003c/span\u003e] = _firstName;\n    map[\u003cspan class=\"hljs-string\"\u003e'last_name'\u003c/span\u003e] = _lastName;\n    map[\u003cspan class=\"hljs-string\"\u003e'avatar'\u003c/span\u003e] = _avatar;\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e map;\n  }\n\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eUserListController 클래스 생성 및 GetxController를 상속받도록 클래스 확장\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-dart\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'dart:async'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'dart:convert'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'dart:io'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:flutter/cupertino.dart'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:http/http.dart'\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eas\u003c/span\u003e http;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:get/get.dart'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:post_project/Models/UserModels.dart'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'../APIConstant.dart'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eUserListController\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eGetxController\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eimplements\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eGetxService\u003c/span\u003e \u003c/span\u003e{\n\n  \u003cspan class=\"hljs-keyword\"\u003evar\u003c/span\u003e isLoading = \u003cspan class=\"hljs-keyword\"\u003etrue\u003c/span\u003e.obs;\n  \u003cspan class=\"hljs-keyword\"\u003evar\u003c/span\u003e getUserList = \u0026#x3C;Data\u003e[].obs;\n\n  \u003cspan class=\"hljs-meta\"\u003e@override\u003c/span\u003e\n  \u003cspan class=\"hljs-keyword\"\u003evoid\u003c/span\u003e onInit() {\n    \u003cspan class=\"hljs-keyword\"\u003esuper\u003c/span\u003e.onInit();\n    userList();\n  }\n\n  Future\u0026#x3C;\u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e\u003e userList() \u003cspan class=\"hljs-keyword\"\u003easync\u003c/span\u003e {\n    \u003cspan class=\"hljs-keyword\"\u003etry\u003c/span\u003e {\n      \u003cspan class=\"hljs-keyword\"\u003efinal\u003c/span\u003e response = \u003cspan class=\"hljs-keyword\"\u003eawait\u003c/span\u003e http.\u003cspan class=\"hljs-keyword\"\u003eget\u003c/span\u003e(\n        \u003cspan class=\"hljs-built_in\"\u003eUri\u003c/span\u003e.parse(APIConstant.url),\n        headers: APIConstant.authHeader,\n      );\n      debugPrint(\u003cspan class=\"hljs-string\"\u003e\"UserList\"\u003c/span\u003e);\n      debugPrint(response.body);\n      \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e utf8Decoder = Utf8Decoder(allowMalformed: \u003cspan class=\"hljs-keyword\"\u003etrue\u003c/span\u003e);\n      \u003cspan class=\"hljs-keyword\"\u003efinal\u003c/span\u003e decodedBytes = utf8Decoder.convert(response.bodyBytes);\n      \u003cspan class=\"hljs-built_in\"\u003eMap\u003c/span\u003e\u0026#x3C;\u003cspan class=\"hljs-built_in\"\u003eString\u003c/span\u003e, \u003cspan class=\"hljs-built_in\"\u003edynamic\u003c/span\u003e\u003e responseBody = json.decode(decodedBytes);\n      \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e (response.statusCode == \u003cspan class=\"hljs-number\"\u003e200\u003c/span\u003e) {\n        isLoading.value = \u003cspan class=\"hljs-keyword\"\u003efalse\u003c/span\u003e;\n        UserModels model = UserModels.fromJson(responseBody);\n        getUserList.value = model.data!;\n      }\n    } \u003cspan class=\"hljs-keyword\"\u003eon\u003c/span\u003e TimeoutException \u003cspan class=\"hljs-keyword\"\u003ecatch\u003c/span\u003e (e) {\n      isLoading.value = \u003cspan class=\"hljs-keyword\"\u003efalse\u003c/span\u003e;\n      debugPrint(e.toString());\n    } \u003cspan class=\"hljs-keyword\"\u003eon\u003c/span\u003e SocketException \u003cspan class=\"hljs-keyword\"\u003ecatch\u003c/span\u003e (e) {\n      isLoading.value = \u003cspan class=\"hljs-keyword\"\u003efalse\u003c/span\u003e;\n      debugPrint(e.toString());\n    } \u003cspan class=\"hljs-keyword\"\u003eon\u003c/span\u003e Error \u003cspan class=\"hljs-keyword\"\u003ecatch\u003c/span\u003e (e) {\n      isLoading.value = \u003cspan class=\"hljs-keyword\"\u003efalse\u003c/span\u003e;\n      debugPrint(e.toString());\n    } \u003cspan class=\"hljs-keyword\"\u003ecatch\u003c/span\u003e (e) {\n      debugPrint(e.toString());\n    }\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003enull\u003c/span\u003e;\n  }\n\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003elistView를 위한 UserItems 위젯 작성\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-dart\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:flutter/material.dart'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:post_project/Models/UserModels.dart'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-class\"\u003e\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eUserItems\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003eStatelessWidget\u003c/span\u003e \u003c/span\u003e{\n\n  \u003cspan class=\"hljs-keyword\"\u003efinal\u003c/span\u003e Data data;\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e UserItems({Key key, \u003cspan class=\"hljs-keyword\"\u003erequired\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003ethis\u003c/span\u003e.data});\n\n  \u003cspan class=\"hljs-meta\"\u003e@override\u003c/span\u003e\n  Widget build(BuildContext context) {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e Padding(\n      padding: \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e EdgeInsets.all(\u003cspan class=\"hljs-number\"\u003e8.0\u003c/span\u003e),\n      child: Container(\n        decoration: BoxDecoration(border: Border.all(color: Colors.black)),\n        child: Row(\n          children: [\n            SizedBox(\n              height: \u003cspan class=\"hljs-number\"\u003e100\u003c/span\u003e,\n              width: \u003cspan class=\"hljs-number\"\u003e70\u003c/span\u003e,\n              child: Image.network(\n                data.avatar.toString(),\n                fit: BoxFit.cover,\n              ),\n            ),\n            Padding(\n              padding: \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e EdgeInsets.all(\u003cspan class=\"hljs-number\"\u003e15.0\u003c/span\u003e),\n              child: Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Text(\n                    \u003cspan class=\"hljs-string\"\u003e\"\u003cspan class=\"hljs-subst\"\u003e${data.firstName}\u003c/span\u003e \u003cspan class=\"hljs-subst\"\u003e${data.lastName}\u003c/span\u003e\"\u003c/span\u003e,\n                    style: \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e TextStyle(\n                        fontSize: \u003cspan class=\"hljs-number\"\u003e20\u003c/span\u003e, fontWeight: FontWeight.w600),\n                  ),\n                  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e SizedBox(height: \u003cspan class=\"hljs-number\"\u003e5\u003c/span\u003e),\n                  Text(data.email.toString()),\n                ],\n              ),\n            )\n          ],\n        ),\n      ),\n    );\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003e이렇게 GetxController를 호출하세요\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-js\"\u003efinal userListController = \u003cspan class=\"hljs-title class_\"\u003eGet\u003c/span\u003e.\u003cspan class=\"hljs-title function_\"\u003eput\u003c/span\u003e(\u003cspan class=\"hljs-title class_\"\u003eUserListController\u003c/span\u003e(), \u003cspan class=\"hljs-attr\"\u003epermanent\u003c/span\u003e: \u003cspan class=\"hljs-literal\"\u003etrue\u003c/span\u003e);\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eUserListScreen 클래스를 생성하세요\u003c/h2\u003e\n\u003cp\u003e전체 코드:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-js\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:flutter/material.dart'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:flutter/services.dart'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:get/get.dart'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:post_project/Controller/UserListController.dart'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'package:post_project/UserItems.dart'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title class_\"\u003eUserListScreen\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-title class_ inherited__\"\u003eStatefulWidget\u003c/span\u003e {\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e \u003cspan class=\"hljs-title class_\"\u003eUserListScreen\u003c/span\u003e({\u003cspan class=\"hljs-variable language_\"\u003esuper\u003c/span\u003e.\u003cspan class=\"hljs-property\"\u003ekey\u003c/span\u003e});\n\n  @override\n  \u003cspan class=\"hljs-title class_\"\u003eState\u003c/span\u003e\u0026#x3C;\u003cspan class=\"hljs-title class_\"\u003eUserListScreen\u003c/span\u003e\u003e \u003cspan class=\"hljs-title function_\"\u003ecreateState\u003c/span\u003e() =\u003e \u003cspan class=\"hljs-title function_\"\u003e_UserListScreenState\u003c/span\u003e();\n}\n\n\u003cspan class=\"hljs-keyword\"\u003eclass\u003c/span\u003e \u003cspan class=\"hljs-title class_\"\u003e_UserListScreenState\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"hljs-title class_ inherited__\"\u003eState\u003c/span\u003e\u0026#x3C;\u003cspan class=\"hljs-title class_\"\u003eUserListScreen\u003c/span\u003e\u003e {\n\n  final userListController = \u003cspan class=\"hljs-title class_\"\u003eGet\u003c/span\u003e.\u003cspan class=\"hljs-title function_\"\u003eput\u003c/span\u003e(\u003cspan class=\"hljs-title class_\"\u003eUserListController\u003c/span\u003e(),\u003cspan class=\"hljs-attr\"\u003epermanent\u003c/span\u003e: \u003cspan class=\"hljs-literal\"\u003etrue\u003c/span\u003e);\n\n  @override\n  \u003cspan class=\"hljs-title class_\"\u003eWidget\u003c/span\u003e \u003cspan class=\"hljs-title function_\"\u003ebuild\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003eBuildContext context\u003c/span\u003e) {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-title class_\"\u003eScaffold\u003c/span\u003e(\n      \u003cspan class=\"hljs-attr\"\u003eappBar\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eAppBar\u003c/span\u003e(\n        \u003cspan class=\"hljs-attr\"\u003esystemOverlayStyle\u003c/span\u003e: \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e \u003cspan class=\"hljs-title class_\"\u003eSystemUiOverlayStyle\u003c/span\u003e(\n          \u003cspan class=\"hljs-attr\"\u003estatusBarColor\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eColors\u003c/span\u003e.\u003cspan class=\"hljs-property\"\u003egreen\u003c/span\u003e,\n          \u003cspan class=\"hljs-attr\"\u003estatusBarIconBrightness\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eBrightness\u003c/span\u003e.\u003cspan class=\"hljs-property\"\u003edark\u003c/span\u003e, \u003cspan class=\"hljs-comment\"\u003e// For Android (dark icons)\u003c/span\u003e\n          \u003cspan class=\"hljs-attr\"\u003estatusBarBrightness\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eBrightness\u003c/span\u003e.\u003cspan class=\"hljs-property\"\u003elight\u003c/span\u003e, \u003cspan class=\"hljs-comment\"\u003e// For iOS (dark icons)\u003c/span\u003e\n        ),\n        \u003cspan class=\"hljs-attr\"\u003etitleSpacing\u003c/span\u003e: \u003cspan class=\"hljs-number\"\u003e5\u003c/span\u003e,\n        \u003cspan class=\"hljs-attr\"\u003ecenterTitle\u003c/span\u003e: \u003cspan class=\"hljs-literal\"\u003efalse\u003c/span\u003e,\n        \u003cspan class=\"hljs-attr\"\u003eelevation\u003c/span\u003e: \u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e,\n        \u003cspan class=\"hljs-attr\"\u003eautomaticallyImplyLeading\u003c/span\u003e: \u003cspan class=\"hljs-literal\"\u003efalse\u003c/span\u003e,\n        \u003cspan class=\"hljs-attr\"\u003ebackgroundColor\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eColors\u003c/span\u003e.\u003cspan class=\"hljs-property\"\u003egreen\u003c/span\u003e,\n        \u003cspan class=\"hljs-attr\"\u003etitle\u003c/span\u003e: \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e \u003cspan class=\"hljs-title class_\"\u003eText\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\"User List\"\u003c/span\u003e,\n            \u003cspan class=\"hljs-attr\"\u003estyle\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eTextStyle\u003c/span\u003e(\n                \u003cspan class=\"hljs-attr\"\u003efontSize\u003c/span\u003e: \u003cspan class=\"hljs-number\"\u003e18\u003c/span\u003e,\n                \u003cspan class=\"hljs-attr\"\u003ecolor\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eColors\u003c/span\u003e.\u003cspan class=\"hljs-property\"\u003ewhite\u003c/span\u003e,\n                \u003cspan class=\"hljs-attr\"\u003efontWeight\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eFontWeight\u003c/span\u003e.\u003cspan class=\"hljs-property\"\u003ew600\u003c/span\u003e)),\n      ),\n      \u003cspan class=\"hljs-attr\"\u003ebody\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eColumn\u003c/span\u003e(\n        \u003cspan class=\"hljs-attr\"\u003echildren\u003c/span\u003e: [\n          \u003cspan class=\"hljs-title class_\"\u003eExpanded\u003c/span\u003e(\n            \u003cspan class=\"hljs-attr\"\u003echild\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eObx\u003c/span\u003e(() {\n              \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e userListController.\u003cspan class=\"hljs-property\"\u003egetUserList\u003c/span\u003e.\u003cspan class=\"hljs-property\"\u003eisEmpty\u003c/span\u003e\n                  ? \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e \u003cspan class=\"hljs-title class_\"\u003eCenter\u003c/span\u003e(\n                      \u003cspan class=\"hljs-attr\"\u003echild\u003c/span\u003e: \u003cspan class=\"hljs-title class_\"\u003eText\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\"data\"\u003c/span\u003e),\n                    )\n                  : \u003cspan class=\"hljs-title class_\"\u003eListView\u003c/span\u003e.\u003cspan class=\"hljs-title function_\"\u003ebuilder\u003c/span\u003e(\n                      \u003cspan class=\"hljs-attr\"\u003eshrinkWrap\u003c/span\u003e: \u003cspan class=\"hljs-literal\"\u003etrue\u003c/span\u003e,\n                      \u003cspan class=\"hljs-attr\"\u003eitemCount\u003c/span\u003e: userListController.\u003cspan class=\"hljs-property\"\u003egetUserList\u003c/span\u003e.\u003cspan class=\"hljs-property\"\u003elength\u003c/span\u003e,\n                      \u003cspan class=\"hljs-attr\"\u003eitemBuilder\u003c/span\u003e: (\u003cspan class=\"hljs-title class_\"\u003eBuildContext\u003c/span\u003e context, int index) {\n                        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-title class_\"\u003eUserItems\u003c/span\u003e(\n                            \u003cspan class=\"hljs-attr\"\u003edata\u003c/span\u003e: userListController.\u003cspan class=\"hljs-property\"\u003egetUserList\u003c/span\u003e[index]);\n                      });\n            }),\n          )\n        ],\n      ),\n    );\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003e스크린샷:\u003c/h2\u003e\n\u003ch2\u003e소스 코드:\u003c/h2\u003e\n\u003cp\u003eGitHub 링크: \u003ca href=\"https://github.com/sanjaysharmajw/UserList\" rel=\"nofollow\" target=\"_blank\"\u003ehttps://github.com/sanjaysharmajw/UserList\u003c/a\u003e\u003c/p\u003e\n\u003ch2\u003e저와 소통해요:\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eLinkedIn: \u003ca href=\"https://www.linkedin.com/in/sanjaydeveloper/\" rel=\"nofollow\" target=\"_blank\"\u003ehttps://www.linkedin.com/in/sanjaydeveloper/\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003eInstagram: \u003ca href=\"https://www.instagram.com/sanjayjw/\" rel=\"nofollow\" target=\"_blank\"\u003ehttps://www.instagram.com/sanjayjw/\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cimg src=\"/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_2.png\" alt=\"이미지\"\u003e\u003c/p\u003e\n\u003cp\u003e이 기사를 즐겨 보셨기를 바라요! 제공된 정보를 감사하게 생각하신다면, 'Buy Me A Coffee'로 저를 지원할 수 있어요! 여러분의 작은 선행에 감사하겠습니다!\u003c/p\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n"},"__N_SSG":true},"page":"/post/[slug]","query":{"slug":"2024-06-22-APIIntegrationusingGetXinflutter"},"buildId":"ANQ7dDegvQhf-pl2SqBlQ","isFallback":false,"gsp":true,"scriptLoader":[{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4877378276818686","strategy":"lazyOnload","crossOrigin":"anonymous"}]}</script></body></html>
