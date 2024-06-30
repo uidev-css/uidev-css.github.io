@@ -3,13 +3,12 @@ title: "Flutter 숨겨진 보물 탐험 잘 알려지지 않은 위젯 공개  P
 description: ""
 coverImage: "/assets/img/2024-06-30-ExploringHiddenTreasuresinFlutterLesser-KnownWidgetsUnveiledPart3_0.png"
 date: 2024-06-30 18:46
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-30-ExploringHiddenTreasuresinFlutterLesser-KnownWidgetsUnveiledPart3_0.png
 tag: Tech
 originalTitle: "Exploring Hidden Treasures in Flutter: Lesser-Known Widgets Unveiled — Part 3"
 link: "https://medium.com/stackademic/exploring-hidden-treasures-in-flutter-lesser-known-widgets-unveiled-part-3-3c92242fa181"
 ---
-
 
 플러터는 다양하고 시각적으로 멋진 애플리케이션을 개발할 수 있도록 개발자들에게 넓은 위젯 카탈로그로 유명합니다. 자주 사용되는 위젯들은 잘 알려져 있지만, 플러터는 잘 알려지지 않지만 매우 유용한 다양한 위젯들도 제공합니다. UI의 세련됨과 기능성을 향상시킬 수 있는 이런 숨겨진 보석들을 알아보겠습니다.
 
@@ -21,7 +20,7 @@ FadeInImage는 주 이미지가 로딩되는 동안 플레이스홀더 이미지
 
 <div class="content-ad"></div>
 
-```dart
+```js
 FadeInImage(
   placeholder: AssetImage('assets/placeholder.png'),
   image: NetworkImage('https://example.com/image.jpg'),
@@ -32,7 +31,7 @@ FadeInImage(
 
 GridPaper은 레이아웃 디버깅을 위한 편리한 위젯입니다. 앱에 그리드를 겹쳐서 간격, 정렬 및 레이아웃 문제를 시각화하기 쉽게 만들어줍니다.
 
-```dart
+```js
 GridPaper(
   color: Colors.blueAccent,
   divisions: 4,
@@ -84,7 +83,7 @@ ListBody는 주어진 축을 따라 자식 위젯을 선형 배열로 정렬합�
 
 <div class="content-ad"></div>
 
-```dart
+```js
 ListBody(
   children: <Widget>[
     Text('Item 1'),
@@ -98,7 +97,7 @@ ListBody(
 
 MenuRegion은 앱에서 컨텍스트 메뉴를 정의하는 데 사용됩니다. 이 위젯은 데스크톱 애플리케이션에서 마우스 오른쪽 클릭 컨텍스트 메뉴가 흔한 경우에 유용합니다.
 
-```dart
+```js
 MenuRegion(
   child: Container(
     color: Colors.blue,
@@ -114,7 +113,7 @@ MenuRegion(
 
 LookUpBoundary은 InheritedWidget 조회 범위를 제한하는 위젯입니다. 위젯 트리의 재구성 동작을 최적화하고 제어하는 데 유용합니다.
 
-```dart
+```js
 LookUpBoundary(
   child: MyInheritedWidget(
     child: MyWidget(),
@@ -144,7 +143,6 @@ Listener(
 확대경은 특정 영역에 확대 효과를 제공합니다. 이는 접근성을 향상시키고 특정 시나리오에서 사용자 경험을 향상하는 데 좋습니다.
 
 <div class="content-ad"></div>
-
 
 ```js
 확대기(
@@ -216,7 +214,7 @@ MouseRegion(
 
 <div class="content-ad"></div>
 
-끝까지 읽어 주셔서 감사합니다! 떠나시기 전에 다음을 확인해 주세요: 
+끝까지 읽어 주셔서 감사합니다! 떠나시기 전에 다음을 확인해 주세요:
 
 - 작가를 박수로 응원하고 팔로우해 주세요! 👏
 - 저희를 팔로우해 주세요: X | LinkedIn | YouTube | Discord

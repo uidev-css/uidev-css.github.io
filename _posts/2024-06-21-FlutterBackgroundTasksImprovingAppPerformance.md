@@ -3,13 +3,12 @@ title: "Flutter 백그라운드 작업 앱 성능 향상 방법"
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterBackgroundTasksImprovingAppPerformance_0.png"
 date: 2024-06-21 23:32
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterBackgroundTasksImprovingAppPerformance_0.png
 tag: Tech
 originalTitle: "Flutter Background Tasks: Improving App Performance"
 link: "https://medium.com/@parthbhanderi01/flutter-background-tasks-improving-app-performance-d1a6d54bd9ec"
 ---
-
 
 요즘의 빠르게 변화하는 디지턈 세계에서 사용자들은 모바일 어플리케이션이 효율적이고 반응성이 있기를 원합니다. 개발자들은 이러한 요구를 충족시키기 위해 어플리케이션의 성능을 향상시키기 위한 다양한 전략을 사용해야 합니다. 그 중 하나는 백그라운드 작업을 실행하는 것인데, 이를 통해 Flutter 어플리케이션이 사용자 경험을 방해하지 않으면서 고통스러운 작업을 처리할 수 있습니다. 이 블로그 글에서 Flutter의 백그라운드 작업과 중요성을 살펴보고, 구현하는 방법을 보여줄 코딩 예제를 제공해보겠습니다.
 
@@ -87,7 +86,7 @@ class _MyAppState extends State<MyApp> {
 
 앱이 닫혀 있거나 사용 중이 아닌 경우에도, 개발자는 플러터 배경 작업 가져오기 플러그인을 사용하여 주기적인 배경 작업을 계획할 수 있습니다. 이는 데이터 동기화나 앱 컨텐츠 업데이트와 같은 상황에서 유용합니다. 플러터 배경 작업 가져오기 패키지를 사용하는 예제는 다음과 같습니다:
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:flutter_background_fetch/flutter_background_fetch.dart';
 
@@ -397,7 +396,7 @@ Firebase Cloud Messaging (FCM)은 서버 이벤트에 의해 유발된 경보를
 
 이 예제를 기준으로 FCM 알림을 수신할 때마다 백그라운드 프로세스를 실행하려고 한다고 가정해 봅시다.
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 

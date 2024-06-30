@@ -3,13 +3,12 @@ title: "플러터 고급 인터뷰 질문  코드 예제로 풀어보는 세부 
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterAdvancedInterviewQuestionsADetailedGuidewithCodingExamples_0.png"
 date: 2024-06-21 21:23
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterAdvancedInterviewQuestionsADetailedGuidewithCodingExamples_0.png
 tag: Tech
 originalTitle: "Flutter Advanced Interview Questions — A Detailed Guide with Coding Examples."
 link: "https://medium.com/@ahsan-001/flutter-advanced-interview-questions-a-detailed-guide-with-coding-examples-f78900977c09"
 ---
-
 
 ![image](/assets/img/2024-06-21-FlutterAdvancedInterviewQuestionsADetailedGuidewithCodingExamples_0.png)
 
@@ -207,7 +206,7 @@ showToast("Hello, Native Toast!");
 
 플러터 앱을 테스트할 때, 나는 유닛 테스팅, 위젯 테스팅 및 통합 테스팅을 포함한 종합적인 접근 방식을 따릅니다.
 
-## * 유닛 테스팅:
+## \* 유닛 테스팅:
 
 각 함수와 클래스에 대한 유닛 테스트를 작성하여 독립적으로 예상대로 작동하는지 확인합니다. 유당 떄 내장된 flutter_test 패키지와 test 패키지를 활용합니다. mockito와 같은 모킹 프레임워크를 사용하여 종속성을 모킹하는 데 도움이 됩니다.
 
@@ -243,7 +242,7 @@ void main() {
 }
 ```
 
-## * 통합 테스트:
+## \* 통합 테스트:
 
 통합 테스트는 앱의 다양한 부분 간 상호 작용을 테스트하는 데 사용됩니다. 저는 플러터 드라이버 패키지와 플러터 테스트 패키지를 이용하여 통합 테스트를 작성합니다. 이러한 테스트는 실제 디바이스나 에뮬레이터에서 실행되며 사용자 상호작용을 시뮬레이트합니다.
 
@@ -290,7 +289,7 @@ void main() {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class Box<T> {
   T value;
 
@@ -311,7 +310,7 @@ void main() {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'dart:async';
 
 void main() {
@@ -336,7 +335,7 @@ Stream<int> countStream(int max) async* {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'dart:isolate';
 
 void main() async {
@@ -369,7 +368,7 @@ Dart는 future와 async/await 구문을 통해 비동기 프로그래밍을 지�
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'dart:async';
 
 void main() async {
@@ -393,7 +392,6 @@ Future<String> fetchUser() async {
 
 # 5. 당신이 개발한 실제 Flutter 앱이나 구현한 복잡한 기능을 소개해주세요.
 
-
 <div class="content-ad"></div>
 
 한 번 제가 구축한 실제 Flutter 앱은 "TaskMaster"라는 생산성 도구입니다. TaskMaster는 사용자가 업무를 조직화하고 알림을 설정하며 진행 상황을 추적하는 데 도움이 되는 업무 관리 앱입니다.
@@ -406,7 +404,7 @@ TaskMaster에 구현한 복잡한 기능 중 하나는 사용자 정의 캘린�
 
 <div class="content-ad"></div>
 
-```dart
+```js
 // 사용자 정의 캘린더 위젯
 class CalendarView extends StatelessWidget {
   @override
@@ -439,10 +437,9 @@ void main() {
 
 이 예는 단순화된 예시일 뿐이며, 실제 구현에는 더 복잡한 논리가 필요할 것입니다. 작업/이벤트 렌더링, 날짜/시간 계산 처리, 백엔드 서비스 통합 등이 포함될 것입니다.
 
---- ---
+---
 
 # 6. Google Material Design 원칙에 대한 지식 및 Flutter 프로젝트에서 적용하는 방법에 대해 이야기해보세요.
-
 
 <div class="content-ad"></div>
 
@@ -478,7 +475,7 @@ AppBar, BottomNavigationBar, Card, FloatingActionButton 등과 같은 내장 플
 
 Material Design 원칙을 준수하여, Flutter 앱이 통일된 느낌과 사용자들이 익숙하고 쉽게 탐색할 수 있는 완성도 높은 외관을 갖도록 합니다.
 
---- 
+---
 
 # 7. 디버깅 도구와 기술을 사용하여 Flutter 앱에서 복잡한 문제를 효과적으로 해결하는 방법을 설명하세요.
 
@@ -677,7 +674,7 @@ HTTP 캐싱, 압축, 프리패칭 기술 등을 사용하여 네트워크 요청
 
 이러한 최적화 기술을 개발 프로세스에 통합함으로써, Flutter 앱이 다양한 기기와 사용 시나리오에서 탁월한 성능을 제공하도록 보장합니다.
 
---- --- ---
+---
 
 # 10. 선택한 접근 방식(예: BLoC)을 사용하여 복잡한 앱 상태 관리를 어떻게 구현할 것인가요?
 
@@ -720,7 +717,7 @@ class CounterBloc {
 
 ## BLoC 제공하기:
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'counter_bloc.dart';
 
@@ -742,7 +739,7 @@ class BlocProvider extends InheritedWidget {
 
 ## 위젯에서 BLoC 사용하기:
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'bloc_provider.dart';
 import 'counter_bloc.dart';
@@ -835,7 +832,7 @@ BLoC 패턴을 따르면 복잡한 앱 상태를 효과적으로 관리할 수 �
 
 <div class="content-ad"></div>
 
---- --- ---
+---
 
 더 많은 내용을 보려면 Ahsi Dev를 팔로우하세요...
 

@@ -3,13 +3,12 @@ title: "카운팅 정렬 딜레마 속도와 자원 사용 균형 맞추는 방�
 description: ""
 coverImage: "/assets/img/2024-06-21-TheCountingSortConundrumBalancingSpeedandResourceUsage_0.png"
 date: 2024-06-21 20:31
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-TheCountingSortConundrumBalancingSpeedandResourceUsage_0.png
 tag: Tech
 originalTitle: "The Counting Sort Conundrum: Balancing Speed and Resource Usage"
 link: "https://medium.com/@gautam007/the-counting-sort-conundrum-balancing-speed-and-resource-usage-9e347f7abec2"
 ---
-
 
 ## 다트에서 카운팅 정렬 및 실용적인 응용 프로그램에 대해 깊이 파헤쳐보기
 
@@ -40,7 +39,7 @@ link: "https://medium.com/@gautam007/the-counting-sort-conundrum-balancing-speed
 
 Dart로 Counting Sort 알고리즘을 구현해봅시다.
 
-```dart
+```js
 void countingSort(List<int> arr) {
   if (arr.isEmpty) return;
 
@@ -86,9 +85,9 @@ void countingSort(List<int> arr) {
 void main() {
   List<int> arr = [4, 2, 2, 8, 3, 3, 1, 7];
   print("원본 배열: $arr");
-  
+
   countingSort(arr);
-  
+
   print("정렬된 배열: $arr");
 }
 ```

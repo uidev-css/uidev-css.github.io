@@ -3,13 +3,12 @@ title: "플러터 위젯 플러터 앱에 카메라 기능 구현하기"
 description: ""
 coverImage: "/assets/img/2024-06-20-FlutterWidgetImplementingCameraFeatureinyourFlutterApp_0.png"
 date: 2024-06-20 13:43
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-20-FlutterWidgetImplementingCameraFeatureinyourFlutterApp_0.png
 tag: Tech
 originalTitle: "Flutter Widget: Implementing Camera Feature in your Flutter App"
 link: "https://medium.com/@olasoji.od/flutter-widget-implementing-camera-feature-in-your-flutter-app-b083ebd74058"
 ---
-
 
 안녕하세요 여러분, 어떻게 지내세요? 잠깐 사라졌다가 다시 돌아왔습니다. 지금은 플러터 애플리케이션에 카메라를 구현하는 방법에 대해 설명해 드릴게요.
 
@@ -79,7 +78,7 @@ Step 3: 퍼미션 핸들러 패키지와 패스 프로바이더 패키지 설치
 
 <div class="content-ad"></div>
 
-```dart
+```js
 late List<CameraDescription> _cameras;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -136,7 +135,7 @@ class _MyAppState extends State<MyApp> {
 
 카메라 컨트롤러 초기화
 
-_CameraAppState 클래스에서 initState 메서드에서 카메라 컨트롤러를 초기화합니다.
+\_CameraAppState 클래스에서 initState 메서드에서 카메라 컨트롤러를 초기화합니다.
 
 <div class="content-ad"></div>
 
@@ -381,7 +380,6 @@ class _CameraAppState extends State<CameraApp> {
 ```
 
 <img src="https://miro.medium.com/v2/resize:fit:592/1*oqIKI2wzNfzOj1IJ-EDmoQ.gif" />
-
 
 <div class="content-ad"></div>
 

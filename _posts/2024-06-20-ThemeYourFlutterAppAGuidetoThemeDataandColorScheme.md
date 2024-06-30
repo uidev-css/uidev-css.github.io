@@ -3,13 +3,12 @@ title: "Flutter 앱을 테마화해보세요 ThemeData와 ColorScheme에 대한 
 description: ""
 coverImage: "/assets/img/2024-06-20-ThemeYourFlutterAppAGuidetoThemeDataandColorScheme_0.png"
 date: 2024-06-20 13:49
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-20-ThemeYourFlutterAppAGuidetoThemeDataandColorScheme_0.png
 tag: Tech
 originalTitle: "Theme Your Flutter App: A Guide to ThemeData and ColorScheme"
 link: "https://medium.com/@nikhithsunil/theme-your-flutter-app-a-guide-to-themedata-and-colorscheme-d8bca920a6b5"
 ---
-
 
 다음을 먼저 말씀드리기 전에 알아두어야 할 점이 있어요. 많은 기사들이 이 주제에 대해 매체와 다른 소스에서 제공되고 있기 때문에, 이 기사의 필요성이 무엇인지 궁금해졌죠?
 
@@ -37,7 +36,7 @@ link: "https://medium.com/@nikhithsunil/theme-your-flutter-app-a-guide-to-themed
 
 먼저 애플리케이션 내에서 ThemeData를 관리하는 전역 클래스를 만드는 것이 첫 번째 단계입니다. 이 클래스에는 ColorSheme를 사용하여 다른 ThemeData 인스턴스를 만드는 메서드가 포함되어 있습니다.
 
-```dart
+```js
 class GlobalThemData {
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
     return ThemeData(colorScheme: colorScheme, focusColor: focusColor);
@@ -69,7 +68,7 @@ class GlobalThemData {
 
 ```js
   static ThemeData lightThemeData = themeData(lightColorScheme, _lightFocusColor);
-     
+
   static ThemeData darkThemeData = themeData(darkColorScheme, _darkFocusColor);
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
     return ThemeData(colorScheme: colorScheme, focusColor: focusColor);
@@ -115,15 +114,15 @@ background: 전체 애플리케이션의 주요 배경색입니다. 이는 모�
 
 배경색 위에 있는 요소를 색칠하는 데 사용되는 색입니다.
 
- 표면 : 카드, 시트, 대화 상자 등과 같은 UI 요소의 기본 색상으로 사용됩니다.
+표면 : 카드, 시트, 대화 상자 등과 같은 UI 요소의 기본 색상으로 사용됩니다.
 
- 표면 위에 있는 요소에 색칠하는 데 사용됩니다.
+표면 위에 있는 요소에 색칠하는 데 사용됩니다.
 
 그래서 우리는 lightColorScheme 및 darkColorScheme 변수를 다음과 같이 설정할 수 있습니다.
 
 <div class="content-ad"></div>
 
-```dart
+```js
 static const ColorScheme lightColorScheme = ColorScheme(
     primary: Color(0xFFB93C5D),
     onPrimary: Colors.black,
@@ -139,7 +138,7 @@ static const ColorScheme lightColorScheme = ColorScheme(
   );
 ```
 
-```dart
+```js
 static const ColorScheme darkColorScheme = ColorScheme(
     primary: Color(0xFFFF8383),
     secondary: Color(0xFF4D1F7C),
@@ -240,10 +239,10 @@ class GlobalThemData {
 
 MaterialApp에서 원하는 테마를 설정합니다.
 
-```dart
+```js
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

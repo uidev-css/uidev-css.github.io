@@ -3,13 +3,12 @@ title: "Flutter에서 날짜와 시간 다루기  전문가 되는 팁과 트릭
 description: ""
 coverImage: "/assets/img/2024-06-22-DateandTimeinFlutterGettingMasterTipsandTricks_0.png"
 date: 2024-06-22 15:40
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-DateandTimeinFlutterGettingMasterTipsandTricks_0.png
 tag: Tech
 originalTitle: "Date and Time in Flutter | Getting Master ~ Tips and Tricks"
 link: "https://medium.com/@fakgun/date-and-time-in-flutter-getting-master-tips-and-tricks-7d5667aee966"
 ---
-
 
 <img src="/assets/img/2024-06-22-DateandTimeinFlutterGettingMasterTipsandTricks_0.png" />
 
@@ -32,7 +31,7 @@ link: "https://medium.com/@fakgun/date-and-time-in-flutter-getting-master-tips-a
 
 플러터에서는 DateTime 클래스를 사용하여 날짜와 시간을 나타냅니다. 이 클래스는 날짜와 시간 값을 조작하고 처리하기 위한 다양한 속성과 메소드를 제공합니다. 이해해야 할 중요한 개념은 다음과 같습니다:
 
-```dart
+```js
 DateTime now = DateTime.now();
 int year = now.year;
 int month = now.month;
@@ -66,7 +65,7 @@ print(monthName); // 결과: "7월"
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:intl/intl.dart';
 
 DateTime now = DateTime.now();
@@ -80,7 +79,6 @@ print(formattedDate);  // Example output: "3 juillet 2023"
 이 원활한 코드 예제들은 Flutter에서 intl 패키지를 사용하여 DateTime 객체를 형식화하는 방법을 보여줍니다. 다양한 형식 패턴과 로캘을 지정하여 Flutter 애플리케이션에서 로컬화된 및 사용자 정의된 날짜 및 시간 표현을 생성할 수 있습니다.
 
 ## 시간 차이와 기간 계산하기
-
 
 <div class="content-ad"></div>
 
@@ -143,7 +141,7 @@ print(convertedDateTime); // 출력: 2023-07-03 09:30:00.000 EDT
 
 <div class="content-ad"></div>
 
-```Dart
+```js
 import 'package:intl/intl.dart';
 import 'package:timezone/timezone.dart' as tz;
 
@@ -185,7 +183,7 @@ int second = now.second;
 print('$year-$month-$day $hour:$minute:$second'); // 예시 출력: "2023-7-3 10:15:30"
 ```
 
-윤년 확인:  
+윤년 확인:
 
 <div class="content-ad"></div>
 
@@ -241,7 +239,7 @@ Firebase는 Firestore와 같은 실시간 데이터베이스를 제공하는 인
 
 Firestore에 날짜와 시간 저장하기:
 
-```dart
+```js
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -259,7 +257,7 @@ void saveDateTime() {
 
 파이어스토어로부터 날짜와 시간 얻기:
 
-```dart
+```js
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -323,7 +321,6 @@ DateTime localDateTime = utcDateTime.toLocal();
 따라오느라 감사합니다. 아래 댓글에 생각을 자유롭게 남겨주세요.
 
 트위터에서 저를 팔로우해주세요.
-
 
 <div class="content-ad"></div>
 

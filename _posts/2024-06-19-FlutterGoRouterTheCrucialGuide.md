@@ -3,14 +3,12 @@ title: "플러터 Go 라우터 필수 가이드"
 description: ""
 coverImage: "/assets/img/2024-06-19-FlutterGoRouterTheCrucialGuide_0.png"
 date: 2024-06-19 08:13
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-FlutterGoRouterTheCrucialGuide_0.png
 tag: Tech
 originalTitle: "Flutter Go Router : The Crucial Guide"
 link: "https://medium.com/@vimehraa29/flutter-go-router-the-crucial-guide-41dc615045bb"
 ---
-
-
 
 ![FlutterGoRouter](/assets/img/2024-06-19-FlutterGoRouterTheCrucialGuide_0.png)
 
@@ -19,7 +17,6 @@ Go_router은 Flutter에서 라우팅을 위한 서드 파티 패키지로, 기�
 URL 패턴을 정의하고, URL을 사용하여 탐색하며, 딥 링크를 처리하고, 기타 여러 네비게이션 관련 시나리오를 다룰 수 있습니다.
 
 # 특징
-
 
 <div class="content-ad"></div>
 
@@ -47,7 +44,7 @@ dependencies:
 
 이제 그렇게 한 다음에 GoRouter 구성을 앱에 추가해 봅시다:
 
-```dart
+```js
 import 'package:go_router/go_router.dart';
 
 // GoRouter 구성
@@ -194,7 +191,7 @@ StatefulShellRoute.indexedStack()은 중첩된 네비게이터에 IndexedStack�
 
 이 생성자는 분기 네비게이터를 나타내는 위젯을 관리하는 컨테이너(navigatorContainerBuilder)에 대한 IndexedStack 기반 구현을 제공합니다.
 
-```dart
+```js
 // `root` 및 `section` 네비게이터를 위한 키 생성하여 불필요한 재구성을 피합니다
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _sectionNavigatorKey = GlobalKey<NavigatorState>();
@@ -248,7 +245,7 @@ final router = GoRouter(
 우리의 루트에 StatefulShellRoute.indexedStack()를 추가했습니다. 이것은 우리의 분기를 생성하고 사용자 정의 쉘(이 경우 BottomNavigationBar)을 반환합니다.
 
 - 빌더: (context, state, navigationShell)에서는 사용자 정의 쉘인 Scaffold with BottomNavigationBar를 반환하며, 이 페이지로 이동할 때 navigationShell을 전달해야 합니다(예: Shope == Home).
-- branches:[]에서는 StatefulShellBranch(분기) 목록을 제공합니다. 이전에 생성한 _sectionNavigatorKey를 첫 번째 분기에 navigatorKey 속성으로 전달하지만, 다른 분기에는 기본 키가 사용됩니다. 또한 해당 분기에 대한 지원 루트 목록인 RouteBase 목록을 제공합니다.
+- branches:[]에서는 StatefulShellBranch(분기) 목록을 제공합니다. 이전에 생성한 \_sectionNavigatorKey를 첫 번째 분기에 navigatorKey 속성으로 전달하지만, 다른 분기에는 기본 키가 사용됩니다. 또한 해당 분기에 대한 지원 루트 목록인 RouteBase 목록을 제공합니다.
 
 <div class="content-ad"></div>
 
@@ -337,7 +334,7 @@ GoRoute(
       key: state.pageKey,
       child: FruitDetailsScreen(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        // 애니메이션의 값에 따라 화면의 불투명도를 변경합니다. 
+        // 애니메이션의 값에 따라 화면의 불투명도를 변경합니다.
         return FadeTransition(
           opacity: CurveTween(curve: Curves.easeInOutCirc).animate(animation),
           child: child,
@@ -369,7 +366,7 @@ go_router에는 아직도 좋은 기능이 있습니다. GoRouter에 NavigatorOb
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class MyNavigatorObserver extends NavigatorObserver {
   @override
   void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
@@ -384,7 +381,7 @@ class MyNavigatorObserver extends NavigatorObserver {
 
 이제 MyNavigatorObserver를 GoRouter에 추가해 봅시다.
 
-```dart
+```js
 GoRouter(
   ...
   observers: [ // 내비게이터 옵저버 추가

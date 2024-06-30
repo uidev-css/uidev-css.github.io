@@ -3,13 +3,12 @@ title: "ThemeExtension으로 Flutter 맞춤 테마 만들기  템플릿 제공"
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterCustomThemewithThemeExtensionTemplates_0.png"
 date: 2024-06-21 20:46
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterCustomThemewithThemeExtensionTemplates_0.png
 tag: Tech
 originalTitle: "Flutter Custom Theme with ThemeExtension + Templates"
 link: "https://medium.com/@alexandersnotes/flutter-custom-theme-with-themeextension-792034106abc"
 ---
-
 
 <img src="/assets/img/2024-06-21-FlutterCustomThemewithThemeExtensionTemplates_0.png" />
 
@@ -80,7 +79,7 @@ abstract class AppPalette {
 }
 
 /// 팔레트에서 색상을 그룹화하는 대체 방법.
-/// 
+///
 /// 단점은 이러한 값들이 상수가 아니기 때문에
 /// 생성자 기본 값으로 사용할 수 없다는 것입니다.
 ///
@@ -98,7 +97,7 @@ class _GreyColors {
 노트:
 
 - AppPalette는 추상입니다. 왜냐하면 우리는 이를 실체화할 필요가 없기 때문입니다.
-- _GreyColors는 비공개입니다. 직접 액세스하는 것이 아니라 AppPalette를 통해서만 액세스를 허용합니다.
+- \_GreyColors는 비공개입니다. 직접 액세스하는 것이 아니라 AppPalette를 통해서만 액세스를 허용합니다.
 
 ## 단계 2: AppColorsExtension + 템플릿
 
@@ -106,7 +105,7 @@ class _GreyColors {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   AppColorsExtension({
     required this.primary,
@@ -149,7 +148,6 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
 - lerp()는 다른 ThemeExtension 개체와 선형 보간을 수행하고 테마를 변경할 때 애니메이션을 만듭니다.
 
 전체 확장 템플릿 링크는 여기에 있습니다. 현재 내장 ColorScheme과 모든 속성이 동일하지만 필요에 맞게 추가, 이름 바꾸기 및 삭제할 수 있습니다.
-
 
 <div class="content-ad"></div>
 
@@ -249,7 +247,7 @@ extension AppThemeExtension on ThemeData {
 
 <div class="content-ad"></div>
 
-- 만약 이 확장 기능이 AppTheme._lightAppColors에 액세스해야 한다면 AppTheme과 같은 파일에 작성되어야 합니다.
+- 만약 이 확장 기능이 AppTheme.\_lightAppColors에 액세스해야 한다면 AppTheme과 같은 파일에 작성되어야 합니다.
 
 ❗또 하나의 개선점입니다. 매번 Theme.of(context)를 작성하는 것이 너무 길 수 있으므로 BuildContext에 다른 확장 메소드를 추가하는 것을 선호합니다:
 
@@ -325,7 +323,6 @@ class MyApp extends StatelessWidget {
 
 참고:
 
-
 <div class="content-ad"></div>
 
 - ChangeNotifierProvider은 provider 패키지에서 제공됩니다. 이미 알고 계실 거라 믿어요 😅
@@ -352,19 +349,17 @@ void darkMode() {
 
 <div class="content-ad"></div>
 
-
 추상 클래스 AppTypography {
-  고정된 body1 = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.normal,
-  );
+고정된 body1 = TextStyle(
+fontSize: 16,
+fontWeight: FontWeight.normal,
+);
 
-  고정된 h1 = TextStyle(
-    fontSize: 96,
-    fontWeight: FontWeight.w300,
-  );
+고정된 h1 = TextStyle(
+fontSize: 96,
+fontWeight: FontWeight.w300,
+);
 }
-
 
 참고:
 
@@ -372,10 +367,9 @@ void darkMode() {
 
 이제 이러한 스타일을 다음과 같이 사용할 수 있습니다:
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 style: AppTypography.h1.copyWith(color: context.theme.appColors.error)
 ```
 
@@ -383,7 +377,7 @@ style: AppTypography.h1.copyWith(color: context.theme.appColors.error)
 
 Text 위젯을 위한 기본 TextStyle을 설정하려면 TextTheme에서 bodyMedium을 설정해야 합니다. 다음은 예제입니다:
 
-```dart
+```js
 static final light = () {
     final defaultTheme = ThemeData.light();
 

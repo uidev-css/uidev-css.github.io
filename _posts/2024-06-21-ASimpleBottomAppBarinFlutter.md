@@ -3,13 +3,12 @@ title: "Flutter에서 간단한 BottomAppBar 만들기"
 description: ""
 coverImage: "/assets/img/2024-06-21-ASimpleBottomAppBarinFlutter_0.png"
 date: 2024-06-21 22:49
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-ASimpleBottomAppBarinFlutter_0.png
 tag: Tech
 originalTitle: "A Simple BottomAppBar in Flutter"
 link: "https://medium.com/@kymoraa/a-simple-bottomappbar-in-flutter-4556b2365baf"
 ---
-
 
 현재 작업 중인 프로젝트에서 — 곧 공유할 예정이에요, BottomNavigationBar를 포함해야 했어요. 하지만 단순한 하단 네비게이션 바가 아니라, 약간은 멋지고 세련된 모습으로 구현하고 싶었어요.
 
@@ -22,7 +21,7 @@ Flutter에서 하단 네비게이션 바를 사용하려면 build 메서드가 S
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class _MyHomePageState extends State<MyHomePage> {
 
   @override
@@ -45,7 +44,6 @@ BottomAppBar에는 다음과 같은 속성들을 사용하고 싶었어요:
 - shape — 탐색 바에 노치를 추가하여 겹치는 FAB(Floating Action Button)에 공간을 만듦
 - notchMargin — 탐색 바 노치와 FAB 사이의 여백
 - clipBehavior — 설정 옵션에 따라 내용이 클리핑되는지 여부를 지정합니다
-
 
 <div class="content-ad"></div>
 
@@ -108,7 +106,6 @@ floatingActionButton: FloatingActionButton(
 
 <div class="content-ad"></div>
 
-
 ![BottomAppBar](/assets/img/2024-06-21-ASimpleBottomAppBarinFlutter_2.png)
 
 그래서 우리는 이제 '다른' ​​디자인의 하단 네비게이션 바를 얻을 수 있게 되었습니다.
@@ -117,10 +114,9 @@ floatingActionButton: FloatingActionButton(
 
 그래서 BottomAppBar의 자식으로 BottomNavigationBar를 사용해야 합니다. 또한 페이지 간 전환을 허용하기 위해 pageController를 사용할 것입니다.
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 bottomNavigationBar: BottomAppBar(
   shape: const CircularNotchedRectangle(),
   notchMargin: 5.0,

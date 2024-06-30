@@ -3,13 +3,12 @@ title: "예제와 함께 배우는 Flutter ValueNotifier 활용 방법"
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterValueNotifierwithExamples_0.png"
 date: 2024-06-21 21:57
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterValueNotifierwithExamples_0.png
 tag: Tech
 originalTitle: "Flutter ValueNotifier with Examples"
 link: "https://medium.com/@thekavak/flutter-valuenotifier-with-examples-66b3933d7036"
 ---
-
 
 <img src="/assets/img/2024-06-21-FlutterValueNotifierwithExamples_0.png" />
 
@@ -88,7 +87,7 @@ ValueNotifier는 폼 유효성 검사에도 사용할 수 있습니다. 이 예�
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class LoginModel {
   final ValueNotifier<String> email = ValueNotifier<String>('');
   final ValueNotifier<String> password = ValueNotifier<String>('');
@@ -159,7 +158,7 @@ ValueNotifier를 사용하여 상태가 변경될 때 UI를 업데이트할 수�
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class Item {
   final ValueNotifier<String> name;
 
@@ -216,7 +215,6 @@ class _ItemListState extends State<ItemList> {
 결론
 
 ValueNotifier는 Flutter에서 다양한 용도로 사용할 수 있는 다재다능한 클래스로, 애플리케이션 상태 관리, 폼 유효성 검사 및 UI 업데이트를 포함한 여러 목적에 사용할 수 있습니다. ValueNotifier를 사용하여 개발자는 애플리케이션에서 상태를 관리하는 간단하고 효율적인 해결책을 만들 수 있습니다.
-
 
 <div class="content-ad"></div>
 

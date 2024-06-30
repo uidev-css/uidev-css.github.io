@@ -3,13 +3,12 @@ title: "Flutter 애니메이션 종합 가이드"
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterAnimationsComprehensiveGuide_0.png"
 date: 2024-06-21 22:15
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterAnimationsComprehensiveGuide_0.png
 tag: Tech
 originalTitle: "Flutter Animations Comprehensive Guide"
 link: "https://medium.com/flutter-community/flutter-animations-comprehensive-guide-cb93b246ca5d"
 ---
-
 
 이 기사에서는 플러터 애니메이션에 대해 자세히 설명하고 여러 예제와 함께 다루어보겠습니다. 이 기사를 끝까지 읽으면 다양한 복잡성을 갖는 애니메이션을 플러터 앱에 추가할 수 있을 것입니다. 또한 플러터에서 제공하는 다양한 접근 방법 중에서 여러분의 애니메이션 목표에 가장 적합한 것을 알게 될 것입니다. 그럼 바로 시작해 봅시다!
 
@@ -59,7 +58,6 @@ link: "https://medium.com/flutter-community/flutter-animations-comprehensive-gui
 
 <div class="content-ad"></div>
 
-
 <img src="https://miro.medium.com/v2/resize:fit:930/1*cjoraoQHodaUhNx7z2n1aA.gif" />
 
 이 애니메이션은 AnimatedContainer, AnimatedPositioned 및 AnimatedDefaultTextStyle 위젯만을 사용하여 구현되었습니다. 지속 시간 값을 지정하고 변경 가능한 변수를 제공하면 끝입니다!
@@ -99,7 +97,6 @@ AnimatedContainer(
 ```
 
 그리고 간단히 각 목록 항목은 아래와 같은 onTap 메서드가 있는 InkWell 위젯으로 래핑되어 있습니다:
-
 
 <div class="content-ad"></div>
 
@@ -157,7 +154,7 @@ TweenAnimationBuilder(
 );
 ```
 
-_sliderValue 변수는 0.01에서 1로 변경됩니다. 따라서 각 값의 변경마다 애니메이션이 트리거되며 BackdropFilter 위젯의 sigmaX 및 sigmaY 속성을 위한 새 값으로 다시 빌더 함수가 재구성됩니다. (0 값을 주면 BackdropFilter 위젯이 웹에서 오류를 발생시키기 때문에 0.01을 사용했습니다.)
+\_sliderValue 변수는 0.01에서 1로 변경됩니다. 따라서 각 값의 변경마다 애니메이션이 트리거되며 BackdropFilter 위젯의 sigmaX 및 sigmaY 속성을 위한 새 값으로 다시 빌더 함수가 재구성됩니다. (0 값을 주면 BackdropFilter 위젯이 웹에서 오류를 발생시키기 때문에 0.01을 사용했습니다.)
 
 <div class="content-ad"></div>
 
@@ -258,13 +255,13 @@ AnimationController({
 
 GradientTransition 위젯이 없죠? 그럼 어떻게 만들었을까요? AnimatedBuilder 위젯을 이용했어요! 여기에 코드가 있어요:
 
-우리는 AnimationController를 초기화하고 정의했고 이를 AnimatedBuilder 위젯의 애니메이션 값으로 사용했어요. 이제 AnimatedBuilder는 컨트롤러의 값이 변경될 때마다 "다시 빌드(build)"되고 빌더를 호출하여 업데이트된 _controller.value 값을 가진 새 위젯을 반환해요. 이로써 그라데이션이 애니메이션 되게 만들었어요.
+우리는 AnimationController를 초기화하고 정의했고 이를 AnimatedBuilder 위젯의 애니메이션 값으로 사용했어요. 이제 AnimatedBuilder는 컨트롤러의 값이 변경될 때마다 "다시 빌드(build)"되고 빌더를 호출하여 업데이트된 \_controller.value 값을 가진 새 위젯을 반환해요. 이로써 그라데이션이 애니메이션 되게 만들었어요.
 
 <div class="content-ad"></div>
 
 물론, AnimationController의 lowerBound 및 upperBound 값 이외의 것을 원한다면, 자체 Animation을 만들고 AnimationController에 연결한 다음 AnimatedBuilder 위젯에 전달할 수 있습니다.
 
-```dart
+```js
 _animation = Tween<double>(begin: 0, end: 0.5).animate(_controller);
 //...
 AnimatedBuilder(
@@ -291,7 +288,6 @@ AnimatedBuilder(
 
 <div class="content-ad"></div>
 
-
 ![Image 1](/assets/img/2024-06-21-FlutterAnimationsComprehensiveGuide_1.png)
 
 😱 It extends an AnimatedWidget class, and from what we see, the Animation type parameter (in this case turns) is passed as a listenable to the super class:
@@ -299,7 +295,6 @@ AnimatedBuilder(
 ![Image 2](/assets/img/2024-06-21-FlutterAnimationsComprehensiveGuide_2.png)
 
 And the AnimatedWidget is basically a StatefulWidget! So we can do the exact same!
-
 
 <div class="content-ad"></div>
 
@@ -333,7 +328,7 @@ class GradientTransition extends AnimatedWidget {
 
 ```js
 GradientTransition(stop: _controller),
-```  
+```
 
 <div class="content-ad"></div>
 

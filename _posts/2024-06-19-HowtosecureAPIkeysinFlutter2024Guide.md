@@ -3,13 +3,12 @@ title: "2024년 플러터Flutter에서 API 키를 안전하게 보호하는 방�
 description: ""
 coverImage: "/assets/img/2024-06-19-HowtosecureAPIkeysinFlutter2024Guide_0.png"
 date: 2024-06-19 14:27
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-HowtosecureAPIkeysinFlutter2024Guide_0.png
 tag: Tech
 originalTitle: "How to secure API keys in Flutter (2024) Guide"
 link: "https://medium.com/@letmeflutter123/how-to-secure-api-keys-in-flutter-2024-guide-cc83086404b8"
 ---
-
 
 앱 빌드에 패킹된 거의 모든 것이 밝혀질 수 있다는 사실을 아셨나요? 이에는 테스트 계정 정보, 재미있는 할 일 목록, 실수로 추가한 장보기 목록, 심지어 API 키 등이 포함됩니다. 네, 어떤 사람들은 여전히 프로젝트에 장보기 목록을 저장해 둔 채로 있습니다!
 
@@ -74,9 +73,9 @@ abstract class AppSecret implements AppEnvFields {
 
 "obfuscate=true"로 설정한 경우 각 키를 final로 선언해야 합니다. 그리고 환경 파일에서 해당 키 이름을 사용하여 @EnviedField로 각각 주석을 달겠습니다. 우리의 경우에는 "SECRET_KEY"입니다.
 
-마지막으로 생성된 파일에서 값을 가져올 _ProductionSecret.secretKey를 호출할 것입니다.
+마지막으로 생성된 파일에서 값을 가져올 \_ProductionSecret.secretKey를 호출할 것입니다.
 
-```dart
+```js
 part 'env_prod.g.dart';
 
 @Envied(
@@ -96,19 +95,19 @@ class ProductionSecret implements AppSecret, AppEnvFields {
 
 <div class="content-ad"></div>
 
-
 # dart
-dart run build_runner build
-# flutter
-flutter pub run build_runner build
 
+dart run build_runner build
+
+# flutter
+
+flutter pub run build_runner build
 
 `.gitignore` 파일에 `.env`, `production_secret.dart`, `production_secret.g.dart`를 추가하는 걸 잊지 마세요. 이것들을 깃 저장소에 저장하고 싶지 않을 거예요.
 
 # CI/CD 흐름에서 시크릿 키 사용하는 방법
 
 만약 Github Actions나 CodeMagic와 같은 CI/CD 도구를 사용 중이라면, 이 플랫폼 내에서 키를 안전하게 저장하는 것이 중요합니다. 그리고 워크플로우에서 Envied 파일을 동적으로 생성할 수 있습니다.
-
 
 <div class="content-ad"></div>
 

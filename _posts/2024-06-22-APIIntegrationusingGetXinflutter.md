@@ -3,13 +3,12 @@ title: "GetX로 API 통합하기 Flutter를 이용한 쉬운 방법"
 description: ""
 coverImage: "/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_0.png"
 date: 2024-06-22 04:13
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-APIIntegrationusingGetXinflutter_0.png
 tag: Tech
 originalTitle: "API Integration using GetX in flutter"
 link: "https://medium.com/@sanjaysharmajw/api-integration-using-getx-in-flutter-0337243b5cc0"
 ---
-
 
 ![APIIntegrationusingGetXinflutter](/assets/img/2024-06-22-APIIntegrationusingGetXinflutter_0.png)
 
@@ -40,7 +39,7 @@ GetX는 플러터를 위한 가벼우면서 강력한 솔루션입니다. 높은
 
 ## main.dart 파일에 GetMaterialApp 추가하기
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; // Get 패키지 가져오기
 import 'UserListScreens.dart'; // 화면 파일 import하기
@@ -65,17 +64,17 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-```  
+```
 
 <div class="content-ad"></div>
 
 ## APIConstant 클래스 생성
 
-```dart
+```js
 import 'dart:io';
 
 class APIConstant {
-  
+
   static const url = 'https://reqres.in/api/users?page=2';
 
   static Map<String, String> authHeader = {
@@ -87,14 +86,14 @@ class APIConstant {
 
 ## UserModels 클래스 생성
 
-```dart
+```js
 class UserModels {
   UserModels({
-    num? page, 
-    num? perPage, 
-    num? total, 
-    num? totalPages, 
-    List<Data>? data, 
+    num? page,
+    num? perPage,
+    num? total,
+    num? totalPages,
+    List<Data>? data,
     Support? support,
   }) {
     _page = page;
@@ -133,7 +132,7 @@ class UserModels {
     num? totalPages,
     List<Data>? data,
     Support? support,
-  }) => UserModels(  
+  }) => UserModels(
     page: page ?? _page,
     perPage: perPage ?? _perPage,
     total: total ?? _total,
@@ -186,7 +185,7 @@ class Support {
   Support copyWith({
     String? url,
     String? text,
-  }) => Support(  
+  }) => Support(
     url: url ?? _url,
     text: text ?? _text,
   );
@@ -238,7 +237,7 @@ class Data {
     String? firstName,
     String? lastName,
     String? avatar,
-  }) => Data(  
+  }) => Data(
     id: id ?? _id,
     email: email ?? _email,
     firstName: firstName ?? _firstName,
@@ -269,7 +268,7 @@ class Data {
 
 ## UserListController 클래스 생성 및 GetxController를 상속받도록 클래스 확장
 
-```dart
+```js
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -326,7 +325,7 @@ class UserListController extends GetxController implements GetxService {
 
 ## listView를 위한 UserItems 위젯 작성
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:post_project/Models/UserModels.dart';
 

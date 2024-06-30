@@ -3,13 +3,12 @@ title: "API 통합 및 상태 관리를 위한 Flutter BLoC 라이브러리"
 description: ""
 coverImage: "/assets/img/2024-06-19-APIIntegrationandStateManagementwithFlutterBLoCLibrary_0.png"
 date: 2024-06-19 08:08
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-APIIntegrationandStateManagementwithFlutterBLoCLibrary_0.png
 tag: Tech
 originalTitle: "API Integration and State Management with Flutter BLoC Library"
 link: "https://medium.com/@praiseajepe/api-integration-and-state-management-with-flutter-bloc-library-408b9dda9690"
 ---
-
 
 Flutter Bloc 라이브러리는 잘 정의된 아키텍처를 통해 응용 프로그램 상태를 효과적으로 관리하는 방법을 제공합니다.
 
@@ -47,9 +46,7 @@ Flutter Bloc Library를 사용하면 다양한 응용 프로그램 상태를 명
 
 데이터 레이어 구현으로 넘어가기 전에 필요한 종속성을 추가해 봅시다:
 
-
 ![Dependency](/assets/img/2024-06-19-APIIntegrationandStateManagementwithFlutterBLoCLibrary_2.png)
-
 
 HTTP: HTTP 요청을 만들기 위한 구성 가능한 미래 기반 라이브러리입니다.
 
@@ -118,7 +115,7 @@ Bloc 확장 프로그램 사용하기
 - Bloc을 extension에 설치하세요.
 - Bloc 디렉토리를 만드세요.
 - 이 디렉토리를 마우스 오른쪽 클릭하고 New `Bloc Class`를 선택하세요.
-- 이름을 product으로 지정하면 _bloc, _event, _state가 클래스 이름에 추가됩니다. 또한 equatable를 확장할 수 있습니다.
+- 이름을 product으로 지정하면 \_bloc, \_event, \_state가 클래스 이름에 추가됩니다. 또한 equatable를 확장할 수 있습니다.
 
 ![이미지](/assets/img/2024-06-19-APIIntegrationandStateManagementwithFlutterBLoCLibrary_3.png)
 
@@ -165,7 +162,7 @@ class ProductLoadedState extends ProductState {
 
 이 시나리오에서 단일 이벤트인 GetProductEvent를 선언합니다. 이 단일 이벤트의 초기화는 다양한 애플리케이션 상태(ProductLoadingState, ProductLoadedState, ProductEmptyState, ProductLoadingFailedState)를 발생시킬 수 있습니다.
 
-```dart
+```js
 part of 'product_bloc.dart';
 
 abstract class ProductEvent extends Equatable {
@@ -206,7 +203,7 @@ ProductRepository는 BlocProvider 래퍼를 통해 프레젠테이션 레이어(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'dart:async';
 import 'dart:io';
 
@@ -227,7 +224,6 @@ handleExceptionWithMessage() 함수는 발생한 예외에 대한 설명을 반�
 
 데이터와 블록 레이어가 준비되어 있으며, 프레젠테이션에는 데이터를 표시하는 위젯이 포함되어 있습니다.
 
-
 <div class="content-ad"></div>
 
 Bloc 이벤트 또는 상태에 액세스하기 전에는 애플리케이션에 이 Bloc을 제공해야 합니다.
@@ -246,7 +242,7 @@ Bloc 이벤트를 초기화하고 상태를 관리합니다
 
 제품을 표시하는 페이지가 생성되었을 때 (initState) 이 페이지의 초기화에서 Bloc 이벤트 (GetProductEvent)를 호출하거나 추가합니다.
 
-```dart
+```js
 @override
 void initState() {
   context.read<ProductBloc>().add(GetProductEvent());

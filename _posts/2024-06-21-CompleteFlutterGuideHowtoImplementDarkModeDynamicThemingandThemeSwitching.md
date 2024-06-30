@@ -3,13 +3,12 @@ title: "완벽한 Flutter 가이드 다크 모드, 동적 테마 및 테마 전�
 description: ""
 coverImage: "/assets/img/2024-06-21-CompleteFlutterGuideHowtoImplementDarkModeDynamicThemingandThemeSwitching_0.png"
 date: 2024-06-21 20:35
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-CompleteFlutterGuideHowtoImplementDarkModeDynamicThemingandThemeSwitching_0.png
 tag: Tech
 originalTitle: "Complete Flutter Guide: How to Implement Dark Mode, Dynamic Theming and Theme Switching"
 link: "https://medium.com/@amazing_gs/complete-flutter-guide-how-to-implement-dark-mode-dynamic-theming-and-theme-switching-ddabaef48d5a"
 ---
-
 
 # 소개
 
@@ -43,7 +42,7 @@ link: "https://medium.com/@amazing_gs/complete-flutter-guide-how-to-implement-da
 
 다크 모드를 사용하고 싶다면, darkTheme: ThemeData.dark()를 추가하세요.
 
-```dart
+```js
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -93,14 +92,14 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-``` 
+```
 
 <div class="content-ad"></div>
 
 Material 3은 애플리케이션의 전체 색상 테마를 단일 시드 색상에서 설정할 수 있습니다. 테마 생성자에서 colorSchemeSeed 매개변수를 설정하여 Flutter가이 항목에서 앱의 각 위젯에 대한 조화로운 색상 테마를 생성합니다.
 예를 들어, 아래 색상 테마는 colorSchemeSeed를 사용하여 생성됩니다: const Color.fromARGB(86, 80, 14, 171)
 
-```dart
+```js
 class MainApp extends StatelessWidget {
   const MainApp({Key key});
   @override
@@ -151,13 +150,13 @@ class MainApp extends StatelessWidget {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class _MainAppState extends State<MainApp> {
   ThemeMode themeMode = ThemeMode.system;
-  
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( 
+    return MaterialApp(
       theme: ThemeData(
         useMaterial3: true,
       ),
@@ -204,7 +203,6 @@ class _MainAppState extends State<MainApp> {
 
 다크 테마는 비슷한 방식으로 정의되지만 brightness 속성이 Brightness.dark로 설정됩니다.
 
-
 <div class="content-ad"></div>
 
 마지막으로, MaterialApp 위젯이 앱을 생성하는 데 사용됩니다. theme 속성은 밝은 테마로 설정되고, themeMode 속성은 themeMode 변수로 설정됩니다. 이것은 앱이 밝은 테마로 시작하지만 사용자가 해당 버튼을 탭하여 테마를 어둡게 변경할 수 있음을 의미합니다.
@@ -238,7 +236,7 @@ Scaffold 위젯은 앱의 기본 레이아웃을 만드는 데 사용됩니다. 
 
 <div class="content-ad"></div>
 
-```dart
+```js
 ThemeData(
         useMaterial3: true,
         colorSchemeSeed: const Color.fromRGBO(86, 80, 14, 171),
@@ -253,7 +251,7 @@ Flutter에서 Material 스타일 색 구성표를 사용자 정의하는 방법�
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:flutter/material.dart';
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
@@ -278,7 +276,7 @@ const darkColorScheme = ColorScheme(
 
 - 이러한 사용자 정의 색상을 테마에서 참조하십시오:
 
-```dart
+```js
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 // 이 위젯은 애플리케이션의 루트입니다.
@@ -297,7 +295,7 @@ class MyApp extends StatelessWidget {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 최종 defaultColorScheme = Theme.of(context).colorScheme;
 appBar: AppBar(
         title: const Text("AppBar"),
@@ -307,9 +305,9 @@ appBar: AppBar(
 
 4, 여러 테마를 만들 수도 있습니다. 테마를 전환할 때 다른 ThemeData 객체를 전달하세요:
 
-```dart
+```js
 MaterialApp(
-  theme: lightTheme, 
+  theme: lightTheme,
   darkTheme: darkTheme,
 )
 ```
@@ -430,7 +428,7 @@ final themeProvider = Provider.of<ThemeProvider>(context);
 테마 색상을 변경하려면 setLightScheme 및 setDarkScheme를 호출하세요:
 
 ```js
-themeProvider.setLightScheme(lightColorScheme); 
+themeProvider.setLightScheme(lightColorScheme);
 themeProvider.setDarkScheme(darkColorScheme);
 ```
 

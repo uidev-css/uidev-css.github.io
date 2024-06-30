@@ -3,14 +3,12 @@ title: "Flutter에서 백그라운드 서비스와 포어그라운드 서비스 
 description: ""
 coverImage: "/assets/img/2024-06-21-BackgroundandForegroundservicesinFlutter_0.png"
 date: 2024-06-21 22:36
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-BackgroundandForegroundservicesinFlutter_0.png
 tag: Tech
 originalTitle: "Background and Foreground services in Flutter"
 link: "https://medium.com/@sanjaysharmajw/background-and-foreground-services-in-flutter-cc66f612d58c"
 ---
-
-
 
 ![그림](/assets/img/2024-06-21-BackgroundandForegroundservicesinFlutter_0.png)
 
@@ -22,8 +20,7 @@ link: "https://medium.com/@sanjaysharmajw/background-and-foreground-services-in-
   flutter_background_service: 5.0.2
   flutter_background_service_android: 6.1.0
   flutter_background_service_ios: ^5.0.0
-``` 
-
+```
 
 <div class="content-ad"></div>
 
@@ -109,7 +106,7 @@ IOS용:
 
 <div class="content-ad"></div>
 
-```dart
+```js
 @pragma('vm:entry-point')
 Future<bool> onIosBackground(ServiceInstance service) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -120,7 +117,7 @@ Future<bool> onIosBackground(ServiceInstance service) async {
 
 Android용:
 
-```dart
+```js
 @pragma('vm:entry-point')
 void onStart(ServiceInstance service) async {
   DartPluginRegistrant.ensureInitialized();
@@ -162,7 +159,6 @@ void onStart(ServiceInstance service) async {
 
 이 메서드는 어디서든 사용할 수 있습니다:
 
-
 <div class="content-ad"></div>
 
 ```js
@@ -197,7 +193,7 @@ import 'package:flutter_background_service_android/flutter_background_service_an
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initializeService(); 
+  await initializeService();
   runApp(const MyApp());
 }
 
@@ -243,7 +239,7 @@ void onStart(ServiceInstance service) async {
     service.stopSelf();
   });
 
-  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = 
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
   FlutterLocalNotificationsPlugin();
   // bring to foreground
   Timer.periodic(const Duration(seconds: 1), (timer) async {
@@ -296,7 +292,6 @@ class _MyAppState extends State<MyApp>{
 ```
 
 <img src="/assets/img/2024-06-21-BackgroundandForegroundservicesinFlutter_1.png" />
-
 
 <div class="content-ad"></div>
 

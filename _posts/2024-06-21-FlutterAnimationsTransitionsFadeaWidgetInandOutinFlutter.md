@@ -3,13 +3,12 @@ title: "Flutter 애니메이션, 전환 효과 Flutter에서 위젯의 페이드
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterAnimationsTransitionsFadeaWidgetInandOutinFlutter_0.png"
 date: 2024-06-21 20:05
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterAnimationsTransitionsFadeaWidgetInandOutinFlutter_0.png
 tag: Tech
 originalTitle: "Flutter Animations , Transitions: Fade a Widget In and Out in Flutter."
 link: "https://medium.com/@blup-tool/flutter-animations-transitions-fade-a-widget-in-and-out-in-flutter-9f95849076f8"
 ---
-
 
 <img src="https://miro.medium.com/v2/resize:fit:1400/1*BOcAOqWDdYizQO08mQaOiA.gif" />
 
@@ -72,7 +71,7 @@ flutter create fade_animation_example
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:flutter/material.dart';
 class MyApp extends StatelessWidget {
   @override
@@ -92,14 +91,14 @@ class FadeInOut extends StatefulWidget {
 
 상태 클래스 내에서 AnimatedOpacity를 사용하여 투명도 애니메이션을 관리할 것입니다.
 
-```dart
+```js
 class _FadeInOutState extends State<FadeInOut> {
   double _opacity = 1.0;
 ```
 
 <div class="content-ad"></div>
 
-```dart
+```js
 위젯 빌드(BuildContext context) {
   반환 Scafflod(
     appBar: AppBar(title: Text('투명도 애니메이션')),
@@ -129,9 +128,9 @@ class _FadeInOutState extends State<FadeInOut> {
 
 # 투명도 전환
 
-투명도를 전환하려면 FloatingActionButton을 사용합니다. 이 버튼을 누르면 setState 메서드가 실행되어 _opacity 변수를 업데이트하고, 이로 인해 AnimatedOpacity 위젯이 새로운 투명도 값으로 다시 빌드됩니다.
+투명도를 전환하려면 FloatingActionButton을 사용합니다. 이 버튼을 누르면 setState 메서드가 실행되어 \_opacity 변수를 업데이트하고, 이로 인해 AnimatedOpacity 위젯이 새로운 투명도 값으로 다시 빌드됩니다.
 
-```dart
+```js
 floatingActionButton: FloatingActionButton(
   onPressed: () {
     setState(() {

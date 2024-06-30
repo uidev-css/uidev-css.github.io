@@ -3,13 +3,12 @@ title: "Flutter 앱 테마 커스터마이즈 라이트와 다크 모드 전환 
 description: ""
 coverImage: "/assets/img/2024-06-23-CustomizeFlutterAppThemesSwappingBetweenLightDarkModesandUsingExtensions_0.png"
 date: 2024-06-23 14:53
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-23-CustomizeFlutterAppThemesSwappingBetweenLightDarkModesandUsingExtensions_0.png
 tag: Tech
 originalTitle: "Customize Flutter App Themes: Swapping Between Light Dark Modes and Using Extensions"
 link: "https://medium.com/@9dan_/customize-flutter-app-themes-swapping-between-light-dark-modes-and-using-extensions-66b1586aae1b"
 ---
-
 
 플러터는 테마 지원을 통해 개발자들이 다양한 테마 기능으로 애플리케이션을 사용자 정의할 수 있도록 훌륭한 지원을 제공합니다. 이 글에서는 두 가지 핵심 테마 기능에 중점을 두겠습니다:
 
@@ -20,7 +19,6 @@ B) 테마 확장을 사용하여 추가 테마 데이터 클래스를 생성하�
 完전한 작동하는 샘플 코드에 대한 접근은 동봉된 GitHub 저장소를 참조해주세요.
 
 <div class="content-ad"></div>
-
 
 ![image](/assets/img/2024-06-23-CustomizeFlutterAppThemesSwappingBetweenLightDarkModesandUsingExtensions_0.png)
 
@@ -78,7 +76,6 @@ context.get<Signal<ThemeMode>>().value = newThemeMode;
 
 앱이 시작할 때마다 ThemeMode를 저장하고 가져와서 사용자의 테마 선호도를 유지해야 합니다. 이렇게 하면 사용자의 선택사항이 기억되고 일관되게 적용됩니다.
 
-
 <div class="content-ad"></div>
 
 # 테마 확장 사용하기
@@ -117,7 +114,7 @@ class MyCustomThemeExtension extends ThemeExtension<MyCustomThemeExtension> {
     );
   }
 }
-```  
+```
 
 <div class="content-ad"></div>
 
@@ -137,7 +134,7 @@ return ThemeData(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 마지막 색상 = Theme.of(context)
                         .extension<MyCustomThemeExtension>()!
                         .customColor;
@@ -148,7 +145,6 @@ ThemeExtension의 사용은 특히 Material 사양과 긴밀히 연결되지 않
 # 결론
 
 테마 전환을 통해 개발자는 더 동적이고 현대적인 애플리케이션을 만들 수 있을 뿐만 아니라 사용자의 요구를 존중할 수 있다고 생각합니다. 저는 개인적으로 다크 모드를 많이 사용하고 애플리케이션이 그것을 지원하지 않을 때 약간 긴장을 느낍니다.
-
 
 <div class="content-ad"></div>
 

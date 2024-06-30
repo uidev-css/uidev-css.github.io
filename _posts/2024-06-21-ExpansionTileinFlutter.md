@@ -3,14 +3,12 @@ title: "플러터에서 Expansion Tile 사용 방법"
 description: ""
 coverImage: "/assets/img/2024-06-21-ExpansionTileinFlutter_0.png"
 date: 2024-06-21 20:50
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-ExpansionTileinFlutter_0.png
 tag: Tech
 originalTitle: "Expansion Tile in Flutter"
 link: "https://medium.com/@aakashpp/expansion-tile-in-flutter-7ba50c7386ab"
 ---
-
-
 
 ![Image](/assets/img/2024-06-21-ExpansionTileinFlutter_0.png)
 
@@ -19,7 +17,6 @@ link: "https://medium.com/@aakashpp/expansion-tile-in-flutter-7ba50c7386ab"
 ![Image](https://miro.medium.com/v2/resize:fit:700/0*SAyKoBHKRJMTrECc.gif)
 
 ## 확장 타일이란 무엇인가요?
-
 
 <div class="content-ad"></div>
 
@@ -33,7 +30,7 @@ link: "https://medium.com/@aakashpp/expansion-tile-in-flutter-7ba50c7386ab"
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -160,7 +157,7 @@ initiallyExpanded
 
 <div class="content-ad"></div>
 
-```dart
+```js
 ExpansionTile(
   title: Text("사용자 $index"),
   initiallyExpanded: index.isEven, // 모든 짝수 타일이 기본적으로 확장됨
@@ -186,7 +183,7 @@ expandedCrossAxisAlignment
 
 확장된 타일의 내부에서는 [children]을 위해 [Column] 위젯을 사용하며, crossAxisAlignment 매개변수는 [Column]으로 직접 전달됩니다.
 
-```dart
+```js
 return Card(
   child: ExpansionTile(
     title: Text("User $index"),
@@ -267,8 +264,7 @@ return Card(
                 ],
               ),
             );
-``` 
-
+```
 
 <div class="content-ad"></div>
 

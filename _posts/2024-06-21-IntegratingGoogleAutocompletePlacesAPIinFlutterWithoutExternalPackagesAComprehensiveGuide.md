@@ -3,13 +3,12 @@ title: "외부 패키지 없이 Flutter에서 Google Autocomplete Places API 통
 description: ""
 coverImage: "/assets/img/2024-06-21-IntegratingGoogleAutocompletePlacesAPIinFlutterWithoutExternalPackagesAComprehensiveGuide_0.png"
 date: 2024-06-21 20:41
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-IntegratingGoogleAutocompletePlacesAPIinFlutterWithoutExternalPackagesAComprehensiveGuide_0.png
 tag: Tech
 originalTitle: "Integrating Google Autocomplete Places API in Flutter Without External Packages: A Comprehensive Guide"
 link: "https://medium.com/@axiftaj/integrating-google-autocomplete-places-api-in-flutter-without-external-packages-a-comprehensive-a86f37aa8b90"
 ---
-
 
 ![image](/assets/img/2024-06-21-IntegratingGoogleAutocompletePlacesAPIinFlutterWithoutExternalPackagesAComprehensiveGuide_0.png)
 
@@ -67,11 +66,11 @@ uuid 패키지는 세션을 관리하는 데 사용될 거에요(세션이 무�
 
 <div class="content-ad"></div>
 
-먼저 사용자로부터 입력을 받기 위해 Text Field를 사용하는 컨트롤러를 만들었습니다. 그리고 uuid 인스턴스를 초기화하였는데, 이는 새로운 세션을 생성하는 데 도움이 됩니다. 그리고 initState() 메서드에서는 컨트롤러의 변경사항을 감지하고 사용자가 무언가를 입력할 때 getSuggestion(_controller.text) 함수를 호출합니다.
+먼저 사용자로부터 입력을 받기 위해 Text Field를 사용하는 컨트롤러를 만들었습니다. 그리고 uuid 인스턴스를 초기화하였는데, 이는 새로운 세션을 생성하는 데 도움이 됩니다. 그리고 initState() 메서드에서는 컨트롤러의 변경사항을 감지하고 사용자가 무언가를 입력할 때 getSuggestion(\_controller.text) 함수를 호출합니다.
 
-_placeList에는 API 호출이 성공했을 때 화면에 자동완성 추천을 저장합니다.
+\_placeList에는 API 호출이 성공했을 때 화면에 자동완성 추천을 저장합니다.
 
-```dart
+```js
 final _controller = TextEditingController();
 var uuid = const Uuid();
 String _sessionToken = '1234567890';

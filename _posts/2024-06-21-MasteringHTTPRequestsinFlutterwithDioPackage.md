@@ -3,13 +3,12 @@ title: "Dio 패키지로 Flutter에서 HTTP 요청 마스터하기 완벽 가이
 description: ""
 coverImage: "/assets/img/2024-06-21-MasteringHTTPRequestsinFlutterwithDioPackage_0.png"
 date: 2024-06-21 22:09
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-MasteringHTTPRequestsinFlutterwithDioPackage_0.png
 tag: Tech
 originalTitle: "Mastering HTTP Requests in Flutter with Dio Package"
 link: "https://medium.com/@azizndao/mastering-http-requests-in-flutter-with-dio-package-975b75002911"
 ---
-
 
 <img src="/assets/img/2024-06-21-MasteringHTTPRequestsinFlutterwithDioPackage_0.png" />
 
@@ -80,7 +79,7 @@ Dio는 인터셉터또한 제공합니다. 이는 요청이 보내거나 받기 
 
 다음은 Dio 인스턴스에 인터셉터를 추가하는 예시입니다:
 
-```dart
+```js
 import 'package:dio/dio.dart';
 
 ...
@@ -137,7 +136,7 @@ Dio는 HTTP 요청 시 발생할 수 있는 오류를 처리하는 편리한 방
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:dio/dio.dart';
 
 ...
@@ -156,7 +155,6 @@ print(response.data);
 # 결론
 
 이 튜토리얼에서는 Dio 패키지를 살펴보고 Flutter 애플리케이션에서 HTTP 요청을 하는 방법을 살펴보았습니다. HTTP 요청을 만드는 기본 사항, 인터셉터 사용, 요청 취소 및 오류 처리에 대해 다루었습니다.
-
 
 <div class="content-ad"></div>
 

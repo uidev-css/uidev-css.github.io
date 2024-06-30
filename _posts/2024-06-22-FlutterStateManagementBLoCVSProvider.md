@@ -3,13 +3,12 @@ title: "Flutter 상태 관리 BLoC와 Provider 비교 어떤 걸 선택해야 �
 description: ""
 coverImage: "/assets/img/2024-06-22-FlutterStateManagementBLoCVSProvider_0.png"
 date: 2024-06-22 15:47
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-FlutterStateManagementBLoCVSProvider_0.png
 tag: Tech
 originalTitle: "Flutter State Management BLoC VS Provider"
 link: "https://medium.com/@Victor.Ahmad/bloc-vs-provider-flutter-state-management-a-detailed-comparison-5a932e9033dd"
 ---
-
 
 세부 비교
 
@@ -48,7 +47,7 @@ class CounterBloc {
 }
 ```
 
-이 예제에서 CounterBloc 클래스에는 비공개 _counterController StreamController와 공개 counter 스트림이 있습니다. increment 메서드는 이벤트를 가져와 스트림의 현재 값에 1을 추가하고, dispose는 더 이상 필요하지 않을 때 스트림을 닫는 데 사용됩니다.
+이 예제에서 CounterBloc 클래스에는 비공개 \_counterController StreamController와 공개 counter 스트림이 있습니다. increment 메서드는 이벤트를 가져와 스트림의 현재 값에 1을 추가하고, dispose는 더 이상 필요하지 않을 때 스트림을 닫는 데 사용됩니다.
 
 <div class="content-ad"></div>
 
@@ -59,7 +58,7 @@ BLoC 사용의 장점은 다음과 같습니다:
 
 다음은 위의 BLoC를 플러터 위젯 트리에 구현하는 예시입니다:
 
-```dart
+```js
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

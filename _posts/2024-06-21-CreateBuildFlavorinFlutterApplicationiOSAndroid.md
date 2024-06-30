@@ -3,13 +3,12 @@ title: "Flutter 애플리케이션에서 빌드 플레버 설정하는 방법 iO
 description: ""
 coverImage: "/assets/img/2024-06-21-CreateBuildFlavorinFlutterApplicationiOSAndroid_0.png"
 date: 2024-06-21 20:29
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-CreateBuildFlavorinFlutterApplicationiOSAndroid_0.png
 tag: Tech
 originalTitle: "Create Build Flavor in Flutter Application (iOS , Android)"
 link: "https://medium.com/@dwirandyh/create-build-flavor-in-flutter-application-ios-android-fb35a81a9fac"
 ---
-
 
 ## Flutter 앱에서 다른 환경을 설정하는 방법이 궁금한 적이 있나요? 예를 들어, 다른 API URL, API 키, 개발 및 제품용 아이콘과 같은 것들을 설정해야 하는 경우가 있습니다.
 
@@ -54,7 +53,7 @@ Build Flavor(빌드 플레이버)는 iOS에서의 Build Configurations(빌드 �
 빌드 모드는 소스 코드를 서로 다른 모드로 컴파일하는 컴파일 모드입니다.
 
 - **개발 중 디버그 모드(Debug mode)**: 핫 리로드를 사용하고 싶을 때 사용됩니다.
-- **성능 분석을 원할 때 프로파일 모드(Profile mode)**: 
+- **성능 분석을 원할 때 프로파일 모드(Profile mode)**:
 - **앱을 릴리스할 준비가 된 경우 릴리스 모드(Release mode)**:
 
 <div class="content-ad"></div>
@@ -80,9 +79,10 @@ Build Flavor(빌드 플레이버)는 iOS에서의 Build Configurations(빌드 �
 <div class="content-ad"></div>
 
 ## 단계 1. AppConfig 파일 만들기
+
 AppConfig 클래스를 만들어주세요. 이 싱글톤 클래스는 플레이버별 구성을 저장하는 데 유용합니다.
 
-```dart
+```js
 import 'package:flutter/material.dart';
 
 enum Flavor { prod, dev }
@@ -109,6 +109,7 @@ class AppConfig {
 ```
 
 ## 단계 2. 각 플레이버별 진입점 생성
+
 `lib/main_prod.dart` 파일을 만들어주세요. 이곳에서 제품 플레이버에 맞게 앱을 실행합니다. 해당 플레이버에 따라 앱의 이름을 지정할 수 있습니다.
 
 프로덕션용 진입점
@@ -117,7 +118,7 @@ class AppConfig {
 
 프로덕션 모드에서 앱을 실행하도록 lib/main.dart 파일을 만들거나 편집하세요. 이 파일에서는 플레이버 타입을 정의하고 앱에 특정 이름, 베이스 URL, 기본 색상 등을 부여합니다.
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:medium_build_flavor/app_config.dart';
 import 'package:medium_build_flavor/home_page.dart';
@@ -156,7 +157,7 @@ class MyApp extends StatelessWidget {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:medium_build_flavor/app_config.dart';
 import 'package:medium_build_flavor/home_page.dart';
@@ -192,7 +193,7 @@ class MyApp extends StatelessWidget {
 단계 3. 홈 페이지
 이 홈 페이지 뷰는 우리가 진입점 파일에서 정의한 app config을 기반으로 한 구성을 표시하는 데 사용됩니다.
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:medium_build_flavor/app_config.dart';
 
@@ -227,15 +228,16 @@ class _HomePageState extends State<HomePage> {
 
 # iOS용 빌드 Flavor 설정
 
-
 <div class="content-ad"></div>
 
 ### Step 1. 대상 복제
+
 ios/Runner.xcworkspace을 여세요. Runner 대상을 복제합니다. 이렇게 하면 두 개의 서로 다른 대상이 생성됩니다. 방금 만든 dev 대상은 개발 대상으로 사용되고 기본 대상인 Runner은 prod로 이름을 변경하여 프로덕션 대상으로 사용됩니다.
 
 ![이미지](https://miro.medium.com/v2/resize:fit:1400/1*3pl3Ash1kCDEecmnD1RIeg.gif)
 
 ### Step 2. 스킴 이름 바꾸기
+
 대상을 복제하면 생성된 스킴을 이름을 변경해야 합니다. Runner을 dev로 이름을 변경합니다. 이 스킴은 dev 플레이버를 사용하여 flutter 명령을 실행할 때 식별자로 사용됩니다.
 
 ![이미지](https://miro.medium.com/v2/resize:fit:1400/1*yGyUZHGWN7cI3XW-m9k69A.gif)
@@ -302,7 +304,6 @@ Step 3. 개발용 빌드 모드 구성 추가
 
 <div class="content-ad"></div>
 
-
 ![Image](https://miro.medium.com/v2/resize:fit:1400/1*2mQ1CJ_sPyIHHSodjqCVGg.gif)
 
 어플리케이션에서 변경 사항을 보려면 flutter run lib/main_dev.dart --flavor dev 명령어를 다시 실행하면, 개발용 앱 아이콘이 변경된 것을 확인할 수 있습니다.
@@ -311,7 +312,6 @@ Step 3. 개발용 빌드 모드 구성 추가
 
 단계 1. 플레이버 구성 추가
 안드로이드에서 빌드 플레이버를 생성하기 위한 첫 번째 단계는 app/build.gradle 파일에 일부 구성을 추가해야 합니다.
-
 
 <div class="content-ad"></div>
 
@@ -334,7 +334,7 @@ Step 3. 개발용 빌드 모드 구성 추가
           versionNameSuffix ".dev"
       }
   }
-  
+
 }
 ```
 
@@ -343,7 +343,6 @@ Step 3. 개발용 빌드 모드 구성 추가
 개발 애플리케이션을 위한 앱 아이콘을 변경하려면 app/src/dev 내에 디렉토리를 생성하고 해당 폴더에 모든 앱 아이콘 리소스를 넣어야 합니다. 이렇게 하면 개발 플레이버를 실행할 때 dev/res 디렉토리에서 ic_launcher를 사용할 수 있습니다
 
 <img src="/assets/img/2024-06-21-CreateBuildFlavorinFlutterApplicationiOSAndroid_8.png" />
-
 
 <div class="content-ad"></div>
 

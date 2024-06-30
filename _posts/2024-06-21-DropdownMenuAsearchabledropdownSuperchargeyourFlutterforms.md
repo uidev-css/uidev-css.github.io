@@ -3,13 +3,12 @@ title: "DropdownMenu  검색 가능한 드롭다운 Flutter 폼을 향상시키�
 description: ""
 coverImage: "/assets/img/2024-06-21-DropdownMenuAsearchabledropdownSuperchargeyourFlutterforms_0.png"
 date: 2024-06-21 23:34
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-DropdownMenuAsearchabledropdownSuperchargeyourFlutterforms_0.png
 tag: Tech
 originalTitle: "DropdownMenu — A searchable dropdown: Supercharge your Flutter forms!"
 link: "https://medium.com/@mohan-smk23/dropdownmenu-a-searchable-dropdown-supercharge-your-flutter-forms-8dde6d46809f"
 ---
-
 
 세 번째 파티 제약을 작별하고! 플러터에서 검색 가능한 드롭다운을 만들어보세요. 검색과 스타일이 적용된 여러분만의 드롭다운.
 
@@ -29,7 +28,7 @@ link: "https://medium.com/@mohan-smk23/dropdownmenu-a-searchable-dropdown-superc
 
 - 드롭다운 메뉴에 표시하고 싶은 항목 목록을 준비해봅시다. 이것은 문자열, 객체 또는 위젯의 리스트일 수 있습니다.
 
-```dart
+```js
 class MenuItem {
   final int id;
   final String label;

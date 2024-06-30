@@ -3,13 +3,12 @@ title: "포괄적인 미디어 쿼리 안내"
 description: ""
 coverImage: "/assets/img/2024-06-19-AComprehensiveMediaQueryGuide_0.png"
 date: 2024-06-19 00:00
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-AComprehensiveMediaQueryGuide_0.png
 tag: Tech
 originalTitle: "A Comprehensive MediaQuery Guide"
 link: "https://medium.com/@rishad2002/a-comprehensive-mediaquery-guide-7ce6c65f7147"
 ---
-
 
 <img src="/assets/img/2024-06-19-AComprehensiveMediaQueryGuide_0.png" />
 
@@ -84,7 +83,7 @@ MediaQuery는 다음과 같은 방법으로 반응형 UI를 구축하는 데 도
 
 <div class="content-ad"></div>
 
-```dart
+```js
 var screenSize = MediaQuery.of(context).size;
 var screenWidth = screenSize.width;
 var screenHeight = screenSize.height;
@@ -94,7 +93,7 @@ var screenHeight = screenSize.height;
 - 사용법: 고해상도 이미지와 그래픽을 렌더링하는 데 유용합니다.
 - 예시:
 
-```dart
+```js
 var devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
 ```
 
@@ -104,7 +103,7 @@ var devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
 
 <div class="content-ad"></div>
 
-```dart
+```js
 var textScaleFactor = MediaQuery.of(context).textScaleFactor;
 ```
 
@@ -114,13 +113,12 @@ var textScaleFactor = MediaQuery.of(context).textScaleFactor;
 - 사용법: 앱이 테마를 이에 맞게 조절할 수 있습니다.
 - 예시:
 
-```dart
+```js
 var brightness = MediaQuery.of(context).platformBrightness;
 bool isDarkMode = brightness == Brightness.dark;
 ```
 
 <div class="content-ad"></div>
-
 
 ![Image](/assets/img/2024-06-19-AComprehensiveMediaQueryGuide_3.png)
 
@@ -135,7 +133,6 @@ var bottomPadding = padding.bottom;
 ```
 
 ![Image](/assets/img/2024-06-19-AComprehensiveMediaQueryGuide_4.png)
-
 
 <div class="content-ad"></div>
 
@@ -160,7 +157,6 @@ var bottomViewPadding = viewPadding.bottom;
 
 <div class="content-ad"></div>
 
-
 ![이미지](/assets/img/2024-06-19-AComprehensiveMediaQueryGuide_5.png)
 
 - 설명: orientation 속성은 기기가 현재 세로 모드 또는 가로 모드인지를 나타냅니다.
@@ -173,7 +169,6 @@ bool isPortrait = orientation == Orientation.portrait;
 ```
 
 # MediaQuery와 LayoutBuilder의 결합
-
 
 <div class="content-ad"></div>
 
@@ -258,7 +253,7 @@ void main() {
 
 - MediaQuery: 전체 화면 크기 및 기타 속성을 검색하는 데 사용됩니다. 이를 통해 전체 화면 크기를 결정하는 데 도움이 됩니다.
 - LayoutBuilder: 부모 위젯이 제공하는 제한에 따라 레이아웃을 동적으로 조정하는 데 사용됩니다.
-- _buildMobileLayout & _buildTabletDesktopLayout: 모바일 및 태블릿/데스크톱 뷰에 대한 두 가지 다른 레이아웃이 정의되어 있습니다.
+- \_buildMobileLayout & \_buildTabletDesktopLayout: 모바일 및 태블릿/데스크톱 뷰에 대한 두 가지 다른 레이아웃이 정의되어 있습니다.
 - 모바일 레이아웃: 모바일 화면에 적합한 작은 컨테이너를 표시합니다.
 - 태블릿/데스크톱 레이아웃: 큰 화면용으로 더 큰 컨테이너를 표시합니다.
 

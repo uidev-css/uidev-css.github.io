@@ -3,21 +3,18 @@ title: "Flutter 프라이빗 패키지 만드는 방법"
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterCreatePrivatePackages_0.png"
 date: 2024-06-21 20:13
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterCreatePrivatePackages_0.png
 tag: Tech
 originalTitle: "[Flutter] Create Private Packages"
 link: "https://medium.com/@fz3hra/flutter-create-private-packages-a9eb2504e60e"
 ---
 
-
-
 ![Flutter Create Private Packages](/assets/img/2024-06-21-FlutterCreatePrivatePackages_0.png)
 
 Flutter 패키지와 함께한 나의 여정은 처음부터 하나를 만들어야 했을 때 시작되었습니다. 오늘은 이 주제에 대한 나의 경험과 통찰을 공유하는 것에 흥분하고 있습니다. Google I/O’23에서도 이에 대해 논의했지만, 여기에서는 개념을 이해하고 자신만의 패키지를 구축하려는 분들을 위한 내용입니다.
 
 # 패키지와 플러그인 이해
-
 
 <div class="content-ad"></div>
 
@@ -27,7 +24,7 @@ Flutter 패키지와 함께한 나의 여정은 처음부터 하나를 만들어
 
 플러그인은 플랫폼별 및 다트 코드로 작성된 API를 포함하고 있어요. 플러그인은 카메라와 같은 기기 특성에 접근하기 위해 필수적이에요.
 
-# 의존성 관리 
+# 의존성 관리
 
 <div class="content-ad"></div>
 
@@ -93,7 +90,7 @@ OnePub에 연결하여 패키지를 게시하려면 다음 단계를 따르세�
 <div class="content-ad"></div>
 
 ```js
-flutter pub global active onepub 
+flutter pub global active onepub
 cd <내 패키지>
 flutter pub publish
 ```
@@ -105,7 +102,6 @@ flutter pub publish
 한 번 발행되면 패키지를 비공개로 호스팅하여 권한이있는 사용자에게만 액세스 가능하도록 할 수 있습니다.
 
 <div class="content-ad"></div>
-
 
 <img src="/assets/img/2024-06-21-FlutterCreatePrivatePackages_3.png" />
 
@@ -119,7 +115,6 @@ flutter pub publish
 
 여기서 플러터 패키지를 만드는 방법에 대해 알아보았습니다. 필요한 경우 댓글에서 추가로 의견을 남겨주세요. 함께 학습할 수 있도록 도와드리겠습니다.
 
-
 <div class="content-ad"></div>
 
 # 참고 자료
@@ -132,7 +127,7 @@ Dart 패키지를 pub.dev에 발행하는 방법을 배우세요.
 
 <div class="content-ad"></div>
 
-```dart
+```js
 Dart
 
 ![image](/assets/img/2024-06-21-FlutterCreatePrivatePackages_5.png)
@@ -174,7 +169,7 @@ Dart
 
 LinkedIn: [https://www.linkedin.com/in/faatimah-iz-zaahra-m-0670881a1/](https://www.linkedin.com/in/faatimah-iz-zaahra-m-0670881a1/)
 
-X (이전 Twitter): _fz3hra
+X (이전 Twitter): \_fz3hra
 
 GitHub: [https://github.com/fz3hra](https://github.com/fz3hra)
 

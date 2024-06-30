@@ -3,13 +3,12 @@ title: "Flutter에서 Bloc과 get_it 패키지를 사용하여 클린 아키텍�
 description: ""
 coverImage: "/assets/img/2024-06-21-HowtoimplementcleanarchitecturewithBlocandget_itpackageinFlutter_0.png"
 date: 2024-06-21 21:16
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-HowtoimplementcleanarchitecturewithBlocandget_itpackageinFlutter_0.png
 tag: Tech
 originalTitle: "How to implement clean architecture with Bloc and get_it package in Flutter"
 link: "https://medium.com/@jhonmunozromero/how-to-implement-clean-architecture-with-bloc-and-get-it-package-in-flutter-9874f038f6f2"
 ---
-
 
 이 기사에서는 get_it 패키지를 서비스 로케이터로, Bloc를 상태 관리로 사용하여 클린 아키텍처를 구현하는 방법을 가르쳐 드리겠습니다. 이를 통해 책임을 분리하고, 앱이 점점 커지고 복잡해짐에 따라 새로운 기능을 더 잘 유지하고 코드를 이해하기 쉽게 유지할 수 있습니다.
 
@@ -30,10 +29,10 @@ Bloc 및 get_it 패키지를 사용하여 청결한 아키텍처를 배우기 �
 ```js
 [
   {
-    "quote": "Congratulations, you’ve just left your family a second-hand Subaru.",
-    "author": "Saul Goodman"
-  }
-]
+    quote: "Congratulations, you’ve just left your family a second-hand Subaru.",
+    author: "Saul Goodman",
+  },
+];
 ```
 
 <div class="content-ad"></div>
@@ -44,7 +43,7 @@ Bloc 및 get_it 패키지를 사용하여 청결한 아키텍처를 배우기 �
 
 우선 엔티티를 만들 것인데, 이는 앱에서 가장 간단한 객체를 나타냅니다. 모든 엔티티와 모델을 Equatable에서 확장하여 객체를 문제없이 비교하고, 앱의 테스트를 개선하며, 상태에서 원치 않는 동작을 피할 수 있도록 해야 합니다.
 
-```dart
+```js
 import 'package:equatable/equatable.dart';
 
 class QuoteEntitie extends Equatable {
@@ -83,7 +82,7 @@ abstract class QuoteRepository{
 
 다음으로, 우리는 리포지토리를 생성자를 통해 주입하는 유스 케이스를 만들 것입니다. 이 유스 케이스는 데이터 레이어와 프레젠테이션 레이어 사이의 다리 역할을 하며 새로운 상태를 발신하는 상태 관리에 중요한 역할을 합니다.
 
-```dart
+```js
 class QuoteUsecase {
 
   final QuoteRepository _quoteRepository;
@@ -311,7 +310,7 @@ class QuoteBloc extends Bloc<QuoteBlocEvent, QuoteBlocState> {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 최종 getIt = GetIt.instance;
 
 void initServices() {
@@ -333,7 +332,7 @@ void initServices() {
 
 main 함수에서 runApp() 이전에 initServices() 함수를 호출하여 애플리케이션의 모든 부분이 인스턴스에 액세스할 수 있도록 합니다.
 
-```dart
+```js
 void main() {
   intServices();
   runApp(const MyApp());
@@ -342,15 +341,13 @@ void main() {
 
 이 시점에서 Bloc을 사용한 상태 관리 및 이미 설정된 서비스 로케이터를 사용하여 표현 레이어가 이렇게 보여야 합니다. 화면을 독립적인 파일로 분리하는 것을 잊지 마세요.
 
-
 <div class="content-ad"></div>
-
 
 ![How to Implement Clean Architecture with Bloc and get_it Package in Flutter 2](/assets/img/2024-06-21-HowtoimplementcleanarchitecturewithBlocandget_itpackageinFlutter_2.png)
 
 마지막으로, 관심 분리를 위해 홈 화면은 작은 위젯으로, 랜덤 인용구와 그 저자를 표시하는 컬럼이 있습니다. 또한, API에서 새 데이터를 가져와 다른 인용구를 검색하는 버튼이 있습니다. 데이터를 가져오는 동안에는 CircularProgressIndicator 위젯을 표시합니다.
 
-```dart
+```js
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key});
 
@@ -398,10 +395,9 @@ class _QuoteWidget extends StatelessWidget {
 
 마지막 단계는 Bloc을 get_it을 사용하여 필요한 위치에 주입하는 것입니다. QuouteBloc의 인스턴스가 서비스 로케이터를 사용하여 위젯 트리에 주입되는 점에 유의하십시오. 마지막으로, Bloc 인스턴스가 생성된 후 인용구를 가져오고 새 상태를 발생시키는 이벤트를 호출하기 위해 연속 연산자를 사용하세요.
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
 

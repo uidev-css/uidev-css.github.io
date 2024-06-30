@@ -3,13 +3,12 @@ title: "flutter_background_service로 플러터 앱의 백그라운드 서비스
 description: ""
 coverImage: "/assets/img/2024-06-21-ElevateYourFlutterAppwithBackgroundServicesusingflutter_background_service_0.png"
 date: 2024-06-21 23:09
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-ElevateYourFlutterAppwithBackgroundServicesusingflutter_background_service_0.png
 tag: Tech
 originalTitle: "Elevate Your Flutter App with Background Services using flutter_background_service"
 link: "https://medium.com/@hasibulhasan3590/elevate-your-flutter-app-with-background-services-using-flutter-background-service-131f4ba7ec8a"
 ---
-
 
 플러터 애플리케이션을 개발할 때는 데이터 가져오기, 업데이트 처리, 또는 알림 처리와 같이 백그라운드에서 작업을 수행해야 하는 시나리오를 자주 마주하게 됩니다. 백그라운드 서비스를 효과적으로 관리하는 강력한 솔루션으로는 flutter_background_service 플러그인이 있습니다. 이 글에서는 해당 기능을 활용하고 Android 및 iOS 플랫폼에서 백그라운드 서비스를 초기화하고 구성하는 세부 사항을 살펴보겠습니다.
 
@@ -19,13 +18,13 @@ link: "https://medium.com/@hasibulhasan3590/elevate-your-flutter-app-with-backgr
 
 <div class="content-ad"></div>
 
-```dart
+```js
 final service = FlutterBackgroundService();
 ```
 
 코드 가독성을 높이기 위해 초기화 과정을 함수 내에 캡슐화하는 것이 좋습니다. initializeBackgroundService()라는 함수를 만들어보겠습니다:
 
-```dart
+```js
 void initializeBackgroundService() async {
  try {
  // 백그라운드 서비스 초기화

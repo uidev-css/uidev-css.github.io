@@ -3,14 +3,12 @@ title: "Flutter iOS  다양한 Firebase 설정으로 Flavors 설정하는 방법
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutteriOSSetupFlavorswithdifferentFirebaseConfig_0.png"
 date: 2024-06-21 21:47
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutteriOSSetupFlavorswithdifferentFirebaseConfig_0.png
 tag: Tech
 originalTitle: "Flutter iOS — Setup Flavors with different Firebase Config"
 link: "https://medium.com/@ahmedyusuf/setup-flavors-in-ios-flutter-with-different-firebase-config-43c4c4823e6b"
 ---
-
-
 
 ![이미지](/assets/img/2024-06-21-FlutteriOSSetupFlavorswithdifferentFirebaseConfig_0.png)
 
@@ -20,7 +18,6 @@ link: "https://medium.com/@ahmedyusuf/setup-flavors-in-ios-flutter-with-differen
 - 반면, 앱을 릴리스할 때에는 프로덕션 버전이 https://api.mobileapp.com/v1/에 위치한 API 호스트와 com.mobileapp.prod 프로젝트 ID를 사용하여 연결해야 합니다.
 
 이러한 값을 변수로 직접 코딩하고 각 환경에 대해 별도의 앱 빌드를 생성하는 대신 플레이버를 활용하는 것이 권장됩니다. 플레이버를 사용하면 이러한 값을 빌드 시간 구성으로 제공하여 프로세스를 간소화할 수 있습니다.
-
 
 <div class="content-ad"></div>
 
@@ -74,7 +71,6 @@ Xcode는 제품 플레이버와 상응하는 스키마와 빌드 구성 개념�
 
 <div class="content-ad"></div>
 
-
 ![Image](https://miro.medium.com/v2/resize:fit:1200/1*5KlPoqD-amdcgurzjTVulA.gif)
 
 We also need to rename for prod build configuration
@@ -82,7 +78,6 @@ We also need to rename for prod build configuration
 ![Image](https://miro.medium.com/v2/resize:fit:1200/1*74RaOwzLGWilIM5LkzVi1A.gif)
 
 Ok, now let’s set Dev schemes by Dev build configuration
-
 
 <div class="content-ad"></div>
 
@@ -92,10 +87,9 @@ Ok, now let’s set Dev schemes by Dev build configuration
 
 이제 두 개의 스키마가 각각의 빌드 구성과 연결되었습니다. 이는 우리가 각 스키마에 맞도록 사용자 정의를 할 수 있게 해 줍니다. 시작하려면 어플리케이션 번들 식별자를 두 스키마 각각에 대해 고유하게 설정해 보겠습니다.
 
-타겟 섹션의 Runner를 클릭하여 ` Build Settings `로 이동하고, 오른쪽 상단의 필터 필드에서 Bundle을 입력하여 모든 제품 번들 식별자를 채워주세요.
+타겟 섹션의 Runner를 클릭하여 `Build Settings`로 이동하고, 오른쪽 상단의 필터 필드에서 Bundle을 입력하여 모든 제품 번들 식별자를 채워주세요.
 
 <div class="content-ad"></div>
-
 
 ![이미지](/assets/img/2024-06-21-FlutteriOSSetupFlavorswithdifferentFirebaseConfig_7.png)
 
@@ -104,7 +98,6 @@ Ok, now let’s set Dev schemes by Dev build configuration
 앱에 다른 디스플레이 이름을 사용하고 싶습니다. 그러나 빌드 설정의 대상에는 디스플레이 이름 매개변수가 없습니다. 해결책으로 사용자 정의 매개변수를 생성하고 이를 디스플레이 이름 매개변수 대신 사용할 수 있습니다.
 
 Build Settings에서 `Info`를 클릭하세요.
-
 
 <div class="content-ad"></div>
 
@@ -183,7 +176,7 @@ Step 5: 플레이버를 기반으로 한 설정을 처리하는 몇 개의 Dart 
 
 lib/utils/environment.dart
 
-```dart
+```js
 abstract class Environment {
   static const dev = 'dev';
   static const prod = 'prod';
@@ -192,17 +185,17 @@ abstract class Environment {
 
 lib/utils/config_reader.dart
 
-```dart
+```js
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
 abstract class ConfigReader {
   static Map<String, dynamic>? _config;
   static bool _isDevMode = false;
-  
+
   static Future<void> initialize(String env) async {
     var configString = '{}';
-    
+
     try {
       configString = await rootBundle.loadString('config/$env.json');
     } catch (_) {
@@ -229,7 +222,7 @@ abstract class ConfigReader {
 
 lib/main_dev.dart
 
-```dart
+```js
 Future<void> main() async {
   await mainCommon(Environment.dev);
 }
@@ -292,43 +285,34 @@ launch.json을 다음 코드로 변경하세요.
 
 ```json
 {
-    // 가능한 속성에 대해 알아보려면 IntelliSense를 사용하세요.
-    // 기존 속성에 대한 설명을 보려면 가리킬 수 있어요.
-    // 더 많은 정보는 여기를 참조하세요: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "[Debug] Development App",
-            "request": "launch",
-            "type": "dart",
-            "program" : "lib/main_dev.dart",
-            "args": [
-                "--flavor",
-                "Dev"
-            ]
-        },
-        {
-            "name": "[Debug] Production App",
-            "request": "launch",
-            "type": "dart",
-            "program" : "lib/main_prod.dart",
-            "args": [
-                "--flavor",
-                "Prod"
-            ]
-        },
-        {
-            "name": "[Release] Production App",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release",
-            "program" : "lib/main_prod.dart",
-            "args": [
-                "--flavor",
-                "Prod"
-            ]
-        }
-    ]
+  // 가능한 속성에 대해 알아보려면 IntelliSense를 사용하세요.
+  // 기존 속성에 대한 설명을 보려면 가리킬 수 있어요.
+  // 더 많은 정보는 여기를 참조하세요: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "[Debug] Development App",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_dev.dart",
+      "args": ["--flavor", "Dev"]
+    },
+    {
+      "name": "[Debug] Production App",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_prod.dart",
+      "args": ["--flavor", "Prod"]
+    },
+    {
+      "name": "[Release] Production App",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release",
+      "program": "lib/main_prod.dart",
+      "args": ["--flavor", "Prod"]
+    }
+  ]
 }
 ```
 
@@ -337,7 +321,6 @@ launch.json을 다음 코드로 변경하세요.
 ![Flutter iOS Setup Flavors](/assets/img/2024-06-21-FlutteriOSSetupFlavorswithdifferentFirebaseConfig_13.png)
 
 그리고 여기 결과가 있어요
-
 
 <div class="content-ad"></div>
 

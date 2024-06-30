@@ -3,13 +3,12 @@ title: "플러터에서 빌드 변형 설정하기 포괄적인 안내"
 description: ""
 coverImage: "/assets/img/2024-06-20-SettingUpBuildVariantsinFlutterAComprehensiveGuide_0.png"
 date: 2024-06-20 13:52
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-20-SettingUpBuildVariantsinFlutterAComprehensiveGuide_0.png
 tag: Tech
 originalTitle: "Setting Up Build Variants in Flutter: A Comprehensive Guide"
 link: "https://medium.com/@johnsonsivakumar13/setting-up-build-variants-in-flutter-a-comprehensive-guide-6cc15f77c948"
 ---
-
 
 현대 앱 개발에서는 다양한 빌드 변형을 관리하는 것이 중요합니다. 플러터(Flutter)에서 빌드 변형은 개발, 스테이징 및 프로덕션과 같이 여러 버전의 앱을 구성할 수 있도록 해줍니다. 각각이 API 엔드포인트, 기능 플래그 및 기타 환경별 설정과 같은 고유의 구성을 가지고 있습니다. 이 안내서에서는 플러터 프로젝트에서 빌드 변형을 설정하는 방법을 안내해 드릴 예정입니다.
 
@@ -38,7 +37,7 @@ link: "https://medium.com/@johnsonsivakumar13/setting-up-build-variants-in-flutt
 
 - lib/config_loader.dart라는 새 파일을 생성하세요:
 
-```dart
+```js
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
@@ -155,7 +154,7 @@ android {
 2. 프로젝트 설정으로 이동:
 
 - Xcode에서 프로젝트 네비게이터(일반적으로 왼쪽에 위치)에서 프로젝트를 선택합니다.
-- 이렇게 하면 다양한 설정을 구성할 수 있는 프로젝트 편집기가 열립니다. 
+- 이렇게 하면 다양한 설정을 구성할 수 있는 프로젝트 편집기가 열립니다.
 
 <div class="content-ad"></div>
 
@@ -171,7 +170,7 @@ android {
 
 <div class="content-ad"></div>
 
-+ 버튼을 클릭하고 "Debug"을 복제하거나 "Release"를 복사하여 사용자 정의 구성물을 추가할 수 있어요. 그리고 나서 그 구성물을 원하는 대로 (예: Debug-staging, Debug-production) 이름을 바꿔주세요.
+- 버튼을 클릭하고 "Debug"을 복제하거나 "Release"를 복사하여 사용자 정의 구성물을 추가할 수 있어요. 그리고 나서 그 구성물을 원하는 대로 (예: Debug-staging, Debug-production) 이름을 바꿔주세요.
 
 5. 빌드 설정 구성:
 
@@ -215,7 +214,6 @@ android {
 
 <div class="content-ad"></div>
 
-
 ![이미지](/assets/img/2024-06-20-SettingUpBuildVariantsinFlutterAComprehensiveGuide_2.png)
 
 # 단계 6. 다른 플레이버 실행/빌드하기
@@ -224,19 +222,15 @@ android {
 
 터미널에서 아래의 주석을 사용하세요
 
-
 <div class="content-ad"></div>
-
 
 flutter run --flavor development -t lib/main.dart // 개발용
 
-flutter run --flavor staging -t lib/main.dart    // 스테이징용
+flutter run --flavor staging -t lib/main.dart // 스테이징용
 
 flutter run --flavor production -t lib/main.dart // 프로덕션 또는 릴리스용
 
-
 Android 빌드하려면 터미널에서 다음 주석을 사용하세요
-
 
 flutter build apk --flavor development -t lib/main.dart
 
@@ -244,9 +238,7 @@ flutter build apk --flavor staging -t lib/main.dart
 
 flutter build apk --flavor production -t lib/main.dart
 
-
 iOS 빌드하려면 터미널에서 다음 주석을 사용하세요
-
 
 <div class="content-ad"></div>
 
@@ -298,7 +290,6 @@ flutter build ios --flavor production -t lib/main.dart
 
 <div class="content-ad"></div>
 
-
 ![image](/assets/img/2024-06-20-SettingUpBuildVariantsinFlutterAComprehensiveGuide_3.png)
 
 # 결론
@@ -306,7 +297,6 @@ flutter build ios --flavor production -t lib/main.dart
 위의 단계를 따라가면, 플러터 앱에서 여러 빌드 변형을 효율적으로 관리하여 개발, 테스트 및 프로덕션을 위한 다른 환경을 유지하기 쉬워집니다. 이 설정을 통해 각 빌드 변형이 자체 구성 및 리소스를 가질 수 있도록하여 개발 및 배포 프로세스를 더 효율적으로 할 수 있습니다.
 
 의문이나 질문이 있으면 언제든지 연락해 주세요. LinkTree를 통해 저에게 연락할 수 있습니다.
-
 
 <div class="content-ad"></div>
 

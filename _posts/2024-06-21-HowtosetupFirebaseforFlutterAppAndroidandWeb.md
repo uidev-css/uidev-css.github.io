@@ -3,13 +3,12 @@ title: "Flutter 앱 설정을 위한 Firebase 설정 방법  Android 및 Web"
 description: ""
 coverImage: "/assets/img/2024-06-21-HowtosetupFirebaseforFlutterAppAndroidandWeb_0.png"
 date: 2024-06-21 23:21
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-HowtosetupFirebaseforFlutterAppAndroidandWeb_0.png
 tag: Tech
 originalTitle: "How to setup Firebase for Flutter App — Android and Web."
 link: "https://medium.com/@dev.hassankhan/how-to-setup-firebase-for-flutter-app-android-and-web-afa7abf488d2"
 ---
-
 
 ![이미지](/assets/img/2024-06-21-HowtosetupFirebaseforFlutterAppAndroidandWeb_0.png)
 
@@ -81,7 +80,6 @@ Step 2: Firebase에 Flutter Android 앱 추가하기
 
 <div class="content-ad"></div>
 
-
 ![How to set up Firebase for Flutter App Android and Web](/assets/img/2024-06-21-HowtosetupFirebaseforFlutterAppAndroidandWeb_9.png)
 
 이제 다음 단계는 Flutter 앱에 Firebase SDK를 추가하는 것입니다. Google services Gradle 플러그인을 사용하여 google-services.json 구성 값을 Firebase SDK가 액세스할 수 있도록 만들어야 합니다.
@@ -89,7 +87,6 @@ Step 2: Firebase에 Flutter Android 앱 추가하기
 ![How to set up Firebase for Flutter App Android and Web](/assets/img/2024-06-21-HowtosetupFirebaseforFlutterAppAndroidandWeb_10.png)
 
 프로젝트 수준의 "build.gradle" 파일에 플러그인을 의존성으로 추가하세요.
-
 
 <div class="content-ad"></div>
 
@@ -105,13 +102,11 @@ Step 2: Firebase에 Flutter Android 앱 추가하기
 
 아래는 Markdown 형식으로 테이블을 표현해 봅니다.
 
-
-| 이벤트 | 장소     | 날짜          |
-|--------|-----------|---------------|
-| A      | Seoul     | 2023년 12월 1일 |
-| B      | Busan     | 2024년 3월 15일  |
-| C      | Incheon   | 2024년 7월 8일   |
-
+| 이벤트 | 장소    | 날짜            |
+| ------ | ------- | --------------- |
+| A      | Seoul   | 2023년 12월 1일 |
+| B      | Busan   | 2024년 3월 15일 |
+| C      | Incheon | 2024년 7월 8일  |
 
 위의 내용을 참고해 주세요!
 
@@ -159,8 +154,8 @@ Step 5 — Firebase 종속성 추가
 
 우선 "firebase_core" 라이브러리를 import 하겠습니다.
 
-```dart
-import 'package:firebase_core/firebase_core.dart';
+```js
+import "package:firebase_core/firebase_core.dart";
 ```
 
 그리고 main() 메서드 안에서 Firebase를 초기화합니다. "WidgetsFlutterBinding.ensureInitialized();" 바로 아래에, 만약 앱이 Web인지 확인하고 해당 구성을 실행하거나 그렇지 않은 경우에는 "await Firebase.initializeApp();"을 초기화합니다.

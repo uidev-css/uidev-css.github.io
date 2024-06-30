@@ -3,13 +3,12 @@ title: "Flutter 앱에 디자인 시스템 적용하는 방법 단계별 가이�
 description: ""
 coverImage: "/assets/img/2024-06-22-HowtoimplementyourdesignsysteminaFlutterapp12_0.png"
 date: 2024-06-22 05:11
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-HowtoimplementyourdesignsysteminaFlutterapp12_0.png
 tag: Tech
 originalTitle: "How to implement your design system in a Flutter app (1 2)"
 link: "https://medium.com/@mregnauld/how-to-implement-your-design-system-in-a-flutter-app-1-2-d2e21b5fcffd"
 ---
-
 
 <img src="/assets/img/2024-06-22-HowtoimplementyourdesignsysteminaFlutterapp12_0.png" />
 
@@ -81,7 +80,7 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme>
   // 앱 전체에서 사용되는 실제 색상:
   final Color backgroundDefault;
   final Color backgroundInput;
-  final Color snackbarValidation;  
+  final Color snackbarValidation;
   final Color snackbarError;
   final Color textDefault;
 
@@ -102,14 +101,14 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme>
       snackbarValidation: _green,
       snackbarError: _red,
       textDefault: _grey
-    );  
+    );
   }
 
   // 다크 모드용 팩토리:
   factory AppColorsTheme.dark() {
-    return AppColorsTheme._internal(...);  
+    return AppColorsTheme._internal(...);
   }
-  
+
   @override
   ThemeExtension<AppColorsTheme> copyWith({bool? lightMode})
   {
@@ -132,7 +131,7 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme>
 
 - 내 앱에서 실제로 사용되는 색상과 기본 색상을 의도적으로 분리했어요. 이유는 경우에 따라 다른 위젯들이 한 모드에서 동일한 색상을 공유하더라도, 다른 모드에서는 다른 색상이 필요할 수 있기 때문이에요. 이는 꽤 드물긴 하지만요.
 - 여기서 팩토리를 사용하면 다양한 모드를 생성하는 것이 매우 간편해져요. 그래서 각 모드에 필요한 색상을 매우 쉽게 선택할 수 있어요. 분명히 몇 분 안에 새 모드를 추가할 수 있어요! 그리고 단지 다크 모드와 라이트 모드로만 제한되지 않고, 추가하고 싶은 어떤 색상 모드든 추가할 수 있어요!
-- 저는 lerp() 메서드를 단순히 this로 다시 반환하여 재정의했지만, 만약 다른 색상 모드들 간의 부드러운 전환을 만들고 싶다면 여기서 보여주는 대로 Color.lerp()를 사용할 수 있어요. 크게 유용하진 않겠지만, 어쨌든 말이죠. 
+- 저는 lerp() 메서드를 단순히 this로 다시 반환하여 재정의했지만, 만약 다른 색상 모드들 간의 부드러운 전환을 만들고 싶다면 여기서 보여주는 대로 Color.lerp()를 사용할 수 있어요. 크게 유용하진 않겠지만, 어쨌든 말이죠.
 
 이제 글꼴에 대해 계속해봅시다. 아래와 같이 새 클래스인 AppTextsTheme을 생성해보세요:
 
@@ -152,7 +151,7 @@ class AppTextsTheme extends ThemeExtension<AppTextsTheme>
     required this.labelDefaultEmphasis,
     required this.labelDefaultDefault,
   });
-  
+
   factory AppTextsTheme.main() => AppTextsTheme._internal(
     labelBigEmphasis: TextStyle(
       fontFamily: _baseFamily,
@@ -179,7 +178,7 @@ class AppTextsTheme extends ThemeExtension<AppTextsTheme>
       height: 1.4,
     ),
   );
-  
+
   @override
   ThemeExtension<AppTextsTheme> copyWith()
   {
@@ -218,7 +217,7 @@ class AppDimensionsTheme extends ThemeExtension<AppDimensionsTheme>
     required this.radiusHelpIndication,
     required this.paddingHelpIndication,
   });
-  
+
   factory AppDimensionsTheme.main() => AppDimensionsTheme._internal(
     radiusHelpIndication: 8,
     paddingHelpIndication: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -275,7 +274,7 @@ MaterialApp(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 확장자 ThemeDataExtended에서 ThemeData에 대한 다음과 같은 테이블 태그를 Markdown 형식으로 변경하십시오.
 
 ## 구현 예시
@@ -375,7 +374,7 @@ isSmallSmartphone 및 이후의 getter들이 필수는 아니지만, 위젯을 �
 클래스 AppDimensionsTheme은 ThemeExtension<AppDimensionsTheme>으로 확장됩니다.
 {
   ...
-    
+
   factory AppDimensionsTheme.main(FlutterView flutterView) => AppDimensionsTheme._internal(
     radiusHelpIndication: flutterView.isSmallSmartphone ? 8 : 16, // <- 여기서 반응형이 사용됩니다!
     paddingHelpIndication: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

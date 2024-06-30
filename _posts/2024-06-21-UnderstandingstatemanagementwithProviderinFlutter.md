@@ -3,13 +3,12 @@ title: "Flutter에서 Provider로 상태 관리 이해하기"
 description: ""
 coverImage: "/assets/img/2024-06-21-UnderstandingstatemanagementwithProviderinFlutter_0.png"
 date: 2024-06-21 23:43
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-UnderstandingstatemanagementwithProviderinFlutter_0.png
 tag: Tech
 originalTitle: "Understanding state management with Provider in Flutter"
 link: "https://medium.com/@nureddineraslan/understanding-state-management-with-provider-in-flut-e74e0b9e49d9"
 ---
-
 
 <img src="/assets/img/2024-06-21-UnderstandingstatemanagementwithProviderinFlutter_0.png" />
 
@@ -28,7 +27,7 @@ Provider 개념을 이해하기 위해 몇 가지 주요 개념을 살펴보겠�
 
 - 먼저 데이터 제공자 클래스를 만들고 ChangeNotifier 클래스에서 확장합니다.
 
-```dart
+```js
 import 'package:flutter/foundation.dart';
 
 class CounterProvider with ChangeNotifier {
@@ -47,7 +46,7 @@ class CounterProvider with ChangeNotifier {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -65,7 +64,7 @@ void main() {
 
 이제 Consumer 위젯을 사용하여 모든 위젯에서 데이터에 액세스할 수 있습니다.
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -85,7 +84,6 @@ class MyWidget extends StatelessWidget {
 ```
 
 위의 예에서는 CounterProvider 클래스 내의 count 변수에 액세스하여 업데이트가 발생할 때마다 위젯을 자동으로 다시 빌드합니다.
-
 
 <div class="content-ad"></div>
 

@@ -3,13 +3,12 @@ title: "Flutter로 코드 생성하기  source_gen과 build_runner 사용 방법
 description: ""
 coverImage: "/assets/img/2024-06-21-CodeGenerationusingFluttersource_genbuild_runner_0.png"
 date: 2024-06-21 22:30
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-CodeGenerationusingFluttersource_genbuild_runner_0.png
 tag: Tech
 originalTitle: "Code Generation using Flutter | source_gen | build_runner."
 link: "https://medium.com/@yamen.abd98/code-generator-using-flutter-source-gen-build-runner-9cc1fe0e2ff2"
 ---
-
 
 ![2024-06-21-CodeGenerationusingFluttersource_genbuild_runner_0.png](/assets/img/2024-06-21-CodeGenerationusingFluttersource_genbuild_runner_0.png)
 
@@ -23,12 +22,10 @@ link: "https://medium.com/@yamen.abd98/code-generator-using-flutter-source-gen-b
 
 예시:
 
-
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
+| First Header | Second Header |
+| ------------ | ------------- |
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
 
 <div class="content-ad"></div>
 
@@ -55,7 +52,7 @@ source_gen 패키지는 build 패키지의 확장판입니다. Dart 소스 코�
 
 우리는 다음 명령어를 실행하여 코드를 생성할 수 있어요:
 
-```dart
+```js
 dart run build_runner `command`
 ```
 
@@ -125,7 +122,7 @@ annotations/lib/annotations.dart와 annotations/test/annotations_test.dart의 �
 
 src 폴더에 acustom_annotation.dart 파일을 생성하여 주석을 작성할 것입니다. 이 주석은 CustomAnnotation으로 명명되었습니다.
 
-```dart
+```js
 // 우리의 주석
 class CustomAnnotation {
   const CustomAnnotation();
@@ -161,7 +158,7 @@ export 'src/custom_annotation.dart';
 dependencies:
   flutter:
     sdk: flutter
-  
+
   build:
   source_gen:
 
@@ -268,22 +265,18 @@ lib/src 에 model_visitor.dart 파일을 만든 후, 다음 import 문을 사용
 
 <div class="content-ad"></div>
 
-
-```dart
-import 'package:analyzer/dart/element/element.dart';
-import 'package:analyzer/dart/element/visitor.dart';
+```js
+import "package:analyzer/dart/element/element.dart";
+import "package:analyzer/dart/element/visitor.dart";
 ```
 
 The first import comes from analyzer because both source_gen and build export it.
 
 Create a ModelVisitor class and extend from SimpleElementVisitor:
 
-```dart
-class ModelVisitor extends SimpleElementVisitor<void>{
-
-}
+```js
+class ModelVisitor extends SimpleElementVisitor<void> {}
 ```
-
 
 <div class="content-ad"></div>
 
@@ -299,7 +292,7 @@ model_visitor.dart 파일의 전체 코드:
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/visitor.dart';
 
@@ -341,16 +334,15 @@ class ModelVisitor extends SimpleElementVisitor<void> {
 
 단계 3: 이 오버라이드된 메서드는 클래스 생성자를 방문하고 element.returnType을 통해 클래스 이름을 검색할 수 있도록 합니다.
 
-
 <div class="content-ad"></div>
 
-단계 4: element.returnType은 원소 유형 뒤에 '*'을 반환하므로 이를 제거합니다.
+단계 4: element.returnType은 원소 유형 뒤에 '\*'을 반환하므로 이를 제거합니다.
 
 단계 5: 이 방법은 클래스의 각 필드에 대해 호출되며, 필드 이름과 필드 유형에 모두 액세스할 수 있습니다.
 
 또한 더 많은 속성에 액세스할 수 있습니다.
 
-단계 6: element.type은 원소 유형 뒤에 '*'을 반환하므로 이를 제거합니다.
+단계 6: element.type은 원소 유형 뒤에 '\*'을 반환하므로 이를 제거합니다.
 
 <div class="content-ad"></div>
 
@@ -358,9 +350,9 @@ class ModelVisitor extends SimpleElementVisitor<void> {
 
 lib/src에 json_generator.dart라는 파일을 생성하세요:
 
-```dart
-import 'package:annotations/annotations.dart';
-import 'package:source_gen/source_gen.dart';
+```js
+import "package:annotations/annotations.dart";
+import "package:source_gen/source_gen.dart";
 
 class JsonGenerator extends GeneratorForAnnotation<CustomAnnotation> {
   // 이곳에 코드를 생성하는 메서드를 작성하세요!
@@ -496,7 +488,6 @@ String generateToJsonMethod(ModelVisitor visitor) {
 
 ## copyWith 메소드
 
-
 <div class="content-ad"></div>
 
 - 생성된 메서드 예시:
@@ -553,7 +544,7 @@ String generateCopyWithMethod(ModelVisitor visitor) {
   return buffer.toString();
   // --------------------copyWith 생성 코드 종료--------------------//
 }
-```  
+```
 
 <div class="content-ad"></div>
 
@@ -695,7 +686,7 @@ class JsonGenerator extends GeneratorForAnnotation<CustomAnnotation> {
 위의 정의는 다음과 같이 되어야 합니다:
 
 ```js
-Builder 이름(BuilderOption) 
+Builder 이름(BuilderOption)
 ```
 
 lib/generators.dart 파일에서:
@@ -795,7 +786,6 @@ dart run build_runner build
 
 <div class="content-ad"></div>
 
-
 ![Code Generation using Flutter](/assets/img/2024-06-21-CodeGenerationusingFluttersource_genbuild_runner_2.png)
 
 Output/Generated file:
@@ -805,8 +795,8 @@ Output/Generated file:
 
 part of 'product.dart';
 
-// **************************************************************************  
-// JsonGenerator  
+// **************************************************************************
+// JsonGenerator
 // **************************************************************************
 
 // From Json Method
@@ -836,7 +826,6 @@ extension $ProductExtension on Product {
 ```
 
 Now you can build your annotation with more customization 🎉😎
-
 
 <div class="content-ad"></div>
 

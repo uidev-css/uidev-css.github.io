@@ -3,13 +3,12 @@ title: "Flutter 테스트 완벽 가이드 유닛 테스트부터 통합 테스�
 description: ""
 coverImage: "/assets/img/2024-06-21-TestinginFlutterFromUnitTeststoIntegrationTests_0.png"
 date: 2024-06-21 20:26
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-TestinginFlutterFromUnitTeststoIntegrationTests_0.png
 tag: Tech
 originalTitle: "Testing in Flutter: From Unit Tests to Integration Tests"
 link: "https://medium.com/@gautam007/testing-in-flutter-from-unit-tests-to-integration-tests-30a7e6981004"
 ---
-
 
 ## 플러터 앱 품질 확보를 위한 포괄적 가이드
 
@@ -38,7 +37,7 @@ dev_dependencies:
 
 다트 언어로 작성된 간단한 함수와 해당하는 유닛 테스트의 예시가 있습니다:
 
-```dart
+```js
 // math_utils.dart
 int add(int a, int b) => a + b;
 
@@ -80,7 +79,7 @@ flutter test
 
 <div class="content-ad"></div>
 
-```dart
+```js
 // main.dart
 import 'package:flutter/material.dart';
 
@@ -138,10 +137,10 @@ class _CounterPageState extends State<CounterPage> {
       ),
     );
   }
-}    
+}
 ```
 
-```dart
+```js
 // counter_page_test.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -166,7 +165,6 @@ void main() {
 # Running Widget Tests
 
 Use the same command as for unit tests:
-
 
 <div class="content-ad"></div>
 
@@ -197,7 +195,7 @@ dev_dependencies:
 
 <div class="content-ad"></div>
 
-```dart
+```js
 // counter_app_test.dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';

@@ -3,14 +3,12 @@ title: "Flutter GetX 상태 관리 쉽게 이해하기"
 description: ""
 coverImage: "/assets/img/2024-06-23-FlutterGetXStateManagement_0.png"
 date: 2024-06-23 14:58
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-23-FlutterGetXStateManagement_0.png
 tag: Tech
 originalTitle: "Flutter GetX State Management"
 link: "https://medium.com/@anugrahdwi1005/flutter-getx-state-management-9c7731b46628"
 ---
-
-
 
 <img src="/assets/img/2024-06-23-FlutterGetXStateManagement_0.png" />
 
@@ -19,7 +17,6 @@ GetX는 가벼우면서 뛰어난 성능을 제공하는 Flutter 패키지입니
 ## GetX 상태 관리의 주요 기능:
 
 <img src="/assets/img/2024-06-23-FlutterGetXStateManagement_1.png" />
-
 
 <div class="content-ad"></div>
 
@@ -35,7 +32,7 @@ Obx(() => Text('Count: ${controller.count}'));
 의존성 주입:
 
 ```js
-Get.lazyPut<MyService>(() => MyService());
+Get.lazyPut < MyService > (() => MyService());
 ```
 
 <div class="content-ad"></div>
@@ -43,13 +40,13 @@ Get.lazyPut<MyService>(() => MyService());
 경로 관리:
 
 ```js
-Get.toNamed('/next');
+Get.toNamed("/next");
 ```
 
 스낵바 및 대화상자:
 
 ```js
-Get.snackbar('제목', '이것은 스낵바입니다');
+Get.snackbar("제목", "이것은 스낵바입니다");
 ```
 
 <div class="content-ad"></div>
@@ -79,7 +76,7 @@ class MyService extends GetxService {
 국제화 (i18n):
 
 ```js
-'hello'.tr;
+"hello".tr;
 ```
 
 GetX 빌더:
@@ -109,7 +106,7 @@ get install | Flutter 패키지 (pub.dev)
 
 # GetX를 사용한 간단한 카운터 예제
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

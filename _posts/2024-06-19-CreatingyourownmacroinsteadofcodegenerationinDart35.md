@@ -3,13 +3,12 @@ title: "Dart 35에서 코드 생성 대신 매크로를 직접 만들어 봅시�
 description: ""
 coverImage: "/assets/img/2024-06-19-CreatingyourownmacroinsteadofcodegenerationinDart35_0.png"
 date: 2024-06-19 08:10
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-CreatingyourownmacroinsteadofcodegenerationinDart35_0.png
 tag: Tech
 originalTitle: "Creating your own macro instead of code generation in Dart 3.5"
 link: "https://medium.com/@alexey.inkin/creating-your-own-macro-instead-of-code-generation-in-dart-3-5-27274f8a5bf6"
 ---
-
 
 Dart 3.5에는 주요한 새로운 기능인 매크로가 추가되었습니다. 이는 컴파일 시간에 메모리 내에서 완전히 발생하는 코드 생성으로 임시 파일이 필요하지 않습니다. 하지만 그 이상의 기능을 제공합니다.
 
@@ -74,7 +73,7 @@ analyzer:
 
 다트 팀이 제공하는 예제를 사용해보세요:
 
-```dart
+```js
 import 'package:json/json.dart';
 
 @JsonCodable() // 매크로 주석.
@@ -202,7 +201,7 @@ augment class Cat {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'dart:async';
 
 import 'package:macros/macros.dart';
@@ -237,7 +236,7 @@ macro class Hello implements ClassDeclarationsMacro {
 
 이 매크로는 macro 수정자를 가진 클래스로 구현되었습니다. ClassDeclarationsMacro를 구현합니다. 이것은 컴파일러에게 해당 매크로가 클래스에 적용될 수 있고 선언을 업데이트할 시간이 되었을 때 실행될 수 있다고 알려줍니다. 매크로가 다양한 코드 엔티티에 적용되어 코드 생성의 다양한 단계에서 실행될 수 있도록 할 수 있는 많은 인터페이스가 있습니다. 제가 명령줄 인수 구문 분석 매크로에 도달하면 해당 내용에 대해 이야기하겠습니다.
 
-이 인터페이스에는 구현해야 하는 buildDeclarationsForClass라는 메서드가 있으며 적절한 시점에 호출됩니다. 이 메서드에 전달되는 매개변수는: 
+이 인터페이스에는 구현해야 하는 buildDeclarationsForClass라는 메서드가 있으며 적절한 시점에 호출됩니다. 이 메서드에 전달되는 매개변수는:
 
 <div class="content-ad"></div>
 
@@ -252,13 +251,13 @@ macro class Hello implements ClassDeclarationsMacro {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'dart:core' as prefix0;
 ```
 
 이것은 자동으로 수행되어, 코드가 print와 같은 핵심적인 내용과 충돌하지 않도록합니다. 접두사는 동적이며 미리 알 수 없으므로 생성된 코드에서 단순히 print(something)을 작성할 수 없습니다. 이것이 우리가 식별자 print를 핵심 라이브러리에서 해결하고 나서 일부로부터 생성된 코드를 빌드하는 이유입니다:
 
-```dart
+```js
 final print = await builder.resolveIdentifier(_dartCore, 'print');
 
 builder.declareInType(
@@ -271,7 +270,6 @@ builder.declareInType(
 ```
 
 일부는 마지막에 함께 붙이는 문자열과 식별자 참조의 조합일 수 있습니다. 이 과정에서 모든 식별자는 필요한 접두사와 함께 앞에 붙입니다.
-
 
 <div class="content-ad"></div>
 
@@ -295,7 +293,8 @@ fun main() {
   val user = User(age = 5, name = 'Roger', username = 'roger1337')
   user.hello()
 }
-```  
+```
+
 ["Augmentation" 페이지로 이동](/assets/img/2024-06-19-CreatingyourownmacroinsteadofcodegenerationinDart35_3.png)
 
 <div class="content-ad"></div>
@@ -313,7 +312,6 @@ fun main() {
 더 배우기 위해 따라할 수 있는 두 가지 실제 세계 매크로가 있습니다:
 
 ## JsonCodable
-
 
 <div class="content-ad"></div>
 
@@ -349,7 +347,7 @@ dart run main.dart --name=Alexey
 <div class="content-ad"></div>
 
 ```js
-안녕, Alexey
+안녕, Alexey;
 ```
 
 문제는 많은 명령줄 옵션이 있는 경우 복잡해진다는 것이죠. 옵션들을 잊어버릴 수 있고, 옵션이 존재하고 특정 타입인지에 대한 컴파일 타임 보장이 없습니다. 옵션의 이름을 쉽게 변경할 수 없으며, 이 코드는 문자열 리터럴로 옵션의 이름을 다루기 때문에 어렵습니다.

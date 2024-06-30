@@ -3,13 +3,12 @@ title: "플러터 오류 처리 완벽 가이드 기법 및 코드 예제"
 description: ""
 coverImage: "/assets/img/2024-06-21-CompleteGuidetoFlutterErrorHandlingTechniquesandCodeExamples_0.png"
 date: 2024-06-21 22:02
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-CompleteGuidetoFlutterErrorHandlingTechniquesandCodeExamples_0.png
 tag: Tech
 originalTitle: "Complete Guide to Flutter Error Handling: Techniques and Code Examples"
 link: "https://medium.com/@parthbhanderi01/complete-guide-to-flutter-error-handling-techniques-and-code-examples-37414dd0992f"
 ---
-
 
 에러 처리는 모바일 앱을 개발할 때 필수적입니다. 뜻밖의 문제가 발생해도 플러터 앱이 원활하게 실행되고 사용자 친화적이도록 보장합니다. 이 깊이 있는 책은 플러터에서 다양한 에러 처리 메커니즘을 탐색하면서 실수를 효율적이고 공손하게 처리하는 데 필요한 모범 사례와 코드 샘플을 다룰 것입니다. 이 글을 다 읽은 시점에는 플러터의 에러 처리에 대한 탄탄한 이해를 갖추어 신뢰할 수 있는 앱을 만들 준비가 될 것입니다. 지금 시작해 봅시다!
 
@@ -35,7 +34,6 @@ assert(someCondition, "someCondition이 false일 경우에 표시될 내용");
 ```
 
 5. 비동기 오류: 플러터 앱에서는 네트워크 쿼리를 보내거나 데이터베이스에서 데이터를 검색하는 등 비동기 활동을 많이 사용합니다. 비동기 작업 중에 발생한 오류로 인한 처리되지 않는 예외는 예기치 않은 애플리케이션 동작이나 충돌을 일으킬 수 있습니다. 비동기 실패를 처리하기 위해 try-catch 블록이나 Future API를 사용할 수 있습니다.
-
 
 <div class="content-ad"></div>
 
@@ -121,7 +119,7 @@ Future와 Stream 오류 처리 예시:
 
 <div class="content-ad"></div>
 
-```dart
+```js
 Future<int> fetchUserData() async {
   await Future.delayed(Duration(seconds: 2)); // 비동기 작업을 시뮬레이션하는 부분
   // 아래 코드 주석 처리를 해제하면 에러가 발생합니다
@@ -155,7 +153,6 @@ Stream 예제에서 `.onError()` 함수는 스트림 수명 중 발생할 수 �
 
 ## 5. 전역 오류 처리에 ErrorWidgets 사용하기
 
-
 <div class="content-ad"></div>
 
 프로그램 어디에서든 발생할 수 있는 처리되지 않은 예외와 결함을 감지하는 시스템을 설정하는 것을 전역 오류 처리라고 합니다. 이러한 오류는 사용자 정의 ErrorWidgets를 사용하여 가로채고 처리할 수 있으며, 앱 충돌을 방지하고 긍정적인 사용자 경험을 보장할 수 있습니다.
@@ -164,7 +161,7 @@ ErrorWidgets 및 FlutterError: Flutter에서는 처리되지 않은 예외가 �
 
 전역 오류 처리 구현: 전역 오류 처리를 구성하는 방법을 보여주기 위해 사용자 정의 ErrorWidget를 사용합시다:
 
-```dart
+```js
 import 'package:flutter/material.dart';
 
 void main() {
@@ -204,7 +201,7 @@ ErrorWidgets를 사용하여 전역 오류 처리를 함으로써, Flutter 앱�
 
 예시: 플랫폼별 오류 처리 예제를 사용하여 해당 문제를 어떻게 처리하고 해당 오류 메시지를 표시하는지 보여드리겠습니다:
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'dart:io' show Platform;
 
@@ -455,7 +452,7 @@ class MyHomePage extends StatelessWidget {
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: 
+  firebase_core:
   firebase_crashlytics:
 ```
 

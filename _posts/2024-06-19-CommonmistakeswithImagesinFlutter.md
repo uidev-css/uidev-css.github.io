@@ -3,13 +3,12 @@ title: "플러터에서 이미지를 다루는 일반적인 실수들"
 description: ""
 coverImage: "/assets/img/2024-06-19-CommonmistakeswithImagesinFlutter_0.png"
 date: 2024-06-19 00:09
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-CommonmistakeswithImagesinFlutter_0.png
 tag: Tech
 originalTitle: "Common mistakes with Images in Flutter"
 link: "https://medium.com/@pomis172/common-mistakes-with-images-in-flutter-aba46288e20d"
 ---
-
 
 이미지는 대부분의 앱에서 사용하는 핵심 기능 중 하나입니다. 그러나 많은 사용자들은 간단히 피할 수 있는 실수로 응용 프로그램 성능에 부정적인 영향을 줄 수 있습니다. 몇 가지 주요 사례를 살펴보겠습니다.
 
@@ -75,7 +74,7 @@ Opacity 위젯은 매우 유용하고 편리하지만, 우리가 원할 때마�
         width: 300,
       ),
     );
-```  
+```
 
 <div class="content-ad"></div>
 
@@ -89,7 +88,7 @@ Opacity 위젯은 매우 유용하고 편리하지만, 우리가 원할 때마�
 
 <div class="content-ad"></div>
 
-```dart
+```js
 Image.asset(
   "assets/6392956.jpg",
   height: 100,
@@ -105,7 +104,6 @@ Image.asset(
 ![Image](/assets/img/2024-06-19-CommonmistakeswithImagesinFlutter_2.png)
 
 # 4. 이미지 에셋을 미리 로드하지 않기
-
 
 <div class="content-ad"></div>
 

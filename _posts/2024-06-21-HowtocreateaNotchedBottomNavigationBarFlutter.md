@@ -3,13 +3,12 @@ title: "Flutter에서 노치가 있는 하단 내비게이션 바 만드는 방�
 description: ""
 coverImage: "/assets/img/2024-06-21-HowtocreateaNotchedBottomNavigationBarFlutter_0.png"
 date: 2024-06-21 22:41
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-HowtocreateaNotchedBottomNavigationBarFlutter_0.png
 tag: Tech
 originalTitle: "How to create a Notched Bottom Navigation Bar Flutter"
 link: "https://medium.com/@akhil-ge0rge/how-to-create-a-notched-bottom-navigation-bar-flutter-39b571afd570"
 ---
-
 
 이 가이드는 하단 네비게이션 앱 바에 노치가 있는 플로팅 액션 버튼을 추가하는 방법을 보여줍니다. 하단 바의 노치가 있는 플로팅 액션 버튼은 앱의 사용자 인터페이스를 더욱 미려하게 만들어줍니다. 더 자세한 정보는 아래 코드를 참조해주세요:
 
@@ -75,7 +74,7 @@ Scaffold(
 <img src="/assets/img/2024-06-21-HowtocreateaNotchedBottomNavigationBarFlutter_1.png" />
 
 시작하려면, Scaffold 위젯의 floatingActionButtonLocation 속성을 사용하여 FloatingActionButton 버튼의 위치를 조정하세요.
-아래에 표시된 centerDocked를 사용하여 중앙에 위치하도록 설정할 것입니다: 
+아래에 표시된 centerDocked를 사용하여 중앙에 위치하도록 설정할 것입니다:
 
 <div class="content-ad"></div>
 
@@ -103,7 +102,7 @@ shape: const CircularNotchedRectangle()
 
 풀 코드:
 
-```dart
+```js
  return Scaffold(
       extendBody: true,
       floatingActionButton: FloatingActionButton(

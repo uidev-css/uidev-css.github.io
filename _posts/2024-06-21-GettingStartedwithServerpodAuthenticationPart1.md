@@ -3,13 +3,12 @@ title: "Serverpod 시작하기 인증  첫 번째 파트"
 description: ""
 coverImage: "/assets/img/2024-06-21-GettingStartedwithServerpodAuthenticationPart1_0.png"
 date: 2024-06-21 21:49
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-GettingStartedwithServerpodAuthenticationPart1_0.png
 tag: Tech
 originalTitle: "Getting Started with Serverpod: Authentication — Part 1"
 link: "https://medium.com/serverpod/getting-started-with-serverpod-authentication-part-1-72c25280e6e9"
 ---
-
 
 ## 서버파드에서 이메일 및 비밀번호 인증 구현 단계별 가이드
 
@@ -52,7 +51,7 @@ Serverpod로 이메일 및 비밀번호 인증을 구현하기 전에 필요한 
 
 ```js
 serverpod create my_project
-```  
+```
 
 <div class="content-ad"></div>
 
@@ -72,12 +71,11 @@ Windows 환경에서: 윈도우 환경이라면, 서버팟을 위한 필요한 �
 docker-compose up --build --detach
 ```
 
-# 서버팟_인증 모듈 설치 및 구성하기
+# 서버팟\_인증 모듈 설치 및 구성하기
 
-서버팟_인증 모듈은 Serverpod 프로젝트에서 인증을 관리하는 데 필수적인 기능을 제공합니다. 사용자 등록, 로그인, 비밀번호 해싱 및 세션 관리와 같은 기능이 포함되어 있습니다. 이 섹션에서는 서버팟_인증 모듈 설치 및 구성 프로세스를 안내하고 데이터베이스를 업데이트하는 방법을 안내합니다.
+서버팟*인증 모듈은 Serverpod 프로젝트에서 인증을 관리하는 데 필수적인 기능을 제공합니다. 사용자 등록, 로그인, 비밀번호 해싱 및 세션 관리와 같은 기능이 포함되어 있습니다. 이 섹션에서는 서버팟*인증 모듈 설치 및 구성 프로세스를 안내하고 데이터베이스를 업데이트하는 방법을 안내합니다.
 
 ## 서버 쪽 설정
-
 
 <div class="content-ad"></div>
 
@@ -94,7 +92,7 @@ dependencies:
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:serverpod_auth_server/serverpod_auth_server.dart' as auth;
 
 void run(List<String> args) async {
@@ -111,7 +109,7 @@ void run(List<String> args) async {
 
 의존성 가져오고 필요한 파일 생성하기: 프로젝트의 루트 디렉토리에서 다음 명령을 실행하여 새로운 종속성을 가져오고 서버 구성에 따라 필요한 파일을 생성하세요:
 
-```dart
+```js
 dart pub get
 serverpod generate
 ```
@@ -163,7 +161,6 @@ docker exec -u postgres <container_name> psql my_project postgres -f /docker-ent
 
 아래는 Markdown 형식으로 표 태그를 변경한 내용입니다.
 
-
 ![GettingStartedwithServerpodAuthenticationPart1_2](/assets/img/2024-06-21-GettingStartedwithServerpodAuthenticationPart1_2.png)
 
 ![GettingStartedwithServerpodAuthenticationPart1_3](/assets/img/2024-06-21-GettingStartedwithServerpodAuthenticationPart1_3.png)
@@ -171,7 +168,6 @@ docker exec -u postgres <container_name> psql my_project postgres -f /docker-ent
 모든 테이블이 성공적으로 생성되었습니다. 다음 단계로 넘어가겠습니다.
 
 ## 클라이언트 라이브러리 설정
-
 
 <div class="content-ad"></div>
 
@@ -193,7 +189,7 @@ dependencies:
 
 Serverpod를 사용하여 이메일 및 비밀번호 인증에 필요한 서버 측 변경 사항을 구현한 후, 다음 단계는 Flutter 앱과 통합하는 것입니다. 다행히도 Serverpod는 이 프로세스를 가능한한 원활하게 만들기 위해 미리 구축된 UI 컴포넌트를 제공합니다.
 
-먼저, Flutter 앱에 필요한 클라이언트 측 종속성을 추가해야 합니다. Serverpod 프로젝트(my_project_flutter)의  pubspec.yaml 파일을 열고 다음과 같은 라인을 dependencies 섹션 아래 추가해주세요:
+먼저, Flutter 앱에 필요한 클라이언트 측 종속성을 추가해야 합니다. Serverpod 프로젝트(my_project_flutter)의 pubspec.yaml 파일을 열고 다음과 같은 라인을 dependencies 섹션 아래 추가해주세요:
 
 ```js
 dependencies:
@@ -237,7 +233,6 @@ flutter run
 <img src="/assets/img/2024-06-21-GettingStartedwithServerpodAuthenticationPart1_5.png" />
 
 ## 문제 해결
-
 
 <div class="content-ad"></div>
 
@@ -296,7 +291,7 @@ Future<void> initializeServerpodClient() async {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 void main() async {
   // runApp을 호출하기 전에 Flutter 바인딩을 사용하는 SessionManager를 호출해야 합니다.
   WidgetsFlutterBinding.ensureInitialized();
@@ -312,7 +307,6 @@ void main() async {
 ## SignIn 페이지 생성
 
 Flutter 앱에서 이메일 및 비밀번호 인증을 활성화하기 위해 serverpod_auth_email_flutter 패키지에서 제공하는 SignInWithEmailButton이라는 미리 만들어진 위젯을 사용하여 로그인 페이지를 생성할 것입니다. 이 위젯은 로그인 버튼을 생성하며 로그인 흐름을 처리하는 대화 상자를 제공합니다.
-
 
 <div class="content-ad"></div>
 
@@ -380,7 +374,7 @@ class MyHomePageState extends State<MyHomePage> {
 잊지 말고 SignInPage 위젯에 대한 import 문을 추가해주세요:
 
 ```js
-import 'package:my_project_flutter/src/widgets/sign_in_page.dart';
+import "package:my_project_flutter/src/widgets/sign_in_page.dart";
 ```
 
 전체 main.dart 파일은 다음과 같이 보여야 합니다:
@@ -569,7 +563,7 @@ UserInfo 객체를 사용하여 사용자의 이름과 이메일을 가져와 UI
 
 <div class="content-ad"></div>
 
-```dart
+```js
 sessionManager.isSignedIn ? const AccountPage() : const SignInPage(),
 ```
 
@@ -577,7 +571,7 @@ sessionManager.isSignedIn ? const AccountPage() : const SignInPage(),
 
 세션 상태 변경에 따라 사용자 인터페이스를 업데이트하려면 main.dart의 MyHomePageState 내에 다음 코드를 추가해야 합니다.
 
-```dart
+```js
 @override
 void initState() {
   super.initState();
@@ -659,7 +653,6 @@ Gmail 계정을 만든 후 다음 단계를 따르세요:
 
 <div class="content-ad"></div>
 
-
 <img src="/assets/img/2024-06-21-GettingStartedwithServerpodAuthenticationPart1_13.png" />
 
 이제 서버팟 프로젝트의 passwords 파일에 암호를 추가해 보겠습니다. 이 파일은 config/passwords.yaml 경로에 있습니다. 여기서 주의할 점은 이 파일을 버전 관리에 저장하지 마십시오. 실제로 서버팟 프로젝트는 이 파일을 .gitignore에 추가하여 사전 구성되어 있습니다. 대신에 항상 프로젝트 외부에서 비밀을 관리하고, 프로덕션 배포 시에는 CI/CD 파이프라인의 비밀 변수로 유지하십시오.
@@ -676,8 +669,7 @@ development:
 
   # 서비스 비밀은 서버 간 통신 및 서비스 프로토콜에 액세스하는 데 사용됩니다.
   serviceSecret: 'IWtaP1Z-Db-F70IBJpWGf3D7x9F3AYGg'
-``` 
-
+```
 
 <div class="content-ad"></div>
 

@@ -3,14 +3,12 @@ title: "플러터에서 히어로 애니메이션 마스터하기 종합 가이�
 description: ""
 coverImage: "/assets/img/2024-06-21-MasteringHeroAnimationsinFlutterAComprehensiveGuide_0.png"
 date: 2024-06-21 21:13
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-MasteringHeroAnimationsinFlutterAComprehensiveGuide_0.png
 tag: Tech
 originalTitle: "Mastering Hero Animations in Flutter: A Comprehensive Guide"
 link: "https://medium.com/@blup-tool/mastering-hero-animations-in-flutter-a-comprehensive-guide-ecb3e2b3f8e5"
 ---
-
-
 
 ![image](https://miro.medium.com/v2/resize:fit:1400/1*hfZq5kMkFSZtlSRsReQYdQ.gif)
 
@@ -19,7 +17,6 @@ link: "https://medium.com/@blup-tool/mastering-hero-animations-in-flutter-a-comp
 ## 히어로 애니메이션의 중요성과 사용 사례
 
 히어로 애니메이션은 시각적으로 매력적일 뿐만 아니라 사용자 경험에서도 중요한 역할을 합니다. 그들은 다음에서 도움이 됩니다:
-
 
 <div class="content-ad"></div>
 
@@ -62,7 +59,7 @@ Flutter에서의 히어로 애니메이션은 위젯 간 전환 애니메이션�
 
 ![영상](https://miro.medium.com/v2/resize:fit:1400/1*Tnp6mCmVil2aRqNtcxrfDg.gif)
 
-```dart
+```js
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -123,7 +120,7 @@ PageRouteBuilder를 사용하여 사용자 정의 슬라이드 전환의 예시�
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

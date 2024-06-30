@@ -3,13 +3,12 @@ title: "Flutter Appwrite  완벽한 크래시 코스"
 description: ""
 coverImage: "/assets/img/2024-06-19-FlutterAppwriteTheCompleteCrashCourse_0.png"
 date: 2024-06-19 00:13
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-FlutterAppwriteTheCompleteCrashCourse_0.png
 tag: Tech
 originalTitle: "Flutter Appwrite — The Complete Crash Course"
 link: "https://medium.com/@tomicriedel/flutter-appwrite-the-complete-crash-course-20eea45bdb65"
 ---
-
 
 <img src="/assets/img/2024-06-19-FlutterAppwriteTheCompleteCrashCourse_0.png" />
 
@@ -56,7 +55,7 @@ Appwrite를 가져와서 Client 유형의 새 변수를 만듭니다. 이제 엔
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:appwrite/appwrite.dart';
 
@@ -65,32 +64,31 @@ void main() {
   Client client = Client()
     .setEndpoint("https://localhost/v1") // 만약 Appwrite cloud를 사용 중이라면 https://cloud.appwrite.io/v1을 사용하세요
     .setProject("<YOUR_PROJECT_ID>");
-  
+
   runApp(MaterialApp();
 }
 ```
 
 자, 이제 첫 번째 요청을 보내 봅시다. 우리는 계정을 만들 것입니다. 이를 위해 account라는 새 변수를 만들고 .create()를 호출합니다. 여기에 대해 몇 가지를 지정할 수 있습니다. 그 값들은 텍스트 필드에서 가져올 수 있습니다:
 
-```dart
+```js
 // 계정 변수 생성
 Account account = Account(client);
 
 // 새 계정 생성. 이름은 옵션입니다.
 await account.create(
-  userId: ID.unique(), 
-  email: email, 
-  password: password, 
+  userId: ID.unique(),
+  email: email,
+  password: password,
   name: name,
 );
 ```
 
 하지만 이렇게 하면 계정만 생성되고 사용자가 로그인되지는 않습니다. 사용자를 로그인하려면 createEmailPasswordSession을 사용할 수 있습니다:
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 // 로그인
 await account.createEmailPasswordSession(email: email, password: password);
 
@@ -100,7 +98,7 @@ final user = await account.get();
 
 사용자를 로그아웃하려면 deleteSession()을 호출하면 됩니다 (걱정 마세요, 이 작업은 계정을 삭제하는 것이 아니라 현재 세션만 삭제합니다):
 
-```dart
+```js
 await widget.account.deleteSession(sessionId: 'current');
 ```
 
@@ -108,7 +106,7 @@ await widget.account.deleteSession(sessionId: 'current');
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:dart_appwrite/dart_appwrite.dart';
 
 Client client = Client()
@@ -132,10 +130,9 @@ await users.delete(
 
 하지만 이제는 당연히 데이터베이스 항목을 가져오고 싶어요. 먼저 모든 문서를 나열할 거에요:
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 final databases = Databases(client);
 
 try {
@@ -155,7 +152,7 @@ try {
 
 하지만 사용자가 할 일을 클릭하고 모든 정보에 액세스하려면 어떻게 해야 할까요? 그럴 경우 한 항목만 가져와야 합니다. 이 작업도 Appwrite를 사용하면 매우 쉽습니다.
 
-```dart
+```js
 try {
   Document result = await databases.getDocument(
       databaseId: '<DATABASE_ID>',

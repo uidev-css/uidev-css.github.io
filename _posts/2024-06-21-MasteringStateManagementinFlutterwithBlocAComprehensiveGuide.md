@@ -3,13 +3,12 @@ title: "Flutter에서 Bloc을 사용한 상태 관리 마스터하기 종합 가
 description: ""
 coverImage: "/assets/img/2024-06-21-MasteringStateManagementinFlutterwithBlocAComprehensiveGuide_0.png"
 date: 2024-06-21 22:13
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-MasteringStateManagementinFlutterwithBlocAComprehensiveGuide_0.png
 tag: Tech
 originalTitle: "Mastering State Management in Flutter with Bloc: A Comprehensive Guide"
 link: "https://medium.com/@dihsar/mastering-state-management-in-flutter-with-bloc-a-comprehensive-guide-1d03319ba7df"
 ---
-
 
 소개
 
@@ -30,7 +29,6 @@ flutter_bloc은 Flutter 애플리케이션의 상태를 관리하기 위해 BLoC
 - 다음 명령어를 사용하여 새로운 Flutter 프로젝트를 생성합니다:
 
 <div class="content-ad"></div>
-
 
 ```js
 flutter create my_bloc_app
@@ -61,7 +59,7 @@ dependencies:
 
 프로젝트에서 Bloc을 위한 새 Dart 파일을 만드세요. counter_bloc.dart라고 이름 짓겠어요.
 
-```dart
+```js
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // 이벤트
@@ -103,7 +101,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'counter_bloc.dart';
@@ -181,7 +179,7 @@ class MyHomePage extends StatelessWidget {
 
 이제 다음을 실행하여 Flutter 앱을 실행할 수 있습니다:
 
-```dart
+```js
 flutter run
 ```
 

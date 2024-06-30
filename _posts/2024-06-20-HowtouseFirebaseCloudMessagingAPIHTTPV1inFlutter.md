@@ -3,13 +3,12 @@ title: "플러터에서 Firebase Cloud Messaging API HTTP V1를 사용하는 방
 description: ""
 coverImage: "/assets/img/2024-06-20-HowtouseFirebaseCloudMessagingAPIHTTPV1inFlutter_0.png"
 date: 2024-06-20 13:52
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-20-HowtouseFirebaseCloudMessagingAPIHTTPV1inFlutter_0.png
 tag: Tech
 originalTitle: "How to use Firebase Cloud Messaging API (HTTP V1) in Flutter"
 link: "https://medium.com/@anna.araslanova.social/how-to-use-firebase-cloud-messaging-api-http-v1-in-flutter-3f23b49d3a51"
 ---
-
 
 만약 해당 이야기가 유용하다고 생각되면 왼쪽에 50개의 박수를 주세요.
 
@@ -76,7 +75,7 @@ http.post(
 
 구글 API 인증 라이브러리를 사용해야 하는 새로운 유효한 코드입니다.
 
-```dart
+```js
 import 'package:googleapis_auth/auth_io.dart' as auth;
 import 'dart:convert';
 import 'package:flutter/services.dart';
@@ -90,19 +89,19 @@ Future<bool> sendPushMessage({
   final jsonCredentials = await rootBundle
       .loadString('data/your-key-from-cloud-console.json');
   final creds = auth.ServiceAccountCredentials.fromJson(jsonCredentials);
-  
+
   final client = await auth.clientViaServiceAccount(
     creds,
     ['https://www.googleapis.com/auth/cloud-platform'],
   );
-  
+
   final notificationData = {
     'message': {
       'token': recipientToken,
       'notification': {'title': title, 'body': body}
     },
   };
-  
+
   const String senderId = '736705283357';
   final response = await client.post(
     Uri.parse('https://fcm.googleapis.com/v1/projects/$senderId/messages:send'),
@@ -111,7 +110,7 @@ Future<bool> sendPushMessage({
     },
     body: jsonEncode(notificationData),
   );
-  
+
   client.close();
   if (response.statusCode == 200) {
     return true; // Success!

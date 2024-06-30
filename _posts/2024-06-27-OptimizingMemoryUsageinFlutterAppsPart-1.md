@@ -3,13 +3,12 @@ title: "Flutter 앱에서 메모리 사용 최적화 방법 파트 1"
 description: ""
 coverImage: "/assets/img/2024-06-27-OptimizingMemoryUsageinFlutterAppsPart-1_0.png"
 date: 2024-06-27 18:29
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-27-OptimizingMemoryUsageinFlutterAppsPart-1_0.png
 tag: Tech
 originalTitle: "Optimizing Memory Usage in Flutter Apps (Part-1)"
 link: "https://medium.com/@gauravswarankar/optimizing-memory-usage-in-flutter-apps-part-1-1ad377b1e975"
 ---
-
 
 <img src="/assets/img/2024-06-27-OptimizingMemoryUsageinFlutterAppsPart-1_0.png" />
 
@@ -35,7 +34,7 @@ Flutter DevTools의 메모리 탭을 사용하여 플러터 앱이 메모리를 
 
 기본적인 객체 풀링의 예시를 살펴봅시다.
 
-```dart
+```js
 // 예시: Worker 객체를 사용한 객체 풀링
 
 class Worker {
@@ -101,13 +100,13 @@ Worker 클래스에는 Worker가 일을 하는 상황을 알리는 메시지를 
 
 <div class="content-ad"></div>
 
-- Object Pool 클래스에는 두 개의 리스트인 _available(재사용 가능한 객체)와 _inUse(현재 사용 중인 객체)가 포함되어 있습니다.
-- _counter는 새로 생성된 Worker 객체에 고유 ID를 할당하는 데 도움을 줍니다.
-- getObject() 메서드는 풀에서 객체를 가져옵니다. 리스트가 비어 있다면 새로운 객체를 생성하고 _available에서 가져온 객체를 _inUse로 이동합니다.
+- Object Pool 클래스에는 두 개의 리스트인 \_available(재사용 가능한 객체)와 \_inUse(현재 사용 중인 객체)가 포함되어 있습니다.
+- \_counter는 새로 생성된 Worker 객체에 고유 ID를 할당하는 데 도움을 줍니다.
+- getObject() 메서드는 풀에서 객체를 가져옵니다. 리스트가 비어 있다면 새로운 객체를 생성하고 \_available에서 가져온 객체를 \_inUse로 이동합니다.
 
-Release object는 객체를 _inUse에서 가져와 _available로 다시 반환합니다.
+Release object는 객체를 \_inUse에서 가져와 \_available로 다시 반환합니다.
 
-_createObject 메서드는 고유 ID가 있는 새 Worker 객체를 생성하고, 각 Worker가 고유 ID를 받을 수 있도록 _counter를 증가시킵니다.
+\_createObject 메서드는 고유 ID가 있는 새 Worker 객체를 생성하고, 각 Worker가 고유 ID를 받을 수 있도록 \_counter를 증가시킵니다.
 
 이제 main 함수인 void main()으로 넘어가 봅시다.
 
@@ -145,8 +144,8 @@ worker1.doWork();
 <div class="content-ad"></div>
 
 ```js
-  // 첫 번째 워커를 풀에 반환합니다
-  workerPool.releaseObject(worker1);
+// 첫 번째 워커를 풀에 반환합니다
+workerPool.releaseObject(worker1);
 ```
 
 이제 풀에서 다른 워커를 가져옵니다. 여기서 워커는 다시 사용되어야 합니다 (이 경우 worker1).
@@ -158,7 +157,6 @@ worker1.doWork();
 ```
 
 나머지 워커들을 풀에 반납합니다
-
 
 <div class="content-ad"></div>
 

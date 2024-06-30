@@ -3,13 +3,12 @@ title: "undefined"
 description: ""
 coverImage: "/assets/img/undefined_0.png"
 date: 2024-06-21 20:10
-ogImage: 
+ogImage:
   url: /assets/img/undefined_0.png
 tag: Tech
 originalTitle: "undefined"
 link: "https://medium.com/@flutternewshub/audioplayers-bringing-versatility-to-audio-playback-in-flutter-feba42b31e7a"
 ---
-
 
 AudioPlayers는 강력한 Flutter 플러그인으로, 여러 플랫폼에서 동시에 여러 오디오 파일을 재생할 수 있는 능력을 제공합니다. 다양한 기능을 갖춘 이 플러그인은 매력적인 오디오 경험을 제공하기에 이상적인 솔루션이 될 것입니다.
 
@@ -43,7 +42,7 @@ URL에서 오디오 재생하기:
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:audioplayers/audioplayers.dart';
 
 // AudioPlayer 인스턴스를 초기화합니다
@@ -55,7 +54,7 @@ await player.play(UrlSource('https://example.com/my-audio.wav'));
 
 재생 제어:
 
-```dart
+```js
 // 오디오 재생을 일시 중지합니다
 player.pause();
 

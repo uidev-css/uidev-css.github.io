@@ -3,13 +3,12 @@ title: "Flutter 상태 관리 비교 Provider, BLoC, GetX, Riverpod, GetIt, 그�
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterStateManagementProviderBLoCGetXRiverpodGetItandMobX_0.png"
 date: 2024-06-21 23:25
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterStateManagementProviderBLoCGetXRiverpodGetItandMobX_0.png
 tag: Tech
 originalTitle: "Flutter State Management: Provider, BLoC, GetX, Riverpod, GetIt and MobX"
 link: "https://medium.com/@alvaro.armijoss/flutter-state-management-provider-bloc-getx-riverpod-getit-and-mobx-c9db3168a834"
 ---
-
 
 본 기사에서는 상태 관리의 일반적인 개요를 검토한 후 가장 흥미로운 상태 관리 방법인 Provider, BLoC, GetX, Riverpod, GetIt, 그리고 MobX를 살펴보겠습니다.
 
@@ -178,10 +177,9 @@ class ProviderPage extends StatelessWidget {
 
 요소별로 Translation을 제공합니다:
 
-
 Consumer 위젯을 가능한 깊이까지 Tree 안에 두는 것이 최선의 방법입니다. 어딘가의 세부 사항이 변경되었을 때 UI의 큰 부분을 다시 빌드하고 싶지 않으니까요.
 
-```dart
+```js
 class HomeProvider extends StatefulWidget {
   const HomeProvider({super.key});
 
@@ -236,7 +234,6 @@ class _HomeProviderState extends State<HomeProvider> {
 그 결과는 다음과 같습니다:
 
 ![이미지](/assets/img/2024-06-21-FlutterStateManagementProviderBLoCGetXRiverpodGetItandMobX_8.png)
-
 
 <div class="content-ad"></div>
 
@@ -444,13 +441,13 @@ class _HomeBlocState extends State<HomeBloc> {
 여기 당신의 계수 변수가 있어요:
 
 ```js
-var name = 'Jonatas Borges';
+var name = "Jonatas Borges";
 ```
 
 이를 관찰 가능하도록 만들기 위해서는 그 뒤에 ".obs"를 추가하기만 하면 돼요:
 
 ```js
-var name = 'Jonatas Borges'.obs;
+var name = "Jonatas Borges".obs;
 ```
 
 <div class="content-ad"></div>
@@ -621,7 +618,7 @@ final riverpodProvider =
 
 UI에서 다음과 같이 하고 있습니다:
 
-```dart
+```js
 class RiverpodPage extends StatelessWidget {
   static const route = 'riverpod-page';
 
@@ -638,7 +635,7 @@ class RiverpodPage extends StatelessWidget {
 
 위젯이 프로바이더를 읽을 수 있도록 하려면 전체 애플리케이션을 "ProviderScope" 위젯으로 감싸야 합니다. 이곳에는 프로바이더의 상태가 저장됩니다.
 
-```dart
+```js
 class HomeRiverpod extends ConsumerWidget {
   const HomeRiverpod({super.key});
 
@@ -694,7 +691,7 @@ class HomeRiverpod extends ConsumerWidget {
 
 <div class="content-ad"></div>
 
-빠른 대답을 위해 노력중입니다! 
+빠른 대답을 위해 노력중입니다!
 
 <div class="content-ad"></div>
 
@@ -781,7 +778,7 @@ GetIt로 데이터를 읽는 것은 이미 간단합니다. 하지만 mixin을 �
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class HomeGetIt extends StatelessWidget with GetItMixin {
   HomeGetIt({super.key});
 
@@ -829,7 +826,6 @@ watch 메서드의 주요 이점은 ValueListenableBuilders, StreamBuilder 등�
 
 <div class="content-ad"></div>
 
-
 ![alt text](/assets/img/2024-06-21-FlutterStateManagementProviderBLoCGetXRiverpodGetItandMobX_16.png)
 
 ## 장점
@@ -838,7 +834,6 @@ watch 메서드의 주요 이점은 ValueListenableBuilders, StreamBuilder 등�
 - 매우 빠르고 배우기/사용하기 쉽습니다. UI 트리를 특별한 위젯으로 엮지 않고 데이터에 액세스할 수 있습니다.
 
 ## 단점
-
 
 <div class="content-ad"></div>
 
@@ -911,8 +906,8 @@ abstract class _DataStore with Store {
 
 여기서 흥미로운 부분은:
 
-- Store mixin을 포함하는 추상 클래스 _DataStore입니다. 모든 스토어 관련 코드는 이 추상 클래스 내에 배치되어야 합니다. build_runner에서 코드를 조합하기 위해 DataStore 클래스를 생성합니다.
-- 생성된 코드는 part 파일인 data_store.g.dart에 포함됩니다. 이를 part 지시문으로 포함해야 build_runner가 출력물을 생성합니다. 생성된 파일에는 _$DataStore mixin이 포함됩니다.
+- Store mixin을 포함하는 추상 클래스 \_DataStore입니다. 모든 스토어 관련 코드는 이 추상 클래스 내에 배치되어야 합니다. build_runner에서 코드를 조합하기 위해 DataStore 클래스를 생성합니다.
+- 생성된 코드는 part 파일인 data*store.g.dart에 포함됩니다. 이를 part 지시문으로 포함해야 build_runner가 출력물을 생성합니다. 생성된 파일에는 *$DataStore mixin이 포함됩니다.
 - 값을 observable로 표시하는 @observable 어노테이션.
 - increment() 메서드를 action으로 표시하기 위한 @action 사용.
 
@@ -947,7 +942,7 @@ Observer 위젯(flutter_mobx의 일부)은 빌더 함수에서 사용된 observa
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class HomeMobX extends StatelessWidget {
   const HomeMobX({super.key});
 
@@ -991,7 +986,6 @@ class HomeMobX extends StatelessWidget {
 <img src="/assets/img/2024-06-21-FlutterStateManagementProviderBLoCGetXRiverpodGetItandMobX_19.png" />
 
 ## 장점
-
 
 <div class="content-ad"></div>
 

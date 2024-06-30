@@ -3,13 +3,12 @@ title: "컨트롤러는 이제 그만 Vertical Slice로 Blazor 웹 앱 더 잘 �
 description: ""
 coverImage: "/assets/img/2024-06-23-GoodbyeControllersBuildingBetterBlazorWebAppswithVerticalSlices_0.png"
 date: 2024-06-23 15:11
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-23-GoodbyeControllersBuildingBetterBlazorWebAppswithVerticalSlices_0.png
 tag: Tech
 originalTitle: "Goodbye Controllers: Building Better Blazor Web Apps with Vertical Slices"
 link: "https://medium.com/gitconnected/goodbye-controllers-building-better-blazor-web-apps-with-vertical-slices-3a8b9b413bac"
 ---
-
 
 ![이미지](/assets/img/2024-06-23-GoodbyeControllersBuildingBetterBlazorWebAppswithVerticalSlices_0.png)
 
@@ -90,7 +89,7 @@ link: "https://medium.com/gitconnected/goodbye-controllers-building-better-blazo
 
 ```js
 dotnet add package MediatR --version 12.1.1
-dotnet add package Microsoft.EntityFrameworkCore 
+dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
 ```
 
@@ -99,12 +98,12 @@ dotnet add package Microsoft.EntityFrameworkCore.InMemory
 프로젝트 루트에 새로운 Features 폴더를 추가해 보겠어요. 이 폴더에는 애플리케이션의 모든 기능이 저장될 거에요. 첫 번째 기능인 GetUserList를 추가할 거기 때문에 GetUserList라는 폴더도 함께 만들어 줄 거에요.
 첫 번째 단계로는 해당 폴더에 UserList라는 기본 Razor 페이지를 간단히 추가할 거에요. 이 작업은 라우팅이 예상대로 작동하는지 확인하기 위한 것이에요.
 
-```razor
+```js
 @page "/users"
 <h3>User List</h3>
 
 @code {
-    
+
 }
 ```
 
@@ -186,7 +185,7 @@ MediatR가 요청을 처리하고 응답을 보낼 수 있도록하는 것을 �
 Markdown 형식의 표태그를 로 변경하십시오.
 
 ```js
-builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(Program).Assembly));
+builder.Services.AddMediatR((config) => config.RegisterServicesFromAssembly(typeof Program.Assembly));
 ```
 
 요청이 들어오면 MediatR은 적절한 핸들러를 찾기 위해 등록을 확인한 후 요청을 전달합니다. 이 등록 프로세스는 MediatR이 응용 프로그램과 원활하게 작동하기 위한 중요한 부분입니다.
@@ -233,13 +232,13 @@ else
     {
         _model = await Mediator.Send(new GetUserListQuery());
     }
-    
+
     private async Task PreviousPage()
     {
         _currentPage--;
         _model = await Mediator.Send(new GetUserListQuery(PageSize, _currentPage));
     }
-    
+
     private async Task NextPage()
     {
         _currentPage++;
@@ -253,7 +252,6 @@ UserList.razor Blazor 페이지에서는 사용자 목록을 표시하는 대화
 그러고 보면, Blazor의 서버 측 렌더링(SSR)의 효율성을 강조합니다. SSR로 인해 Blazor가 서버에서 데이터 검색 및 페이지네이션의 복잡성을 처리하므로 상세한 클라이언트 측 코드가 필요하지 않고 더 부드러운 사용자 경험을 제공할 수 있습니다.
 
 사용자 세부 정보를 보는 다른 기능 슬라이스와의 상호 작용 및 테스트 데이터 생성을 포함한 전체 구현은 GitHub에서 찾을 수 있습니다.
-
 
 <div class="content-ad"></div>
 

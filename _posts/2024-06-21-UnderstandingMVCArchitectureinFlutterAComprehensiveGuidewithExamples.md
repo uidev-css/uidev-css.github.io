@@ -3,13 +3,12 @@ title: "예제와 함께 배우는 Flutter에서의 MVC 아키텍처 완벽 가�
 description: ""
 coverImage: "/assets/img/2024-06-21-UnderstandingMVCArchitectureinFlutterAComprehensiveGuidewithExamples_0.png"
 date: 2024-06-21 21:27
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-UnderstandingMVCArchitectureinFlutterAComprehensiveGuidewithExamples_0.png
 tag: Tech
 originalTitle: "Understanding MVC Architecture in Flutter: A Comprehensive Guide with Examples"
 link: "https://medium.com/@Faiz_Rhm/understanding-mvc-architecture-in-flutter-a-comprehensive-guide-with-examples-5d1a372c7eaf"
 ---
-
 
 <img src="/assets/img/2024-06-21-UnderstandingMVCArchitectureinFlutterAComprehensiveGuidewithExamples_0.png" />
 
@@ -40,7 +39,7 @@ class Task {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class TaskListView extends StatefulWidget {
   final TaskListController controller;
 
@@ -79,7 +78,7 @@ class _TaskListViewState extends State<TaskListView> {
 
 - 컨트롤러: 사용자 입력을 처리하고 모델 및 뷰를 업데이트하는 별도의 클래스를 만듭니다. 이 예에서는 TaskListController 클래스를 만들 수 있습니다:
 
-```dart
+```js
 class TaskListController {
   List<Task> tasks = [
     Task('Task 1', false),
@@ -95,10 +94,9 @@ class TaskListController {
 
 - 전부 합치기: 이제 모델, 뷰 및 컨트롤러를 연결하여 작동하는 앱을 만들어 봅시다.
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 void main() {
   runApp(TaskListApp());
 }
@@ -129,7 +127,6 @@ class TaskListApp extends StatelessWidget {
 - 확장성: Model, View 및 Controller를 분리함으로써 새로운 기능을 추가하거나 기존 기능을 수정할 때 다른 구성 요소에 영향을 주지 않게 됩니다.
 
 결론: Model-View-Controller(MVC)는 플러터 애플리케이션 구축에 구조화된 접근 방식을 제공하는 강력한 아키텍처 패턴입니다. 관심사를 분리하고 코드를 구별 구성 요소로 구성함으로써, 개발자는 더 나은 코드 유지 보수성, 확장성 및 재사용성을 달성할 수 있습니다. 플러터에서 MVC를 이해하고 구현함으로써 개발 프로세스를 크게 개선하고 더 나은 소프트웨어 품질을 달성할 수 있습니다.
-
 
 <div class="content-ad"></div>
 

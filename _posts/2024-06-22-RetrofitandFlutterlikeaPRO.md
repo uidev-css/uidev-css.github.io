@@ -3,14 +3,12 @@ title: "Retrofit과 Flutter로 프로처럼 개발하는 방법"
 description: ""
 coverImage: "/assets/img/2024-06-22-RetrofitandFlutterlikeaPRO_0.png"
 date: 2024-06-22 04:08
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-RetrofitandFlutterlikeaPRO_0.png
 tag: Tech
 originalTitle: "Retrofit and Flutter like a PRO"
 link: "https://medium.com/@ayalon.idan/retrofit-and-flutter-like-a-pro-e80b654545c1"
 ---
-
-
 
 ![이미지](/assets/img/2024-06-22-RetrofitandFlutterlikeaPRO_0.png)
 
@@ -19,7 +17,6 @@ link: "https://medium.com/@ayalon.idan/retrofit-and-flutter-like-a-pro-e80b65454
 Flutter로 이를 처리하는 몇 가지 방법이 있습니다. 이 기사에서는 REST API를 처리하는 데 가장 효과적이라고 생각하는 방법을 보여드립니다. 이 멋진 기사를 보신 후에는 다른 것을 사용하지 않게 될 것입니다!
 
 우리는 훌륭한 Retrofit 패키지에 대해 알아볼 것입니다. 이 패키지는 Dio 패키지의 유형 변환을 수행하며 (JSON을 Dart 객체로 변환하는 고통스러운 작업을 source_gen을 사용해 코드를 생성함으로써) 번거로움을 줄여줍니다. 시작해 봅시다.
-
 
 <div class="content-ad"></div>
 
@@ -50,16 +47,20 @@ Flutter로 이를 처리하는 몇 가지 방법이 있습니다. 이 기사에�
 
 <div class="content-ad"></div>
 
-# dio_smart_retry 
+# dio_smart_retry
+
 Dio를 위한 유연한 재시도 라이브러리
 
-# dio_cache_interceptor 
+# dio_cache_interceptor
+
 여러 저장소를 존줍하여 HTTP 지시문을 준수하는 (또는 그렇지 않은) Dio HTTP 캐시 인터셉터
 
-# dio_http_cache 
+# dio_http_cache
+
 안드로이드의 Rxcache와 같은 Dio를 위한 간단한 캐시 라이브러리
 
-# pretty_dio_logger 
+# pretty_dio_logger
+
 네트워크 호출을 읽기 쉬운 형식으로 로그하는 Dio 인터셉터, 예쁜 Dio 로거
 
 <div class="content-ad"></div>
@@ -104,8 +105,8 @@ json_serializable: 최신 버전 확인
 <div class="content-ad"></div>
 
 - dio_client.dart이라는 파일을 만드세요.
-- baseUrl 문자열을 인수로 받아 Dio 클라이언트를 반환하는 함수를 생성하세요. 
-- baseUrl과 Interceptor(이에 대해서 나중에 논의할 것입니다.)와 같은 최소한의 *BaseOptions로 Dio 인스턴스를 만드세요.
+- baseUrl 문자열을 인수로 받아 Dio 클라이언트를 반환하는 함수를 생성하세요.
+- baseUrl과 Interceptor(이에 대해서 나중에 논의할 것입니다.)와 같은 최소한의 \*BaseOptions로 Dio 인스턴스를 만드세요.
 
 BaseOptions: Dio 인스턴스의 표준 구성입니다. 이 기사에서 다루지는 않겠지만, 연결 제한 시간, 수신 제한 시간, 전송 제한 시간, 쿼리 매개변수, 헤더 등과 같은 다양한 구성 요소가 포함되어 있습니다.
 
@@ -162,9 +163,7 @@ https://jsonplaceholder.typicode.com/posts
 
 그 후, freezed 결과를 복사하여 새로운 모델 파일, 예를 들어 post_model.dart를 만들고 오른쪽 코드를 붙여넣은 다음 다음 명령을 실행해보세요. (NOTICE: quickly에서 필드들을 선택적으로하거나 필수로하지 않았는데, freezed는 그것을 허용하지 않으므로 각 부분에 ?를 추가하여 선택적으로 만듭니다.)
 
-
 flutter pub run build_runner build --delete-conflicting-outputs
-
 
 <div class="content-ad"></div>
 
@@ -198,7 +197,7 @@ build_runner를 다시 실행하여 Retrofit이 중요한 작업을 대신 처�
 
 <div class="content-ad"></div>
 
-```dart
+```js
 @freeze
 abstract class PostModelRequest with _$PostModelRequest {
   const factory PostModelRequest({
@@ -215,7 +214,6 @@ abstract class PostModelRequest with _$PostModelRequest {
 ![image](/assets/img/2024-06-22-RetrofitandFlutterlikeaPRO_9.png)
 
 같은 방법으로 retrofit 클라이언트에 @PUT, @PATCH, @DELETE 메서드를 추가할 수 있습니다.
-
 
 <div class="content-ad"></div>
 
@@ -243,16 +241,13 @@ Retrofit은 인코딩된 폼 데이터를 사용하여 업로드도 지원합니
 
 개발자님 안녕하세요. 업로드된 진행 상황을 얻어 업로드하는 것도 요청하셨지만, 이겪는 것은 선택 사항입니다. 네, 물론, 단지:
 
-
 <img src="/assets/img/2024-06-22-RetrofitandFlutterlikeaPRO_14.png" />
-
 
 # 모든 호출에 토큰 추가하는 방법
 
 회사에서 엄격한 곳이어서 호출을 액세스 토큰으로 안전하게 보호하길 원합니다. 물론, 당신이 원하는 마지막 것은 각 호출에 수동으로 이러한 토큰을 추가하는 것입니다. 절대 안돼요! 우리에게는 인터셉터가 있어서 다행입니다. 인터셉터는 당신이 만든 모든 호출을 듣는 훌륭한 도구입니다. 이들에는 onRequest, onError 및 onResponse와 같은 세 가지 콜백이 있습니다. 우리의 작은 예에서 백엔드는 우리의 토큰을 파이어베이스에서 원합니다. 그래서 token_interceptor.dart라는 새 파일을 만들고 나중에 Dio 클라이언트에 추가합시다.
 
 <div class="content-ad"></div>
-
 
 ![이미지](/assets/img/2024-06-22-RetrofitandFlutterlikeaPRO_15.png)
 
@@ -261,7 +256,6 @@ Retrofit은 인코딩된 폼 데이터를 사용하여 업로드도 지원합니
 또한 오류가 발생하면 간단히 처리하는 방법이 있습니다. 실제 세계에서는 토큰이 만료되어 새로 고칠 필요가 있는 상황을 처리할 수도 있습니다. 요청에 무언가를 하고 싶다면 언제든지 onResponse를 재정의할 수 있습니다.
 
 # 응답을 캐시하는 방법
-
 
 <div class="content-ad"></div>
 
@@ -292,7 +286,7 @@ Dio().get(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 dio.interceptors.add(PrettyDioLogger(
         requestHeader: true,
         requestBody: true,
@@ -308,7 +302,6 @@ dio.interceptors.add(PrettyDioLogger(
 다음 기사는 오류를 전문가처럼 처리하는 방법에 대해 다룰 예정입니다. 이 내용이 도움이 되었기를 바랍니다. Flutter 서비스가 필요하신 경우 언제든지 연락해 주세요. Flutter 개발 전문 회사인 BlueBirdCoders에서는 4년 이상의 경험을 가지고 있으며, 아래 링크에서 우리 멋진 커뮤니티에 참여하실 수 있습니다:
 
 https://www.facebook.com/groups/flutteril/
-
 
 <div class="content-ad"></div>
 

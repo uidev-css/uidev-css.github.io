@@ -3,13 +3,12 @@ title: "Flutter 확장 프로그램 생산성을 높이는 7가지 꿀팁 "
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterExtensionsTrickstoBoostYourProductivity_0.png"
 date: 2024-06-21 21:39
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterExtensionsTrickstoBoostYourProductivity_0.png
 tag: Tech
 originalTitle: "Flutter Extensions: Tricks to Boost Your Productivity 💫"
 link: "https://medium.com/stackademic/flutter-extensions-tricks-to-boost-your-productivity-88573b7efc0f"
 ---
-
 
 ![이미지](/assets/img/2024-06-21-FlutterExtensionsTrickstoBoostYourProductivity_0.png)
 
@@ -20,7 +19,6 @@ link: "https://medium.com/stackademic/flutter-extensions-tricks-to-boost-your-pr
 먼저, 확장 기능을 만들고 이 확장 기능이 BuildContext를 확장한다는 것을 확실히하고 메서드를 확장 기능에 넣으세요:
 
 <div class="content-ad"></div>
-
 
 # 테이블 태그를 Markdown 형식으로 변경
 
@@ -53,10 +51,9 @@ extension ContextExt on BuildContext {
 
 2. MediaQuery에 쉽게 접근하기
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
   double get width => MediaQuery.of(this).size.width;
   double get height => MediaQuery.of(this).size.height;
   double get aspectRatio => MediaQuery.of(this).size.aspectRatio;
@@ -68,7 +65,7 @@ extension ContextExt on BuildContext {
 
 3. SnackBar 표시하기
 
-```dart
+```js
   void showSnackBar(String message) {
     if (!mounted) return;
     final snackBar = SnackBar(
@@ -80,7 +77,6 @@ extension ContextExt on BuildContext {
 ```
 
 4. AlertDialog 표시하기
-
 
 <div class="content-ad"></div>
 
@@ -140,7 +136,6 @@ extension ContextExt on BuildContext {
 
 <img src="https://miro.medium.com/v2/resize:fit:1200/1*aFEZr6_WdUFq3-DRjnYm9g.gif" />
 
-
 <div class="content-ad"></div>
 
 # 위젯 확장
@@ -159,7 +154,7 @@ extension WidgetExt on Widget {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 확장된확장({int flex = 1}) => Expanded(
         flex: flex,
         child: this,
@@ -168,7 +163,7 @@ extension WidgetExt on Widget {
 
 2. 투명도 설정
 
-```dart
+```js
 투명도설정(double val) => Opacity(
         opacity: val,
         child: this,
@@ -176,7 +171,6 @@ extension WidgetExt on Widget {
 ```
 
 3. Padding 추가하기
-
 
 <div class="content-ad"></div>
 
@@ -217,7 +211,7 @@ Widget onClick(Function() onClick) => InkWell(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 RotatedBox rotate(int quarterTurns) => RotatedBox(
   quarterTurns: quarterTurns,
   child: this,
@@ -232,7 +226,7 @@ RotatedBox rotate(int quarterTurns) => RotatedBox(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 extension StringExt on String {
 
   // 여기에 EXT 함수 추가하세요
@@ -242,7 +236,7 @@ extension StringExt on String {
 
 - 텍스트 위젯으로 변환
 
-```dart
+```js
 Text get text => Text(this);
 ```
 
@@ -250,7 +244,7 @@ Text get text => Text(this);
 
 <div class="content-ad"></div>
 
-```dart
+```js
 // 8자리 문자, 소문자, 대문자, 숫자를 포함해야 함
 bool isValidPassword() {
   return RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$').hasMatch(this);
@@ -274,7 +268,7 @@ bool isURL() {
 
 3. 기타 내용
 
-```dart
+```js
 String append(String other) => '$this$other';
 
 String get capitalizeFirstLetter =>
@@ -288,13 +282,13 @@ DateTime toDateTime() {
 }
 ```
 
-# D. Num 확장  
+# D. Num 확장
 
 <div class="content-ad"></div>
 
 먼저 Extension을 만들고 num을 확장하세요.
 
-```dart
+```js
 extension NumExt on num {
 
     // 여기에 EXT 함수를 넣어주세요
@@ -304,7 +298,7 @@ extension NumExt on num {
 
 - 수직 및 수평 간격을 간단하게 만듭니다.
 
-```dart
+```js
 SizedBox get heightBox => SizedBox(
         height: toDouble(),
       );
@@ -356,7 +350,7 @@ Duration get days => Duration(days: toInt());
 
 - DateTime 확장
 
-```dart
+```js
 extension DateTimeExt on DateTime {
   bool isToday() {
     final now = DateTime.now();
@@ -380,7 +374,7 @@ extension DateTimeExt on DateTime {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 extension FileExt on File {
   Future<Uint8List?> toUint8List() async {
     try {
@@ -411,7 +405,7 @@ extension FileExt on File {
 
 3. Scope Function Extension
 
-```dart
+```js
 extension ScopeFunctionExt<T> on T {
 
   // Do Something on The Object and returns Something
@@ -428,7 +422,6 @@ extension ScopeFunctionExt<T> on T {
 ```
 
 플러터에서 확장 메서드에 대한 코드 팁을 보여드렸습니다. 생산성을 높이는 데 도움이 되는 내용일지 모릅니다. 만약 이 기사가 유익했다면 👏 박수를 보내주시고, 휴대폰 개발에 관한 다양한 기사를 확인하시려면 팔로우해주세요. 감사합니다. 계속해서 생산적이세요 🔥
-
 
 <div class="content-ad"></div>
 

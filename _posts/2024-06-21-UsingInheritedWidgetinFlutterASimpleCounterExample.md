@@ -3,14 +3,12 @@ title: "Flutter에서 InheritedWidget 사용하기 간단한 카운터 예제"
 description: ""
 coverImage: "/assets/img/2024-06-21-UsingInheritedWidgetinFlutterASimpleCounterExample_0.png"
 date: 2024-06-21 21:03
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-UsingInheritedWidgetinFlutterASimpleCounterExample_0.png
 tag: Tech
 originalTitle: "Using InheritedWidget in Flutter: A Simple Counter Example"
 link: "https://medium.com/@subhashchandrashukla/using-inheritedwidget-in-flutter-a-simple-counter-example-3eb0d03ca936"
 ---
-
-
 
 ![사진](/assets/img/2024-06-21-UsingInheritedWidgetinFlutterASimpleCounterExample_0.png)
 
@@ -20,9 +18,7 @@ link: "https://medium.com/@subhashchandrashukla/using-inheritedwidget-in-flutter
 
 먼저, AppState라는 InheritedWidget을 만들겠습니다. 이 위젯은 공유 상태(이 경우 카운터)를 보유하고 이를 하위 항목에 제공할 것입니다.
 
-
 <div class="content-ad"></div>
-
 
 ```js
 import 'package:flutter/material.dart';
@@ -54,7 +50,6 @@ AppState 클래스에서:
 - updateShouldNotify 메서드는 하위 항목에 변경 사항을 알리는 시점을 결정합니다.
 
 단계 2: State를 관리하는 StatefulWidget 생성
-
 
 <div class="content-ad"></div>
 
@@ -102,7 +97,7 @@ class _MyAppState extends State<MyApp> {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class CounterDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -124,7 +119,6 @@ CounterDisplay 클래스에서:
 - Text 위젯에 카운터 값을 표시합니다.
 
 이 코드를 실행해 봅시다.
-
 
 <div class="content-ad"></div>
 

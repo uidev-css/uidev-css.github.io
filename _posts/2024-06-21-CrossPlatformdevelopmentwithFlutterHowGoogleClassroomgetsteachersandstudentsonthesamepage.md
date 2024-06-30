@@ -3,13 +3,12 @@ title: "구글 클래스룸으로 교사와 학생을 하나로 Flutter를 사�
 description: ""
 coverImage: "/assets/img/2024-06-21-CrossPlatformdevelopmentwithFlutterHowGoogleClassroomgetsteachersandstudentsonthesamepage_0.png"
 date: 2024-06-21 23:54
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-CrossPlatformdevelopmentwithFlutterHowGoogleClassroomgetsteachersandstudentsonthesamepage_0.png
 tag: Tech
 originalTitle: "Cross Platform development with Flutter — How Google Classroom gets teachers and students on the same page"
 link: "https://medium.com/flutter/cross-platform-development-with-flutter-how-google-classroom-gets-teachers-and-students-on-the-597d4f3b450c"
 ---
-
 
 Google의 Classroom 앱은 원래 2014년에 시작되어 전 세계의 1억 5천만 교육자와 학생들이 수업 내에서 숙제, 성적 및 커뮤니케이션을 조직화하는 데 사용됩니다. Android 및 iOS에서 사용할 수 있으며, 개발은 처음 시작된 해부터 이어져 왔으며, 이동 플랫폼의 변화 시대를 겪었습니다. 그 다양한 변화를 관리하는 것은 어려운 일이었습니다.
 
@@ -21,7 +20,7 @@ Google의 Classroom 앱은 원래 2014년에 시작되어 전 세계의 1억 5�
 
 <div class="content-ad"></div>
 
-## 일관성 없는 UIs 
+## 일관성 없는 UIs
 
 Google Classroom의 가장 뚜렷한 문제 중 하나는 UI의 변화로, 선생님들이 안드로이드와 iOS UI를 깊이 알아야 했습니다. 학생들이 한 플랫폼에서 보는 숙제 화면과 지침에 관한 질문을 받았을 때, 다른 플랫폼에서 본 화면과의 비교로 답변이 상당히 혼란스러울 수 있습니다.
 
@@ -45,7 +44,7 @@ Flutter를 사용하여 클래스룸을 다시 작성함으로써, Flutter가 �
 
 플러터 앱은 여전히 주기적으로 기본 플랫폼과 통신해야 합니다 — 어쨌든, 숙제를 업로드하고 볼 수 있는 사용자 경로는 파일 시스템을 사용하지 않으면 이뤄질 수 없습니다. 하지만 여기서도 플러터는 플랫폼별 로직을 전용 플러그인으로 격리하는 패턴을 따라 일상적인 디스크 I/O와 같은 것이 소속되지 말아야 하는 곳으로 슬금슬금 스니킹되는 것을 방지했습니다. 아래 예제는 플러터 앱이 전체 호출 스택을 혼란스럽지 않게 하면서 파일 시스템에 액세스하는 현실적인 방법을 보여줍니다.
 
-```dart
+```js
 import "dart:io";
 import "package:path/path.dart" as path;
 import "package:path_provider/path_provider.dart" as path_provider;
@@ -54,7 +53,7 @@ import "package:path_provider/path_provider.dart" as path_provider;
 // 반환된 값의 exists() 함수는 학생이 숙제를 먹은 경우 False를 반환합니다.
 Future<File> getHomework(Assignment assignment) async {
   // `path_provider` 패키지를 사용하여 플랫폼별 파일 시스템 특성을 추상화합니다
-  final Directory homeworkDirectory = 
+  final Directory homeworkDirectory =
     await path_provider.getApplicationSupportDirectory();
 
   // 학생이 업로드한 숙제를 추출합니다
@@ -78,7 +77,7 @@ Future<File> getHomework(Assignment assignment) async {
 
 <div class="content-ad"></div>
 
-대부분의 Classroom 기능은 과제와 업로드된 숙제와 같은 내용을 공유하는 사용자들을 모아주는 비교적 일상적인 앱으로 볼 수 있습니다. 그러나 한 가지 기능이 분명히 복잡하게 빛을 발합니다. Classroom의 주요 기능 중 하나는 파일 공유입니다. 여기서 교사와 학생 모두가 파일을 만들고 보고 편집할 수 있으며, 자유형 주석을 추가할 수 있습니다. 마치 펜이나 마커로 직접 종이에 그림을 그리는 것처럼 자유롭게 주석을 추가할 수 있습니다. 이 주석 공유 기능은 이미 Classroom의 내장 Android 및 iOS 클라이언트에 존재했기 때문에 Flutter로 이식하는 것이 어려웠던 문제였습니다. 
+대부분의 Classroom 기능은 과제와 업로드된 숙제와 같은 내용을 공유하는 사용자들을 모아주는 비교적 일상적인 앱으로 볼 수 있습니다. 그러나 한 가지 기능이 분명히 복잡하게 빛을 발합니다. Classroom의 주요 기능 중 하나는 파일 공유입니다. 여기서 교사와 학생 모두가 파일을 만들고 보고 편집할 수 있으며, 자유형 주석을 추가할 수 있습니다. 마치 펜이나 마커로 직접 종이에 그림을 그리는 것처럼 자유롭게 주석을 추가할 수 있습니다. 이 주석 공유 기능은 이미 Classroom의 내장 Android 및 iOS 클라이언트에 존재했기 때문에 Flutter로 이식하는 것이 어려웠던 문제였습니다.
 
 Classroom 팀은 이 주석 기능을 플랫폼별 구현을 별도의 라이브러리로 위임하는 플러그인으로 재패키지할 수 있었습니다. 파일 주석에 대해, 해당 기능은 이미 Google One, Google Keep 및 이전 Classroom 앱에서 사용되는 기존 네이티브 라이브러리들을 감싼 얇은 래퍼로 되어 있었습니다. 내부적으로 Android와 iOS는 파일 공유 주변에 서로 다른 구현 요구 사항이 있습니다. iOS에서는 Classroom 앱이 네이티브 뷰를 통해 파일에 액세스하지만, Android에서는 Google Keep 앱을 직접 엽니다. 그러나 좋은 플러그인 디자인 원칙을 통해 이러한 구현 세부 사항을 격리시키고 앱의 나머지 부분에서 깨끗하고 일관된 Dart API를 노출할 수 있었습니다. 결과적으로 Classroom의 "가장 복잡한" 기능 중 하나가 Flutter로 성공적으로 이식되었습니다.
 

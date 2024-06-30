@@ -3,13 +3,12 @@ title: "Flutter 프로젝트에서 Riverpod 20  Generator 사용법"
 description: ""
 coverImage: "/assets/img/2024-06-21-HowtouseRiverpod20GeneratorinyourFlutterProject_0.png"
 date: 2024-06-21 20:19
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-HowtouseRiverpod20GeneratorinyourFlutterProject_0.png
 tag: Tech
 originalTitle: "How to use Riverpod 2.0 + Generator in your Flutter Project"
 link: "https://medium.com/@31carlton7/how-to-use-riverpod-2-0-generator-in-your-flutter-project-4f7f5faba4b2"
 ---
-
 
 <img src="/assets/img/2024-06-21-HowtouseRiverpod20GeneratorinyourFlutterProject_0.png" />
 
@@ -62,7 +61,7 @@ dev_dependencies:
 
 이제 가장 기본적인 provider 스타일을 만들고 사용하는 방법을 보여주는 다음 코드 조각을 살펴봅시다.
 
-```dart
+```js
 // main.dart
 
 import 'package:flutter/material.dart';
@@ -166,7 +165,7 @@ typedef HelloWorldRef = AutoDisposeProviderRef<String>;
 
 다음은 Consumer 클래스를 사용한 예시입니다.
 
-```dart
+```js
 // main.dart
 
 import 'package:flutter/material.dart';
@@ -235,7 +234,7 @@ ref.watch(helloWorldProvider.notifier).toCamelCase();
 ref.watch(helloWorldProvider); // Hello World
 ```
 
-이 예제에서는 우리의 클래스가 _$`클래스명`을 확장하고 제공자로 변환되어야 한다는 것을 riverpod에게 알려주기 위해 위에 riverpod 주석이 달렸습니다. 참고: 클래스로 만든 모든 제공자는 build() 메서드가 필요합니다. 이곳이 제공자의 초기 상태를 구성하는 곳입니다.
+이 예제에서는 우리의 클래스가 \_$`클래스명`을 확장하고 제공자로 변환되어야 한다는 것을 riverpod에게 알려주기 위해 위에 riverpod 주석이 달렸습니다. 참고: 클래스로 만든 모든 제공자는 build() 메서드가 필요합니다. 이곳이 제공자의 초기 상태를 구성하는 곳입니다.
 
 <div class="content-ad"></div>
 
@@ -278,7 +277,7 @@ final favoriteWordsRepositoryProvider =
 <div class="content-ad"></div>
 
 ```js
-ref.watch(favoriteWordsRepositoryProvider.notifier).words = ['Cars', 'Dogs', 'Flutter'];
+ref.watch(favoriteWordsRepositoryProvider.notifier).words = ["Cars", "Dogs", "Flutter"];
 ```
 
 # 비동기 공급자 생성
@@ -303,7 +302,7 @@ Future<String> helloWorldFuture(HelloWorldFutureRef ref) async {
 
 우리의 함수는 다시 HelloWorldFutureRef를 가져와야 합니다. 이것은 단일 공급자에서 여러 제공자를 사용하는 데에 사용됩니다. 다음은 dio: ^4.0.6을 사용하여 예제 API에 HTTP 요청을하는 예제입니다:
 
-```dart
+```js
 // dio_provider.dart
 
 import 'package:dio/dio.dart';
@@ -319,7 +318,7 @@ Dio dio(DioRef ref, {Map<String, dynamic>? headers, String? subDomain}) {
 
 그리고 우리의 공급자에서 액세스하는 방법은 다음과 같습니다:
 
-```dart
+```js
 // greeting_service.dart
 
 import 'dio_provider.dart';
@@ -369,7 +368,7 @@ UI에서 공급자를 사용하려면 .when() 구문을 사용해야 합니다. 
 
 <div class="content-ad"></div>
 
-```dart
+```js
 // main.dart
 
 import 'package:flutter/material.dart';
@@ -394,7 +393,7 @@ class MyApp extends StatelessWidget {
 
 Creating foo class and provider
 
-```dart
+```js
 // foo.dart
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -431,12 +430,14 @@ class FooController extends _$FooController {
 ```
 
 Consuming foo provider
-```dart
+
+```js
+
 ```
 
 <div class="content-ad"></div>
 
-```dart
+```js
 // home.dart
 
 class MyHomePage extends StatelessWidget {
@@ -467,7 +468,7 @@ class MyHomePage extends StatelessWidget {
 
 이 작업은 생성된 파일에서 provider의 초기값을 설정해야 합니다.
 
-```dart
+```js
 final fooControllerProvider = AutoDisposeAsyncNotifierProvider<FooController, Foo>(
   () => FooController(Foo(1)), // FooController.new --> FooController(Foo(1))
   name: r'fooControllerProvider',

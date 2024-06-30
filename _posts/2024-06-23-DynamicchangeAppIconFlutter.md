@@ -3,13 +3,12 @@ title: "Flutter에서 동적으로 앱 아이콘 변경하는 방법"
 description: ""
 coverImage: "/assets/img/2024-06-23-DynamicchangeAppIconFlutter_0.png"
 date: 2024-06-23 14:51
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-23-DynamicchangeAppIconFlutter_0.png
 tag: Tech
 originalTitle: "Dynamic change App Icon Flutter"
 link: "https://medium.com/@diego.mazega/dynamic-change-app-icon-flutter-061dae4da40e"
 ---
-
 
 안녕하세요! 이번 기사에서는 앱 아이콘을 동적으로 변경하는 방법을 구성하고 코딩하는 방법을 살펴보겠습니다. 안드로이드에서는 원하는 경우 라벨도 변경할 수 있습니다.
 
@@ -20,7 +19,6 @@ link: "https://medium.com/@diego.mazega/dynamic-change-app-icon-flutter-061dae4d
 앱 폴더 내에서 android → app → src → main → kotlin → MainActivity.kt 파일을 열어보세요. 다음과 같은 내용을 볼 수 있을 것입니다:
 
 <div class="content-ad"></div>
-
 
 ![Dynamic Change App Icon](/assets/img/2024-06-23-DynamicchangeAppIconFlutter_0.png)
 
@@ -38,7 +36,6 @@ import io.flutter.plugins.GeneratedPluginRegistrant
 ```
 
 이제 도움이 될 몇 가지 속성을 만들 수 있습니다. MainActivity 클래스 내부에 두 개의 변수를 추가할 수 있습니다:
-
 
 <div class="content-ad"></div>
 
@@ -119,10 +116,9 @@ class MainActivity: FlutterActivity() {
 
 여기가 iOS 측의 코드입니다. 코드는 다음과 같이 보일 것입니다:
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 import UIKit
 import Flutter
 
@@ -155,15 +151,15 @@ import Flutter
 }
 ```
 
-위 코드를 설명하자면, 이 함수는 화면에서 선택한 홀수나 짝수에 따라 홀수나 짝수를 반환합니다. 이제 main.dart 파일로 돌아가서 코드를 작성할 수 있습니다. 소스 코드에서 모든 주석을 제거하고 _incrementCounter라는 함수를 찾습니다. 이 함수를 비동기식으로 만듭니다. 상태(State) 내부에 채널을 호출할 변수를 만들 수 있습니다. 다음과 같이 채널을 호출하는 변수를 생성합니다:
+위 코드를 설명하자면, 이 함수는 화면에서 선택한 홀수나 짝수에 따라 홀수나 짝수를 반환합니다. 이제 main.dart 파일로 돌아가서 코드를 작성할 수 있습니다. 소스 코드에서 모든 주석을 제거하고 \_incrementCounter라는 함수를 찾습니다. 이 함수를 비동기식으로 만듭니다. 상태(State) 내부에 채널을 호출할 변수를 만들 수 있습니다. 다음과 같이 채널을 호출하는 변수를 생성합니다:
 
-```dart
+```js
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   final MethodChannel channel = const MethodChannel('com.example.dynamic_icon_example.get.number');
 ```
 
-그리고 _incrementCounter 함수 내부에서 메소드를 호출할 것입니다:
+그리고 \_incrementCounter 함수 내부에서 메소드를 호출할 것입니다:
 
 <div class="content-ad"></div>
 
@@ -177,6 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 ```
+
 그리고 디버그 콘솔에서 값들을 확인할 수 있습니다:
 
 ![이미지](/assets/img/2024-06-23-DynamicchangeAppIconFlutter_2.png)
@@ -192,7 +189,7 @@ ANDROID
 android/app/src/main 폴더 안의 AndroidManifest.xml 파일을 열어주세요. `activity` 태그를 찾은 후, 그 안에 다음 코드를 추가해주세요:
 
 ```js
-            android:enabled="false"
+android: enabled = "false";
 ```
 
 이후, 각 아이콘 변형에 대해 activity-alias를 생성할 건데요. 각 activity-alias 코드는 다음과 같이 보일 거에요:
@@ -331,7 +328,7 @@ class MainActivity: FlutterActivity() {
     private val CHANNEL = "app.com.get.change.icon"
     var methodChannelResult: MethodChannel.Result? = null
     // 초기 점을 제외한 모든 alias를 추가합니다.
-    val aliases = listOf("launcherAlias.Default", "launcherAlias.One", "launcherAlias.Two") 
+    val aliases = listOf("launcherAlias.Default", "launcherAlias.One", "launcherAlias.Two")
 
     @Override
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
@@ -372,7 +369,7 @@ class MainActivity: FlutterActivity() {
                 val state =
                     if (alias == targetIcon) PackageManager.COMPONENT_ENABLED_STATE_ENABLED
                     else PackageManager.COMPONENT_ENABLED_STATE_DISABLED
-                
+
                 // 새로운 아이콘과 라벨을 설정합니다.
                 packageManager.setComponentEnabledSetting(
                     ComponentName(packageName, "com.example.dynamic_icon_example.$alias"),
@@ -389,7 +386,7 @@ class MainActivity: FlutterActivity() {
 
 <div class="content-ad"></div>
 
-플러터 쪽에서 main.dart의 _incrementCounter 함수 내부에서:
+플러터 쪽에서 main.dart의 \_incrementCounter 함수 내부에서:
 
 ```js
   Future<void> _incrementCounter() async {
@@ -407,7 +404,6 @@ class MainActivity: FlutterActivity() {
 이제 테스트할 수 있습니다.
 
 <img src="https://miro.medium.com/v2/resize:fit:1400/1*eICX4eVobzz-tyLme9W4Hg.gif" />
-
 
 <div class="content-ad"></div>
 
@@ -567,7 +563,6 @@ iOS로 이동하여 Xcode로 열어주세요. Runner 디렉토리 내에 Alterna
 
 <div class="content-ad"></div>
 
-
 ![이미지_이름](/assets/img/2024-06-23-DynamicchangeAppIconFlutter_3.png)
 
 이제 Xcode의 Info.plist로 이동하여 "Icon files (iOS 5)"라는 매개변수를 Dictionary으로 추가하십시오. 이 매개변수 내에서 "CFBundleAlternateIcons"를 Dictionary로 추가하십시오. 그런 다음 사용하려는 각 새 이미지에 대해(예: "Default", "One", "Two") 새 항목을 만드십시오. 각 항목 내에서 "CFBundleIconFiles" 매개변수를 Array로 추가하십시오. 배열의 첫 번째 위치에는 이미지 이름을 @2x 또는 @3x 없이, .png 없이 사용하십시오.
@@ -575,7 +570,6 @@ iOS로 이동하여 Xcode로 열어주세요. Runner 디렉토리 내에 Alterna
 최종적으로 아래와 같이 보여야 합니다:
 
 ![이미지_이름](/assets/img/2024-06-23-DynamicchangeAppIconFlutter_4.png)
-
 
 <div class="content-ad"></div>
 
@@ -656,7 +650,6 @@ import Flutter
 <img src="/assets/img/2024-06-23-DynamicchangeAppIconFlutter_5.png" />
 
 <div class="content-ad"></div>
-
 
 ![이미지](https://miro.medium.com/v2/resize:fit:1400/1*siJRg9-s1ba9LwJfuvvscQ.gif)
 

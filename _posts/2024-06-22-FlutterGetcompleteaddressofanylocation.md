@@ -3,13 +3,12 @@ title: "Flutter 모든 위치의 전체 주소를 가져오는 방법"
 description: ""
 coverImage: "/assets/img/2024-06-22-FlutterGetcompleteaddressofanylocation_0.png"
 date: 2024-06-22 04:06
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-FlutterGetcompleteaddressofanylocation_0.png
 tag: Tech
 originalTitle: "(Flutter) Get complete address of any location"
 link: "https://medium.com/@krishnabhdas3/flutter-get-complete-address-of-any-location-f22c12057824"
 ---
-
 
 <img src="/assets/img/2024-06-22-FlutterGetcompleteaddressofanylocation_0.png" />
 
@@ -30,7 +29,7 @@ geocoding: ^2.1.1
 🌞 그 후에 .dart 파일에서 종속성을 import해주세요
 
 ```js
-import 'package:geocoding/geocoding.dart';
+import "package:geocoding/geocoding.dart";
 ```
 
 <div class="content-ad"></div>
@@ -87,7 +86,7 @@ address += streets.join(', ');
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:geocoding/geocoding.dart';
 
 Future<String> getPlacemarks(double lat, double long) async {

@@ -3,13 +3,12 @@ title: "Flutter에서 Shared Preferences 사용하기 데모 앱과 함께하는
 description: ""
 coverImage: "/assets/img/2024-06-21-SharedPreferencesinFlutterAGuidewithaDemonstrativeApp_0.png"
 date: 2024-06-21 20:38
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-SharedPreferencesinFlutterAGuidewithaDemonstrativeApp_0.png
 tag: Tech
 originalTitle: "Shared Preferences in Flutter: A Guide with a Demonstrative App"
 link: "https://medium.com/@ndubuisiaso/shared-preferences-in-flutter-a-guide-with-a-demonstrative-app-e03582ccce9a"
 ---
-
 
 ![image](/assets/img/2024-06-21-SharedPreferencesinFlutterAGuidewithaDemonstrativeApp_0.png)
 
@@ -30,7 +29,7 @@ dependencies:
 
 의존성을 추가했으면 Dart 파일에서 가져와 초기화할 수 있습니다:
 
-```dart
+```js
 import 'package:shared_preferences/shared_preferences.dart';
 
 SharedPreferences prefs;
@@ -49,16 +48,16 @@ prefs = await SharedPreferences.getInstance();
 
 ```js
 // 문자열 값을 저장
-prefs.setString('키', '값');
+prefs.setString("키", "값");
 
 // 정수 값을 저장
-prefs.setInt('키', 42);
+prefs.setInt("키", 42);
 
 // 실수 값을 저장
-prefs.setDouble('키', 3.14);
+prefs.setDouble("키", 3.14);
 
 // 부울 값을 저장
-prefs.setBool('키', true);
+prefs.setBool("키", true);
 ```
 
 <div class="content-ad"></div>

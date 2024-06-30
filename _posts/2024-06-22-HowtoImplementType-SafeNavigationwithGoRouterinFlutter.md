@@ -3,13 +3,12 @@ title: "Flutter에서 Go Router를 사용해 타입-안전 내비게이션 구�
 description: ""
 coverImage: "/assets/img/2024-06-22-HowtoImplementType-SafeNavigationwithGoRouterinFlutter_0.png"
 date: 2024-06-22 04:10
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-HowtoImplementType-SafeNavigationwithGoRouterinFlutter_0.png
 tag: Tech
 originalTitle: "How to Implement Type-Safe Navigation with Go Router in Flutter"
 link: "https://medium.com/canopas/how-to-implement-type-safe-navigation-with-go-router-in-flutter-b11315bd183b"
 ---
-
 
 ## Flutter에서 안전한 탐색: Go Router 및 Go Router Builder와 함께하는 가이드
 
@@ -60,7 +59,7 @@ link: "https://medium.com/canopas/how-to-implement-type-safe-navigation-with-go-
 ```yaml
 dependencies:
   # Router API 기반의 내비게이션을 활용하기 위해 필요합니다.
-  go_router: <최신 버전> 
+  go_router: <최신 버전>
 
 dev_dependencies:
   # go_router와 함께 타입 안전한 경로를 생성하기 위한 도구입니다.
@@ -83,10 +82,10 @@ dev_dependencies:
   routes: [
     TypedGoRoute<ItemDetailsRoute>(path: 'items/:id')
   ],
-) 
+)
 class HomeRoute extends GoRouteData {
   @override
-  Widget build(BuildContext context, GoRouterState state) 
+  Widget build(BuildContext context, GoRouterState state)
     => const HomeScreen();
 }
 
@@ -103,7 +102,7 @@ class ItemDetailsRoute extends GoRouteData {
   path: '/sign-in',
   routes: [
     TypedGoRoute<VerifyOtpRoute>(path: "verify"),
-  ], 
+  ],
 )
 class SignInRoute extends GoRouteData {
   @override
@@ -117,7 +116,7 @@ class VerifyOtpRoute extends GoRouteData {
   const VerifyOtpRoute({required this.$extra});
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => 
+  Widget build(BuildContext context, GoRouterState state) =>
      VerifyOtpScreen(verificationId: $extra);
 }
 ```
@@ -141,7 +140,7 @@ class HomeRoute extends GoRouteData {
     // 여기서 반환된 위젯은 사용자가 이 경로로 이동할 때 표시됩니다.
     return const HomeScreen();
 }
-  
+
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {
     // 여기서 반환된 Page는 사용자가 이 경로로 이동할 때 표시됩니다.
@@ -201,14 +200,14 @@ TypedGoRoute: TypedGoRoute 어노테이션은 경로 트리를 정의하는 데 
 @TypedGoRoute<ProductDetailsRoute>(path: '/details/:id')
 class ProductDetailsRoute extends GoRouteData {
   // path에 정의된 변수 이름이 경로 매개변수로 사용됩니다.
-  final String id; 
+  final String id;
 
   // path에 정의되지 않은 변수 이름은 쿼리 매개변수로 사용됩니다.
   final String code;
 
   // 추가 데이터를 사용하려면 변수 이름을 $extra로 설정해야 합니다.
   final String $extra;
-  
+
   const ProductDetailsRoute({required this.id, required this.code, required this.$extra});
 
   @override
@@ -232,7 +231,7 @@ part 'routes.g.dart'; //part '<current-file>.g.dart';
 
 <div class="content-ad"></div>
 
-```dart
+```js
 dart run build_runner build --delete-conflicting-outputs
 ```
 
@@ -244,7 +243,7 @@ dart run build_runner build --delete-conflicting-outputs
 
 <div class="content-ad"></div>
 
-```dart
+```js
 최종 라우터는 GoRouter(
   initialLocation: HomeRoute().location, // location getter is generated.
   //$appRoutes is generated
@@ -318,7 +317,6 @@ await Screen2Route(id: id).replace(context);
 
 <div class="content-ad"></div>
 
-
 ![image](https://miro.medium.com/v2/resize:fit:1000/0*QwBEMwvqVkuL2OUM.gif)
 
 Now, let’s take a look at how we can implement a shell route with type-safe navigation using go_router and go_router_builder.
@@ -326,7 +324,6 @@ Now, let’s take a look at how we can implement a shell route with type-safe na
 ## Related Articles
 
 We're grateful to have you on this journey with us!
-
 
 <div class="content-ad"></div>
 

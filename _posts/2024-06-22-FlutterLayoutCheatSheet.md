@@ -3,17 +3,16 @@ title: "Flutter 레이아웃 치트 시트 완벽 가이드"
 description: ""
 coverImage: "/assets/img/2024-06-22-FlutterLayoutCheatSheet_0.png"
 date: 2024-06-22 15:45
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-FlutterLayoutCheatSheet_0.png
 tag: Tech
 originalTitle: "Flutter Layout Cheat Sheet"
 link: "https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e"
 ---
 
-
 플러터를 위한 간단한 레이아웃 샘플이 필요하신가요?
 제가 마련한 플러터 레이아웃 코드 조각을 소개합니다. 시각적 예시를 풍부하고 간결하게 제시할 거에요.
-아직은 작업 중이라 샘플 목록은 계속 늘어날 거예요. 플러터 위젯의 활용에 더 초점을 맞출 거라 구성요소를 보여주는 것보다는 (플러터 갤러리가 그런 부분에 뛰어나거든요!) 
+아직은 작업 중이라 샘플 목록은 계속 늘어날 거예요. 플러터 위젯의 활용에 더 초점을 맞출 거라 구성요소를 보여주는 것보다는 (플러터 갤러리가 그런 부분에 뛰어나거든요!)
 플러터 레이아웃에 문제가 있거나 다른 사람들과 코드 조각을 공유하고 싶다면 말씀해주세요!
 
 이 기사는 다음 언어로도 제공됩니다:
@@ -54,7 +53,7 @@ link: "https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d0
 
 <div class="content-ad"></div>
 
-```dart
+```js
 Row /*또는 Column*/(
   mainAxisAlignment: MainAxisAlignment.start,
   children: <Widget>[
@@ -65,7 +64,7 @@ Row /*또는 Column*/(
 ),
 ```
 
-```dart
+```js
 Row /*또는 Column*/(
   mainAxisAlignment: MainAxisAlignment.center,
   children: <Widget>[
@@ -76,7 +75,7 @@ Row /*또는 Column*/(
 ),
 ```
 
-```dart
+```js
 Row /*또는 Column*/(
   mainAxisAlignment: MainAxisAlignment.end,
   children: <Widget>[
@@ -87,7 +86,7 @@ Row /*또는 Column*/(
 ),
 ```
 
-```dart
+```js
 Row /*또는 Column*/(
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   children: <Widget>[
@@ -99,7 +98,6 @@ Row /*또는 Column*/(
 ```
 
 <div class="content-ad"></div>
-
 
 표태그를 다음과 같이 Markdown 형식으로 변경하십시오.
 
@@ -129,53 +127,46 @@ Row /*or Column*/(
 
 다른 텍스트의 기준선을 정렬해야 한다면 CrossAxisAlignment.baseline을 사용해야 합니다.
 
-
 <div class="content-ad"></div>
 
-
 Row(
-  crossAxisAlignment: CrossAxisAlignment.baseline,
-  textBaseline: TextBaseline.alphabetic,
-  children: <Widget>[
-    Text(
-      'Baseline',
-      style: Theme.of(context).textTheme.display3,
-    ),
-    Text(
-      'Baseline',
-      style: Theme.of(context).textTheme.body1,
-    ),
-  ],
+crossAxisAlignment: CrossAxisAlignment.baseline,
+textBaseline: TextBaseline.alphabetic,
+children: <Widget>[
+Text(
+'Baseline',
+style: Theme.of(context).textTheme.display3,
 ),
-
+Text(
+'Baseline',
+style: Theme.of(context).textTheme.body1,
+),
+],
+),
 
 ## CrossAxisAlignment
 
-
-Row /*or Column*/( 
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: <Widget>[
-    Icon(Icons.star, size: 50),
-    Icon(Icons.star, size: 200),
-    Icon(Icons.star, size: 50),
-  ],
+Row /_or Column_/(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: <Widget>[
+Icon(Icons.star, size: 50),
+Icon(Icons.star, size: 200),
+Icon(Icons.star, size: 50),
+],
 ),
 
-
-
-Row /*or Column*/( 
-  crossAxisAlignment: CrossAxisAlignment.center,
-  children: <Widget>[
-    Icon(Icons.star, size: 50),
-    Icon(Icons.star, size: 200),
-    Icon(Icons.star, size: 50),
-  ],
+Row /_or Column_/(
+crossAxisAlignment: CrossAxisAlignment.center,
+children: <Widget>[
+Icon(Icons.star, size: 50),
+Icon(Icons.star, size: 200),
+Icon(Icons.star, size: 50),
+],
 ),
-
 
 <div class="content-ad"></div>
 
-```dart
+```js
 Row /*또는 Column*/(
   crossAxisAlignment: CrossAxisAlignment.end,
   children: <Widget>[
@@ -186,7 +177,7 @@ Row /*또는 Column*/(
 ),
 ```
 
-```dart
+```js
 Row /*또는 Column*/(
   crossAxisAlignment: CrossAxisAlignment.stretch,
   children: <Widget>[
@@ -199,7 +190,7 @@ Row /*또는 Column*/(
 
 ## MainAxisSize
 
-```dart
+```js
 Row /*또는 Column*/(
   mainAxisSize: MainAxisSize.max,
   children: <Widget>[
@@ -212,16 +203,14 @@ Row /*또는 Column*/(
 
 <div class="content-ad"></div>
 
-
-Row /*or Column*/( 
-  mainAxisSize: MainAxisSize.min,
-  children: <Widget>[
-    Icon(Icons.star, size: 50),
-    Icon(Icons.star, size: 50),
-    Icon(Icons.star, size: 50),
-  ],
+Row /_or Column_/(
+mainAxisSize: MainAxisSize.min,
+children: <Widget>[
+Icon(Icons.star, size: 50),
+Icon(Icons.star, size: 50),
+Icon(Icons.star, size: 50),
+],
 ),
-
 
 # IntrinsicWidth and IntrinsicHeight
 
@@ -229,10 +218,9 @@ Want all the widgets inside Row or Column to be as tall/wide as the tallest/wide
 
 In case you have this kind of layout:
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 위젯 build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(title: Text('IntrinsicWidth')),
@@ -264,7 +252,7 @@ In case you have this kind of layout:
 
 <div class="content-ad"></div>
 
-```dart
+```js
 위젯 build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(title: Text('IntrinsicWidth')),
@@ -337,10 +325,9 @@ Widget build(BuildContext context) {
 
 <img src="/assets/img/2024-06-22-FlutterLayoutCheatSheet_4.png" />
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 위젯 build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(title: Text('Stack')),
@@ -368,7 +355,7 @@ Widget build(BuildContext context) {
 
 ![이미지](/assets/img/2024-06-22-FlutterLayoutCheatSheet_5.png)
 
-```dart
+```js
 Widget build(BuildContext context) {
   const iconSize = 50;
   return Scaffold(
@@ -403,7 +390,7 @@ Widget build(BuildContext context) {
 
 ![이미지](/assets/img/2024-06-22-FlutterLayoutCheatSheet_6.png)
 
-```dart
+```js
 Row(
   children: <Widget>[
     Expanded(
@@ -436,7 +423,7 @@ Row(
 
 ![ConstrainedBox Example](/assets/img/2024-06-22-FlutterLayoutCheatSheet_7.png)
 
-```dart
+```js
 Card(child: const Text('Hello World!'), color: Colors.yellow)
 ```
 
@@ -446,13 +433,13 @@ ConstrainedBox 위젯을 사용하면 원하는 대로 남은 공간을 활용�
 
 ![ConstrainedBox Example](/assets/img/2024-06-22-FlutterLayoutCheatSheet_8.png)
 
-```dart
-ConstrainedBox( 
+```js
+ConstrainedBox(
   constraints: BoxConstraints.expand(),
   child: const Card(
-    child: const Text('Hello World!'), 
+    child: const Text('Hello World!'),
     color: Colors.yellow,
-  ), 
+  ),
 ),
 ```
 
@@ -464,11 +451,11 @@ BoxConstraints를 사용하면 위젯이 차지할 수 있는 공간의 양을 �
 
 ![image](/assets/img/2024-06-22-FlutterLayoutCheatSheet_9.png)
 
-```dart
+```js
 ConstrainedBox(
   constraints: BoxConstraints.expand(height: 300),
   child: const Card(
-    child: const Text('Hello World!'), 
+    child: const Text('Hello World!'),
     color: Colors.yellow,
   ),
 ),
@@ -478,7 +465,7 @@ ConstrainedBox(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 ConstrainedBox(
   constraints: BoxConstraints(
     minWidth: double.infinity,
@@ -487,7 +474,7 @@ ConstrainedBox(
     maxHeight: 300,
   ),
   child: const Card(
-    child: const Text('Hello World!'), 
+    child: const Text('Hello World!'),
     color: Colors.yellow,
   ),
 ),
@@ -499,14 +486,13 @@ ConstrainedBox(
 
 <img src="/assets/img/2024-06-22-FlutterLayoutCheatSheet_10.png" />
 
-
 <div class="content-ad"></div>
 
 위와 같은 상황이 발생하는 예시는 Column에 CrossAxisAlignment.stretch를 가진 경우이며, 버튼만 늘어지지 않도록 원할 때 발생합니다:
 
 ![image](/assets/img/2024-06-22-FlutterLayoutCheatSheet_11.png)
 
-```dart
+```js
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(title: Text('Align: without Align')),
@@ -539,10 +525,9 @@ Widget build(BuildContext context) {
 
 <div class="content-ad"></div>
 
-
 ![Flutter Layout Cheat Sheet](/assets/img/2024-06-22-FlutterLayoutCheatSheet_12.png)
 
-```dart
+```js
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(title: Text('Container as a layout')),
@@ -558,10 +543,9 @@ If you want to stretch the Container to match its parent, use `double.infinity` 
 
 ![Flutter Layout Cheat Sheet](/assets/img/2024-06-22-FlutterLayoutCheatSheet_13.png)
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 위젯 build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text('Container를 레이아웃으로 사용하기')),
@@ -581,7 +565,6 @@ Container의 배경에 영향을 주기 위해 color 속성을 사용할 수 있
 decoration은 항상 자식 위에 배치되지만, foregroundDecoration은 자식 위에 배치됩니다.
 
 <img src="/assets/img/2024-06-22-FlutterLayoutCheatSheet_14.png" />
-
 
 <div class="content-ad"></div>
 
@@ -626,7 +609,7 @@ decoration은 항상 자식 위에 배치되지만, foregroundDecoration은 자�
 
 ![이미지](/assets/img/2024-06-22-FlutterLayoutCheatSheet_16.png)
 
-```dart
+```js
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(title: Text('Container.transform')),
@@ -658,7 +641,7 @@ Widget build(BuildContext context) {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 Scaffold(
   appBar: AppBar(title: Text('image: DecorationImage')),
   body: Center(
@@ -687,7 +670,7 @@ Container의 테두리가 어떻게 보일지를 지정합니다.
 
 <div class="content-ad"></div>
 
-```dart
+```js
 Scaffold(
   appBar: AppBar(title: Text('border: Border')),
   body: Center(
@@ -734,11 +717,11 @@ Scaffold(
 
 <div class="content-ad"></div>
 
-다른 모양을 사용하려면 BoxDecoration 대신 ShapeDecoration을 사용할 수 있습니다. 
+다른 모양을 사용하려면 BoxDecoration 대신 ShapeDecoration을 사용할 수 있습니다.
 
 ![ShapeDecoration](/assets/img/2024-06-22-FlutterLayoutCheatSheet_20.png)
 
-```dart
+```js
 Scaffold(
   appBar: AppBar(title: Text('shape: BoxShape')),
   body: Center(
@@ -764,7 +747,7 @@ Scaffold(
 
 ![그림자 추가](/assets/img/2024-06-22-FlutterLayoutCheatSheet_21.png)
 
-```dart
+```js
 Scaffold(
   appBar: AppBar(title: Text('boxShadow: List<BoxShadow>')),
   body: Center(
@@ -811,7 +794,6 @@ Scaffold(
 ```
 
 <div class="content-ad"></div>
-
 
 ![Flutter Layout Cheat Sheet 23](/assets/img/2024-06-22-FlutterLayoutCheatSheet_23.png)
 
@@ -872,7 +854,7 @@ Scaffold(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 Scaffold(
   appBar: AppBar(title: Text('backgroundBlendMode')),
   body: Center(
@@ -900,7 +882,6 @@ Scaffold(
 
 `backgroundBlendMode`은 Container에서 상위 위젯 트리에 올라가 있는 모든 색상을 변경합니다.
 아래 코드는 이미지를 그리는 부모 Container와 `backgroundBlendMode`를 사용하는 자식 Container가 있지만, 이전과 동일한 효과를 얻을 수 있습니다.
-
 
 <div class="content-ad"></div>
 
@@ -942,7 +923,7 @@ Border with cut corners
 
 <img src="/assets/img/2024-06-22-FlutterLayoutCheatSheet_27.png" />
 
-```dart
+```js
 Scaffold(
   appBar: AppBar(title: Text('shape: BeveledRectangleBorder')),
   body: Center(
@@ -971,7 +952,7 @@ Scaffold(
 
 ![FlutterLayoutCheatSheet_28](/assets/img/2024-06-22-FlutterLayoutCheatSheet_28.png)
 
-```dart
+```js
 Scaffold(
   appBar: AppBar(title: Text('SliverFillRemaining')),
   body: CustomScrollView(
@@ -998,7 +979,6 @@ Scaffold(
 
 <div class="content-ad"></div>
 
-
 ![이미지](/assets/img/2024-06-22-FlutterLayoutCheatSheet_29.png)
 
 만약 SliverFillRemaining이 없었다면 컨텐츠가 이렇게 오버플로될 것입니다:
@@ -1006,7 +986,6 @@ Scaffold(
 ![이미지](/assets/img/2024-06-22-FlutterLayoutCheatSheet_30.png)
 
 ## 남은 공간 채우기
-
 
 <div class="content-ad"></div>
 
@@ -1020,7 +999,7 @@ Scaffold(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 Scaffold(
   appBar: AppBar(title: Text('SliverFillRemaining')),
   body: CustomScrollView(
@@ -1067,7 +1046,7 @@ SizedBox는 ConstrainedBox와 비슷한 방식으로 작동할 수 있어요.
 
 ![image](/assets/img/2024-06-22-FlutterLayoutCheatSheet_33.png)
 
-```dart
+```js
 SizedBox.expand(
   child: Card(
     child: Text('Hello World!'),
@@ -1084,7 +1063,7 @@ SizedBox.expand(
 
 ![FlutterLayoutCheatSheet_34](/assets/img/2024-06-22-FlutterLayoutCheatSheet_34.png)
 
-```dart
+```js
 Column(
   children: <Widget>[
     Icon(Icons.star, size: 50),
@@ -1108,22 +1087,22 @@ Widget build(BuildContext context) {
     appBar: AppBar(
       title: Text('isVisible = $isVisible'),
     ),
-    body: isVisible 
-      ? Icon(Icons.star, size: 150) 
+    body: isVisible
+      ? Icon(Icons.star, size: 150)
       : const SizedBox(),
   );
 }
 ```
 
-SizedBox에는 const 생성자가 있으므로 const SizedBox()를 사용하는 것이 정말 저렴합니다**.
+SizedBox에는 const 생성자가 있으므로 const SizedBox()를 사용하는 것이 정말 저렴합니다\*\*.
 
-**보다 저렴한 해결책은 Opacity 위젯을 사용하고 투명도 값을 0.0으로 변경하는 것입니다. 이 해결책의 단점은 주어진 위젯이 보이지 않을 뿐 아직 공간을 차지할 것이라는 점입니다.
+\*\*보다 저렴한 해결책은 Opacity 위젯을 사용하고 투명도 값을 0.0으로 변경하는 것입니다. 이 해결책의 단점은 주어진 위젯이 보이지 않을 뿐 아직 공간을 차지할 것이라는 점입니다.
 
 <div class="content-ad"></div>
 
 # SafeArea
 
-다양한 플랫폼에서 안드로이드의 상태 바(Status Bar)나 아이폰 X의 노치(Notch)와 같은 특별한 영역이 있습니다.  
+다양한 플랫폼에서 안드로이드의 상태 바(Status Bar)나 아이폰 X의 노치(Notch)와 같은 특별한 영역이 있습니다.
 
 이러한 영역 아래에는 그리기를 피할 필요가 있습니다.
 

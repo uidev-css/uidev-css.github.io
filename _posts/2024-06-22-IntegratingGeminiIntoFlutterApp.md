@@ -3,19 +3,19 @@ title: "Flutter 앱에 Gemini 연동 방법"
 description: ""
 coverImage: "/assets/img/2024-06-22-IntegratingGeminiIntoFlutterApp_0.png"
 date: 2024-06-22 05:06
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-IntegratingGeminiIntoFlutterApp_0.png
 tag: Tech
 originalTitle: "Integrating Gemini Into Flutter App"
 link: "https://medium.com/@aysealmaci/integrating-gemini-into-flutter-app-39d19d135d1b"
 ---
 
-
 안녕하세요 여러분! 이 기사에서는 플러터 프로젝트에서 제미니를 사용하는 방법에 대해 이야기하고 싶습니다.
 
 ![Gemini](/assets/img/2024-06-22-IntegratingGeminiIntoFlutterApp_0.png)
 
 ## 제미니란 무엇인가요?
+
 제미니 AI는 구글의 최첨단 AI 모델로, 인공지능 분야에서의 중요한 발전을 이루었습니다. 이 모델은 다양한 형식인 텍스트, 이미지, 오디오 및 비디오와 같은 콘텐츠를 이해하고 처리할 수 있는 다재다능한 기능으로 눈에 띕니다.
 
 <div class="content-ad"></div>
@@ -50,17 +50,15 @@ API 키를 안전하게 보관하고 절대 공개하지 마세요.
 
 <div class="content-ad"></div>
 
-
 flutter pub add google_generative_ai
-
 
 이 패키지를 사용하려면 다트 코드에 이 줄을 추가하세요:
 
-```dart
-import 'package:google_generative_ai/google_generative_ai.dart';
+```js
+import "package:google_generative_ai/google_generative_ai.dart";
 ```
 
-```dart
+```js
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 final apiKey = Platform.environment['API_KEY'];
@@ -142,7 +140,7 @@ Gemini를 사용하여 스토리 앱을 만들고 싶다고 가정해 봅시다.
     모델: '젬니 1.5 프로',
     apiKey: Apiclass.apiKey,
     시스템명령: Content.system('당신은 이야기꾼이에요. 당신은 짧은 공포 이야기를 만드는 것을 좋아해요.'),);
-      
+
 콘텐츠 = [
     Content.text(
         "이야기를 써라")

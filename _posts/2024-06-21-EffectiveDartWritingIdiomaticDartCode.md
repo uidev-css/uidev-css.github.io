@@ -3,13 +3,12 @@ title: "효과적인 Dart 2024년 최신 다트 관용구 작성하기"
 description: ""
 coverImage: "/assets/img/2024-06-21-EffectiveDartWritingIdiomaticDartCode_0.png"
 date: 2024-06-21 20:32
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-EffectiveDartWritingIdiomaticDartCode_0.png
 tag: Tech
 originalTitle: "Effective Dart: Writing Idiomatic Dart Code"
 link: "https://medium.com/@gautam007/effective-dart-writing-idiomatic-dart-code-5a062ce3e62f"
 ---
-
 
 # 깨끗하고 효율적이며 관용적인 다트 코드 작성하는 방법
 
@@ -62,18 +61,10 @@ Dart의 collection if와 spread 연산자(`...`와 `...?`)를 사용하면 더 �
 
 ```js
 var isLoggedIn = true;
-var items = [
-  '홈',
-  isLoggedIn ? '프로필' : '',
-  '설정',
-];
+var items = ["홈", isLoggedIn ? "프로필" : "", "설정"];
 
-var extraItems = ['도움말', '로그아웃'];
-var allItems = [
-  '홈',
-  ...extraItems,
-  '설정',
-];
+var extraItems = ["도움말", "로그아웃"];
+var allItems = ["홈", ...extraItems, "설정"];
 ```
 
 # 4. 확장에 대해 긍정적으로 생각하세요
@@ -138,7 +129,7 @@ Typedef를 사용하면 함수 시그니처를 간단히할 수 있고 코드 �
 
 <div class="content-ad"></div>
 
-```dart
+```js
 typedef IntBinaryOperation = int Function(int, int);
 
 int add(int a, int b) => a + b;
@@ -208,7 +199,7 @@ Dart의 async 및 await 키워드는 비동기 프로그래밍을 간단하고 �
 
 <div class="content-ad"></div>
 
-```dart
+```js
 Future<void> fetchData() async {
   var data = await fetchDataFromServer();
   print(data);
@@ -232,7 +223,7 @@ Future<String> fetchDataFromServer() async {
 
 # 예시
 
-```dart
+```js
 // 이렇게 피하세요
 dynamic foo = 'bar';
 

@@ -3,13 +3,12 @@ title: "플러터Flutter에서 환경 변수 설정하기"
 description: ""
 coverImage: "/assets/img/2024-06-20-ConfiguringEnvironmentVariablesinFlutter_0.png"
 date: 2024-06-20 13:48
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-20-ConfiguringEnvironmentVariablesinFlutter_0.png
 tag: Tech
 originalTitle: "Configuring Environment Variables in Flutter"
 link: "https://medium.com/@9dan_/configuring-environment-variables-in-flutter-e0614e3449e5"
 ---
-
 
 우리 앱이 개발, 스테이징, 프로덕션 등 여러 환경을 지원해야 하는 경우가 많습니다.
 
@@ -89,14 +88,14 @@ class Environment {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 static const int magicInt = int.fromEnvironment('magic_number');
 static const bool magicBool = bool.fromEnvironment('magic_bool');
 ```
 
 `fromEnvironment` 팩토리는 키가 선언되지 않았을 때 오버라이드 가능한 기본값으로 설정됩니다.
 
-```dart
+```js
 // `defaultValue`가 지정되지 않은 경우, String.fromEnvironment는 ""를 기본값으로 사용합니다
 static const String stringValue = String.fromEnvironment('string_key', defaultValue: 'Hello');
 // int.fromEnvironment는 기본값으로 0을 사용합니다
@@ -106,7 +105,6 @@ static const String boolValue = int.fromEnvironment('bool_key', defaultValue: tr
 ```
 
 # 결론
-
 
 <div class="content-ad"></div>
 

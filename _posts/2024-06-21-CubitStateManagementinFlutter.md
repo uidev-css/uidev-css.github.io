@@ -3,14 +3,12 @@ title: "플러터에서 Cubit 상태 관리 사용하는 방법"
 description: ""
 coverImage: "/assets/img/2024-06-21-CubitStateManagementinFlutter_0.png"
 date: 2024-06-21 23:02
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-CubitStateManagementinFlutter_0.png
 tag: Tech
 originalTitle: "Cubit State Management in Flutter"
 link: "https://medium.com/@muhammadnaqeeb/cubit-state-management-in-flutter-cb3d357fd0f0"
 ---
-
-
 
 ![Cubit State Management in Flutter](/assets/img/2024-06-21-CubitStateManagementinFlutter_0.png)
 
@@ -20,13 +18,12 @@ link: "https://medium.com/@muhammadnaqeeb/cubit-state-management-in-flutter-cb3d
 
 Cubit은 BLoC 패턴의 일부인 간단하고 직관적인 상태 관리 솔루션입니다. "Business Logic Component"의 약자입니다. 전통적인 BLoC와는 달리, Cubit은 더 가벼우며 더 간단한 API를 가지고 있어 더 작은 프로젝트나 간단한 상태 관리 필요에 쉽게 사용할 수 있습니다.
 
-
 <div class="content-ad"></div>
 
 플러터에서 Cubit 상태 관리를 시작하려면 flutter_bloc 패키지를 설치해야 합니다:
 
 ```js
-dependencies: 
+dependencies:
    flutter_bloc: ^8.1.3
 ```
 
@@ -36,14 +33,13 @@ dependencies:
 
 <div class="content-ad"></div>
 
-
 친구야, Cubit 폴더를 만들어 그 안에 counter_cubit.dart 파일을 생성해보세요.
 
 ![이미지](/assets/img/2024-06-21-CubitStateManagementinFlutter_1.png)
 
 파일 안에 Cubit을 확장한 클래스를 만들어주세요.
 
-```dart
+```js
 class CounterCubit extends Cubit {}
 ```
 
@@ -82,9 +78,7 @@ final counter = CounterCubit().state;
 필요한 곳에서 사용할 수 있습니다.
 
 ```js
-Text(
- '$counter',
-)
+Text("$counter");
 ```
 
 <div class="content-ad"></div>
@@ -149,6 +143,7 @@ final counterCubit = CounterCubit();
 final counter = counterCubit.state; // 빌드 내부
 
 ```
+
 버튼을 누르면
 
 ```js
@@ -179,10 +174,9 @@ BlocBuilder<CounterCubit, int>(
 
 테이블 태그를 Markdown 형식으로 변경해주세요.
 
-
 Create a separate class extend with cubit, give the initial state and a function to change the state.
 
-```dart
+```js
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterCubit extends Cubit<int> {
@@ -196,7 +190,7 @@ class CounterCubit extends Cubit<int> {
 
 Use the state by making a single object of the cubit class and use BlocBuilder where you need the changing state
 
-```dart
+```js
 class _MyHomePageState extends State<MyHomePage> {
   final counterCubit = CounterCubit(); // (1: object)
   @override
@@ -228,7 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-``` 
+```
 
 <div class="content-ad"></div>
 
@@ -270,20 +264,19 @@ onPressed: () => counterCubit.decrement(),
 Markdown 형식의 표로 변경:
 
 Widget build(BuildContext context) {
-    return BlocProvider( // <-- 이 부분
-      create: (_) => CounterCubit(),
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      ),
-    );
-  }
+return BlocProvider( // <-- 이 부분
+create: (\_) => CounterCubit(),
+child: MaterialApp(
+title: 'Flutter Demo',
+theme: ThemeData(
+colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+useMaterial3: true,
+),
+home: const MyHomePage(title: 'Flutter Demo Home Page'),
+),
+);
 }
-
+}
 
 <div class="content-ad"></div>
 
@@ -303,7 +296,7 @@ home_page.dart에서
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-           
+
             BlocBuilder<CounterCubit, int>(
                 bloc: counterCubit, // optional
                 builder: (context, counter) {

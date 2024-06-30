@@ -3,13 +3,12 @@ title: "Flutter TextField 레벨업 디자인과 기능 팁 모음"
 description: ""
 coverImage: "/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_0.png"
 date: 2024-06-21 23:16
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_0.png
 tag: Tech
 originalTitle: "Elevate Your Flutter TextField Game: Design and Functionality Tips"
 link: "https://medium.com/@AryanBeast/elevate-your-flutter-textfield-game-design-and-functionality-tips-75bb69f52ccd"
 ---
-
 
 ![image](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_0.png)
 
@@ -26,13 +25,12 @@ link: "https://medium.com/@AryanBeast/elevate-your-flutter-textfield-game-design
 시간을 낭비하지 않고 직접 기본 TextField를 만드는 방법을 살펴보겠습니다.
 
 ```js
-TextField()
+TextField();
 ```
 
 네, 그렇습니다! 이렇게 간단합니다. 다음과 같이 새로운 TextField가 생성됩니다 :-
 
 <div class="content-ad"></div>
-
 
 ![이미지](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_1.png)
 
@@ -42,11 +40,10 @@ TextField()
 
 - 이 작업을 수행하는 가장 쉬운 방법은 onChanged 메서드를 사용하여 현재 값을 간단한 변수에 저장하는 것입니다. 아래는 그에 대한 샘플 코드입니다:
 
-
 <div class="content-ad"></div>
 
 ```js
-String value = ""; 
+String value = "";
 TextField(
   onChanged: (text) {
     value = text;
@@ -57,13 +54,13 @@ TextField(
 두 번째 방법은 TextEditingController를 사용하는 것입니다. 제가 항상 이 방법을 선호하는 이유는 필요에 따라 텍스트를 설정할 수 있는 유연성을 제공하기 때문입니다. (Flutter에서도 권장됩니다..) 컨트롤러는 TextField에 첨부되어 텍스트를들을 수 있게 해주며 텍스트를 제어할 수도 있습니다.
 
 ```js
-TextEditingController controller = TextEditingController(); 
+TextEditingController controller = TextEditingController();
 TextField(
   controller: controller,
 )
 ```
 
-변화를 감지할 수 있습니다.  
+변화를 감지할 수 있습니다.
 
 <div class="content-ad"></div>
 
@@ -77,7 +74,7 @@ controller.addListener(() {
 
 ```js
 debugPrint(controller.text); // 문자열이 표시됩니다
-controller.text = "원하는 문자열으로 설정"; 
+controller.text = "원하는 문자열으로 설정";
 ```
 
 textField의 FocusMode
@@ -90,7 +87,7 @@ textField의 FocusMode
 
 위젯이 생성될 때 TextField에 자동 포커스를 맞추려면 autofocus 필드를 true로 설정하세요.
 
-```dart
+```js
 TextField(
   autofocus: true,
 ),
@@ -148,7 +145,6 @@ RaisedButton(
 
 <div class="content-ad"></div>
 
-
 ![image](https://miro.medium.com/v2/resize:fit:1400/0*n8F5Z1LUpUIloga9.gif)
 
 When you press the button, the focus changes.
@@ -156,7 +152,6 @@ When you press the button, the focus changes.
 # Changing Keyboard Properties for TextFields
 
 In Flutter, you can customize properties related to the keyboard for a TextField.
-
 
 <div class="content-ad"></div>
 
@@ -203,7 +198,6 @@ TextField(
 
 <div class="content-ad"></div>
 
-
 ```js
 TextField(
   textInputAction: TextInputAction.send,
@@ -215,7 +209,6 @@ TextField(
 <img src="/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_3.png" />
 
 전체 목록은 여기에 표시하기에 너무 많지만 꼭 확인해보세요.
-
 
 <div class="content-ad"></div>
 
@@ -257,7 +250,6 @@ TextField(
 
 <div class="content-ad"></div>
 
-
 ![Image](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_5.png)
 
 3. TextCapitalization.words
@@ -265,7 +257,6 @@ TextField(
 Capitalizes the first letter of each word.
 
 ![Image](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_6.png)
-
 
 <div class="content-ad"></div>
 
@@ -279,18 +270,15 @@ Flutter를 사용하면 TextField 내부 텍스트의 스타일 및 정렬과 Te
 
 <div class="content-ad"></div>
 
-
 TextField(
-  textAlign: TextAlign.center,
+textAlign: TextAlign.center,
 ),
-
 
 이로 인해 커서와 텍스트가 TextField의 중간에서 시작됩니다.
 
 <img src="/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_7.png" />
 
 이것은 일반적인 정렬 속성을 갖고 있습니다: start, end, left, right, center, justify.
-
 
 <div class="content-ad"></div>
 
@@ -304,7 +292,7 @@ TextField(
 ),
 ```
 
-<img src="/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_8.png" /> 
+<img src="/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_8.png" />
 
 <div class="content-ad"></div>
 
@@ -324,7 +312,6 @@ TextField(
 
 <div class="content-ad"></div>
 
-
 ![이미지](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_9.png)
 
 ## TextField 안에서 크기 및 최대 길이 제어하기
@@ -332,7 +319,6 @@ TextField(
 TextField는 안에 입력된 문자의 최대 수, 최대 줄 수를 제어하고 텍스트가 입력됨에 따라 확장될 수 있습니다.
 
 ## 최대 문자 수 제어하기
-
 
 <div class="content-ad"></div>
 
@@ -381,9 +367,7 @@ TextField(
 
 테이블 태그를 마크다운 형식으로 변경해보세요.
 
-
 We can also change what should we visible instead of character we typed using obsuringCharacter Property.
-
 
 ![TextField](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_13.png)
 
@@ -403,7 +387,6 @@ We can also change what should we visible instead of character we typed using ob
 
 <div class="content-ad"></div>
 
-
 ![image](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_15.png)
 
 Label
@@ -412,9 +395,7 @@ Label
 
 You can add icons directly to TextFields. You can also use prefixText and suffixText for Text instead.
 
-
 <div class="content-ad"></div>
-
 
 ```js
 TextField(
@@ -436,9 +417,7 @@ TextField(
 ),
 ```
 
-
 <div class="content-ad"></div>
-
 
 ![Image](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_17.png)
 
@@ -447,7 +426,6 @@ Icon using the `prefixIcon` property
 # Similarly for any other widget, use "prefix" instead of "prefixIcon"
 
 To use a generic widget instead of an icon, use the `prefix` field. Again for no apparent reason, let's add a circular progress indicator in a TextField.
-
 
 <div class="content-ad"></div>
 
@@ -465,10 +443,9 @@ TextField(
 
 힌트를 스타일링하려면 hintStyle을 사용하세요. 레이블을 스타일링하려면 labelStyle을 사용하세요.
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 TextField(
   decoration: InputDecoration(
     hintText: "데모 텍스트",
@@ -501,7 +478,7 @@ TextField(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 TextField(
   decoration: InputDecoration.collapsed(hintText: "")
 ),
@@ -511,7 +488,7 @@ TextField(
 
 # 텍스트 필드에 테두리를 주려면 “border”를 사용하세요
 
-```dart
+```js
 TextField(
   decoration: InputDecoration(
     border: OutlineInputBorder()
@@ -533,7 +510,7 @@ TextField에 "포커스"가 있다는 것은 TextField가 활성화되어 있고
 
 위젯이 생성될 때 TextField에 자동 초점이 맞추어지도록 하려면 autofocus 필드를 true로 설정하십시오.
 
-```dart
+```js
 TextField(
   autofocus: true,
 ),
@@ -587,7 +564,7 @@ RaisedButton(
 
 TextField를 사용하면 TextField가 포커스를 맞추면 표시되는 키보드 유형을 맞춤 설정할 수 있어요. 이를 위해 keyboardType 속성을 변경할 수 있어요.
 
-```dart
+```js
 TextField(
   keyboardType: TextInputType.number,
 ),
@@ -628,7 +605,6 @@ TextField(
 
 Markdown 형식으로 변경해보면 다음과 같습니다.
 
-
 ```js
 TextField(
   textInputAction: TextInputAction.send,
@@ -638,7 +614,6 @@ TextField(
 Causes
 
 <img src="/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_23.png" />
-
 
 <div class="content-ad"></div>
 
@@ -682,9 +657,7 @@ TextField(
 
 이미지 태그를 마크다운 형식으로 변경해주세요.
 
-
 ![이미지](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_25.png)
-
 
 3. TextCapitalization.words
 
@@ -780,7 +753,7 @@ maxLength 속성을 설정하면 최대 길이가 강제되며 TextField에는 �
 
 <div class="content-ad"></div>
 
-```dart
+```js
 TextField(
   maxLines: 3,
 )
@@ -794,18 +767,15 @@ TextField(
 
 <div class="content-ad"></div>
 
-
 TextField(
-  obscureText: true,
+obscureText: true,
 ),
-
 
 ![Image](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_33.png)
 
 # 그리고 마지막으로, TextField 장식하기
 
 지금까지는 입력을 위해 Flutter에서 제공하는 기능에 중점을 두었습니다. 이제는 실제로 화려한 TextField를 디자인하고 디자이너의 의견을 거부하지 않을 것입니다.
-
 
 <div class="content-ad"></div>
 
@@ -821,9 +791,7 @@ TextField(
 
 힌트
 
-
 ![Hint](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_35.png)
-
 
 라벨
 
@@ -847,7 +815,7 @@ icon 속성을 사용한 아이콘
 
 <div class="content-ad"></div>
 
-```dart
+```js
 TextField(
   decoration: InputDecoration(
     prefixIcon: Icon(Icons.print)
@@ -912,7 +880,7 @@ TextField(
 
 <div class="content-ad"></div>
 
-```dart
+```js
 TextField(
   decoration: InputDecoration.collapsed(hintText: "")
 ),
@@ -924,20 +892,17 @@ TextField(
 
 <div class="content-ad"></div>
 
-
 TextField(
-  decoration: InputDecoration(
-    border: OutlineInputBorder()
-  )
+decoration: InputDecoration(
+border: OutlineInputBorder()
+)
 ),
-
 
 ![image](/assets/img/2024-06-21-ElevateYourFlutterTextFieldGameDesignandFunctionalityTips_42.png)
 
 더 많은 꾸밈 작업이 가능하지만, 한 기사로는 모든 것을 다 다룰 수 없습니다. 그러나 플러터 텍스트필드를 사용자 정의하는 것이 얼마나 쉬운지 이해하는 데 도움이 되었으면 합니다.
 
 Aryan Bisht님으로부터 더 많은 내용을 확인하세요.
-
 
 <div class="content-ad"></div>
 

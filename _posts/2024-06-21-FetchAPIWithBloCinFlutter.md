@@ -3,13 +3,12 @@ title: "플러터에서 BloC 패턴으로 Fetch API 사용 방법"
 description: ""
 coverImage: "/assets/img/2024-06-21-FetchAPIWithBloCinFlutter_0.png"
 date: 2024-06-21 22:39
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FetchAPIWithBloCinFlutter_0.png
 tag: Tech
 originalTitle: "Fetch API With BloC in Flutter"
 link: "https://medium.com/gitconnected/fetch-api-with-bloc-in-flutter-730b9e305c54"
 ---
-
 
 이 문서에서는 블록 라이브러리를 사용하여 HTTP 요청을 수행하고 애플리케이션의 상태를 관리하는 방법을 살펴보겠습니다. 최종 애플리케이션은 다음과 같습니다:
 
@@ -30,7 +29,7 @@ dependencies:
 
 이제 API를 사용하여 서버에서 데이터를 가져오는 메커니즘을 만들어 보겠습니다. http 작업을 수행하기 위해 lib 내부에 폴더를 생성하고 repo라는 이름으로 지정합니다. 이 repo 내부에 repositories.dart라는 새 파일을 생성합니다.
 
-```dart
+```js
 import 'dart:convert';
 
 import 'package:bloc_example/models/user_model.dart';
@@ -41,7 +40,7 @@ class UserRepository {
 
   Future<List<UserModel>> getUsers() async {
     Response response = await get(Uri.parse(userUrl));
-   
+
     if (response.statusCode == 200) {
       final List result = jsonDecode(response.body)['data'];
       return result.map((e) => UserModel.fromJson(e)).toList();
@@ -53,7 +52,6 @@ class UserRepository {
 ```
 
 http 요청을 수행하려면 http 패키지를 사용할 것입니다. 이제 json 내용을 살펴봅시다. 우리는 이 링크의 API를 사용하고 있습니다.
-
 
 <div class="content-ad"></div>
 
@@ -99,8 +97,7 @@ class UserModel {
 
 <div class="content-ad"></div>
 
-
-```dart
+```js
 import 'package:bloc_example/models/user_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -133,7 +130,6 @@ Equatable를 사용하면 값들을 비교할 수 있습니다. 두 변수가 �
 먼저 상태를 생성하려면 equatable을 확장해야 하는 추상 클래스를 생성해야 합니다.
 
 Bloc에서 x.obs를 통해 변수를 반응형으로 만들 수 있는 Getx와 달리 Bloc에서는 이와 같이 작동하지 않습니다. Bloc을 사용할 때는 모든 상태가 클래스임을 염두에 두어야 합니다.
-
 
 <div class="content-ad"></div>
 
@@ -170,14 +166,13 @@ class LoadUserEvent extends UserEvent {
 
 상태와 이벤트를 생성한 후에는 그들을 연결하는 방법을 찾아야 합니다.
 
-
 <div class="content-ad"></div>
 
 그러려면 새 클래스를 만들고 방금 만든 상태와 이벤트를 삽입해야 해요. 이제 Bloc 라이브러리를 사용하여 이것들을 연결해 보죠.
 
 blocs 폴더 안에 app_blocs라는 새 파일을 만들어주세요.
 
-```dart
+```js
 import 'package:bloc_example/blocs/app_events.dart';
 import 'package:bloc_example/blocs/app_states.dart';
 import 'package:bloc_example/repos/repositories.dart';
@@ -263,7 +258,7 @@ Widget blocBody() {
                               '${userList[index].email}',
                               style: const TextStyle(color: Colors.white),
                             ),
-                            
+
                             leading: CircleAvatar(
                               backgroundImage: NetworkImage(
                                   userList[index].avatar.toString()),

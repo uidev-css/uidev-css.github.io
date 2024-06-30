@@ -3,13 +3,12 @@ title: "Flutter  Firebase로 푸시 알림 구현하는 완벽 가이드"
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterFirebasePushNotificationsCompleteGuide_0.png"
 date: 2024-06-21 21:01
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterFirebasePushNotificationsCompleteGuide_0.png
 tag: Tech
 originalTitle: "Flutter + Firebase Push Notifications (Complete Guide)"
 link: "https://medium.com/@ChanakaDev/flutter-firebase-push-notifications-complete-guide-fae42c88f32a"
 ---
-
 
 <img src="/assets/img/2024-06-21-FlutterFirebasePushNotificationsCompleteGuide_0.png" />
 
@@ -45,7 +44,6 @@ FCM은 기존 앱 인프라와 쉽게 통합되고 사용하기 쉽게 설계되
 
 <div class="content-ad"></div>
 
-
 ![이미지](/assets/img/2024-06-21-FlutterFirebasePushNotificationsCompleteGuide_2.png)
 
 플러터와 FCM에서 3가지 디바이스 상태
@@ -55,7 +53,6 @@ FCM은 기존 앱 인프라와 쉽게 통합되고 사용하기 쉽게 설계되
 - Terminated(종료됨): 장치가 잠겨 있거나 어플리케이션이 실행되지 않을 때입니다. 사용자는 장치의 앱 전환기 UI를 통해 앱을 닫거나 탭(웹)을 닫아 어플리케이션을 종료할 수 있습니다.
 
 이 프로세스가 어떻게 작동하는지 보려면 이 동영상을 시청해보세요.
-
 
 <div class="content-ad"></div>
 
@@ -73,7 +70,7 @@ FCM은 기존 앱 인프라와 쉽게 통합되고 사용하기 쉽게 설계되
 
 - 그런 다음 플러터 프로젝트를 열고 터미널에서 다음 명령을 실행하세요
 - dart pub global activate flutterfire_cli
-- flutterfire configure (만약 이 명령이 "flutterfire가 인식되지 않습니다."와 같은 오류를 발생시킨다면, 시스템 환경 변수에 "C:\Users\*사용자명*\AppData\Local\Pub\Cache\bin"을 새 항목으로 추가해야 합니다. 이제 오류 없이 명령을 실행할 수 있어야 합니다.) 
+- flutterfire configure (만약 이 명령이 "flutterfire가 인식되지 않습니다."와 같은 오류를 발생시킨다면, 시스템 환경 변수에 "C:\Users\*사용자명\*\AppData\Local\Pub\Cache\bin"을 새 항목으로 추가해야 합니다. 이제 오류 없이 명령을 실행할 수 있어야 합니다.)
 
 3. Firebase 콘솔에서
 
@@ -85,9 +82,9 @@ FCM은 기존 앱 인프라와 쉽게 통합되고 사용하기 쉽게 설계되
 
 ```js
 // 의존성
-import 'package:firebase_core/firebase_core.dart';
-import '/firebase_options.dart'; // 이 파일은 "flutterfire config" 명령어로 생성됩니다.
-import 'package:firebase_messaging/firebase_messaging.dart';
+import "package:firebase_core/firebase_core.dart";
+import "/firebase_options.dart"; // 이 파일은 "flutterfire config" 명령어로 생성됩니다.
+import "package:firebase_messaging/firebase_messaging.dart";
 ```
 
 5. 이제 main.dart에 다음 라인을 추가하여 Firebase Messaging을 초기화합니다.
@@ -117,10 +114,9 @@ print('사용자가 허용한 권한: ${settings.authorizationStatus}');
 
 6. 이제 main.dart에 다음 라인을 추가하여 "백그라운드 메시지"를 받습니다.
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 // 백그라운드 메시지 수신
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
@@ -128,7 +124,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 }
 ```
 
-```dart
+```js
 // 백그라운드 메시지 수신 대기
 WidgetsFlutterBinding.ensureInitialized();
 FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
@@ -136,7 +132,7 @@ FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
 7. 그런 다음 main.dart에 다음 줄을 추가하여 "전경 메시지"를 받습니다.
 
-```dart
+```js
 // 전경 메시지 수신
 FirebaseMessaging.onMessage.listen((RemoteMessage message) {
   print('전경에서 메시지를 받았어요!');
@@ -203,14 +199,14 @@ class _Application extends State<Application> {
       _handleMessage(initialMessage);
     }
 
-    // 애플리케이션이 백그라운드에 있을 때 상호작용을 다루기 위해 
+    // 애플리케이션이 백그라운드에 있을 때 상호작용을 다루기 위해
     // Stream 리스너를 통해 처리합니다.
     FirebaseMessaging.onMessageOpenedApp.listen(_handleMessage);
   }
-  
+
   void _handleMessage(RemoteMessage message) {
     if (message.data['type'] == 'chat') {
-      Navigator.pushNamed(context, '/chat', 
+      Navigator.pushNamed(context, '/chat',
         arguments: ChatArguments(message),
       );
     }
@@ -220,7 +216,7 @@ class _Application extends State<Application> {
   void initState() {
     super.initState();
 
-    // initState()이 비동기일 수 없기 때문에 상호작용하는 메시지를 다루는 
+    // initState()이 비동기일 수 없기 때문에 상호작용하는 메시지를 다루는
     // 코드를 비동기 함수에서 실행합니다.
     setupInteractedMessage();
   }

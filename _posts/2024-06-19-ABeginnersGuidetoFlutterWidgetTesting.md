@@ -3,13 +3,12 @@ title: "플러터 위젯 테스팅 초보자 가이드"
 description: ""
 coverImage: "/assets/img/2024-06-19-ABeginnersGuidetoFlutterWidgetTesting_0.png"
 date: 2024-06-19 08:15
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-ABeginnersGuidetoFlutterWidgetTesting_0.png
 tag: Tech
 originalTitle: "A Beginner’s Guide to Flutter Widget Testing"
 link: "https://medium.com/@sharansukesh2000/a-beginners-guide-to-flutter-widget-testing-f7e3cf5b61c4"
 ---
-
 
 플러터를 사용해오신 분이라면, 앱이 완벽하고 원활한 사용자 경험을 제공하는 것이 얼마나 중요한지 알고 계실 것입니다. 위젯 테스팅은 이를 달성하는 데 가장 좋은 방법 중 하나입니다. 이 블로그 포스트에서는 플러터 위젯 테스팅의 기본 사항을 다루고 유용한 예제를 제공하여 여러분을 도와드리겠습니다.
 
@@ -129,7 +128,7 @@ class TodoScreenState extends State<TodoScreen> {
 
 다음의 테스트 코드를 추가하여 test 디렉토리에 todo_test.dart 파일을 생성해주세요:
 
-```dart
+```js
 // 파일 구조에 맞게 import 수정해주세요.
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

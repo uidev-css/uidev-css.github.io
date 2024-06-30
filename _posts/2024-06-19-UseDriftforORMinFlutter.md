@@ -3,13 +3,12 @@ title: "플러터에서 ORM으로 Drift 사용하기"
 description: ""
 coverImage: "/assets/img/2024-06-19-UseDriftforORMinFlutter_0.png"
 date: 2024-06-19 14:28
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-UseDriftforORMinFlutter_0.png
 tag: Tech
 originalTitle: "Use Drift for ORM in Flutter"
 link: "https://medium.com/@winsonet/use-drift-for-orm-in-flutter-a144be7fae80"
 ---
-
 
 <img src="/assets/img/2024-06-19-UseDriftforORMinFlutter_0.png" />
 
@@ -60,7 +59,7 @@ dev_dependencies:
 
 예를 들어, 책 데이터베이스를 생성해야 한다면 아래의 book_database.dart 파일을 만들 수 있습니다.
 
-```dart
+```js
 import 'dart:io';
 
 import 'package:drift/drift.dart';
@@ -192,7 +191,6 @@ getTop10: SELECT * FROM book ORDER BY viewCount DESC Limit 10;
 ```
 
 아래에서 이를 사용할 수 있습니다.
-
 
 <div class="content-ad"></div>
 

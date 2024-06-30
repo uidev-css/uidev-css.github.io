@@ -3,14 +3,12 @@ title: "State Management in Flutter  외부 라이브러리 종속성 없이"
 description: ""
 coverImage: "/assets/img/2024-06-19-StateManagementinFlutterNoThirdPartyDependencies_0.png"
 date: 2024-06-19 00:11
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-StateManagementinFlutterNoThirdPartyDependencies_0.png
 tag: Tech
 originalTitle: "State Management in Flutter — No Third Party Dependencies"
 link: "https://medium.com/prolog-app/state-management-in-flutter-no-third-party-dependencies-847dbc0ed3d0"
 ---
-
-
 
 <img src="/assets/img/2024-06-19-StateManagementinFlutterNoThirdPartyDependencies_0.png" />
 
@@ -19,7 +17,6 @@ link: "https://medium.com/prolog-app/state-management-in-flutter-no-third-party-
 Flutter 환경에서 제공되는 모든 상태 관리 솔루션을 다뤄보고 어떤 것을 사용할지 결정해야 했습니다. 이 일은 실제로 힘들었습니다. Provider, Riverpod, Bloc, Cubit, MobX, GetX, Redux 등 다양한 옵션들이 있었기 때문이죠. 각각을 이해하는 데 많은 노력이 필요했고, 다양한 솔루션들을 읽고 시도한 뒤에 우리는 내부에서 너무 많은 마술이 일어나고 있다고 더 확신을 얻을 수 있었습니다.
 
 조사를 진행하다가, 서드파티 라이브러리 없이 상태 관리를 하는 방법을 사용하는 많은 앱들이 상점에 있다는 것을 알게되는 기사를 찾았습니다. 좀 더 조사해보니, 플러터에서 상태 관리를 아주 멋지게 구현한 다른 기사도 찾았습니다. 이러한 콘텐츠에서 영감을 받아 우리는 서드파티 라이브러리 없이 솔루션을 찾기 위해 조사를 시작했습니다. 이어서 저희가 어떻게 앱에서 플러터의 네이티브 자원만을 사용하여 상태 관리를 구현했는지 알려드릴게요.
-
 
 <div class="content-ad"></div>
 
@@ -45,7 +42,7 @@ MVVM 패턴은 주로 세 가지 클래스로 구성됩니다:
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class UserDto {
   final String name;
 
@@ -55,7 +52,7 @@ class UserDto {
 
 2. user_repository.dart: 이 파일은 HTTP 페치 요청을 담당하는 클래스가 위치할 것입니다.
 
-```dart
+```js
 import 'package:teste_artigo/user_dto.dart';
 
 class UserRepository {
@@ -216,7 +213,7 @@ ValueListenableBuilder 내에서 "마법"이 일어납니다: 상태의 유형�
 
 ## 결론
 
-이게 다에요!  별도의 외부 의존성이 없어 매우 간단해요.
+이게 다에요! 별도의 외부 의존성이 없어 매우 간단해요.
 
 이것은 아주 간단한 예시라는 것을 이해합니다. 더 복잡한 화면을 만들기 시작하면 더 많은 질문이 생겨나고, 이렇게 간단한 해결책을 유지하는 것이 더 어려워질 수도 있습니다. 그러나 저희는 이 방법을 성공적으로 사용하여 매우 복잡한 화면을 만들고 있습니다 (실제로 회사의 주요 제품인 전체 앱을 Flutter로 이주 중이기도 합니다), 그리고 이 방법이 저희에게 아주 잘 작동하고 있어요.
 

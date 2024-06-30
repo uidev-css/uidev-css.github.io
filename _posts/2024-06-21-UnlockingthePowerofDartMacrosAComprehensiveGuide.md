@@ -3,13 +3,12 @@ title: "Dart 매크로의 힘을 풀어내기 종합 가이드"
 description: ""
 coverImage: "/assets/img/2024-06-21-UnlockingthePowerofDartMacrosAComprehensiveGuide_0.png"
 date: 2024-06-21 20:04
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-UnlockingthePowerofDartMacrosAComprehensiveGuide_0.png
 tag: Tech
 originalTitle: "Unlocking the Power of Dart Macros: A Comprehensive Guide"
 link: "https://medium.com/@hemantjamdev/unlocking-the-power-of-dart-macros-a-comprehensive-guide-9374b2e32ee6"
 ---
-
 
 다트 프로그래밍 언어가 계속 발전함에 따라 도입된 가장 흥미로운 기능 중 하나는 다트 매크로입니다. 다트 매크로는 코드 생성 및 메타프로그래밍을 수행하는 강력한 방법을 제공하여 코드를 더 효율적으로 만들고 보일러플레이트를 줄일 수 있습니다. 이 기사에서는 다트 매크로가 무엇인지, 그 사용 방법은 물론 개발 작업 흐름에 가져다주는 이점을 살펴보겠습니다.
 
@@ -48,7 +47,7 @@ class DataClass {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'dart:mirrors';
 
 class DataClassMacro {
@@ -58,10 +57,10 @@ class DataClassMacro {
     for (var variable in classMirror.declarations.values.whereType<VariableMirror>()) {
       var name = MirrorSystem.getName(variable.simpleName);
       var type = MirrorSystem.getName(variable.type.simpleName);
-      
+
       // 게터 생성
       print('$name에 대한 게터를 생성했습니다.');
-      
+
       // 세터 생성
       print('$name에 대한 세터를 생성했습니다.');
     }
@@ -71,7 +70,7 @@ class DataClassMacro {
 
 - 매크로 적용: 클래스에 주석을 사용하고 매크로가 필요한 코드를 생성합니다.
 
-```dart
+```js
 @DataClass()
 class User {
   String name;
@@ -80,7 +79,6 @@ class User {
 ```
 
 매크로가 적용되면 User 클래스의 게터와 세터가 생성됩니다.
-
 
 <div class="content-ad"></div>
 
@@ -110,7 +108,7 @@ class NotNull {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'dart:mirrors';
 
 class NotNullMacro {
@@ -128,7 +126,7 @@ class NotNullMacro {
 
 - Validation 적용:
 
-```dart
+```js
 class User {
   @NotNull()
   String name;

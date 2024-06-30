@@ -3,13 +3,12 @@ title: "Dart에서 Extension Types으로 할 수 있는 것들"
 description: ""
 coverImage: "/assets/img/2024-06-22-WhatcanIdowithExtensionTypesinDart_0.png"
 date: 2024-06-22 00:40
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-WhatcanIdowithExtensionTypesinDart_0.png
 tag: Tech
 originalTitle: "What can I do with “Extension Types” in Dart?"
 link: "https://medium.com/flutter-community/what-can-i-do-with-extension-types-in-dart-5dfa73e4b009"
 ---
-
 
 Dart 3.3 확장 타입
 
@@ -59,8 +58,8 @@ extension type MyId(int id) {}
 
 void main(List<String> arguments) {
   final id = MyId(1);
-  
-  print(id); // 1 
+
+  print(id); // 1
   print(id.runtimeType); // int
 }
 ```
@@ -75,10 +74,10 @@ void main(List<String> arguments) {
 
 기존 유형에 대해서는 더 많은 확장이나 유형의 제약 사항에 대해 노출되는 것이 아닌 사용 가능한 API만 노출되며, 그렇게 함으로써 일부 허용되지 않는 작업을 피할 수 있습니다. 우리가 필요로 하는 의미 있는 함수를 추가할 수 있습니다.
 
-```dart
+```js
 extension type MyId(int id) {
   operator >(MyId other) => id > other.id;
-  
+
   bool isBiggerThan(MyId other) => id > other.id;
 }
 
@@ -114,7 +113,7 @@ id = i as Id;  // ✅
 
 <div class="content-ad"></div>
 
-```dart
+```js
 extension type Wrapper(int i) {
   void showValue() {
     print('my value is $i');
@@ -133,10 +132,9 @@ void main() {
 
 익스텐션 타입과 제네릭을 함께 사용하기:
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 extension type MyList<T>(List<T> elements) {
  void add(T value) => elements.add(value);
 }
@@ -159,14 +157,13 @@ Extension 타입은 여러 개의 생성자를 가질 수 있습니다:
 - 명명된 생성자
 - private 생성자 문법을 사용한 숨겨진 생성자
 
-
 <div class="content-ad"></div>
 
-```dart
+```js
 extension type Password._(String value) {
   Password(this.value) {
     assert(value.length >= 8);
-    
+
     if (value.length < 8) {
       throw Exception('Password must be at least 8 characters long');
     }
@@ -191,22 +188,22 @@ void main(List<String> arguments) {
 ```
 
 기억하세요, 암시적 주 생성자에서는 assert() 체크나 다른 작업을 사용할 수 없습니다. 기본 생성자를 재정의하고 assert 체크를 추가하세요. 기본 생성자를 내부적으로(private) 만드세요.
-```dart
+
+```js
 extension type Password._(String value) {
 
   Password(this.value) {
     assert(value.length >= 8);
-    
+
     if (value.length < 8) {
       throw Exception('Password must be at least 8 characters long');
     }
   }
-  
+
 }
 ```
 
 # 안전한 Alias
-
 
 <div class="content-ad"></div>
 
@@ -223,7 +220,7 @@ void main() {
   var weight = Weight(65);
   var bmi = calculateBmi(height, weight);
   print(bmi); // 21.22448979591837
-  
+
   bmi = calculateBmi(1.64, 54.0);     // ❌ 컴파일 타임 오류
   bmi = calculateBmi(weight, height); // ❌ 컴파일 타임 오류
 }
@@ -298,7 +295,6 @@ void main(List<String> arguments) {
 
 <div class="content-ad"></div>
 
-
 ## JSON 접근
 
 JSON 데이터에 대한 Extension Types 활용.
@@ -331,7 +327,6 @@ void main() {
 }
 ```
 
-
 <div class="content-ad"></div>
 
 # 상호 운용성
@@ -354,7 +349,7 @@ flutter_soloud는 C++을 기반으로 개발된 오디오 엔진 및 패키지�
 
 <div class="content-ad"></div>
 
-```dart
+```js
 final soloud = SoLoud.instance;
 await soloud.init();
 final source = await soloud.loadAsset('path/to/asset.mp3');
@@ -370,7 +365,6 @@ await soloud.disposeSource(soundHandle);
 - player.cpp의 play()를 사용하여 오디오 핸들을 얻습니다.
 
 ![Extension Types in Dart](/assets/img/2024-06-22-WhatcanIdowithExtensionTypesinDart_3.png)
-
 
 <div class="content-ad"></div>
 
@@ -399,7 +393,7 @@ extension type Number(int i) {
   const factory Number.zero() = Number2;
 }
 
-extension type Number2(int i) implements Number { 
+extension type Number2(int i) implements Number {
   const Number2(int value) : this(i: value);
 }
 ```

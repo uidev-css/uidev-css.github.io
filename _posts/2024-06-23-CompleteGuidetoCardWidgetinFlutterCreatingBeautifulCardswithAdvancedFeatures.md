@@ -3,33 +3,30 @@ title: "Flutter 카드 위젯 완벽 가이드 고급 기능을 활용한 아름
 description: ""
 coverImage: "/assets/img/2024-06-23-CompleteGuidetoCardWidgetinFlutterCreatingBeautifulCardswithAdvancedFeatures_0.png"
 date: 2024-06-23 14:54
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-23-CompleteGuidetoCardWidgetinFlutterCreatingBeautifulCardswithAdvancedFeatures_0.png
 tag: Tech
 originalTitle: "Complete Guide to Card Widget in Flutter: Creating Beautiful Cards with Advanced Features"
 link: "https://medium.com/@hamidrezadeveloper/complete-guide-to-card-widget-in-flutter-creating-beautiful-cards-with-advanced-features-982fc1ac32ba"
 ---
 
-
-
 ![Card Widget](/assets/img/2024-06-23-CompleteGuidetoCardWidgetinFlutterCreatingBeautifulCardswithAdvancedFeatures_0.png)
 
 플러터 프레임워크의 Card 위젯은 그림자와 둥근 모서리를 가진 표면을 만들 수 있어서 기사, 목록 및 다른 UI 섹션에 정보를 표시하는 데 적합합니다. 이 위젯에는 카드의 모양을 사용자 지정할 수 있는 다양한 속성이 있습니다.
 
 1. 자식 위젯 지정:
-Card 위젯은 카드의 내용으로 작동하는 자식 위젯을 허용합니다. 다음 예제는 카드 안에 텍스트를 배치하는 방법을 보여줍니다:
+   Card 위젯은 카드의 내용으로 작동하는 자식 위젯을 허용합니다. 다음 예제는 카드 안에 텍스트를 배치하는 방법을 보여줍니다:
 
-```dart
+```js
 Card(
   child: Text('This is a card'),
 )
-``` 
-
+```
 
 <div class="content-ad"></div>
 
 2. 색상 설정
-`color` 속성을 사용하여 카드의 배경색을 변경할 수 있습니다. 아래 예시는 다채로운 카드를 표시합니다:
+   `color` 속성을 사용하여 카드의 배경색을 변경할 수 있습니다. 아래 예시는 다채로운 카드를 표시합니다:
 
 ```js
 Card(

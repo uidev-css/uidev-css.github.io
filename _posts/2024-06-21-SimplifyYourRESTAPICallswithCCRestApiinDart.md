@@ -3,13 +3,12 @@ title: "Dart에서 CC Rest Api로 REST API 호출 간단하게 하는 방법"
 description: ""
 coverImage: "/assets/img/2024-06-21-SimplifyYourRESTAPICallswithCCRestApiinDart_0.png"
 date: 2024-06-21 20:34
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-SimplifyYourRESTAPICallswithCCRestApiinDart_0.png
 tag: Tech
 originalTitle: "Simplify Your REST API Calls with CC Rest Api in Dart"
 link: "https://medium.com/@ferhaterdem/simplify-your-rest-api-calls-with-cc-rest-api-in-dart-1e944e7ea9ab"
 ---
-
 
 # 안녕하세요, Dart 애호가 여러분!
 
@@ -103,7 +102,7 @@ class GetUser extends CCApiModule {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 class GetUser extends CCApiModule {
   GetUser(CCApiConfig config): super(config);
 
@@ -118,7 +117,7 @@ class GetUser extends CCApiModule {
 
 모듈을 설정한 후에 API 요청을 하는 것은 매우 간단합니다. GetUser 모듈을 사용하는 예시를 보여드리겠습니다:
 
-```dart
+```js
 import 'package:cc_rest_api/cc_rest_api.dart'; // 패키지 import
 
 void main() {

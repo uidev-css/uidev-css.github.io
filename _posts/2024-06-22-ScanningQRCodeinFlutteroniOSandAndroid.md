@@ -3,13 +3,12 @@ title: "iOS와 Android에서 QR 코드를 스캔하는 방법 Flutter 사용하�
 description: ""
 coverImage: "/assets/img/2024-06-22-ScanningQRCodeinFlutteroniOSandAndroid_0.png"
 date: 2024-06-22 15:41
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-ScanningQRCodeinFlutteroniOSandAndroid_0.png
 tag: Tech
 originalTitle: "Scanning QR Code in Flutter on iOS and Android"
 link: "https://medium.com/@rishi_singh/scanning-qr-code-in-flutter-on-ios-and-android-b9caa26c4e74"
 ---
-
 
 ## 플러터 앱에서 QR 코드 스캔 기능을 구현하는 방법을 배워보세요
 
@@ -79,14 +78,13 @@ ios`Runner` 폴더의 info.plist 파일로 이동해서 아래 두 가지 키를
 
 mobile_scanner를 main.dart 파일에 import 해주세요
 
-
 <div class="content-ad"></div>
 
-```dart
-import 'package:mobile_scanner/mobile_scanner.dart';
+```js
+import "package:mobile_scanner/mobile_scanner.dart";
 ```
 
-```dart
+```js
 // 스캐너 추가하기
 MobileScanner(
   onDetect: (capture) {
@@ -100,7 +98,7 @@ MobileScanner(
 
 전체 코드:
 
-```dart
+```js
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 

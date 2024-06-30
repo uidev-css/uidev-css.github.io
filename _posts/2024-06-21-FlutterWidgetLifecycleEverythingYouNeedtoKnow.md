@@ -3,13 +3,12 @@ title: "플러터 위젯 생명주기 모든 것을 알아보세요"
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterWidgetLifecycleEverythingYouNeedtoKnow_0.png"
 date: 2024-06-21 21:28
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterWidgetLifecycleEverythingYouNeedtoKnow_0.png
 tag: Tech
 originalTitle: "Flutter Widget Lifecycle: Everything You Need to Know"
 link: "https://medium.com/gytworkz/flutter-widget-lifecycle-everything-you-need-to-know-629d01ca4a09"
 ---
-
 
 ![이미지](/assets/img/2024-06-21-FlutterWidgetLifecycleEverythingYouNeedtoKnow.png)
 
@@ -36,7 +35,7 @@ link: "https://medium.com/gytworkz/flutter-widget-lifecycle-everything-you-need-
 
 상태가 없는 위젯은 상태를 포함하지 않기 때문에 부모가 변경될 때만 업데이트될 수 있습니다. 생성된 후에 상태가 없는 위젯은 업데이트할 수 없으므로 변하지 않고 불변성을 가집니다. 변경 사항을 보려면 새 데이터를 제공하여 다시 만들어야 합니다.
 
-```dart
+```js
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -53,7 +52,7 @@ class MyApp extends StatelessWidget {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -77,12 +76,11 @@ class _MyAppState extends State<MyApp> {
 
 위젯 라이프사이클은 위젯이 생성, 업데이트 또는 파괴될 때 발생하는 일련의 이벤트입니다. 위젯 라이프사이클을 이해하는 것은 효율적인 Flutter 애플리케이션을 작성하는 데 중요합니다.
 
-
 <div class="content-ad"></div>
 
 - createState(): 위 메서드는 위젯의 상태 객체를 생성합니다. 상태를 가진 위젯을 만들 때, 프레임워크는 createState() 메서드를 호출하며 이를 재정의해야 합니다.
 
-```dart
+```js
 class MyPage extends StatefulWidget {
   @override
   _MyPageState createState() => _MyPageState();
@@ -91,7 +89,7 @@ class MyPage extends StatefulWidget {
 
 - initState(): 위 메서드는 상태 객체 생성 후에 호출됩니다. 위젯의 상태를 초기화하는 데 사용됩니다.
 
-```dart
+```js
 late int _counter;
 @override
 void initState() {
@@ -105,7 +103,7 @@ void initState() {
 
 - build() 메서드: 이 메서드는 상태 객체가 초기화된 후에 호출됩니다. 위젯 트리를 구축하는 데 사용됩니다. initState, didChangeDependencies, didUpdateWidget 또는 setState를 통해 상태가 변경된 후에 위젯이 다시 빌드될 때마다 호출됩니다.
 
-```dart
+```js
   @override
   Widget build(BuildContext context) {
     print("build");
@@ -126,7 +124,7 @@ void initState() {
 
 - didChangeDependencies() 메서드: 이 메서드는 initState 후에 즉시 호출되며, 상태 객체의 종속성이 InheritedWidget을 통해 변경된 경우에 호출됩니다.
 
-```dart
+```js
   @override
   void didChangeDependencies() {
     print("didChangeDependencies");

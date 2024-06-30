@@ -3,13 +3,12 @@ title: "Flutter FCM - 푸시 알림 탭 후 특정 화면으로 이동하는 방
 description: ""
 coverImage: "/assets/img/2024-06-21-FlutterFCMHowtoNavigatetoaParticularScreenAfterTappingonPushNotification_0.png"
 date: 2024-06-21 23:04
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-FlutterFCMHowtoNavigatetoaParticularScreenAfterTappingonPushNotification_0.png
 tag: Tech
 originalTitle: "Flutter: FCM — How to Navigate to a Particular Screen After Tapping on Push Notification"
 link: "https://medium.com/firebase-developers/flutter-fcm-how-to-navigate-to-a-particular-screen-after-tapping-on-push-notification-8cb5d5111ee6"
 ---
-
 
 이 게시물에서는 FCM 푸시 알림을 수신하고 사용자가 푸시 알림을 탭했을 때 특정 페이지로 이동하는 방법에 대해 Flutter에서 설명하겠습니다 (서버 측 코드 없음).
 
@@ -21,7 +20,7 @@ Apple의 플랫폼에서 개발하는 것은 때로 어려울 수 있습니다. 
 
 <div class="content-ad"></div>
 
-- Xcode에서 Targets ` Runner ` Signing & Capabilities로 이동하여 푸시 알림을 추가하려면 +를 눌러주세요. 그리고 Background Modes에 Background fetch와 Remote notification도 추가해주세요.
+- Xcode에서 Targets `Runner` Signing & Capabilities로 이동하여 푸시 알림을 추가하려면 +를 눌러주세요. 그리고 Background Modes에 Background fetch와 Remote notification도 추가해주세요.
 
 2. Apple Developer Member Center에서 Certificates, Identifiers & Profile로 이동하여 `Keys`에서 Apple Push Notification service (APN) 키를 추가해주세요. 그런 다음, 해당 키를 Firebase Console `Project Settings` Cloud Messaging `Apple app configuration`에 추가해주세요.
 
@@ -35,8 +34,9 @@ Foreground Notification(푸시 알림이 일시적으로 화면 상단에 팝업
 
 ```js
 <meta-data
- android:name="com.google.firebase.messaging.default_notification_channel_id"
- android:value="high_importance_channel" />
+  android:name="com.google.firebase.messaging.default_notification_channel_id"
+  android:value="high_importance_channel"
+/>
 ```
 
 ## Firebase 초기화
@@ -83,7 +83,7 @@ class FirebaseService {
   Future<String?> getDeviceToken() async => await FirebaseMessaging.instance.getToken();
 
   static FlutterLocalNotificationsPlugin _localNotificationsPlugin = FlutterLocalNotificationsPlugin();
-  
+
   static Future<void> initializeLocalNotifications() async {
     final InitializationSettings _initSettings = InitializationSettings(
       android: AndroidInitializationSettings("icon_name"),
@@ -98,18 +98,18 @@ class FirebaseService {
       sound: true,
     );
   }
-  
+
   static NotificationDetails platformChannelSpecifics = NotificationDetails(
     android: AndroidNotificationDetails(
       "high_importance_channel", "High Importance Notifications", priority: Priority.max, importance: Importance.max,
     ),
   );
-  
+
   // for receiving message when app is in background or foreground
   static Future<void> onMessage() async {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
       if (Platform.isAndroid) {
-        // if this is available when Platform.isIOS, you'll receive the notification twice 
+        // if this is available when Platform.isIOS, you'll receive the notification twice
         await FirebaseService._localNotificationsPlugin.show(
           0, message.notification!.title, message.notification!.body, FirebaseService.platformChannelSpecifics,
           payload: message.data.toString(),
@@ -129,7 +129,7 @@ class FirebaseService {
 
 FirebaseService.initializeFirebase 메서드 내의 모든 메서드를 살펴보겠습니다.
 
-_firebaseMessaging: 이전 FCM 포스트를 작성하던 중 한국 어딘가에서 FirebaseMessaging.instance를 한 번만 호출하는 것이 좋다는 글을 읽은 적이 있어요. 그래서 이를 initialize 메서드에서 초기화하고, _firebaseMessaging이 null인 경우 적절한 값을 제공해주는 getter를 만들었어요.
+\_firebaseMessaging: 이전 FCM 포스트를 작성하던 중 한국 어딘가에서 FirebaseMessaging.instance를 한 번만 호출하는 것이 좋다는 글을 읽은 적이 있어요. 그래서 이를 initialize 메서드에서 초기화하고, \_firebaseMessaging이 null인 경우 적절한 값을 제공해주는 getter를 만들었어요.
 
 initializeLocalNotifications: Foreground Notification을 활용하려면 이 메서드가 필요해요. Android에서는 반드시 전달해야 하는 인자 중 하나가 android/app/src/main/res/drawable에 있어야 하는 아이콘 로고 파일 이름이에요.
 
@@ -174,7 +174,7 @@ Future<String?> checkDeviceToken() async {
 }
 
 Future<String?> _getDeviceToken() async => await FirebaseService.firebaseMessaging.getToken();
-  
+
 Future<void> _saveDeviceToken(String deviceToken) async {
     final String _createSql = "CREATE TABLE ${this._tableName}(deviceToken TEXT PRIMARY KEY NOT NULL, timeStamp TEXT NOT NULL)";
     final List<Object> _values = [deviceToken, DateTime.now().toIso8601String()];
@@ -207,16 +207,13 @@ Future<void> _updateDeviceToken(String deviceToken) async {
 
 <div class="content-ad"></div>
 
-
 @override
 void init() {
-  super.initState();
-  WidgetsBinding.instance.addPostFrameCallback((_) {
-    FCMProvider.setContext(context);
-  });
+super.initState();
+WidgetsBinding.instance.addPostFrameCallback((\_) {
+FCMProvider.setContext(context);
+});
 }
-
-
 
 import 'package:firebase_messaging/firebase_messaging.dart' show FirebaseMessaging, RemoteMessage;
 import 'package:flutter/widgets.dart';
@@ -225,55 +222,53 @@ import 'package:pops/helpers/custom_types.dart';
 import '../views/store_detail/store_detail_page.dart';
 
 class FCMProvider with ChangeNotifier {
-  static BuildContext? _context;
+static BuildContext? \_context;
 
-  static void setContext(BuildContext context) => FCMProvider._context = context;
+static void setContext(BuildContext context) => FCMProvider.\_context = context;
 
-  /// when app is in the foreground
-  static Future<void> onTapNotification(NotificationResponse? response) async {
-    if (FCMProvider._context == null || response?.payload == null) return;
-    final Json _data = FCMProvider.convertPayload(response!.payload!);
-    if (_data.containsKey(...)){
-      await Navigator.of(FCMProvider._context!).push(...);
-    }
-  }
-
-  static Json convertPayload(String payload){
-    final String _payload = payload.substring(1, payload.length - 1);
-    List<String> _split = [];
-    _payload.split(",")..forEach((String s) => _split.addAll(s.split(":")));
-    Json _mapped = {};
-    for (int i = 0; i < _split.length + 1; i++) {
-      if (i % 2 == 1) _mapped.addAll({_split[i-1].trim().toString(): _split[i].trim()});
-    }
-    return _mapped;
-  }
-  
-  static Future<void> onMessage() async {
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
-      if (FCMProvider._refreshNotifications != null) await FCMProvider._refreshNotifications!(true);
-      // if this is available when Platform.isIOS, you'll receive the notification twice 
-      if (Platform.isAndroid) {
-        await FirebaseService.localNotificationsPlugin.show(
-          0, message.notification!.title,
-          message.notification!.body,
-          FirebaseService.platformChannelSpecifics,
-          payload: message.data.toString(),
-        );
-      }
-    });
-  }
-
-  static Future<void> backgroundHandler(RemoteMessage message) async {
-
-  }
+/// when app is in the foreground
+static Future<void> onTapNotification(NotificationResponse? response) async {
+if (FCMProvider.\_context == null || response?.payload == null) return;
+final Json \_data = FCMProvider.convertPayload(response!.payload!);
+if (\_data.containsKey(...)){
+await Navigator.of(FCMProvider.\_context!).push(...);
+}
 }
 
+static Json convertPayload(String payload){
+final String \_payload = payload.substring(1, payload.length - 1);
+List<String> \_split = [];
+\_payload.split(",")..forEach((String s) => \_split.addAll(s.split(":")));
+Json \_mapped = {};
+for (int i = 0; i < \_split.length + 1; i++) {
+if (i % 2 == 1) \_mapped.addAll({\_split[i-1].trim().toString(): \_split[i].trim()});
+}
+return \_mapped;
+}
+
+static Future<void> onMessage() async {
+FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
+if (FCMProvider.\_refreshNotifications != null) await FCMProvider.\_refreshNotifications!(true);
+// if this is available when Platform.isIOS, you'll receive the notification twice
+if (Platform.isAndroid) {
+await FirebaseService.localNotificationsPlugin.show(
+0, message.notification!.title,
+message.notification!.body,
+FirebaseService.platformChannelSpecifics,
+payload: message.data.toString(),
+);
+}
+});
+}
+
+static Future<void> backgroundHandler(RemoteMessage message) async {
+
+}
+}
 
 앱이 화면에 보일 때 onTapNotification 메서드가 실행되며, localNotificationsPlugin.initialize의 onSelectNotification에 콜백 메서드로 설정됩니다. onTapNotification은 message.data.toString()을 페이로드로 받고(페이로드는 문자열로만 넣을 수 있기 때문에) 페이로드를 다시 맵으로 변환합니다.
 
 ## 앱이 백그라운드에 있을 때 (Android) 및 앱이 포그라운드 / 백그라운드에 있을 때(iOS)
-
 
 <div class="content-ad"></div>
 
@@ -294,7 +289,7 @@ _stream.listen((RemoteMessage event) async {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 // main.dart
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -322,7 +317,7 @@ void initState() {
 iOS에서 소리가 포함된 알림을 받으려면 Cloud 콘솔에 다음이 필요합니다: (깃헙 참조)
 
 ```js
-"apns: { 
+"apns: {
   "payload": {
     "aps": {
       "sound": default

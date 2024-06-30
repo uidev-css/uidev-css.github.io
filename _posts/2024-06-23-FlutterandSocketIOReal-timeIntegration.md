@@ -3,21 +3,18 @@ title: "Flutter와 SocketIO 실시간 통합 방법"
 description: ""
 coverImage: "/assets/img/2024-06-23-FlutterandSocketIOReal-timeIntegration_0.png"
 date: 2024-06-23 14:53
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-23-FlutterandSocketIOReal-timeIntegration_0.png
 tag: Tech
 originalTitle: "Flutter and Socket.IO: Real-time Integration"
 link: "https://medium.com/@akshelar.18119/flutter-and-socket-io-real-time-integration-9112d48c41a3"
 ---
 
-
-
 ![Socket.IO package for Flutter](/assets/img/2024-06-23-FlutterandSocketIOReal-timeIntegration_0.png)
 
 ## Socket.IO는 무엇인가요?
 
 Socket.IO는 실시간 이중방향 및 이벤트 주도 통신을 가능하게 하는 JavaScript 라이브러리입니다. 모든 플랫폼, 브라우저 또는 디바이스에서 작동하여 클라이언트와 서버 간의 원활한 연결을 보장합니다. Socket.IO는 WebSocket 프로토콜을 기반으로 작동하지만 다시 연결 지원, 멀티플렉싱 및 채널 지원과 같은 추가 기능을 제공합니다. 이는 즉각적인 데이터 업데이트 및 동적 상호작용이 필요한 애플리케이션에 이상적인 선택이 됩니다.
-
 
 <div class="content-ad"></div>
 
@@ -54,6 +51,7 @@ String socketUrl() {
 <div class="content-ad"></div>
 
 온라인 Socket.IO 서버에 연결하려면:
+
 - Socket.IO 서버를 온라인으로 배포하거나 기존 서버를 사용합니다.
 - socketUrl 함수를 업데이트하여 온라인 서버 URL을 반환하세요.
 
@@ -67,7 +65,7 @@ String socketUrl() {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 @override
 void initState() {
   super.initState();
@@ -91,7 +89,7 @@ void initState() {
 
 ## 메시지 전송:
 
-```dart
+```js
 void sendMessage(String message) {
   socket.emit('sendMessage', message);
 }
@@ -118,12 +116,11 @@ void dispose() {
 
 <div class="content-ad"></div>
 
-
 ![Socket.IO Flutter Demo](https://miro.medium.com/v2/resize:fit:1200/1*fdjqKbSJXfSqS_13uHvy9g.gif)
 
 # 전체 코드:
 
-```dart
+```js
 import 'dart:async';
 import 'dart:io';
 
@@ -215,7 +212,7 @@ class HomeScreenState extends State<HomeScreen> {
                 if (snapshot.hasError) {
                   return Text('Error: ${snapshot.error}');
                 }
-                return Padding( 
+                return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: ListTile(
                     title: Text("Received Message: ${snapshot.data ?? ""}"),

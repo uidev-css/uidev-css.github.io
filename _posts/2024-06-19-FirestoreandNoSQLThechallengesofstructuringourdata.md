@@ -3,13 +3,12 @@ title: "Firestore와 NoSQL - 데이터 구조화의 어려움"
 description: ""
 coverImage: "/assets/img/2024-06-19-FirestoreandNoSQLThechallengesofstructuringourdata_0.png"
 date: 2024-06-19 00:03
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-FirestoreandNoSQLThechallengesofstructuringourdata_0.png
 tag: Tech
 originalTitle: "Firestore and NoSQL — The challenges of structuring our data"
 link: "https://medium.com/itnext/firestore-and-nosql-the-challenges-of-structuring-our-data-c812f1f1a961"
 ---
-
 
 <img src="/assets/img/2024-06-19-FirestoreandNoSQLThechallengesofstructuringourdata_0.png" />
 
@@ -73,7 +72,7 @@ Future<List<Toy>> fetchToysAndMaterials() async {
     final materialSnapshot = await toyToMaterialReference[key]!.get();
     toyToMaterial[key] = Material.fromFirebase(materialSnapshot);
   }
-  
+
   // 단계 4: 재료 정보를 포함한 Toy 객체 생성
   final toys = toyDocs.map((doc) {
     Material material = toyToMaterial[doc.id];
@@ -142,12 +141,11 @@ Toy 객체를 만들어 이 카드 위젯을 구축하기 위해 자료 및 색�
 
 <div class="content-ad"></div>
 
-
 ![FirestoreandNoSQLThechallengesofstructuringourdata](/assets/img/2024-06-19-FirestoreandNoSQLThechallengesofstructuringourdata_9.png)
 
 이제 1,000개 요소로 구성된 목록을 표시하려면, 이 카드를 구성하는 데 필요한 모든 데이터를 가져오기 위해 Firestore에서 하나의 읽기만 필요합니다. 이는 Flutter에서 클라이언트 측 코드를 간단하게 만들어줍니다:
 
-```dart
+```js
 Future<List<Toy>> fetchToysAndMaterials() async {
   final firestore = FirebaseFirestore.instance;
 
@@ -161,7 +159,6 @@ Future<List<Toy>> fetchToysAndMaterials() async {
 ```
 
 Color 및 Material에서 추가해야 할 다른 속성이 있습니까? 이는 두 가지 질문에 달려 있습니다:
-
 
 <div class="content-ad"></div>
 
@@ -252,7 +249,7 @@ def on_toy_material_update(event: Event[Change[DocumentSnapshot]]) -> None:
         updates["materialName"] = new_data.get("name")
 
     material_id = event.data.after.id
-    
+
     # 업데이트해야 할 필드가 있는지 확인합니다
     if updates:
         # 장난감 컬렉션에서이 재료를 사용하는 모든 장난감을 쿼리합니다
@@ -283,7 +280,6 @@ firebase deploy --only functions
 
 <div class="content-ad"></div>
 
-
 ![Firestore Image](/assets/img/2024-06-19-FirestoreandNoSQLThechallengesofstructuringourdata_11.png)
 
 You can test it by directly editing the Firestore values in the console:
@@ -292,9 +288,7 @@ You can test it by directly editing the Firestore values in the console:
 
 To debug, go to Log Explorer in the Google Cloud Console. Here, you can find all logs for our app, including the print statements added in our Function.
 
-
 <div class="content-ad"></div>
-
 
 ![이미지](/assets/img/2024-06-19-FirestoreandNoSQLThechallengesofstructuringourdata_12.png)
 
@@ -303,7 +297,6 @@ To debug, go to Log Explorer in the Google Cloud Console. Here, you can find all
 프로젝트가 성장함에 따라 사이드 이펙트를 관리하기 위해 추가적인 Firebase 함수를 생성해야 할 것입니다. 색상 컬렉션을 변경하면 해당 변경 사항을 소재 및 장난감에 전파해야 할 필요가 있습니다. 주문 컬렉션에서 주문을 처리할 때 소재와 장난감의 재고를 확인하고 주문을 처리하기 전에 필요한 항목을 재고에서 빼야 할 수도 있습니다.
 
 이러한 사이드 이펙트는 비정규화된 데이터베이스를 사용함으로 인한 결과입니다. 앱의 기능을 중심으로 데이터를 모델링한다면 SQL과 유사한 구조 대신 데이터베이스를 동기화하는 방법이 필요합니다. Firebase Functions를 활용함으로써 데이터베이스를 클라이언트 애플리케이션으로부터 격리시키고 민감한 데이터를 안전하게 보호하며 무단 수정을 방지할 수 있습니다.
-
 
 <div class="content-ad"></div>
 

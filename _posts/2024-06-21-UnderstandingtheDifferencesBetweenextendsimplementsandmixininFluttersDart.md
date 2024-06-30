@@ -3,13 +3,12 @@ title: "플러터 다트에서 extends, implements, mixin의 차이점 완벽 �
 description: ""
 coverImage: "/assets/img/2024-06-21-UnderstandingtheDifferencesBetweenextendsimplementsandmixininFluttersDart_0.png"
 date: 2024-06-21 23:00
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-21-UnderstandingtheDifferencesBetweenextendsimplementsandmixininFluttersDart_0.png
 tag: Tech
 originalTitle: "Understanding the Differences Between “extends”, “implements”, and “mixin” in Flutter’s Dart"
 link: "https://medium.com/@lakshithlfvithana/understanding-the-differences-between-extends-implements-and-mixin-in-flutters-dart-f4bb152dd464"
 ---
-
 
 ![image](/assets/img/2024-06-21-UnderstandingtheDifferencesBetweenextendsimplementsandmixininFluttersDart_0.png)
 
@@ -36,7 +35,7 @@ class 자식클래스 extends 부모클래스 {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 // 슈퍼클래스 생성
 class Animal {
   String name;
@@ -79,7 +78,7 @@ void main() {
 
 <div class="content-ad"></div>
 
-```dart
+```js
 // 인터페이스 생성하기
 abstract class Flyable {
   void fly();
@@ -110,7 +109,6 @@ void main() {
 3. "mixin"의 힘을 이해하기.
 
 Dart는 상속 없이 여러 클래스 간에 코드를 재사용할 수 있게 하는 "mixin"이라는 개념을 소개합니다. Mixin은 다른 클래스에 적용할 수 있는 행동을 구성하여 코드 모듈성과 재사용성을 향상시킵니다.
-
 
 <div class="content-ad"></div>
 
