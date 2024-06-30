@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><title>Flask, MongoDB, 그리고 React로 실시간 GitHub Webhook 리스너 만드는 방법 | uidev-css</title><meta name="description" content=""/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:url" content="https://uidev-css.github.io///post/2024-06-30-BuildingaReal-TimeGitHubWebhookListenerwithFlaskMongoDBandReact" data-gatsby-head="true"/><meta property="og:type" content="website" data-gatsby-head="true"/><meta property="og:site_name" content="Flask, MongoDB, 그리고 React로 실시간 GitHub Webhook 리스너 만드는 방법 | uidev-css" data-gatsby-head="true"/><meta property="og:title" content="Flask, MongoDB, 그리고 React로 실시간 GitHub Webhook 리스너 만드는 방법 | uidev-css" data-gatsby-head="true"/><meta property="og:description" content="" data-gatsby-head="true"/><meta property="og:image" content="/assets/img/2024-06-30-BuildingaReal-TimeGitHubWebhookListenerwithFlaskMongoDBandReact_0.png" data-gatsby-head="true"/><meta property="og:locale" content="en_US" data-gatsby-head="true"/><meta name="twitter:card" content="summary_large_image" data-gatsby-head="true"/><meta property="twitter:domain" content="https://uidev-css.github.io/" data-gatsby-head="true"/><meta property="twitter:url" content="https://uidev-css.github.io///post/2024-06-30-BuildingaReal-TimeGitHubWebhookListenerwithFlaskMongoDBandReact" data-gatsby-head="true"/><meta name="twitter:title" content="Flask, MongoDB, 그리고 React로 실시간 GitHub Webhook 리스너 만드는 방법 | uidev-css" data-gatsby-head="true"/><meta name="twitter:description" content="" data-gatsby-head="true"/><meta name="twitter:image" content="/assets/img/2024-06-30-BuildingaReal-TimeGitHubWebhookListenerwithFlaskMongoDBandReact_0.png" data-gatsby-head="true"/><meta name="twitter:data1" content="Dev | uidev-css" data-gatsby-head="true"/><meta name="article:published_time" content="2024-06-30 23:02" data-gatsby-head="true"/><meta name="next-head-count" content="19"/><meta name="google-site-verification" content="a-yehRo3k3xv7fg6LqRaE8jlE42e5wP2bDE_2F849O4"/><link rel="stylesheet" href="/favicons/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png"/><link rel="icon" href="/favicons/apple-icon-180x180.png"/><link rel="apple-touch-icon" href="/favicons/apple-icon-180x180.png"/><link rel="apple-touch-startup-image" href="/startup.png"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="msapplication-config" content="/favicons/browserconfig.xml"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BHFR6GTH9P"></script><script>window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-BHFR6GTH9P');</script><link rel="preload" href="/_next/static/css/6e57edcf9f2ce551.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6e57edcf9f2ce551.css" data-n-g=""/><link rel="preload" href="/_next/static/css/b8ef307c9aee1e34.css" as="style"/><link rel="stylesheet" href="/_next/static/css/b8ef307c9aee1e34.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-ee6df16fdc6dae4d.js" defer=""></script><script src="/_next/static/chunks/framework-46611630e39cfdeb.js" defer=""></script><script src="/_next/static/chunks/main-cf4a52eec9a970a0.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6fae11262ee5c69b.js" defer=""></script><script src="/_next/static/chunks/75fc9c18-ac4aa08aae62f90e.js" defer=""></script><script src="/_next/static/chunks/463-0429087d4c0b0335.js" defer=""></script><script src="/_next/static/chunks/pages/post/%5Bslug%5D-b4eed7811784bdd3.js" defer=""></script><script src="/_next/static/ckvP8zvWyPnScUqpsTElP/_buildManifest.js" defer=""></script><script src="/_next/static/ckvP8zvWyPnScUqpsTElP/_ssgManifest.js" defer=""></script></head><body><div id="__next"><header class="Header_header__Z8PUO"><div class="Header_inner__tfr0u"><strong class="Header_title__Otn70"><a href="/">UIDEV CSS</a></strong><nav class="Header_nav_area__6KVpk"><a class="nav_item" href="/posts/1">Posts</a></nav></div></header><main class="posts_container__NyRU3"><div class="posts_inner__i3n_i"><h1 class="posts_post_title__EbxNx">Flask, MongoDB, 그리고 React로 실시간 GitHub Webhook 리스너 만드는 방법</h1><div class="posts_meta__cR7lu"><div class="posts_profile_wrap__mslMl"><div class="posts_profile_image_wrap__kPikV"><img alt="Flask, MongoDB, 그리고 React로 실시간 GitHub Webhook 리스너 만드는 방법" loading="lazy" width="44" height="44" decoding="async" data-nimg="1" class="profile" style="color:transparent" src="/favicons/apple-icon-114x114.png"/></div><div class="posts_textarea__w_iKT"><span class="writer">UIDEV CSS</span><span class="posts_info__5KJdN"><span class="posts_date__ctqHI">Posted On Jun 30, 2024</span><span class="posts_reading_time__f7YPP">7<!-- --> min read</span></span></div></div><img alt="" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" class="posts_view_badge__tcbfm" style="color:transparent" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fallround-coder.github.io/post/2024-06-30-BuildingaReal-TimeGitHubWebhookListenerwithFlaskMongoDBandReact&amp;count_bg=%2379C83D&amp;title_bg=%23555555&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=views&amp;edge_flat=false"/></div><article class="posts_post_content__n_L6j"><div><!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+</head>
+<body>
+<p>본 기사에서는 "Push", "Pull Request", "Merge"와 같은 GitHub 웹훅을 수신하는 프로젝트를 만드는 방법을 안내하겠습니다. 이러한 이벤트를 Flask 애플리케이션에서 캡처하고 MongoDB에 저장하며, React 프론트엔드를 사용하여 실시간으로 표시할 것입니다. 마지막으로 Flask 앱을 Vercel에 배포해 보겠습니다.</p>
+<h1>배울 내용</h1>
+<ul>
+<li>GitHub 웹훅 설정하는 방법</li>
+<li>웹훅을 처리하기 위한 Flask 애플리케이션 만드는 방법</li>
+<li>웹훅 데이터를 MongoDB에 저장하는 방법</li>
+<li>실시간 업데이트를 표시하는 React 애플리케이션 만드는 방법</li>
+<li>Flask 애플리케이션을 Vercel에 배포하는 방법</li>
+</ul>
+<h1>준비물</h1>
+<div class="content-ad"></div>
+<ul>
+<li>Python, Flask 및 React에 대한 기본 지식</li>
+<li>GitHub 계정</li>
+<li>로컬에 MongoDB 설치 또는 클라우드 MongoDB 서비스</li>
+<li>Node.js 및 npm 설치</li>
+<li>Vercel 계정</li>
+</ul>
+<h2>단계 1: GitHub Webhook 설정</h2>
+<ul>
+<li>GitHub 저장소 설정</li>
+</ul>
+<p>GitHub에서 새 저장소를 만듭니다.</p>
+<p>GitHub에서 action-repo라는 새 저장소를 만듭니다. 이 저장소는 "Push", "Pull Request", "Merge"와 같은 이벤트에 기반하여 웹훅을 트리거합니다.</p>
+<div class="content-ad"></div>
+<ol start="2">
+<li>웹훅 추가하기</li>
+</ol>
+<ul>
+<li>GitHub의 작업 리포지토리로 이동합니다.</li>
+<li>설정에서 웹훅(Webhooks)으로 이동합니다.</li>
+<li>웹훅 추가를 클릭합니다.</li>
+<li>페이로드 URL을 Flask 앱의 엔드포인트로 설정합니다 (나중에 이를 설정할 예정입니다).</li>
+<li>컨텐츠 유형을 application/json으로 설정합니다.</li>
+<li>개별 이벤트를 선택하도록 "푸쉬(Push)", "풀 리퀘스트(Pull Request)", "병합(Merge)" 이벤트를 선택합니다.</li>
+<li>웹훅 추가를 클릭합니다.</li>
+</ul>
+<h1>단계 2: Flask 애플리케이션 생성</h1>
+<ul>
+<li>프로젝트 초기화</li>
+</ul>
+<div class="content-ad"></div>
+<p>플라스크 프로젝트를 위한 webhook-repo라는 디렉토리를 만들어보세요.</p>
+<pre><code class="hljs language-js">mkdir webhook-repo
+cd webhook-repo
+python3 -m venv venv
+source venv/bin/activate
+pip install <span class="hljs-title class_">Flask</span> pymongo
+</code></pre>
+<ol start="2">
+<li>Flask 앱 만들기</li>
+</ol>
+<p>webhook-repo 디렉토리에 다음 코드를 사용하여 app.py를 만들어보세요.</p>
+<div class="content-ad"></div>
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask, request, jsonify
+<span class="hljs-keyword">from</span> pymongo <span class="hljs-keyword">import</span> MongoClient
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
+
+app = Flask(__name__)
+
+<span class="hljs-comment"># MongoDB 연결</span>
+client = MongoClient(<span class="hljs-string">'mongodb://localhost:27017/'</span>)
+db = client[<span class="hljs-string">'github_webhooks'</span>]
+collection = db[<span class="hljs-string">'events'</span>]
+
+<span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">'/webhook'</span>, methods=[<span class="hljs-string">'POST'</span>]</span>)</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">webhook</span>():
+    data = request.json
+    event_type = request.headers.get(<span class="hljs-string">'X-GitHub-Event'</span>)
+    
+    <span class="hljs-keyword">if</span> event_type == <span class="hljs-string">'push'</span>:
+        author = data[<span class="hljs-string">'pusher'</span>][<span class="hljs-string">'name'</span>]
+        to_branch = data[<span class="hljs-string">'ref'</span>].split(<span class="hljs-string">'/'</span>)[-<span class="hljs-number">1</span>]
+        timestamp = datetime.strptime(data[<span class="hljs-string">'head_commit'</span>][<span class="hljs-string">'timestamp'</span>], <span class="hljs-string">"%Y-%m-%dT%H:%M:%SZ"</span>)
+        event_data = {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"push"</span>,
+            <span class="hljs-string">"author"</span>: author,
+            <span class="hljs-string">"to_branch"</span>: to_branch,
+            <span class="hljs-string">"timestamp"</span>: timestamp
+        }
+    <span class="hljs-keyword">elif</span> event_type == <span class="hljs-string">'pull_request'</span>:
+        author = data[<span class="hljs-string">'pull_request'</span>][<span class="hljs-string">'user'</span>][<span class="hljs-string">'login'</span>]
+        from_branch = data[<span class="hljs-string">'pull_request'</span>][<span class="hljs-string">'head'</span>][<span class="hljs-string">'ref'</span>]
+        to_branch = data[<span class="hljs-string">'pull_request'</span>][<span class="hljs-string">'base'</span>][<span class="hljs-string">'ref'</span>]
+        timestamp = datetime.strptime(data[<span class="hljs-string">'pull_request'</span>][<span class="hljs-string">'created_at'</span>], <span class="hljs-string">"%Y-%m-%dT%H:%M:%SZ"</span>)
+        event_data = {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"pull_request"</span>,
+            <span class="hljs-string">"author"</span>: author,
+            <span class="hljs-string">"from_branch"</span>: from_branch,
+            <span class="hljs-string">"to_branch"</span>: to_branch,
+            <span class="hljs-string">"timestamp"</span>: timestamp
+        }
+    <span class="hljs-keyword">elif</span> event_type == <span class="hljs-string">'pull_request'</span> <span class="hljs-keyword">and</span> data[<span class="hljs-string">'pull_request'</span>][<span class="hljs-string">'merged'</span>]:
+        author = data[<span class="hljs-string">'pull_request'</span>][<span class="hljs-string">'user'</span>][<span class="hljs-string">'login'</span>]
+        from_branch = data[<span class="hljs-string">'pull_request'</span>][<span class="hljs-string">'head'</span>][<span class="hljs-string">'ref'</span>]
+        to_branch = data[<span class="hljs-string">'pull_request'</span>][<span class="hljs-string">'base'</span>][<span class="hljs-string">'ref'</span>]
+        timestamp = datetime.strptime(data[<span class="hljs-string">'pull_request'</span>][<span class="hljs-string">'merged_at'</span>], <span class="hljs-string">"%Y-%m-%dT%H:%M:%SZ"</span>)
+        event_data = {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"merge"</span>,
+            <span class="hljs-string">"author"</span>: author,
+            <span class="hljs-string">"from_branch"</span>: from_branch,
+            <span class="hljs-string">"to_branch"</span>: to_branch,
+            <span class="hljs-string">"timestamp"</span>: timestamp
+        }
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> jsonify({<span class="hljs-string">'message'</span>: <span class="hljs-string">'지원되지 않는 이벤트입니다'</span>}), <span class="hljs-number">400</span>
+
+    collection.insert_one(event_data)
+    <span class="hljs-keyword">return</span> jsonify({<span class="hljs-string">'message'</span>: <span class="hljs-string">'이벤트가 수신되었습니다'</span>}), <span class="hljs-number">200</span>
+
+<span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">'/events'</span>, methods=[<span class="hljs-string">'GET'</span>]</span>)</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">get_events</span>():
+    events = <span class="hljs-built_in">list</span>(collection.find().sort(<span class="hljs-string">"timestamp"</span>, -<span class="hljs-number">1</span>).limit(<span class="hljs-number">10</span>))
+    <span class="hljs-keyword">for</span> event <span class="hljs-keyword">in</span> events:
+        event[<span class="hljs-string">'_id'</span>] = <span class="hljs-built_in">str</span>(event[<span class="hljs-string">'_id'</span>])
+    <span class="hljs-keyword">return</span> jsonify(events), <span class="hljs-number">200</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    app.run(host=<span class="hljs-string">'0.0.0.0'</span>, port=<span class="hljs-number">5000</span>)
+</code></pre>
+<ol start="3">
+<li>requirements.txt 파일 생성</li>
+</ol>
+<p>필요한 의존성이 명시된 requirements.txt 파일을 만들어주세요:</p>
+<pre><code class="hljs language-python">Flask
+pymongo
+</code></pre>
+<div class="content-ad"></div>
+<h1>단계 3: Vercel에 Flask 앱 배포하기</h1>
+<ul>
+<li>vercel.json 파일 만들기</li>
+</ul>
+<p>vercel.json 설정 파일을 만듭니다:</p>
+<pre><code class="hljs language-js">{
+  <span class="hljs-string">"version"</span>: <span class="hljs-number">2</span>,
+  <span class="hljs-string">"builds"</span>: [
+    {
+      <span class="hljs-string">"src"</span>: <span class="hljs-string">"app.py"</span>,
+      <span class="hljs-string">"use"</span>: <span class="hljs-string">"@vercel/python"</span>
+    }
+  ],
+  <span class="hljs-string">"routes"</span>: [
+    {
+      <span class="hljs-string">"src"</span>: <span class="hljs-string">"/(.*)"</span>,
+      <span class="hljs-string">"dest"</span>: <span class="hljs-string">"app.py"</span>
+    }
+  ]
+}
+</code></pre>
+<div class="content-ad"></div>
+<ol start="2">
+<li>Vercel에 배포하기</li>
+</ol>
+<ul>
+<li>Vercel CLI 설치하기: npm install -g vercel</li>
+<li>Vercel에 로그인하기: vercel login</li>
+<li>프로젝트를 배포하기: vercel</li>
+</ul>
+<h1>단계 4: React 프론트엔드 생성</h1>
+<ul>
+<li>React 앱 설정하기</li>
+</ul>
+<div class="content-ad"></div>
+<p>React 애플리케이션을 새로 만들어 보세요:</p>
+<pre><code class="hljs language-js">npx create-react-app github-webhooks-ui
+cd github-webhooks-ui
+npm install axios
+</code></pre>
+<ol start="2">
+<li>App.js 파일을 만들어 보세요</li>
+</ol>
+<p>App.js 파일 내용을 다음과 같이 변경해 주세요:</p>
+<div class="content-ad"></div>
+<pre><code class="hljs language-js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span>, { useState, useEffect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">'axios'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'./App.css'</span>;
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">App</span> = (<span class="hljs-params"></span>) => {
+  <span class="hljs-keyword">const</span> [events, setEvents] = <span class="hljs-title function_">useState</span>([]);
+
+  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =></span> {
+    <span class="hljs-keyword">const</span> <span class="hljs-title function_">fetchEvents</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) => {
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> axios.<span class="hljs-title function_">get</span>(<span class="hljs-string">'https://your-vercel-app.vercel.app/events'</span>);
+        <span class="hljs-title function_">setEvents</span>(response.<span class="hljs-property">data</span>);
+      } <span class="hljs-keyword">catch</span> (error) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">'Error fetching events'</span>, error);
+      }
+    };
+
+    <span class="hljs-title function_">fetchEvents</span>();
+    <span class="hljs-keyword">const</span> interval = <span class="hljs-built_in">setInterval</span>(fetchEvents, <span class="hljs-number">15000</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =></span> <span class="hljs-built_in">clearInterval</span>(interval);
+  }, []);
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&#x3C;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"App"</span>></span>
+      <span class="hljs-tag">&#x3C;<span class="hljs-name">h1</span>></span>GitHub Repository Events<span class="hljs-tag">&#x3C;/<span class="hljs-name">h1</span>></span>
+      <span class="hljs-tag">&#x3C;<span class="hljs-name">ul</span>></span>
+        {events.map(event => (
+          <span class="hljs-tag">&#x3C;<span class="hljs-name">li</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{event._id}</span>></span>
+            {event.type === 'push' &#x26;&#x26; `${event.author} pushed to ${event.to_branch} on ${new Date(event.timestamp).toUTCString()}`}
+            {event.type === 'pull_request' &#x26;&#x26; `${event.author} submitted a pull request from ${event.from_branch} to ${event.to_branch} on ${new Date(event.timestamp).toUTCString()}`}
+            {event.type === 'merge' &#x26;&#x26; `${event.author} merged branch ${event.from_branch} to ${event.to_branch} on ${new Date(event.timestamp).toUTCString()}`}
+          <span class="hljs-tag">&#x3C;/<span class="hljs-name">li</span>></span>
+        ))}
+      <span class="hljs-tag">&#x3C;/<span class="hljs-name">ul</span>></span>
+    <span class="hljs-tag">&#x3C;/<span class="hljs-name">div</span>></span></span>
+  );
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;
+</code></pre>
+<ol start="3">
+<li>React 앱 실행</li>
+</ol>
+<p>React 애플리케이션을 시작하려면:</p>
+<pre><code class="hljs language-js">npm start
+</code></pre>
+<div class="content-ad"></div>
+<h1>테스트 및 확인</h1>
+<ul>
+<li>GitHub 웹훅 업데이트:</li>
+</ul>
+<p>GitHub 웹훅 설정에서 Payload URL을 배포된 Vercel의 Flask 앱을 가리키도록 업데이트하십시오:</p>
+<pre><code class="hljs language-js"><span class="hljs-attr">https</span>:<span class="hljs-comment">//your-vercel-app.vercel.app/webhook</span>
+</code></pre>
+<div class="content-ad"></div>
+<ol start="2">
+<li>트리거 이벤트:</li>
+</ol>
+<ul>
+<li>Push Action: 변경 사항을 만들어서 action-repo에 푸시합니다.</li>
+<li>Pull Request Action: 새 브랜치를 만들어서 변경 사항을 적용하고 푸시한 다음 풀 리퀘스트를 오픈합니다.</li>
+<li>Merge Action: 풀 리퀘스트를 병합합니다.</li>
+</ul>
+<ol start="3">
+<li>확인: React 앱을 확인해서 이벤트가 올바르게 표시되는지 확인해보세요.</li>
+</ol>
+<h1>결론</h1>
+<div class="content-ad"></div>
+<p>이 프로젝트에서는 다음을 배웠습니다:</p>
+<ul>
+<li>GitHub 웹훅 설정 및 처리 방법</li>
+<li>웹훅 이벤트를 처리하는 Flask 애플리케이션 생성</li>
+<li>MongoDB에 이벤트 저장</li>
+<li>React 프론트엔드를 사용하여 실시간 이벤트 표시</li>
+<li>Vercel에 Flask 애플리케이션 배포</li>
+</ul>
+<p>이 프로젝트는 다양한 기술을 통합하여 실시간 업데이트를 효율적으로 처리하는 풀 스택 애플리케이션을 보여줍니다. 궁금한 점이나 개선하고 싶은 부분이 있으면 인증, 추가적인 이벤트 유형 또는 더 다양하고 진보된 UI 요소를 추가하여 이 프로젝트를 확장해보세요.</p>
+<p>즐거운 코딩되세요!</p>
+</body>
+</html>
+</div></article></div></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"Flask, MongoDB, 그리고 React로 실시간 GitHub Webhook 리스너 만드는 방법","description":"","date":"2024-06-30 23:02","slug":"2024-06-30-BuildingaReal-TimeGitHubWebhookListenerwithFlaskMongoDBandReact","content":"\n\n본 기사에서는 \"Push\", \"Pull Request\", \"Merge\"와 같은 GitHub 웹훅을 수신하는 프로젝트를 만드는 방법을 안내하겠습니다. 이러한 이벤트를 Flask 애플리케이션에서 캡처하고 MongoDB에 저장하며, React 프론트엔드를 사용하여 실시간으로 표시할 것입니다. 마지막으로 Flask 앱을 Vercel에 배포해 보겠습니다.\n\n# 배울 내용\n\n- GitHub 웹훅 설정하는 방법\n- 웹훅을 처리하기 위한 Flask 애플리케이션 만드는 방법\n- 웹훅 데이터를 MongoDB에 저장하는 방법\n- 실시간 업데이트를 표시하는 React 애플리케이션 만드는 방법\n- Flask 애플리케이션을 Vercel에 배포하는 방법\n\n# 준비물\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n- Python, Flask 및 React에 대한 기본 지식\n- GitHub 계정\n- 로컬에 MongoDB 설치 또는 클라우드 MongoDB 서비스\n- Node.js 및 npm 설치\n- Vercel 계정\n\n## 단계 1: GitHub Webhook 설정\n\n- GitHub 저장소 설정\n\nGitHub에서 새 저장소를 만듭니다.\n\nGitHub에서 action-repo라는 새 저장소를 만듭니다. 이 저장소는 \"Push\", \"Pull Request\", \"Merge\"와 같은 이벤트에 기반하여 웹훅을 트리거합니다.\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n2. 웹훅 추가하기\n\n- GitHub의 작업 리포지토리로 이동합니다.\n- 설정에서 웹훅(Webhooks)으로 이동합니다.\n- 웹훅 추가를 클릭합니다.\n- 페이로드 URL을 Flask 앱의 엔드포인트로 설정합니다 (나중에 이를 설정할 예정입니다).\n- 컨텐츠 유형을 application/json으로 설정합니다.\n- 개별 이벤트를 선택하도록 \"푸쉬(Push)\", \"풀 리퀘스트(Pull Request)\", \"병합(Merge)\" 이벤트를 선택합니다.\n- 웹훅 추가를 클릭합니다.\n\n# 단계 2: Flask 애플리케이션 생성\n\n- 프로젝트 초기화\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n플라스크 프로젝트를 위한 webhook-repo라는 디렉토리를 만들어보세요.\n\n```js\nmkdir webhook-repo\ncd webhook-repo\npython3 -m venv venv\nsource venv/bin/activate\npip install Flask pymongo\n```\n\n2. Flask 앱 만들기\n\nwebhook-repo 디렉토리에 다음 코드를 사용하여 app.py를 만들어보세요.\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n```python\nfrom flask import Flask, request, jsonify\nfrom pymongo import MongoClient\nfrom datetime import datetime\n\napp = Flask(__name__)\n\n# MongoDB 연결\nclient = MongoClient('mongodb://localhost:27017/')\ndb = client['github_webhooks']\ncollection = db['events']\n\n@app.route('/webhook', methods=['POST'])\ndef webhook():\n    data = request.json\n    event_type = request.headers.get('X-GitHub-Event')\n    \n    if event_type == 'push':\n        author = data['pusher']['name']\n        to_branch = data['ref'].split('/')[-1]\n        timestamp = datetime.strptime(data['head_commit']['timestamp'], \"%Y-%m-%dT%H:%M:%SZ\")\n        event_data = {\n            \"type\": \"push\",\n            \"author\": author,\n            \"to_branch\": to_branch,\n            \"timestamp\": timestamp\n        }\n    elif event_type == 'pull_request':\n        author = data['pull_request']['user']['login']\n        from_branch = data['pull_request']['head']['ref']\n        to_branch = data['pull_request']['base']['ref']\n        timestamp = datetime.strptime(data['pull_request']['created_at'], \"%Y-%m-%dT%H:%M:%SZ\")\n        event_data = {\n            \"type\": \"pull_request\",\n            \"author\": author,\n            \"from_branch\": from_branch,\n            \"to_branch\": to_branch,\n            \"timestamp\": timestamp\n        }\n    elif event_type == 'pull_request' and data['pull_request']['merged']:\n        author = data['pull_request']['user']['login']\n        from_branch = data['pull_request']['head']['ref']\n        to_branch = data['pull_request']['base']['ref']\n        timestamp = datetime.strptime(data['pull_request']['merged_at'], \"%Y-%m-%dT%H:%M:%SZ\")\n        event_data = {\n            \"type\": \"merge\",\n            \"author\": author,\n            \"from_branch\": from_branch,\n            \"to_branch\": to_branch,\n            \"timestamp\": timestamp\n        }\n    else:\n        return jsonify({'message': '지원되지 않는 이벤트입니다'}), 400\n\n    collection.insert_one(event_data)\n    return jsonify({'message': '이벤트가 수신되었습니다'}), 200\n\n@app.route('/events', methods=['GET'])\ndef get_events():\n    events = list(collection.find().sort(\"timestamp\", -1).limit(10))\n    for event in events:\n        event['_id'] = str(event['_id'])\n    return jsonify(events), 200\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)\n```\n\n3. requirements.txt 파일 생성\n\n필요한 의존성이 명시된 requirements.txt 파일을 만들어주세요:\n\n```python\nFlask\npymongo\n```\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n# 단계 3: Vercel에 Flask 앱 배포하기\n\n- vercel.json 파일 만들기\n\nvercel.json 설정 파일을 만듭니다:\n\n```js\n{\n  \"version\": 2,\n  \"builds\": [\n    {\n      \"src\": \"app.py\",\n      \"use\": \"@vercel/python\"\n    }\n  ],\n  \"routes\": [\n    {\n      \"src\": \"/(.*)\",\n      \"dest\": \"app.py\"\n    }\n  ]\n}\n```\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n2. Vercel에 배포하기\n\n- Vercel CLI 설치하기: npm install -g vercel\n- Vercel에 로그인하기: vercel login\n- 프로젝트를 배포하기: vercel\n\n# 단계 4: React 프론트엔드 생성\n\n- React 앱 설정하기\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\nReact 애플리케이션을 새로 만들어 보세요:\n\n```js\nnpx create-react-app github-webhooks-ui\ncd github-webhooks-ui\nnpm install axios\n```\n\n2. App.js 파일을 만들어 보세요\n\nApp.js 파일 내용을 다음과 같이 변경해 주세요:\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n```js\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\nimport './App.css';\n\nconst App = () =\u003e {\n  const [events, setEvents] = useState([]);\n\n  useEffect(() =\u003e {\n    const fetchEvents = async () =\u003e {\n      try {\n        const response = await axios.get('https://your-vercel-app.vercel.app/events');\n        setEvents(response.data);\n      } catch (error) {\n        console.error('Error fetching events', error);\n      }\n    };\n\n    fetchEvents();\n    const interval = setInterval(fetchEvents, 15000);\n    return () =\u003e clearInterval(interval);\n  }, []);\n\n  return (\n    \u003cdiv className=\"App\"\u003e\n      \u003ch1\u003eGitHub Repository Events\u003c/h1\u003e\n      \u003cul\u003e\n        {events.map(event =\u003e (\n          \u003cli key={event._id}\u003e\n            {event.type === 'push' \u0026\u0026 `${event.author} pushed to ${event.to_branch} on ${new Date(event.timestamp).toUTCString()}`}\n            {event.type === 'pull_request' \u0026\u0026 `${event.author} submitted a pull request from ${event.from_branch} to ${event.to_branch} on ${new Date(event.timestamp).toUTCString()}`}\n            {event.type === 'merge' \u0026\u0026 `${event.author} merged branch ${event.from_branch} to ${event.to_branch} on ${new Date(event.timestamp).toUTCString()}`}\n          \u003c/li\u003e\n        ))}\n      \u003c/ul\u003e\n    \u003c/div\u003e\n  );\n};\n\nexport default App;\n```\n\n3. React 앱 실행\n\nReact 애플리케이션을 시작하려면:\n\n```js\nnpm start\n```\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n# 테스트 및 확인\n\n- GitHub 웹훅 업데이트:\n\nGitHub 웹훅 설정에서 Payload URL을 배포된 Vercel의 Flask 앱을 가리키도록 업데이트하십시오:\n\n```js\nhttps://your-vercel-app.vercel.app/webhook\n```\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n2. 트리거 이벤트:\n\n- Push Action: 변경 사항을 만들어서 action-repo에 푸시합니다.\n- Pull Request Action: 새 브랜치를 만들어서 변경 사항을 적용하고 푸시한 다음 풀 리퀘스트를 오픈합니다.\n- Merge Action: 풀 리퀘스트를 병합합니다.\n\n3. 확인: React 앱을 확인해서 이벤트가 올바르게 표시되는지 확인해보세요.\n\n# 결론\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n이 프로젝트에서는 다음을 배웠습니다:\n\n- GitHub 웹훅 설정 및 처리 방법\n- 웹훅 이벤트를 처리하는 Flask 애플리케이션 생성\n- MongoDB에 이벤트 저장\n- React 프론트엔드를 사용하여 실시간 이벤트 표시\n- Vercel에 Flask 애플리케이션 배포\n\n이 프로젝트는 다양한 기술을 통합하여 실시간 업데이트를 효율적으로 처리하는 풀 스택 애플리케이션을 보여줍니다. 궁금한 점이나 개선하고 싶은 부분이 있으면 인증, 추가적인 이벤트 유형 또는 더 다양하고 진보된 UI 요소를 추가하여 이 프로젝트를 확장해보세요.\n\n즐거운 코딩되세요!","ogImage":{"url":"/assets/img/2024-06-30-BuildingaReal-TimeGitHubWebhookListenerwithFlaskMongoDBandReact_0.png"},"coverImage":"/assets/img/2024-06-30-BuildingaReal-TimeGitHubWebhookListenerwithFlaskMongoDBandReact_0.png","tag":["Tech"],"readingTime":7},"content":"\u003c!doctype html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n\u003cmeta charset=\"utf-8\"\u003e\n\u003cmeta content=\"width=device-width, initial-scale=1\" name=\"viewport\"\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n\u003cp\u003e본 기사에서는 \"Push\", \"Pull Request\", \"Merge\"와 같은 GitHub 웹훅을 수신하는 프로젝트를 만드는 방법을 안내하겠습니다. 이러한 이벤트를 Flask 애플리케이션에서 캡처하고 MongoDB에 저장하며, React 프론트엔드를 사용하여 실시간으로 표시할 것입니다. 마지막으로 Flask 앱을 Vercel에 배포해 보겠습니다.\u003c/p\u003e\n\u003ch1\u003e배울 내용\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003eGitHub 웹훅 설정하는 방법\u003c/li\u003e\n\u003cli\u003e웹훅을 처리하기 위한 Flask 애플리케이션 만드는 방법\u003c/li\u003e\n\u003cli\u003e웹훅 데이터를 MongoDB에 저장하는 방법\u003c/li\u003e\n\u003cli\u003e실시간 업데이트를 표시하는 React 애플리케이션 만드는 방법\u003c/li\u003e\n\u003cli\u003eFlask 애플리케이션을 Vercel에 배포하는 방법\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003e준비물\u003c/h1\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003cul\u003e\n\u003cli\u003ePython, Flask 및 React에 대한 기본 지식\u003c/li\u003e\n\u003cli\u003eGitHub 계정\u003c/li\u003e\n\u003cli\u003e로컬에 MongoDB 설치 또는 클라우드 MongoDB 서비스\u003c/li\u003e\n\u003cli\u003eNode.js 및 npm 설치\u003c/li\u003e\n\u003cli\u003eVercel 계정\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003e단계 1: GitHub Webhook 설정\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eGitHub 저장소 설정\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eGitHub에서 새 저장소를 만듭니다.\u003c/p\u003e\n\u003cp\u003eGitHub에서 action-repo라는 새 저장소를 만듭니다. 이 저장소는 \"Push\", \"Pull Request\", \"Merge\"와 같은 이벤트에 기반하여 웹훅을 트리거합니다.\u003c/p\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003col start=\"2\"\u003e\n\u003cli\u003e웹훅 추가하기\u003c/li\u003e\n\u003c/ol\u003e\n\u003cul\u003e\n\u003cli\u003eGitHub의 작업 리포지토리로 이동합니다.\u003c/li\u003e\n\u003cli\u003e설정에서 웹훅(Webhooks)으로 이동합니다.\u003c/li\u003e\n\u003cli\u003e웹훅 추가를 클릭합니다.\u003c/li\u003e\n\u003cli\u003e페이로드 URL을 Flask 앱의 엔드포인트로 설정합니다 (나중에 이를 설정할 예정입니다).\u003c/li\u003e\n\u003cli\u003e컨텐츠 유형을 application/json으로 설정합니다.\u003c/li\u003e\n\u003cli\u003e개별 이벤트를 선택하도록 \"푸쉬(Push)\", \"풀 리퀘스트(Pull Request)\", \"병합(Merge)\" 이벤트를 선택합니다.\u003c/li\u003e\n\u003cli\u003e웹훅 추가를 클릭합니다.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003e단계 2: Flask 애플리케이션 생성\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003e프로젝트 초기화\u003c/li\u003e\n\u003c/ul\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003cp\u003e플라스크 프로젝트를 위한 webhook-repo라는 디렉토리를 만들어보세요.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-js\"\u003emkdir webhook-repo\ncd webhook-repo\npython3 -m venv venv\nsource venv/bin/activate\npip install \u003cspan class=\"hljs-title class_\"\u003eFlask\u003c/span\u003e pymongo\n\u003c/code\u003e\u003c/pre\u003e\n\u003col start=\"2\"\u003e\n\u003cli\u003eFlask 앱 만들기\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003ewebhook-repo 디렉토리에 다음 코드를 사용하여 app.py를 만들어보세요.\u003c/p\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-python\"\u003e\u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e flask \u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e Flask, request, jsonify\n\u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e pymongo \u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e MongoClient\n\u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e datetime \u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e datetime\n\napp = Flask(__name__)\n\n\u003cspan class=\"hljs-comment\"\u003e# MongoDB 연결\u003c/span\u003e\nclient = MongoClient(\u003cspan class=\"hljs-string\"\u003e'mongodb://localhost:27017/'\u003c/span\u003e)\ndb = client[\u003cspan class=\"hljs-string\"\u003e'github_webhooks'\u003c/span\u003e]\ncollection = db[\u003cspan class=\"hljs-string\"\u003e'events'\u003c/span\u003e]\n\n\u003cspan class=\"hljs-meta\"\u003e@app.route(\u003cspan class=\"hljs-params\"\u003e\u003cspan class=\"hljs-string\"\u003e'/webhook'\u003c/span\u003e, methods=[\u003cspan class=\"hljs-string\"\u003e'POST'\u003c/span\u003e]\u003c/span\u003e)\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003edef\u003c/span\u003e \u003cspan class=\"hljs-title function_\"\u003ewebhook\u003c/span\u003e():\n    data = request.json\n    event_type = request.headers.get(\u003cspan class=\"hljs-string\"\u003e'X-GitHub-Event'\u003c/span\u003e)\n    \n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e event_type == \u003cspan class=\"hljs-string\"\u003e'push'\u003c/span\u003e:\n        author = data[\u003cspan class=\"hljs-string\"\u003e'pusher'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'name'\u003c/span\u003e]\n        to_branch = data[\u003cspan class=\"hljs-string\"\u003e'ref'\u003c/span\u003e].split(\u003cspan class=\"hljs-string\"\u003e'/'\u003c/span\u003e)[-\u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e]\n        timestamp = datetime.strptime(data[\u003cspan class=\"hljs-string\"\u003e'head_commit'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'timestamp'\u003c/span\u003e], \u003cspan class=\"hljs-string\"\u003e\"%Y-%m-%dT%H:%M:%SZ\"\u003c/span\u003e)\n        event_data = {\n            \u003cspan class=\"hljs-string\"\u003e\"type\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"push\"\u003c/span\u003e,\n            \u003cspan class=\"hljs-string\"\u003e\"author\"\u003c/span\u003e: author,\n            \u003cspan class=\"hljs-string\"\u003e\"to_branch\"\u003c/span\u003e: to_branch,\n            \u003cspan class=\"hljs-string\"\u003e\"timestamp\"\u003c/span\u003e: timestamp\n        }\n    \u003cspan class=\"hljs-keyword\"\u003eelif\u003c/span\u003e event_type == \u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e:\n        author = data[\u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'user'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'login'\u003c/span\u003e]\n        from_branch = data[\u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'head'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'ref'\u003c/span\u003e]\n        to_branch = data[\u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'base'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'ref'\u003c/span\u003e]\n        timestamp = datetime.strptime(data[\u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'created_at'\u003c/span\u003e], \u003cspan class=\"hljs-string\"\u003e\"%Y-%m-%dT%H:%M:%SZ\"\u003c/span\u003e)\n        event_data = {\n            \u003cspan class=\"hljs-string\"\u003e\"type\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"pull_request\"\u003c/span\u003e,\n            \u003cspan class=\"hljs-string\"\u003e\"author\"\u003c/span\u003e: author,\n            \u003cspan class=\"hljs-string\"\u003e\"from_branch\"\u003c/span\u003e: from_branch,\n            \u003cspan class=\"hljs-string\"\u003e\"to_branch\"\u003c/span\u003e: to_branch,\n            \u003cspan class=\"hljs-string\"\u003e\"timestamp\"\u003c/span\u003e: timestamp\n        }\n    \u003cspan class=\"hljs-keyword\"\u003eelif\u003c/span\u003e event_type == \u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003eand\u003c/span\u003e data[\u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'merged'\u003c/span\u003e]:\n        author = data[\u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'user'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'login'\u003c/span\u003e]\n        from_branch = data[\u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'head'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'ref'\u003c/span\u003e]\n        to_branch = data[\u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'base'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'ref'\u003c/span\u003e]\n        timestamp = datetime.strptime(data[\u003cspan class=\"hljs-string\"\u003e'pull_request'\u003c/span\u003e][\u003cspan class=\"hljs-string\"\u003e'merged_at'\u003c/span\u003e], \u003cspan class=\"hljs-string\"\u003e\"%Y-%m-%dT%H:%M:%SZ\"\u003c/span\u003e)\n        event_data = {\n            \u003cspan class=\"hljs-string\"\u003e\"type\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"merge\"\u003c/span\u003e,\n            \u003cspan class=\"hljs-string\"\u003e\"author\"\u003c/span\u003e: author,\n            \u003cspan class=\"hljs-string\"\u003e\"from_branch\"\u003c/span\u003e: from_branch,\n            \u003cspan class=\"hljs-string\"\u003e\"to_branch\"\u003c/span\u003e: to_branch,\n            \u003cspan class=\"hljs-string\"\u003e\"timestamp\"\u003c/span\u003e: timestamp\n        }\n    \u003cspan class=\"hljs-keyword\"\u003eelse\u003c/span\u003e:\n        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e jsonify({\u003cspan class=\"hljs-string\"\u003e'message'\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e'지원되지 않는 이벤트입니다'\u003c/span\u003e}), \u003cspan class=\"hljs-number\"\u003e400\u003c/span\u003e\n\n    collection.insert_one(event_data)\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e jsonify({\u003cspan class=\"hljs-string\"\u003e'message'\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e'이벤트가 수신되었습니다'\u003c/span\u003e}), \u003cspan class=\"hljs-number\"\u003e200\u003c/span\u003e\n\n\u003cspan class=\"hljs-meta\"\u003e@app.route(\u003cspan class=\"hljs-params\"\u003e\u003cspan class=\"hljs-string\"\u003e'/events'\u003c/span\u003e, methods=[\u003cspan class=\"hljs-string\"\u003e'GET'\u003c/span\u003e]\u003c/span\u003e)\u003c/span\u003e\n\u003cspan class=\"hljs-keyword\"\u003edef\u003c/span\u003e \u003cspan class=\"hljs-title function_\"\u003eget_events\u003c/span\u003e():\n    events = \u003cspan class=\"hljs-built_in\"\u003elist\u003c/span\u003e(collection.find().sort(\u003cspan class=\"hljs-string\"\u003e\"timestamp\"\u003c/span\u003e, -\u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e).limit(\u003cspan class=\"hljs-number\"\u003e10\u003c/span\u003e))\n    \u003cspan class=\"hljs-keyword\"\u003efor\u003c/span\u003e event \u003cspan class=\"hljs-keyword\"\u003ein\u003c/span\u003e events:\n        event[\u003cspan class=\"hljs-string\"\u003e'_id'\u003c/span\u003e] = \u003cspan class=\"hljs-built_in\"\u003estr\u003c/span\u003e(event[\u003cspan class=\"hljs-string\"\u003e'_id'\u003c/span\u003e])\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e jsonify(events), \u003cspan class=\"hljs-number\"\u003e200\u003c/span\u003e\n\n\u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e __name__ == \u003cspan class=\"hljs-string\"\u003e'__main__'\u003c/span\u003e:\n    app.run(host=\u003cspan class=\"hljs-string\"\u003e'0.0.0.0'\u003c/span\u003e, port=\u003cspan class=\"hljs-number\"\u003e5000\u003c/span\u003e)\n\u003c/code\u003e\u003c/pre\u003e\n\u003col start=\"3\"\u003e\n\u003cli\u003erequirements.txt 파일 생성\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e필요한 의존성이 명시된 requirements.txt 파일을 만들어주세요:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-python\"\u003eFlask\npymongo\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003ch1\u003e단계 3: Vercel에 Flask 앱 배포하기\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003evercel.json 파일 만들기\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003evercel.json 설정 파일을 만듭니다:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-js\"\u003e{\n  \u003cspan class=\"hljs-string\"\u003e\"version\"\u003c/span\u003e: \u003cspan class=\"hljs-number\"\u003e2\u003c/span\u003e,\n  \u003cspan class=\"hljs-string\"\u003e\"builds\"\u003c/span\u003e: [\n    {\n      \u003cspan class=\"hljs-string\"\u003e\"src\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"app.py\"\u003c/span\u003e,\n      \u003cspan class=\"hljs-string\"\u003e\"use\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"@vercel/python\"\u003c/span\u003e\n    }\n  ],\n  \u003cspan class=\"hljs-string\"\u003e\"routes\"\u003c/span\u003e: [\n    {\n      \u003cspan class=\"hljs-string\"\u003e\"src\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"/(.*)\"\u003c/span\u003e,\n      \u003cspan class=\"hljs-string\"\u003e\"dest\"\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\"app.py\"\u003c/span\u003e\n    }\n  ]\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003col start=\"2\"\u003e\n\u003cli\u003eVercel에 배포하기\u003c/li\u003e\n\u003c/ol\u003e\n\u003cul\u003e\n\u003cli\u003eVercel CLI 설치하기: npm install -g vercel\u003c/li\u003e\n\u003cli\u003eVercel에 로그인하기: vercel login\u003c/li\u003e\n\u003cli\u003e프로젝트를 배포하기: vercel\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch1\u003e단계 4: React 프론트엔드 생성\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003eReact 앱 설정하기\u003c/li\u003e\n\u003c/ul\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003cp\u003eReact 애플리케이션을 새로 만들어 보세요:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-js\"\u003enpx create-react-app github-webhooks-ui\ncd github-webhooks-ui\nnpm install axios\n\u003c/code\u003e\u003c/pre\u003e\n\u003col start=\"2\"\u003e\n\u003cli\u003eApp.js 파일을 만들어 보세요\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eApp.js 파일 내용을 다음과 같이 변경해 주세요:\u003c/p\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-js\"\u003e\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-title class_\"\u003eReact\u003c/span\u003e, { useState, useEffect } \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'react'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e axios \u003cspan class=\"hljs-keyword\"\u003efrom\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'axios'\u003c/span\u003e;\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e'./App.css'\u003c/span\u003e;\n\n\u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e \u003cspan class=\"hljs-title function_\"\u003eApp\u003c/span\u003e = (\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) =\u003e {\n  \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e [events, setEvents] = \u003cspan class=\"hljs-title function_\"\u003euseState\u003c/span\u003e([]);\n\n  \u003cspan class=\"hljs-title function_\"\u003euseEffect\u003c/span\u003e(\u003cspan class=\"hljs-function\"\u003e() =\u003e\u003c/span\u003e {\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e \u003cspan class=\"hljs-title function_\"\u003efetchEvents\u003c/span\u003e = \u003cspan class=\"hljs-keyword\"\u003easync\u003c/span\u003e (\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) =\u003e {\n      \u003cspan class=\"hljs-keyword\"\u003etry\u003c/span\u003e {\n        \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e response = \u003cspan class=\"hljs-keyword\"\u003eawait\u003c/span\u003e axios.\u003cspan class=\"hljs-title function_\"\u003eget\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e'https://your-vercel-app.vercel.app/events'\u003c/span\u003e);\n        \u003cspan class=\"hljs-title function_\"\u003esetEvents\u003c/span\u003e(response.\u003cspan class=\"hljs-property\"\u003edata\u003c/span\u003e);\n      } \u003cspan class=\"hljs-keyword\"\u003ecatch\u003c/span\u003e (error) {\n        \u003cspan class=\"hljs-variable language_\"\u003econsole\u003c/span\u003e.\u003cspan class=\"hljs-title function_\"\u003eerror\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e'Error fetching events'\u003c/span\u003e, error);\n      }\n    };\n\n    \u003cspan class=\"hljs-title function_\"\u003efetchEvents\u003c/span\u003e();\n    \u003cspan class=\"hljs-keyword\"\u003econst\u003c/span\u003e interval = \u003cspan class=\"hljs-built_in\"\u003esetInterval\u003c/span\u003e(fetchEvents, \u003cspan class=\"hljs-number\"\u003e15000\u003c/span\u003e);\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-function\"\u003e() =\u003e\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003eclearInterval\u003c/span\u003e(interval);\n  }, []);\n\n  \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e (\n    \u003cspan class=\"xml\"\u003e\u003cspan class=\"hljs-tag\"\u003e\u0026#x3C;\u003cspan class=\"hljs-name\"\u003ediv\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eclassName\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e\"App\"\u003c/span\u003e\u003e\u003c/span\u003e\n      \u003cspan class=\"hljs-tag\"\u003e\u0026#x3C;\u003cspan class=\"hljs-name\"\u003eh1\u003c/span\u003e\u003e\u003c/span\u003eGitHub Repository Events\u003cspan class=\"hljs-tag\"\u003e\u0026#x3C;/\u003cspan class=\"hljs-name\"\u003eh1\u003c/span\u003e\u003e\u003c/span\u003e\n      \u003cspan class=\"hljs-tag\"\u003e\u0026#x3C;\u003cspan class=\"hljs-name\"\u003eul\u003c/span\u003e\u003e\u003c/span\u003e\n        {events.map(event =\u003e (\n          \u003cspan class=\"hljs-tag\"\u003e\u0026#x3C;\u003cspan class=\"hljs-name\"\u003eli\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003ekey\u003c/span\u003e=\u003cspan class=\"hljs-string\"\u003e{event._id}\u003c/span\u003e\u003e\u003c/span\u003e\n            {event.type === 'push' \u0026#x26;\u0026#x26; `${event.author} pushed to ${event.to_branch} on ${new Date(event.timestamp).toUTCString()}`}\n            {event.type === 'pull_request' \u0026#x26;\u0026#x26; `${event.author} submitted a pull request from ${event.from_branch} to ${event.to_branch} on ${new Date(event.timestamp).toUTCString()}`}\n            {event.type === 'merge' \u0026#x26;\u0026#x26; `${event.author} merged branch ${event.from_branch} to ${event.to_branch} on ${new Date(event.timestamp).toUTCString()}`}\n          \u003cspan class=\"hljs-tag\"\u003e\u0026#x3C;/\u003cspan class=\"hljs-name\"\u003eli\u003c/span\u003e\u003e\u003c/span\u003e\n        ))}\n      \u003cspan class=\"hljs-tag\"\u003e\u0026#x3C;/\u003cspan class=\"hljs-name\"\u003eul\u003c/span\u003e\u003e\u003c/span\u003e\n    \u003cspan class=\"hljs-tag\"\u003e\u0026#x3C;/\u003cspan class=\"hljs-name\"\u003ediv\u003c/span\u003e\u003e\u003c/span\u003e\u003c/span\u003e\n  );\n};\n\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e \u003cspan class=\"hljs-keyword\"\u003edefault\u003c/span\u003e \u003cspan class=\"hljs-title class_\"\u003eApp\u003c/span\u003e;\n\u003c/code\u003e\u003c/pre\u003e\n\u003col start=\"3\"\u003e\n\u003cli\u003eReact 앱 실행\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eReact 애플리케이션을 시작하려면:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-js\"\u003enpm start\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003ch1\u003e테스트 및 확인\u003c/h1\u003e\n\u003cul\u003e\n\u003cli\u003eGitHub 웹훅 업데이트:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eGitHub 웹훅 설정에서 Payload URL을 배포된 Vercel의 Flask 앱을 가리키도록 업데이트하십시오:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-js\"\u003e\u003cspan class=\"hljs-attr\"\u003ehttps\u003c/span\u003e:\u003cspan class=\"hljs-comment\"\u003e//your-vercel-app.vercel.app/webhook\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003col start=\"2\"\u003e\n\u003cli\u003e트리거 이벤트:\u003c/li\u003e\n\u003c/ol\u003e\n\u003cul\u003e\n\u003cli\u003ePush Action: 변경 사항을 만들어서 action-repo에 푸시합니다.\u003c/li\u003e\n\u003cli\u003ePull Request Action: 새 브랜치를 만들어서 변경 사항을 적용하고 푸시한 다음 풀 리퀘스트를 오픈합니다.\u003c/li\u003e\n\u003cli\u003eMerge Action: 풀 리퀘스트를 병합합니다.\u003c/li\u003e\n\u003c/ul\u003e\n\u003col start=\"3\"\u003e\n\u003cli\u003e확인: React 앱을 확인해서 이벤트가 올바르게 표시되는지 확인해보세요.\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch1\u003e결론\u003c/h1\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003cp\u003e이 프로젝트에서는 다음을 배웠습니다:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eGitHub 웹훅 설정 및 처리 방법\u003c/li\u003e\n\u003cli\u003e웹훅 이벤트를 처리하는 Flask 애플리케이션 생성\u003c/li\u003e\n\u003cli\u003eMongoDB에 이벤트 저장\u003c/li\u003e\n\u003cli\u003eReact 프론트엔드를 사용하여 실시간 이벤트 표시\u003c/li\u003e\n\u003cli\u003eVercel에 Flask 애플리케이션 배포\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e이 프로젝트는 다양한 기술을 통합하여 실시간 업데이트를 효율적으로 처리하는 풀 스택 애플리케이션을 보여줍니다. 궁금한 점이나 개선하고 싶은 부분이 있으면 인증, 추가적인 이벤트 유형 또는 더 다양하고 진보된 UI 요소를 추가하여 이 프로젝트를 확장해보세요.\u003c/p\u003e\n\u003cp\u003e즐거운 코딩되세요!\u003c/p\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n"},"__N_SSG":true},"page":"/post/[slug]","query":{"slug":"2024-06-30-BuildingaReal-TimeGitHubWebhookListenerwithFlaskMongoDBandReact"},"buildId":"ckvP8zvWyPnScUqpsTElP","isFallback":false,"gsp":true,"scriptLoader":[{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4877378276818686","strategy":"lazyOnload","crossOrigin":"anonymous"}]}</script></body></html>
