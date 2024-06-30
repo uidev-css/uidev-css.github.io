@@ -3,13 +3,12 @@ title: "제 자동화된 문서 작성 도구로 새로운 Toolips를 만들기"
 description: ""
 coverImage: "/assets/img/2024-06-19-CreatingMyNewAutomatedDocumentationWithToolips_0.png"
 date: 2024-06-19 00:27
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-19-CreatingMyNewAutomatedDocumentationWithToolips_0.png
 tag: Tech
 originalTitle: "Creating My New Automated Documentation With Toolips"
 link: "https://medium.com/chifi-media/creating-my-new-automated-documentation-with-toolips-3b59f6e35122"
 ---
-
 
 ## 소개
 
@@ -46,7 +45,6 @@ end # ChifiDocs <3
 
 ## 백엔드
 
-
 <div class="content-ad"></div>
 
 툴립을 사용하는 가장 큰 장점 중 하나는 백엔드와 프론트엔드가 동일한 위치에 있고 원활하게 연결되어 있다는 것입니다. 많은 웹 개발 경우에 프론트엔드 서비스와 백엔드 서비스 사이에 통신을 하는 반면, 툴립을 사용하면 콜백 이벤트를 등록하고 연결을 제공함으로써 프론트엔드에서 백엔드를 작업할 수 있습니다.
@@ -70,7 +68,6 @@ end
 제가 생각한 두 구조입니다. DocModule은 모듈, 페이지 및 경로인 mdpath를 보관합니다. DocSystem은 범주별 정보를 갖는 일련의 DocModule을 감싼 것으로, 색상과 표시에 대한 이름을 포함합니다. 이 프로젝트에 필요한 마지막 요소는 이 데이터를 보관할 Toolips 서버 확장 기능입니다. Auth에서 제공되는 인증 데이터를 사용하는 등 다른 옵션이 있지만, 이 경우에는 이 모든 것을 처리할 자체 시스템을 개발하여 사용하겠습니다.
 
 <div class="content-ad"></div>
-
 
 ```js
 abstract type AbstractDocClient end
@@ -100,15 +97,14 @@ mutable struct ClientDocLoader <: Toolips.AbstractExtension
 end
 ```
 
-
 이제 이 백엔드에서 프론트엔드를 구축하고 올바른 탭을 클라이언트에 제공해야 합니다. 이 모듈에서 메뉴를 구축하는 `generate_menu`로 시작하겠습니다.
 
 ```js
 function generate_menu(mods::Vector{DocSystem})
-    menuholder::Component{:div} = div("mainmenu", align = "center", 
+    menuholder::Component{:div} = div("mainmenu", align = "center",
     children = [begin
         mdiv = a(string(menu_mod.name) * "eco", text = "$(menu_mod.name)")
-        style!(mdiv, "background-color" => menu_mod.color, 
+        style!(mdiv, "background-color" => menu_mod.color,
         "color" => "white", "font-size" => 14pt, "padding" => 10px)
         mdiv::Component{:a}
     end for menu_mod in mods])
@@ -117,7 +113,6 @@ end
 ```
 
 또한 `ClientDocLoader`에 대한 `Toolips.on_start` 바인딩을 추가하여 서버가 시작될 때 단순히 그것을 Connection 데이터로 푸시합니다.
-
 
 <div class="content-ad"></div>
 
@@ -145,7 +140,7 @@ function home(c::Toolips.AbstractConnection)
     client_keys = c[:doc].client_keys
     ip = get_ip(c)
     if ~(ip in keys(client_keys))
-        
+
     end
     key = client_keys[ip]
     client::DocClient = c[:doc].clients[key]
@@ -205,7 +200,7 @@ end
 해보죠!
 
 ```js
-include("dev.jl")
+include("dev.jl");
 ```
 
 <div class="content-ad"></div>
@@ -268,10 +263,10 @@ end
     # 페이지 작성
     pages = c[:doc].pages
     mainbody::Component{:body} = body("main", align = "center")
-    style!(mainbody, "margin-left" => 5percent, "margin-top" => 5percent, "background-color" => "#333333", "display" => "flex", 
+    style!(mainbody, "margin-left" => 5percent, "margin-top" => 5percent, "background-color" => "#333333", "display" => "flex",
     "transition" => 1s)
     main_container::Component{:div} = div("main-container")
-    style!(main_container, "height" => 80percent, "width" => 75percent, "background-color" => "white", "padding" => 0px, "display" => "flex", "flex-direction" => "column", 
+    style!(main_container, "height" => 80percent, "width" => 75percent, "background-color" => "white", "padding" => 0px, "display" => "flex", "flex-direction" => "column",
     "border-bottom-right-radius" => 5px, "border-top-right-radius" => 5px, "border" => "2px solid #211f1f", "border-left" => "none", "border-top" => "none")
     main_window::Component{:div} = div("main_window")
     tabbar = generate_tabbar(client)
@@ -293,13 +288,13 @@ function generate_tabbar(client::DocClient)
     tabholder::Component{:div} = div("tabs", align = "left",
     children = [begin
         taba = a("tab$(tab.name)", text = "$(tab.name)")
-        style!(taba, "padding" => 10px, "font-size" => 13pt, "font-weight" => "bold", 
-        "color" => "#333333", "background-color" => "lightgray", "cursor" => "pointer", 
+        style!(taba, "padding" => 10px, "font-size" => 13pt, "font-weight" => "bold",
+        "color" => "#333333", "background-color" => "lightgray", "cursor" => "pointer",
         "border-bottom" => "1px solid #333333", "border-right" => "1px solid #333333")
         taba
     end for (e, tab) in enumerate(client.tabs)])
     childs = tabholder[:children]
-    style!(childs[1], "background-color" => "white", "border-bottom" => "0px", 
+    style!(childs[1], "background-color" => "white", "border-bottom" => "0px",
     "border-top-left-radius" => 10px)
     style!(childs[length(childs)], "border-top-right-radius" => 10px)
     tabholder::Component{:div}
@@ -366,20 +361,20 @@ pages = ["sample", "gattino.md"]
 
 ```js
 function generate_menu(mods::Vector{DocSystem})
-    menuholder::Component{:div} = div("mainmenu", align = "center", 
+    menuholder::Component{:div} = div("mainmenu", align = "center",
     children = [begin
         mdiv = a(string(menu_mod.name) * "eco", text = "$(menu_mod.name)")
-        style!(mdiv, "background-color" => menu_mod.color, 
+        style!(mdiv, "background-color" => menu_mod.color,
         "color" => "white", "font-size" => "20pt", "padding" => "14px", "font-weight" => "bold")
         mdiv::Component{:a}
     end for menu_mod in mods])
-    style!(menuholder, "position" => "absolute", "top" => "-100", "left" => "0", "width" => "100%", "height" => "0px", 
+    style!(menuholder, "position" => "absolute", "top" => "-100", "left" => "0", "width" => "100%", "height" => "0px",
     "transition" => "800ms")
     menuholder::Component{:div}
 end
 
 function generate_menu(dm::Vector{DocModule})
-    
+
 end
 
 function switch_tabs!(c::AbstractConnection, cm::ComponentModifier, t::String)
@@ -391,8 +386,8 @@ function generate_tabbar(c::AbstractConnection, client::DocClient)
     children = [begin
         labelname = join(split(tab.name, "-")[2:3], " | ")
         taba = a("tab$(tab.name)", text = "$labelname")
-        style!(taba, "padding" => "10px", "font-size" => "13pt", "font-weight" => "bold", 
-        "color" => "#333333", "background-color" => "lightgray", "cursor" => "pointer", 
+        style!(taba, "padding" => "10px", "font-size" => "13pt", "font-weight" => "bold",
+        "color" => "#333333", "background-color" => "lightgray", "cursor" => "pointer",
         "border-bottom" => "1px solid #333333", "border-right" => "1px solid #333333")
         on(c, taba, "click") do cm::ComponentModifier
             switch_tabs!(c, cm, tab.name)
@@ -401,7 +396,7 @@ function generate_tabbar(c::AbstractConnection, client::DocClient)
     end for (e, tab) in enumerate(client.tabs)])
     childs = tabholder[:children]
     style!(tabholder, "width" => "50%")
-    style!(childs[1], "background-color" => "white", "border-bottom" => "0px", 
+    style!(childs[1], "background-color" => "white", "border-bottom" => "0px",
     "border-top-left-radius" => "10px")
     style!(childs[length(childs)], "border-top-right-radius" => "10px")
     return(tabholder, client.tabs[1].name)
@@ -410,13 +405,13 @@ end
 function build_main(c::AbstractConnection, client::DocClient)
     tabbar, docname = generate_tabbar(c, client)
     main_container::Component{:div} = div("main-container", children = [tabbar, div("main_window")])
-    style!(main_container, "height" => "80%", "width" => "75%", "background-color" => "white", "padding" => "0px", "display" => "flex", "flex-direction" => "column", 
+    style!(main_container, "height" => "80%", "width" => "75%", "background-color" => "white", "padding" => "0px", "display" => "flex", "flex-direction" => "column",
     "border-bottom-right-radius" => "5px", "border-top-right-radius" => "5px", "border" => "2px solid #211f1f", "border-left" => "none", "border-top" => "none")
     return(main_container::Component{:div}, docname)
 end
 
 function build_leftmenu(c::AbstractConnection, mod::DocModule)
-    [begin 
+    [begin
         pagename = page.name
         openbutton = button("open-$pagename", text = "open")
         labela = a("label-$pagename", text = replace(pagename, "-" => " "))
@@ -441,7 +436,7 @@ function home(c::Toolips.AbstractConnection)
     # 페이지 작성
     pages = c[:doc].pages
     mainbody::Component{:body} = body("main", align = "center")
-    style!(mainbody, "margin-left" => "5%", "margin-top" => "5%", "background-color" => "#333333", "display" => "flex", 
+    style!(mainbody, "margin-left" => "5%", "margin-top" => "5%", "background-color" => "#333333", "display" => "flex",
     "transition" => "1s")
     main_container::Component{:div}, mod::String = build_main(c, client)
     ecopage = split(mod, "-")
@@ -463,6 +458,7 @@ end
 <div class="content-ad"></div>
 
 @info에 대한 몇 가지 호출도 있습니다. 이는 데이터가 올바르게 로드되었는지 확인하기 위한 점검입니다. 웹 브라우저를 통해 요청을 보냅니다.
+
 ```js
 julia> include("dev.jl")
   `~/dev/packages/chifi/ChifiDocs`에서 프로젝트를 활성화 중
@@ -487,6 +483,7 @@ julia> [ Info: ["gattino", "parametric", "toolips", "chifi"]
 ```
 
 마지막으로 언급할 가치가 있는 것은 이 프로젝트의 설정이 실제로 어떻게 로드되는지입니다. 이 프로젝트에는 두 개의 별도 환경이 있습니다. 하나는 문서화할 모듈을 포함하고 다른 하나는 ChifiDocs 빌드에 필요한 종속성을 포함합니다. 전자는 chifi 아래에 포함되어 있습니다. 또한 이 프로젝트에는 각 생태계를 문서화하기 위한 마크다운 및 에셋이 포함되어 있습니다. 자동 빌드 문서 참조와 기타 자동으로 빌드되는 기능을 원하지만 새로운 튜토리얼 문서를 작성하고 제공할 수 있는 능력도 원합니다.
+
 ```js
 shell> tree .
 .
@@ -524,7 +521,7 @@ shell> tree .
 
 여기가 내 dev.jl 파일이에요:
 
-```julia
+```js
 using Pkg; Pkg.activate(".")
 using ChifiDocs
 Pkg.activate("chifi")
@@ -535,7 +532,7 @@ toolips_process = ChifiDocs.start_from_project("chifi", ChifiDocComponents, ip =
 
 그리고 마지막으로 components.jl 파일이에요. 그 파일이 존재하는 이유에 대해 설명하겠습니다.:
 
-```julia
+```js
 #== components.jl ==
 `components.jl`은 이 프로젝트에 특화된 특별한 소스 파일이에요. 이 파일은 dev.jl에서 불러와서 사용되며, 마크다운 문서 페이지에 사용자 정의 구성 요소를 작성하고, 문서 페이지에서 사용할 종속성을 로드할 수 있게 해줘요.
 `components.jl` 파일에서는 오직 구성 요소만 내보내야 하며, 이름으로 보간하여 마크다운에서 $를 사용하거나, Julia에서 'interpolate!' 또는 'interpolate_code!'를 사용해야 해요.

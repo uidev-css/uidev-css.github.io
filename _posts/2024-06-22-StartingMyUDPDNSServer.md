@@ -3,13 +3,12 @@ title: "UDP DNS 서버 시작하기 Nodejs로 쉽게 따라하는 방법"
 description: ""
 coverImage: "/assets/img/2024-06-22-StartingMyUDPDNSServer_0.png"
 date: 2024-06-22 15:49
-ogImage: 
+ogImage:
   url: /assets/img/2024-06-22-StartingMyUDPDNSServer_0.png
 tag: Tech
 originalTitle: "Starting My UDP DNS Server"
 link: "https://medium.com/chifi-media/starting-my-udp-dns-server-8cc196cffbbc"
 ---
-
 
 나의 최근 생태계 업데이트에서는 완료 직전에 있는 여러 패키지를 소개했어요. 해당 업데이트에서 논의된 패키지 중 하나는 현재 Julia General에 병합 중인 새 Toolips 확장 프로그램인 ToolipsUDP입니다. ToolipsUDP는 Toolips 생태계를 만들면서 초기화한 프로젝트인데, 프로젝트에 사용 목적이 없었기 때문에 빨리 만들었어요.
 
@@ -34,7 +33,7 @@ Toolips 프로젝트를 시작하려면 보통 Toolips.new_app 또는 Toolips.ne
  _/ |\__'_|_|_|\__'_|  |  Fedora 38 빌드
 |__/                   |
 
-julia> 
+julia>
 (@v1.9) pkg> add https://github.com/ChifiSource/ToolipsUDP.jl
      Cloning git-repo `https://github.com/ChifiSource/ToolipsUDP.jl`
     Updating git-repo `https://github.com/ChifiSource/ToolipsUDP.jl
@@ -54,7 +53,7 @@ julia> ToolipsUDP.new_app("ChiNS", UDPServer)
 
 <div class="content-ad"></div>
 
-```julia
+```js
 module ChiNS
 using Toolips
 using ToolipsUDP
@@ -79,7 +78,7 @@ end # - module
 
 dev.jl을 포함하면 우리 서버는 즉시 시작됩니다.
 
-```julia
+```js
 julia> include("dev.jl")
   Activating project at `~/dev/packages/julia/ChiNS`
 [ Info: Precompiling ChiNS [3335ca11-6bce-43d8-b1c1-b64d7d07a7e2]
@@ -89,7 +88,6 @@ status: active (4)
 ```
 
 더 흥미로운 일을 위해 다른 터미널에서 클라이언트 서버를 열 것입니다. 이렇게 하면 서버가 무엇을 말하는지 보다 쉽게 파악할 수 있습니다. 같은 터미널에서 두 서버가 병렬로 출력되는 것보다 더 편리합니다.
-
 
 <div class="content-ad"></div>
 
@@ -163,7 +161,7 @@ UDP 서버: 127.0.0.1:2000
 ```js
 julia> ToolipsUDP.send(newserv, "emma", "127.0.0.1", 2000)
 
-julia> 안녕 emma ! 
+julia> 안녕 emma !
 ```
 
 <div class="content-ad"></div>
@@ -177,7 +175,7 @@ using Toolips
 using ToolipsUDP
 
 function handler(c::UDPConnection)
-    
+
 end
 
 function start(ip::String = "127.0.0.1", port::Int64 = 2000)
@@ -363,7 +361,7 @@ function build_response(data::String)
     tid = data[1:2]
     println("Transaction ID: ", tid)
     flags::DNSFlags = build_flags(data[3:5])
-    
+
 end
 ```
 
