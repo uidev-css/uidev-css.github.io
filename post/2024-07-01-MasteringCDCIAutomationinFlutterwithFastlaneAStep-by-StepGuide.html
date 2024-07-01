@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><title>Fastlane을 사용한 Flutter CDCI 자동화 마스터하기 단계별 가이드 | uidev-css</title><meta name="description" content=""/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:url" content="https://uidev-css.github.io///post/2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide" data-gatsby-head="true"/><meta property="og:type" content="website" data-gatsby-head="true"/><meta property="og:site_name" content="Fastlane을 사용한 Flutter CDCI 자동화 마스터하기 단계별 가이드 | uidev-css" data-gatsby-head="true"/><meta property="og:title" content="Fastlane을 사용한 Flutter CDCI 자동화 마스터하기 단계별 가이드 | uidev-css" data-gatsby-head="true"/><meta property="og:description" content="" data-gatsby-head="true"/><meta property="og:image" content="/assets/img/2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide_0.png" data-gatsby-head="true"/><meta property="og:locale" content="en_US" data-gatsby-head="true"/><meta name="twitter:card" content="summary_large_image" data-gatsby-head="true"/><meta property="twitter:domain" content="https://uidev-css.github.io/" data-gatsby-head="true"/><meta property="twitter:url" content="https://uidev-css.github.io///post/2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide" data-gatsby-head="true"/><meta name="twitter:title" content="Fastlane을 사용한 Flutter CDCI 자동화 마스터하기 단계별 가이드 | uidev-css" data-gatsby-head="true"/><meta name="twitter:description" content="" data-gatsby-head="true"/><meta name="twitter:image" content="/assets/img/2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide_0.png" data-gatsby-head="true"/><meta name="twitter:data1" content="Dev | uidev-css" data-gatsby-head="true"/><meta name="article:published_time" content="2024-07-01 17:15" data-gatsby-head="true"/><meta name="next-head-count" content="19"/><meta name="google-site-verification" content="a-yehRo3k3xv7fg6LqRaE8jlE42e5wP2bDE_2F849O4"/><link rel="stylesheet" href="/favicons/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png"/><link rel="icon" href="/favicons/apple-icon-180x180.png"/><link rel="apple-touch-icon" href="/favicons/apple-icon-180x180.png"/><link rel="apple-touch-startup-image" href="/startup.png"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="msapplication-config" content="/favicons/browserconfig.xml"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BHFR6GTH9P"></script><script>window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-BHFR6GTH9P');</script><link rel="preload" href="/_next/static/css/6e57edcf9f2ce551.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6e57edcf9f2ce551.css" data-n-g=""/><link rel="preload" href="/_next/static/css/b8ef307c9aee1e34.css" as="style"/><link rel="stylesheet" href="/_next/static/css/b8ef307c9aee1e34.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-ee6df16fdc6dae4d.js" defer=""></script><script src="/_next/static/chunks/framework-46611630e39cfdeb.js" defer=""></script><script src="/_next/static/chunks/main-cf4a52eec9a970a0.js" defer=""></script><script src="/_next/static/chunks/pages/_app-6fae11262ee5c69b.js" defer=""></script><script src="/_next/static/chunks/75fc9c18-ac4aa08aae62f90e.js" defer=""></script><script src="/_next/static/chunks/463-0429087d4c0b0335.js" defer=""></script><script src="/_next/static/chunks/pages/post/%5Bslug%5D-b4eed7811784bdd3.js" defer=""></script><script src="/_next/static/9ddMoNNI_mr3kv4sKx3b_/_buildManifest.js" defer=""></script><script src="/_next/static/9ddMoNNI_mr3kv4sKx3b_/_ssgManifest.js" defer=""></script></head><body><div id="__next"><header class="Header_header__Z8PUO"><div class="Header_inner__tfr0u"><strong class="Header_title__Otn70"><a href="/">UIDEV CSS</a></strong><nav class="Header_nav_area__6KVpk"><a class="nav_item" href="/posts/1">Posts</a></nav></div></header><main class="posts_container__NyRU3"><div class="posts_inner__i3n_i"><h1 class="posts_post_title__EbxNx">Fastlane을 사용한 Flutter CDCI 자동화 마스터하기 단계별 가이드</h1><div class="posts_meta__cR7lu"><div class="posts_profile_wrap__mslMl"><div class="posts_profile_image_wrap__kPikV"><img alt="Fastlane을 사용한 Flutter CDCI 자동화 마스터하기 단계별 가이드" loading="lazy" width="44" height="44" decoding="async" data-nimg="1" class="profile" style="color:transparent" src="/favicons/apple-icon-114x114.png"/></div><div class="posts_textarea__w_iKT"><span class="writer">UIDEV CSS</span><span class="posts_info__5KJdN"><span class="posts_date__ctqHI">Posted On Jul 1, 2024</span><span class="posts_reading_time__f7YPP">3<!-- --> min read</span></span></div></div><img alt="" loading="lazy" width="50" height="50" decoding="async" data-nimg="1" class="posts_view_badge__tcbfm" style="color:transparent" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fallround-coder.github.io/post/2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide&amp;count_bg=%2379C83D&amp;title_bg=%23555555&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=views&amp;edge_flat=false"/></div><article class="posts_post_content__n_L6j"><div><!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+</head>
+<body>
+<p><img src="/assets/img/2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide_0.png" alt="이미지"></p>
+<p>안녕하세요!</p>
+<p>이번 블로그 포스트에서는 Fastlane 및 이를 통한 모바일 앱 개발의 중요성을 소개하겠습니다. Fastlane을 Flutter 프로젝트에 통합하는 이점을 강조하고, 앱 개발 워크플로우에서 자동화의 중요성을 강조할 것입니다.</p>
+<p>Fastlane이란 무엇인가요? Fastlane의 핵심 기능을 개요하여 설명하고, 이 도구가 모바일 앱 개발 수명주기에서 작업을 자동화하는 방법에 대해 설명합니다.</p>
+<p>Flutter에 Fastlane 통합하는 이유는 무엇인가요? 자동화 도구 없이 Flutter 프로젝트를 관리하는 데 어려움이 있다는 문제와 Fastlane을 Flutter에 통합하여 효율성과 확장성을 높이는 이점을 탐구할 것입니다.</p>
+<p>간단하게 소개했지만, 자세한 내용은 블로그 포스트에서 확인해 주세요! 자동화와 효율성에 대한 더 많은 정보가 여러분을 기다리고 있습니다. 함께 공부해요!</p>
+<div class="content-ad"></div>
+<p>시작하기:</p>
+<ul>
+<li>플러터 프로젝트에 Fastlane 설정하는 단계별 가이드.</li>
+<li>Fastlane 설치 및 플러터와 함께 사용할 수 있도록 구성하는 방법 안내.</li>
+<li>레인, 액션, 플러그인과 같은 필수 Fastlane 구성 요소 소개.</li>
+<li>공식 Fastlane 문서</li>
+</ul>
+<p>빌드 및 배포 프로세스 자동화:</p>
+<ul>
+<li>Fastlane이 플랫폼 간 플러터 앱 빌드 및 배포를 어떻게 간소화하는지 시연.</li>
+<li>일반 작업(빌드, 테스트, 릴리스 배포 등)에 대한 샘플 Fastfile 구성 쇼케이스.</li>
+<li>플러터 프로젝트에 Fastlane 설정하기 위한 코드 스니펫:</li>
+</ul>
+<pre><code class="hljs language-js"># <span class="hljs-title class_">Ruby</span> gem을 사용하여 <span class="hljs-title class_">Fastlane</span> 설치
+ sudo gem install fastlane -<span class="hljs-variable constant_">NV</span>
+ 
+ # 플러터 프로젝트 디렉토리로 이동
+ cd /경로/플러터_프로젝트
+ 
+ # 플러터 프로젝트에서 <span class="hljs-title class_">Fastlane</span> 초기화
+ fastlane init
+</code></pre>
+<ul>
+<li>플러터 Fastlane 플러그인</li>
+</ul>
+<div class="content-ad"></div>
+<h1>자동 빌드 및 배포 프로세스를 자동화하기 위한 샘플 Fastfile:</h1>
+<pre><code class="hljs language-js"># <span class="hljs-title class_">Fastfile</span>
+
+<span class="hljs-title function_">default_platform</span>(:flutter)
+
+platform :android <span class="hljs-keyword">do</span>
+  desc <span class="hljs-string">"Android 릴리즈 빌드"</span>
+  lane :build_android <span class="hljs-keyword">do</span>
+    <span class="hljs-title function_">flutter_build</span>()
+    <span class="hljs-title function_">gradle</span>(<span class="hljs-attr">task</span>: <span class="hljs-string">'assembleRelease'</span>)
+  end
+
+  desc <span class="hljs-string">"Google Play에 배포"</span>
+  lane :deploy_android <span class="hljs-keyword">do</span>
+    build_android
+    <span class="hljs-title function_">upload_to_play_store</span>(<span class="hljs-attr">track</span>: <span class="hljs-string">'alpha'</span>, <span class="hljs-attr">release_status</span>: <span class="hljs-string">'draft'</span>)
+  end
+end
+
+platform :ios <span class="hljs-keyword">do</span>
+  desc <span class="hljs-string">"iOS 릴리즈 빌드"</span>
+  lane :build_ios <span class="hljs-keyword">do</span>
+    <span class="hljs-title function_">flutter_build</span>()
+    gym
+  end
+
+  desc <span class="hljs-string">"App Store에 배포"</span>
+  lane :deploy_ios <span class="hljs-keyword">do</span>
+    build_ios
+    deliver
+  end
+end
+</code></pre>
+<p>지속적 통합 및 배포 (CI/CD):</p>
+<ul>
+<li>Fastlane이 Jenkins, Travis CI, GitHub Actions 등 인기있는 CI/CD 서비스와 어떻게 통합되는지 설명합니다.</li>
+<li>Fastlane을 Flutter 프로젝트의 CI/CD 파이프라인에 통합하는 이점을 설명합니다.</li>
+</ul>
+<p>고급 팁과 트릭:</p>
+<ul>
+<li>Flutter 프로젝트에서 Fastlane 워크플로우를 최적화하는 고급 기술을 공유합니다.</li>
+<li>여러 환경 및 사용자 정의 빌드 스크립트와 같은 복잡한 시나리오를 처리하는 팁을 제공합니다.</li>
+</ul>
+<div class="content-ad"></div>
+<p>Best Practices:</p>
+<ul>
+<li>효율적이고 깔끔한 Fastlane 환경을 유지하기 위한 최상의 방법을 제공합니다.</li>
+<li>Fastlane을 Flutter와 함께 사용할 때 오류 처리, 로깅 및 버전 관리 전략을 논의합니다.</li>
+</ul>
+<p>결론:</p>
+<ul>
+<li>블로그 글에서 다룬 주요 내용을 요약합니다.</li>
+<li>Fastlane을 Flutter와 통합하는 중요성을 강조하여 앱 개발 워크플로를 효율적으로 만드는 것을 재확인합니다.</li>
+<li>독자들에게 Fastlane을 더 탐구하고 그 경험을 커뮤니티와 공유할 것을 격려합니다.</li>
+</ul>
+<p>추가 자료:</p>
+<ul>
+<li>Flutter 문서</li>
+<li>Fastlane GitHub 저장소</li>
+<li>Fastlane 액션</li>
+</ul>
+</body>
+</html>
+</div></article></div></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"title":"Fastlane을 사용한 Flutter CDCI 자동화 마스터하기 단계별 가이드","description":"","date":"2024-07-01 17:15","slug":"2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide","content":"\n\n![이미지](/assets/img/2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide_0.png)\n\n안녕하세요!\n\n이번 블로그 포스트에서는 Fastlane 및 이를 통한 모바일 앱 개발의 중요성을 소개하겠습니다. Fastlane을 Flutter 프로젝트에 통합하는 이점을 강조하고, 앱 개발 워크플로우에서 자동화의 중요성을 강조할 것입니다.\n\nFastlane이란 무엇인가요? Fastlane의 핵심 기능을 개요하여 설명하고, 이 도구가 모바일 앱 개발 수명주기에서 작업을 자동화하는 방법에 대해 설명합니다.\n\nFlutter에 Fastlane 통합하는 이유는 무엇인가요? 자동화 도구 없이 Flutter 프로젝트를 관리하는 데 어려움이 있다는 문제와 Fastlane을 Flutter에 통합하여 효율성과 확장성을 높이는 이점을 탐구할 것입니다.\n\n간단하게 소개했지만, 자세한 내용은 블로그 포스트에서 확인해 주세요! 자동화와 효율성에 대한 더 많은 정보가 여러분을 기다리고 있습니다. 함께 공부해요!\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n시작하기:\n\n- 플러터 프로젝트에 Fastlane 설정하는 단계별 가이드.\n- Fastlane 설치 및 플러터와 함께 사용할 수 있도록 구성하는 방법 안내.\n- 레인, 액션, 플러그인과 같은 필수 Fastlane 구성 요소 소개.\n- 공식 Fastlane 문서\n\n빌드 및 배포 프로세스 자동화:\n- Fastlane이 플랫폼 간 플러터 앱 빌드 및 배포를 어떻게 간소화하는지 시연.\n- 일반 작업(빌드, 테스트, 릴리스 배포 등)에 대한 샘플 Fastfile 구성 쇼케이스.\n- 플러터 프로젝트에 Fastlane 설정하기 위한 코드 스니펫:\n\n```js\n# Ruby gem을 사용하여 Fastlane 설치\n sudo gem install fastlane -NV\n \n # 플러터 프로젝트 디렉토리로 이동\n cd /경로/플러터_프로젝트\n \n # 플러터 프로젝트에서 Fastlane 초기화\n fastlane init\n```\n\n- 플러터 Fastlane 플러그인\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\n# 자동 빌드 및 배포 프로세스를 자동화하기 위한 샘플 Fastfile:\n\n```js\n# Fastfile\n\ndefault_platform(:flutter)\n\nplatform :android do\n  desc \"Android 릴리즈 빌드\"\n  lane :build_android do\n    flutter_build()\n    gradle(task: 'assembleRelease')\n  end\n\n  desc \"Google Play에 배포\"\n  lane :deploy_android do\n    build_android\n    upload_to_play_store(track: 'alpha', release_status: 'draft')\n  end\nend\n\nplatform :ios do\n  desc \"iOS 릴리즈 빌드\"\n  lane :build_ios do\n    flutter_build()\n    gym\n  end\n\n  desc \"App Store에 배포\"\n  lane :deploy_ios do\n    build_ios\n    deliver\n  end\nend\n```\n\n지속적 통합 및 배포 (CI/CD):\n- Fastlane이 Jenkins, Travis CI, GitHub Actions 등 인기있는 CI/CD 서비스와 어떻게 통합되는지 설명합니다.\n- Fastlane을 Flutter 프로젝트의 CI/CD 파이프라인에 통합하는 이점을 설명합니다.\n\n고급 팁과 트릭:\n- Flutter 프로젝트에서 Fastlane 워크플로우를 최적화하는 고급 기술을 공유합니다.\n- 여러 환경 및 사용자 정의 빌드 스크립트와 같은 복잡한 시나리오를 처리하는 팁을 제공합니다.\n\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\nBest Practices:\n- 효율적이고 깔끔한 Fastlane 환경을 유지하기 위한 최상의 방법을 제공합니다.\n- Fastlane을 Flutter와 함께 사용할 때 오류 처리, 로깅 및 버전 관리 전략을 논의합니다.\n\n결론:\n- 블로그 글에서 다룬 주요 내용을 요약합니다.\n- Fastlane을 Flutter와 통합하는 중요성을 강조하여 앱 개발 워크플로를 효율적으로 만드는 것을 재확인합니다.\n- 독자들에게 Fastlane을 더 탐구하고 그 경험을 커뮤니티와 공유할 것을 격려합니다.\n\n추가 자료:\n- Flutter 문서\n- Fastlane GitHub 저장소\n- Fastlane 액션","ogImage":{"url":"/assets/img/2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide_0.png"},"coverImage":"/assets/img/2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide_0.png","tag":["Tech"],"readingTime":3},"content":"\u003c!doctype html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n\u003cmeta charset=\"utf-8\"\u003e\n\u003cmeta content=\"width=device-width, initial-scale=1\" name=\"viewport\"\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n\u003cp\u003e\u003cimg src=\"/assets/img/2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide_0.png\" alt=\"이미지\"\u003e\u003c/p\u003e\n\u003cp\u003e안녕하세요!\u003c/p\u003e\n\u003cp\u003e이번 블로그 포스트에서는 Fastlane 및 이를 통한 모바일 앱 개발의 중요성을 소개하겠습니다. Fastlane을 Flutter 프로젝트에 통합하는 이점을 강조하고, 앱 개발 워크플로우에서 자동화의 중요성을 강조할 것입니다.\u003c/p\u003e\n\u003cp\u003eFastlane이란 무엇인가요? Fastlane의 핵심 기능을 개요하여 설명하고, 이 도구가 모바일 앱 개발 수명주기에서 작업을 자동화하는 방법에 대해 설명합니다.\u003c/p\u003e\n\u003cp\u003eFlutter에 Fastlane 통합하는 이유는 무엇인가요? 자동화 도구 없이 Flutter 프로젝트를 관리하는 데 어려움이 있다는 문제와 Fastlane을 Flutter에 통합하여 효율성과 확장성을 높이는 이점을 탐구할 것입니다.\u003c/p\u003e\n\u003cp\u003e간단하게 소개했지만, 자세한 내용은 블로그 포스트에서 확인해 주세요! 자동화와 효율성에 대한 더 많은 정보가 여러분을 기다리고 있습니다. 함께 공부해요!\u003c/p\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003cp\u003e시작하기:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e플러터 프로젝트에 Fastlane 설정하는 단계별 가이드.\u003c/li\u003e\n\u003cli\u003eFastlane 설치 및 플러터와 함께 사용할 수 있도록 구성하는 방법 안내.\u003c/li\u003e\n\u003cli\u003e레인, 액션, 플러그인과 같은 필수 Fastlane 구성 요소 소개.\u003c/li\u003e\n\u003cli\u003e공식 Fastlane 문서\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e빌드 및 배포 프로세스 자동화:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eFastlane이 플랫폼 간 플러터 앱 빌드 및 배포를 어떻게 간소화하는지 시연.\u003c/li\u003e\n\u003cli\u003e일반 작업(빌드, 테스트, 릴리스 배포 등)에 대한 샘플 Fastfile 구성 쇼케이스.\u003c/li\u003e\n\u003cli\u003e플러터 프로젝트에 Fastlane 설정하기 위한 코드 스니펫:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-js\"\u003e# \u003cspan class=\"hljs-title class_\"\u003eRuby\u003c/span\u003e gem을 사용하여 \u003cspan class=\"hljs-title class_\"\u003eFastlane\u003c/span\u003e 설치\n sudo gem install fastlane -\u003cspan class=\"hljs-variable constant_\"\u003eNV\u003c/span\u003e\n \n # 플러터 프로젝트 디렉토리로 이동\n cd /경로/플러터_프로젝트\n \n # 플러터 프로젝트에서 \u003cspan class=\"hljs-title class_\"\u003eFastlane\u003c/span\u003e 초기화\n fastlane init\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n\u003cli\u003e플러터 Fastlane 플러그인\u003c/li\u003e\n\u003c/ul\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003ch1\u003e자동 빌드 및 배포 프로세스를 자동화하기 위한 샘플 Fastfile:\u003c/h1\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-js\"\u003e# \u003cspan class=\"hljs-title class_\"\u003eFastfile\u003c/span\u003e\n\n\u003cspan class=\"hljs-title function_\"\u003edefault_platform\u003c/span\u003e(:flutter)\n\nplatform :android \u003cspan class=\"hljs-keyword\"\u003edo\u003c/span\u003e\n  desc \u003cspan class=\"hljs-string\"\u003e\"Android 릴리즈 빌드\"\u003c/span\u003e\n  lane :build_android \u003cspan class=\"hljs-keyword\"\u003edo\u003c/span\u003e\n    \u003cspan class=\"hljs-title function_\"\u003eflutter_build\u003c/span\u003e()\n    \u003cspan class=\"hljs-title function_\"\u003egradle\u003c/span\u003e(\u003cspan class=\"hljs-attr\"\u003etask\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e'assembleRelease'\u003c/span\u003e)\n  end\n\n  desc \u003cspan class=\"hljs-string\"\u003e\"Google Play에 배포\"\u003c/span\u003e\n  lane :deploy_android \u003cspan class=\"hljs-keyword\"\u003edo\u003c/span\u003e\n    build_android\n    \u003cspan class=\"hljs-title function_\"\u003eupload_to_play_store\u003c/span\u003e(\u003cspan class=\"hljs-attr\"\u003etrack\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e'alpha'\u003c/span\u003e, \u003cspan class=\"hljs-attr\"\u003erelease_status\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e'draft'\u003c/span\u003e)\n  end\nend\n\nplatform :ios \u003cspan class=\"hljs-keyword\"\u003edo\u003c/span\u003e\n  desc \u003cspan class=\"hljs-string\"\u003e\"iOS 릴리즈 빌드\"\u003c/span\u003e\n  lane :build_ios \u003cspan class=\"hljs-keyword\"\u003edo\u003c/span\u003e\n    \u003cspan class=\"hljs-title function_\"\u003eflutter_build\u003c/span\u003e()\n    gym\n  end\n\n  desc \u003cspan class=\"hljs-string\"\u003e\"App Store에 배포\"\u003c/span\u003e\n  lane :deploy_ios \u003cspan class=\"hljs-keyword\"\u003edo\u003c/span\u003e\n    build_ios\n    deliver\n  end\nend\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e지속적 통합 및 배포 (CI/CD):\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eFastlane이 Jenkins, Travis CI, GitHub Actions 등 인기있는 CI/CD 서비스와 어떻게 통합되는지 설명합니다.\u003c/li\u003e\n\u003cli\u003eFastlane을 Flutter 프로젝트의 CI/CD 파이프라인에 통합하는 이점을 설명합니다.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e고급 팁과 트릭:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eFlutter 프로젝트에서 Fastlane 워크플로우를 최적화하는 고급 기술을 공유합니다.\u003c/li\u003e\n\u003cli\u003e여러 환경 및 사용자 정의 빌드 스크립트와 같은 복잡한 시나리오를 처리하는 팁을 제공합니다.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cdiv class=\"content-ad\"\u003e\u003c/div\u003e\n\u003cp\u003eBest Practices:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e효율적이고 깔끔한 Fastlane 환경을 유지하기 위한 최상의 방법을 제공합니다.\u003c/li\u003e\n\u003cli\u003eFastlane을 Flutter와 함께 사용할 때 오류 처리, 로깅 및 버전 관리 전략을 논의합니다.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e결론:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e블로그 글에서 다룬 주요 내용을 요약합니다.\u003c/li\u003e\n\u003cli\u003eFastlane을 Flutter와 통합하는 중요성을 강조하여 앱 개발 워크플로를 효율적으로 만드는 것을 재확인합니다.\u003c/li\u003e\n\u003cli\u003e독자들에게 Fastlane을 더 탐구하고 그 경험을 커뮤니티와 공유할 것을 격려합니다.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e추가 자료:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eFlutter 문서\u003c/li\u003e\n\u003cli\u003eFastlane GitHub 저장소\u003c/li\u003e\n\u003cli\u003eFastlane 액션\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n"},"__N_SSG":true},"page":"/post/[slug]","query":{"slug":"2024-07-01-MasteringCDCIAutomationinFlutterwithFastlaneAStep-by-StepGuide"},"buildId":"9ddMoNNI_mr3kv4sKx3b_","isFallback":false,"gsp":true,"scriptLoader":[{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4877378276818686","strategy":"lazyOnload","crossOrigin":"anonymous"}]}</script></body></html>
